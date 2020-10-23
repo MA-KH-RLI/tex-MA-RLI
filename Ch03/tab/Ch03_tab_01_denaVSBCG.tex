@@ -1,0 +1,21 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Studienvergleich der zentralen Annahmen zur Entwicklung des Zubaus an regenerativen Erzeugungseinheiten und neuen Verbraucher bis zum Jahr \num{2050}}
+		\begin{tabu} to \textwidth {X[1.5] X[1, r] X[1, r]}
+			\hline
+            {}                                      &   dena-Leitstudie             & BCG Studie                \\
+            {}                                      &   Elektrifizierungsszenarien  & \SI{95}{\percent}-Pfad    \\\hline
+            Leistung PVA in \si{\gw}                &   \num{165}                   & \num{130}                 \\
+            Leistung onshore WEA in \si{\gw}        &   \num{179}                   & \num{102}                 \\
+            BEV in \si{\MioStk}                     &   \num{30.2}                  & \num{28}                  \\
+            PHEV in \si{\MioStk}                    &   \num{5.6}                   & \num{7}                   \\
+            Wärmepumpen in \si{\MioStk}             &   \num{17}                    & \num{16}                  \\\hline
+		\end{tabu}
+		\label{tab:denaVSBCG}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

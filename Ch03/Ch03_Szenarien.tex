@@ -1,0 +1,299 @@
+% Szenarien und Annahmen
+
+\section{Szenariorahmen und Annahmen}\label{chap:Szenariorahmen}
+
+In diesem Kapitel sollen die verschiedenen Szenarien erläutert und die zugrundeliegenden Annahmen dargestellt werden.
+Vorerst wurde hierfür eine quantitative Metaanalyse bereits vorliegender Studien unternommen.
+Innerhalb des Workshops ToDo! wurden die Ergebnisse der Metaanalyse genutzt, um einen Szenariorahmen für die vorliegende Studie aufzustellen.
+
+\subsection{Metaanalyse vorliegender Literatur}\label{chap:Metaanalyse}
+
+Aufgrund der zunehmenden Marktdurchdringung der Elektromobilität rückt die Frage der Rückwirkungen der Ladevorgänge auf die Stromnetze vermehrt in den Vordergrund.
+Sind die Auswirkungen heutzutage noch klein, so kann ein stark steigender Markthochlauf auch starken Einfluss auf die Netzlast haben.
+
+\subsubsection{Fahrzeughochlauf}
+
+Die tatsächliche Anzahl von Elektrofahrzeugen bildet die wichtigste Einflussgröße für die Höhe der Rückwirkungen auf das Stromnetz wieder.
+Neben der Anzahl an Fahrzeugen haben auch die technischen Parameter der einzelnen Fahrzeugklassen einen starken Einfluss.
+Die technischen Parameter der Fahrzeuge können dem ToDo! entnommen werden und sind nicht Teil der Metaanalyse.
+
+\input{Ch03/fig/Ch03_fig_01_RampUp_BEV}
+
+In \autoref{fig:RampUpBEV} sind die Annahmen der betrachteten Studien zum Fahrzeugbestand von \glspl{BEV} bis zum Jahr \num{2050} als Box-Plot dargestellt.
+Die zugrundeliegenden Daten finden sich im Anhang in \autoref{tab:RampUpBEV}.
+Trotz einer starken Streuung zeigt sich bis \num{2050} eine klare Zunahme im Bestand.
+Der Median liegt 2030 noch bei \SI{1.9}{\MioStk}, steigt bis \num{2040} auf \SI{11.0}{\MioStk} und erreicht \num{2050} \SI{15.5}{\MioStk}.
+Die starke Streuung lässt sich zum einen durch den unterschiedlichen Fokus der verschiedenen Studien und zum anderen durch den langen Zeithorizont und die damit verbundene Unsicherheit erklären.
+Teilweise werden in einzelnen Szenarien hohe Elektrifzierungsquoten angenommen und das Einhalten des \SIrange[range-phrase=~{--}~]{80}{95}{\percent}-Ziels des Klimaschutzplans \num{2050} vorausgesetzt, während andere Szenarien eine Fortschreibung der aktuellen Entwicklungen (\gls{BAU}) untersuchen.
+So handelt es sich bei dem Ausreißer im Jahr 2030 um das Elektrifizierungsszenario der dena-Leitstudie Integrierte Energiewende.
+Hierbei handelt es sich um ein Szenario, welches sowohl hohe Elektrifizierungsquoten annimmt und als Leitlinie die Einhaltung des  \SIrange[range-phrase=~{--}~]{80}{95}{\percent}-Ziels setzt.\medskip
+
+Neben dem Hochlauf an \glspl{BEV}, ist auch mit einem starken Hochlauf bei den \glspl{PHEV} zu rechnen.
+Da ein Großteil der Fahrten von \glspl{PKW} eine Strecke von \SI{50}{\km} nicht überschreiten, können viele dieser Fahrten auch von \glspl{PHEV} batterieelektrisch zurückgelegt werden. \cite{Agora2019}
+Unterschiede gibt es jedoch in der maximalen Ladeleistung der Fahrzeugklassen.
+So werden \glspl{BEV} \num{2050} maximale Ladeleistungen von bis zu \SI{350}{\kw} aufweisen, während die maximale Ladeleistung von \glspl{PHEV} mit bis zu \SI{120}{\kw} deutlich geringer ausfällt. \cite{Kaul2019}
+
+\input{Ch03/fig/Ch03_fig_02_RampUp_PHEV}
+
+\autoref{fig:RampUpPHEV} zeigt die Annahmen der betrachteten Studien zum Fahrzeugbestand von \glspl{PHEV} bis zum Jahr \num{2050} als Box-Plot.
+Die zugrundeliegenden Daten finden sich im Anhang in \autoref{tab:RampUpPHEV}.
+Bei \glspl{PHEV} liegt der Anstieg im Fahrzeugbestand anfangs sogar höher als bei \glspl{BEV}.
+So liegt der Median 2030 bereits bei \SI{3.4}{\MioStk}.
+Anschließend fällt der Fahrzeugbestand von \glspl{PHEV} hinter den der \glspl{BEV} zurück.
+Bis \num{2040} steigt dieser auf \SI{8.2}{\MioStk} und \num{2050} auf \SI{9.6}{\MioStk}.
+Je nach Studie und Szenario sinkt der Fahrzeugbestand nach \num{2030} sogar wieder, da unter Umständen zur Erreichung der Klimaziele der Umstieg auf \glspl{BEV} sinnvoller ist.
+
+\input{Ch03/fig/Ch03_fig_03_RampUp2030}
+
+Von den betrachteten Studien quantifizieren drei Studien den Netzausbaubedarf auf Verteilnetzebene und bilden somit eine Referenz zu der vorliegenden Arbeit und werden vertieft betrachtet.
+Hierzu zählen die dena-Leitstudie \glqq Integrierte Energiewende\grqq{} \cite{DEAGH2018}, die BCG Studie \glqq Klimapfade für Deutschland\grqq{} \cite{BCG2018} und die Agora Studie \glqq Verteilnetzausbau für die Energiewende\grqq{} \cite{Agora2019}.
+\autoref{fig:RampUp2030} zeigt den Fahrzeughochlauf verschiedener alternativer Antriebstechnologien im Verkehrssektor bis \num{2030} je Studie und Szenario.
+Als Referenz wurden die konservativste und progressivste Annahmen des Netzentwicklungsplans \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020} hinzugefügt.
+Zu beachten ist hierbei, dass sich der Netzentwicklungsplan im Gegensatz zu den anderen Studien auf das Stützjahr \num{2035} bezieht.
+Es wird erneut deutlich, dass sich der Markthochlauf je nach Studie und Szenario teils erheblich unterscheidet.
+Grund hierfür sind nicht nur unterschiedliche Zielsetzungen der Studien, sondern auch verschiedene Modellgrundlagen und Annahmen.
+So spannen sowohl die dena-Leitstudie als auch die BCG Studie einen Szenariorahmen für die Erreichung der Klimaschutzziele bis \num{2050} auf.
+Dennoch liegt der Fahrzeugbestand alternativer Antriebstechnologien in den Klimaschutzszenarien \glqq Technologiemix\grqq{} und \glqq Elektrifizierung\grqq{} der dena-Leitstudie im Jahr 2030 mehr als doppelt so hoch als in den vergleichbaren Szenarien \glqq \SI{80}{\percent}-Pfad\grqq{} und \glqq \SI{95}{\percent}-Pfad\grqq{} der BCG Studie.
+Beide Studien betrachten dabei die Erreichung der Klimaschutzziele über alle relevanten Sektoren.
+Hierbei bewertet die BCG Studie den Verkehrssektor als deutlich unelastischer als die dena-Leitstudie, wodurch im Jahr \num{2030} eine große Diskrepanz zwischen den Szenarien entsteht.\medskip
+
+Demgegenüber definiert die Agora Studie feste Markthochläufe und ermittelt auf Grundlage dieser den nötigen Netzausbaubedarf in Abhängigkeit verschiedener Ladestrategien und -leistungen.
+Dabei basieren die angenommenen Markthochläufe in den \texttt{F}-Szenarien auf einer Fortschreibung des aktuellen Verkehrsverhaltens auf einer \glqq Antriebswende\grqq{} und in dem \texttt{M}-Szenario (s. \autoref{fig:RampUp2050}) auf einer \glqq Mobilitätswende\grqq{}.
+
+\input{Ch03/fig/Ch03_fig_04_RampUp2050}
+
+In \autoref{fig:RampUp2050} findet sich der Fahrzeughochlauf verschiedener alternativer Antriebstechnologien im Verkehrssektor bis \num{2050} je Studie und Szenario.
+Im Gegensatz zum Markthochlauf bis \num{2030}, liegen die Markthochlaufzahlen bis \num{2050} in allen Studien auf einem ähnlichen Niveau.
+Dennoch liegen die Zahlen der BCG-Szenarien unter denen der dena-Leitstudie.
+Der Grund hierfür ist, dass die Erreichung der Klimaschutzziele in der BCG Studie stärker in die Sektoren Energie, Haushalte, \gls{GHD} und Industrie verlagert werden.
+Beide Studien sind sich jedoch einig, dass zum Erreichen der Klimaschutzziele der Markthochlauf von alternativer Antriebstechnologien im Verkehrssektor gegenüber dem jeweiligen Referenzszenario (\gls{BAU}) deutlich angehoben werden muss.
+
+\subsubsection{Kosten für den Netzausbau}
+
+Die Kosten für den Netzausbau auf Verteilnetzebene werden von drei Studien untersucht.
+Hierzu zählen die dena-Leitstudie \glqq Integrierte Energiewende\grqq{} \cite{DEAGH2018}, die BCG Studie \glqq Klimapfade für Deutschland\grqq{} \cite{BCG2018} und die Agora Studie \glqq Verteilnetzausbau für die Energiewende\grqq{} \cite{Agora2019}.
+
+\input{Ch03/fig/Ch03_fig_05_DS_CAPEX-Meta}
+
+In \autoref{fig:DSCAPEXMeta} finden sich die Ergebnisse der Studien für den Investitionsbedarf in die Verteilnetze bis zum Jahr \num{2050} aufgeteilt auf die drei Spannungsebenen \gls{NS}, \gls{MS} und \gls{HS}.
+Deutlich wird hierbei, dass die dena-Leistudie die mit Abstand höchsten Kosten für den Netzausbau auf \gls{NS}- und \gls{HS}-Ebene ermittelt.
+Die Agora Studie untersucht hingegen die Netzausbaukosten nicht auf der \gls{HS}-Ebene, ermittelt jedoch die höchsten Ausbaukosten auf \gls{MS}-Ebene.
+Ein direkter Vergleich der Ergebnisse ist jedoch nur bedingt möglich, da die drei Studien unterschiedliche Grundsätze für ihre Szenarien und die Bestimmung des Netzausbaubedarfs ansetzen.
+Deshalb sollen diese Grundsätze kurz näher betrachtet werden.
+
+\paragraph{dena-Leitstudie \glqq Integrierte Energiewende\grqq{}:}
+
+Ziel der dena-Leitstudie war es, Szenarien für eine Transformation des Energiesystems zur Einhaltung der Klimaschutzziele von für eine Minderung der Treibhausgasemissionen von \SIrange[range-phrase=~{--}~]{80}{95}{\percent} bis \num{2050} zu entwerfen und zu untersuchen.
+Dabei wurden die Sektoren Energiewirtschaft, Gebäude, Industrie, Verkehr, Land- und
+Abfallwirtschaft inkludiert.
+Somit handelt es sich bei den Netzausbaukosten um die Kosten der Summe der Effekte der Umstellung aller Sektoren auf einen Klimaschutzpfad.\medskip
+
+Neben einem Referenzszenario, welches eine progressive Fortschreibung aktueller politischer und technologischer Entwicklungen darstellt, wird zwischen Technologiemix- und Elektrifizierungsszenarien unterschieden.
+Während in den Elektrifizierungsszenarien von einer hohen Elektrifizierung der Sektoren Gebäude, Industrie und Verkehr ausgegangen wird, kommt es in den Technologiemixszenarien zu einem variableren Einsatz verschiedener Technologien und Energieträger.\medskip
+
+Die Grundlage für die Bestimmung der Netzausbaukosten bildet die Ermittlung der zukünftigen Versorgungsaufgaben in den einzelnen Netzgebieten.
+Die Versorgungsaufgabe wird hierbei im wesentlichen durch den Zubau \glspl{DEA} (\glspl{PVA}, \glspl{WEA} und \glspl{BMA}), sowie neuer Lasten (\glspl{EV} und \glspl{WP}), beeinflusst.
+Die Zubauprognosen erfolgen zunächst auf Bundeslandebene und werden anschließend auf Gemeindeebene verteilt.
+Weiterhin erfolgt eine Einordnung der Gemeinden in \glspl{NGK} anhand ihrer Einwohnerzahl und Leistungsdichten von \glspl{EV} und \glspl{WP}.
+Dies führt zu einer Clusterung der Gemeinden, wodurch das Verhalten einer Gemeinde auf das einer anderen Gemeinde übertragen werden kann.\medskip
+
+Für die \gls{NS}- und \gls{MS}-Ebene erfolgt die Ermittlung des Netzausbaubedarfs mit Hilfe repräsentativer Netzstrukturen, welche genutzt werden um die nötigen Netzausbaumaßnahmen zu identifizieren.
+Auf \gls{HS}-Ebene wird davon ausgegangen, dass der Netzausbaubedarf einen linearen Zusammenhang zum Zubau von \glspl{DEA} aufweist.
+Abschließend wird der ermittelte Netzausbaubedarf auf allen Spannungsebenen monetär bewertet.\medskip
+
+Eine Steuerung der Ladevorgänge von neuen Verbrauchern findet nicht statt.
+Stattdessen geht die Studie davon aus, dass die zusätzliche Last durch \glspl{EV} und \glspl{WP} gleichzeitig mit der bisherigen Spitzenlast auftritt und der auslegungsrelevante Starklastfall somit deutlich erhöht wird.
+
+\paragraph{BCG Studie \glqq Klimapfade für Deutschland\grqq{}:}
+
+Auch die BCG Studie setzt sich das Erreichen der Klimaschutzziele bis \num{2050} als Ziel.
+Dabei steht die volkswirtschaftliche Kosteneffizienz und die Wettbewerbsfähigkeit des Industriestandorts Deutschland im Vordergrund.
+Dabei werden die gleichen Sektoren, wie in der dena-Leitstudie betrachtet. \medskip
+
+Im Gegensatz zur dena-Leitstudie erfolgt für die Quantifizierung des Netzausbaubedarfs auf Grundlage eines vereinfachten Ansatzes.
+Der Netzausbaubedarf wird in Anlehnung an die dena-Verteilnetzstudie \cite{DEAGH2012} auf Grundlage der Zubauzahlen für \glspl{DEA} und neue Verbraucher abgeschätzt und die Kosten anschließend anhand spezifischer Investitionskosten berechnet. 
+
+\input{Ch03/tab/Ch03_tab_01_denaVSBCG}
+
+\autoref{tab:denaVSBCG} zeigt die wichtigsten Annahmen der dena-Leitstudie und der BCG Studie zur Entwicklung des Zubaus an \glspl{DEA} und neuen Verbraucher bis zum Jahr \num{2050} für die jeweils progressivsten Szenarien.
+Der Investitionsbedarf Die dena-Leitstudie ermittelt bis \num{2050} eine installierten Leistung von \SI{344}{\gw} an \glspl{PVA} und onshore \glspl{WEA}.
+Dies ist etwa  \num{1.5}-mal so viel wie bei der BCG Studie.
+Die ermittelten Zubauzahlen für die neuen Verbraucher sind hingegen bei beiden Studien ähnlich.\medskip
+
+Dennoch ist der ermittelte Investitionsbedarf in die Verteilnetze in der dena-Leitstudie im Vergleich zur BCG Studie mehr als \num{2.5}-mal und auf \gls{NS}-Ebene sogar beinah \num{4}-mal so hoch.
+Im Gegensatz zur dena-Leitstudie, wird in der BCG-Studie von einem gesteuerten Laden der neuen Verbraucher ausgegangen.
+Dabei wird bei \glspl{WP} ein zweistündiger Warmwasserspeicher unterstellt, wodurch ein ebenso langer Starklastfall überbrückt werden kann.
+\SI{80}{\percent} der \glspl{EV} können hingegen auf Strommarktsignale reagieren und werden nur geladen, wenn weniger als \SI{50}{\percent} des Ladestands vorhanden sind oder eine lange Fahrt ansteht.
+Die starken Unterschiede im ermittelten Netzausbaubedarf sind somit sowohl eine folge der unterschiedlichen Berechnungsmethoden, der starken Differenzen im Verhalten der neuen Verbraucher als auch des unterschiedlichen starken Ausbaus an \glspl{DEA}.
+Die Effekte können jedoch nicht klar differenziert werden.
+
+\paragraph{Agora Studie \glqq Verteilnetzausbau für die Energiewende\grqq{}:}
+
+Die Agora Studie setzt ihren Fokus ausschließlich auf die Elektromobilität und den hiermit verbundenen Netzausbaubedarf im Verteilnetz auf \gls{NS}- und \gls{MS}-Ebene.
+Während die Annahmen zum Zubau von \glspl{DEA} und Wärmepumpen in den Szenarien konstant gehalten werden, wird in der Entwicklung der Elektromobilität zwischen \glqq Antriebs-\grqq{} und \glqq Mobilitätswende\grqq-Szenarien unterschieden.
+Nicht elektrische Antriebstechnologien werden hierbei nicht berücksichtigt.
+Zusätzlich wird ein starker Fokus auf den Einfluss von unterschiedlichen Ladestrategien auf den Netzausbaubedarf gelegt.\medskip
+
+Die Ermittlung des Netzausbaudedarfs erfolgt analog zur Methodik der dena-Leitstudie.
+Dabei wurden jedoch die Annahmen zur Gleichzeitigkeit der Ladevorgänge um eine Abhängigkeit von der Ladeleistung erweitert.
+Zusätzlich wurde ein netzdienliches Ladekonzept (gesteuert) untersucht, welches eine Verschiebung der Ladevorgänge zur Residuallastglättung innerhalb der Standzeit ermöglicht, sowie ein erweitertes netzdienliches Ladekonzept (gesteuert\Plus), welches zusätzlich die Verschiebung der Ladevorgänge über mehrere Standzeiten und eine Kappung von Lastspitzen erlaubt.\medskip
+
+Es zeigt sich, dass die Netzausbaukosten auf \gls{NS}-Ebene durch das erweiterte netzdienliche Ladekonzept deutlich gesenkt werden können, während der Einfluss auf \gls{MS}-Ebene nur gering ausfällt.
+Auch zeigt sich aufgrund der Residuallastglättung des netzdienlichen Ladens im Vergleich zur dena-Leitstudie ein deutlich geringerer Netzausbaubedarf auf \gls{NS}-Ebene trotz der höheren Hochlaufzahlen an \glspl{EV} im \texttt{F3}-Szenario von \SI{45}{\MioStk} und einem vergleichbaren Ausbau an \glspl{DEA} von \SI{311}{\gw}.
+Jedoch fällt der Netzausbaubedarf auf \gls{MS}-Ebene höher aus als in der dena-Leitstudie, da der Anteil an nicht steuerbaren Lasten (z.~B. Schnellladeinfrastruktur und Ladeinfrastruktur für Flotten und Busse) auf \gls{MS}-Ebene höher ausfällt und der hohe \gls{EV}-Bestand somit einen größeren Einfluss ausübt.
+
+\subsection{Ergebnisse des Workshops \glqq Neue Verbraucher und elektrische Flexbilitäten\grqq{}}
+
+Dieses Kapitel beschreibt und diskutiert die wichtigsten Ergebnisse des Workshops \glqq Neue Verbraucher und elektrische Flexbilitäten\grqq{}, welche die Grundlage für den Szenariorahmen bilden.
+Unter Einbeziehung der Ergebnisse der Literaturrecherche aus \ref{chap:Metaanalyse} wurden verschiedene Fragestellungen im Bezug auf \glqq Neue Verbraucher und elektrische Flexbilitäten\grqq{} mit Vertretern aus Industrie, Forschung und vor allem von Netzbetreibern diskutiert.
+Dabei sind für die Aufstellung des Szenariorahmens in erster Linie folgende behandelte Schwerpunkte von Bedeutung:
+
+\begin{itemize}
+    \item Elektromobilitätsszenarien
+    \item Elektrische Flexibilitäten
+    \item Neue Verbraucher in der Verteilnetzplanung
+\end{itemize}
+
+\paragraph{Elektromobilitätsszenarien:}
+
+%ToDo!: Welche Jahreszahl als Stütztjahr, oder stattdessen nur eine Hochlaufzahl?
+
+Bei dem Schwerpunkt \glqq Elektromobilitätsszenarien\grqq{} stand die Aufstellung eines groben Szenariorahmens für den Hochlauf an \glspl{EV} im Vordergrund.
+Dabei wurden folgende Szeanriorahmen diskutiert und es wurde darüber abgestimmt, welche Szenariorahmen von besonderem Interesse sind:
+
+\begin{itemize}
+    \item Mobilitätswende
+    \item Klimaschutz
+    \item Antriebswende (Vollelektrifizierung)
+\end{itemize}
+
+Bei der Abstimmung wurde deutlich, dass vor allem ein Mobilitätswende-Szenario von großem Interesse für die Teilnehmer des Workshops ist.
+Um mit dieser Arbeit einen möglichst breiten Horizont abzudecken, werden somit neben einem Referenzszenario ein Mobilitätswende-Szenario mit verhältnismäßig geringem Anteil an \glspl{MIV} und ein Antriebswende-Szenario mit einem hohen Anteil an \glspl{MIV} betrachtet.\medskip
+
+Bei der Ladeinfrastruktur stellte sich heraus, dass erwartet wird, dass vor allem die große Anzahl an \gls{AC}-Ladepunkten mit niedrigen Ladeleistungen und einer hohen Gleichzeitigkeit im privaten Bereich und am Arbeitsplatz zu Problemen führen wird.
+Regionale Konzentrationen von Ladepunkten und somit eine regional stark unterschieldiche Netzbelastung sind hingegen nur bei geringen Durchdringungen der Elektromobilität von Bedeutung und zu erwarten.
+
+\paragraph{Elektrische Flexibilitäten:}
+
+% Definition zeitlich und räumlich
+% V2G hat vermutlich keine Zukunft
+
+\paragraph{Neue Verbraucher in der Verteilnetzplanung:}
+
+\subsection{Annahmen}
+
+\subsubsection{Ausbau regenerativer Energien}
+
+\subsubsection{Wärmepumpen}
+
+\subsubsection{Elektromobilität}
+
+Bei der Elektromobilität müssen neben Annahmen zu den Zahlen zum Fahrzeughochlauf auch die technischen Daten der Fahrzeuge und der Ladeinfrastruktur berücksichtigt werden.
+
+\paragraph{Fahrzeughochlauf:}
+Der Fahrzeughochlauf unterscheidet sich je nach Szenario.
+Für das Stützjahr \num{2035} wird nur ein Szenario untersucht, wobei der Fahrzeughochlauf mit \SI{14}{\MioStk} den Annahmen des Szenarios C~\num{2035} des Netzentwicklungsplans \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020} entspricht.
+Die Hochlaufzahlen für das Referenzszenario entsprechen mit \SI{25.1}{\MioStk} den summierten Medianen der Literaturrecherche für den Fahrzeughochlauf an \glspl{BEV} und \glspl{PHEV}.
+Beim Mobilitätswende-Szenario wurde der Fahrzeugbestand des Effizienz-Plus Szenarios des Renewbility~III Projekts \cite{Institut2016} übernommen und von einer vollständigen Elektrifizierung ausgegangen.
+Das Antriebswende-Szenario spiegelt hingegen den Fahrzeugbestand von \SI{47.7}{\MioStk} vom \DTMdate{2020-01-01} \cite{KBA2020} wieder.
+
+\input{Ch03/tab/Ch03_tab_02_SzenarienRampUp}
+
+Die Aufteilung in \glspl{BEV} und \glspl{PHEV} erfolgt für das Stütztjahr \num{2035}, sowie das Referenz- und Antriebswende-Szenario anhand der ermittelten Mediane der Literaturrecherche für den Fahrzeughochlauf an \glspl{BEV} und \glspl{PHEV} für das jeweilige Jahr.
+Für das Jahr \num{2035} erfolgt eine lineare Interpolation zwischen den Jahren \num{2030} und \num{2040}.
+Im Mobilitätswende-Szenario wird hingegen davon ausgegangen, dass sich der Anteil an vollständig elektrifizierten Fahrzeugen erhöht.
+Der Anteil an \glspl{BEV} entspricht in diesem Szenario \SI{75}{\percent}, wodurch der Anteil an \glspl{PHEV} auf \SI{25}{\percent} sinkt.\medskip
+
+Innerhalb der Fahrzeugtypen erfolgt weiterhin eine Einteilung in die Fahrzeugklassen Kleinwagen, Mittelklasse und Oberklasse.
+Es wird davon ausgegangen, dass sich die Einteilung zwischen \glspl{BEV} und \glspl{PHEV} nicht unterscheidet.
+Für das Stütztjahr \num{2035}, sowie das Referenz- und Antriebswende-Szenario entspricht die Einteilung der Statistik des Kraftfahrt-Bundesamtes \cite{KBASegments2020} vom \DTMdate{2020-01-01}.
+Es wird somit von einer Fortschreibung des aktuellen Verbraucherverhaltens ausgegangen.
+Eine genaue Zuordnung der \gls{PKW}-Segmente in die Klassen findet sich im Anhang (\autoref{tab:KBASegments} und \autoref{tab:Segments}).
+Im Mobilitätswende-Szenario wird hingegen davon ausgegangen, dass es durch ein erhöhtes Umweltbewusstsein der Verbraucher zu einer Verschiebung der Anteile der Klassen kommt.
+In diesem Szenario entfallen \SI{50}{\percent} aller Fahrzeuge in die Kleinwagen-Klasse, \SI{35}{\percent} in die Mittelklasse und nur \SI{15}{\percent} in die Oberklasse.
+
+\paragraph{Technische Daten:}
+
+Die technischen Daten der Fahrzeuge sind klassenspezifisch und innerhalb ihrer Klasse homogen.
+In \autoref{tab:TechPowerCap} finden sich die fahrzeugseitige maximale Ladeleistung und die nutzbare Batteriekapazität der jeweiligen Fahrzeugklassen.
+Eine Limitierung der Ladeleistung durch die Unterscheidung in Normal- und Schnellladung, erfolgt im Simulationsmodell von Seiten der Ladeinfrastruktur.
+
+\input{Ch03/tab/Ch03_tab_03_techDetailsPowerCap}
+
+Der elektrische Energieverbrauch der Fahrzeuge wird aus den Annahmen der Studie \glqq eMobil \num{2050}\grqq{} \cite{Hacker2014} abgeleitet.
+Es wird angenommen, dass Kleinwagen gegenüber Mittelklasse Fahrzeugen einen um \SI{20}{\percent} reduzierten Energieverbrauch aufweisen.
+Oberklasse Fahrzeuge weisen hingegen einen um \SI{20}{\percent} erhöhten Energieverbrauch auf.\medskip
+
+Für das Jahr \num{2035} erfolgt eine lineare Interpolation zwischen den Verbrauchswerten von \num{2030} und \num{2040}.
+Weiterhin bietet die Studie \glqq eMobil \num{2050}\grqq{} nur Verbrauchsangaben nach dem \glspl{NEFZ}, welche nicht realen Verbrauchsdaten entsprechen.
+Nach \cite{Heinfellner2015} lag der Realverbrauch \num{2013} gegenüber einer Messung nach \gls{NEFZ} im Mittel um \SI{27}{\percent} höher.
+Die Werte der Studie \glqq eMobil \num{2050}\grqq{} wurden um diesen Faktor erhöht.
+
+\input{Ch03/tab/Ch03_tab_04_techVerbrauch}
+
+\paragraph{Ladeinfrastruktur:}
+
+Die Ladeinfrastruktur wird im Gegensatz zu den Annahmen zum Fahrzeughochlauf nicht in absoluten Zahlen ausgedrückt.
+Stattdessen werden den einzelnen Wegezwecken der Fahrzeuge Wahrscheinlichkeiten zugeordnet, dass das Fahrzeug am Zielort geladen werden kann.
+Weiterhin wird diese Wahrscheinlichkeit auf verschiedene Ladeleistungen aufgeteilt.
+Dabei wird grundsätzlich zwischen Normal- und Schnellladung unterschieden.
+Normalladung beschreibt in dieser Masterarbeit alle Ladevorgänge mit einer Leistung von bis zu einschließlich \SI{50}{\kw} und Schnellladung alle Ladevorgänge von größer \SIrange[range-phrase=~bis~einschließlich~]{50}{350}{\kw}.
+
+\subparagraph{Normalladung} beinhaltet die Leistungsklassen \SI{3.7}{\kw}, \SI{11}{\kw}, \SI{22}{\kw} und \SI{50}{\kw}.
+Eine Zuordnung der Leistungsklassen auf die einzelnen Wegezwecke erfordert vorerst eine Zuordnung der \UCs auf die Wegezwecke.
+In \autoref{tab:WegLadeUseCase} findet sich die entsprechende prozentuale Aufteilung der \UCs auf die Wegezwecke.
+
+\input{Ch03/tab/Ch03_tab_05_WegezweckeLadeUseCase}
+
+Derzeit leben in Deutschland ungefähr \SI{44.2}{\MioMen} in Gebäuden mit maximal zwei Wohnungen und \SI{37.2}{\MioMen} in Mehrfamilienhäusern.
+Etwa \SI{80}{\percent} der Fahrzeugbesitzer in Gebäuden mit maximal zwei Wohnungen verfügen über einen Stellplatz in der Garage oder im \texttt{Carport}.
+In Mehrfamilienhäusern haben hingegen nur \SI{55}{\percent} der Fahrzeugbesitzer einen Stellplatz. \cite{dena2020}
+Unter der vereinfachenden Annahme einer gleichmäßigen Verteilung von Fahrzeugen zwischen Bewohnern von Ein- und Mehrfamilienhäusern ergibt sich hieraus die ermittelte Aufteilung der \UCs auf den Wegezweck \nHdot.\medskip
+
+Die Aufteilung der \UCs auf die Wegezwecke \Einkaufdot, \Erledigung und \Freizeitdot, ergeben sich aus den Wegeanteilen nach Fahrtzweck im \gls{MIV}-Privatverkehr. \cite{Rikus2015}
+Im Falle des Wegezwecks \Einkaufdot, wird angenommen, dass Lebensmittelgschäfte einen Gewerbeparkplatz für jeden Kunden vorhalten. Weiterhin wird angenommen, dass im Falle von sonstigen Waren und sonstigen Dienstleistungen in \SI{50}{\percent} der Fälle ein Gewerbeparkplatz zur Verfügung steht.
+Bei dem Wegezweck \Erledigungdot, wird davon ausgegangen, dass beim Besuch von Behörden, Banken, Post und Geldautomaten ein Gewerbeparkplatz vorhanden ist und bei sonstigen Erledigungen in \SI{50}{\percent} der Fälle.
+Für den Wegezweck \Freizeitdot, wird angenommen, dass bei kulturelle Einrichtungen und Veranstaltungen ein Gewerbeparkplatz vorhanden ist.
+Bei sonstigen Freizeitaktivitäten wird angenommen, dass in \SI{50}{\percent} der Fälle ein Gewerbeparkplatz vorhanden ist.
+In allen verbleibenden Fällen erfolgt ein Parken am Straßenrand.\medskip
+
+Für die Abschätzung der Wahrscheinlichkeit auf einem Firmenparkplatz für den Wegezweck \Arbeit parken zu können, wurde die Parkplatzsituation am Arbeitsplatz zugrunde gelegt.
+Demnach werden \SI{67}{\percent} aller Arbeitswege mit dem \gls{PKW} zurückgelegt, wenn die Parkplatzsituation als nicht schwierig eingestuft wird.
+Demgegenüber werden bei einer schwierigen Parkplatzsituation nur \SI{36}{\percent} der Arbeitswege mit dem \gls{PKW} zurückgelegt.
+Insgesamt werden mit dem \gls{PKW} \SI{56}{\percent} aller Arbeitswege zurückgelegt. \cite{Ecke2020}
+Unter der Annahme, dass eine nicht schwierige Parkplatzsituation am Arbeitsplatz gleichbedeutend mit einem Firmenparkplatz und eine schwierige Parkplatzsituation mit dem Parken am Straßenrand ist, ergeben sich hieraus die ermittelten Anteile für den Wegezweck \Arbeitdot.
+Weiterhin wird angenommen, dass dieses Verhältnis auf den Wegezweck \Ausbildung~übertragen werden kann.\medskip
+
+Für den Wegezweck \dienstdot, wird die Aufteilung nach dem üblichen Stellplatz am Fahrtziel im Wirtschaftsverkehr verwendet. \cite{Rikus2015}
+Demnach parken gewerbliche Halter im Wirtschaftsverkehr in \SI{30}{\percent} der Fälle am Straßenrand.
+In \SI{26}{\percent} der Fälle erfolgt das Parken auf einem Privatgrundstück.
+Im Wirtschaftsverkehr handelt es sich in der Regel nicht um das eigene Privatgrundstück, weswegen diese Art des Parkens ebenfalls als Parken am Straßenrand gewertet wird.
+In \SI{6}{\percent} der Fälle erfolgt das Parken auf einem Gewerbeparkplatz und in \SI{38}{\percent} der Fälle auf einem Firmenparkplatz.\medskip
+
+Anschließend erfolgt für die Stützjahre \num{2035} und \num{2050} je \UC eine Abschätzung der Wahrscheinlichkeiten, ob eine Ladung stattfinden kann und mit welcher Ladeleistung geladen werden kann.
+In \autoref{tab:UCProbability2035} und \autoref{tab:UCProbability2050} die entsprechenden Annahmen.
+
+\input{Ch03/tab/Ch03_tab_06_UCProbability}
+
+In allen \UCs wird davon ausgegangen, dass Ladevorgänge mit der Zeit mit immer höheren Ladeleistungen stattfinden werden.
+Für den \UC \Eigenheim wird angenommen, dass jeder Besitzer eines \gls{EPKW} eine Ladevorrichtung vorhält, wenn die technischen Vorraussetzungen gegeben sind.
+Bei rund \SI{15}{\percent} der Stellplätze der Gebäude mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz.
+Es wird angenommen, dass dieser Bestand bis \num{2035} bestehen bleibt.
+Bis \num{2050} wird hingegen davon ausgegangen, dass alle Stellplätze mit einem Netzanschluss ausgerüstet werden.
+Die Aufteilung der Ladeleistungen erfolgt in Anlehnung an \cite{NPZMAVE2020}.
+Dabei wird der Anteil von Ladevorgängen mit \SI{3.7}{\kw} bis \num{2035} weiter abnehmen und \num{2050} keine Rolle mehr spielen.
+Der Anteil an Ladevorgängen mit \SI{11}{\kw} wird weiter wachsen, allerdings langsamer als der Anteil an Ladevorgängen mit \SI{22}{\kw}.
+Eine Ladung mit \SI{50}{\kw} wird im privaten Bereich keine Rolle spielen.\medskip
+
+
+
+% Ladeleistung der Fahrzeuge
+% 1/2/3ph laden
+
+\subsection{Szenariosteckbriefe}
+
+\subsubsection{Referenz-Szenario}
+
+\subsubsection{Mobilitätswende-Szenario}
+
+\subsubsection{Antriebswende-Szenario}

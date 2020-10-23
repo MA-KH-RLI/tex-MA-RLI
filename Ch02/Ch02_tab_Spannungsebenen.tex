@@ -1,0 +1,19 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~oder~}
+\begin{table}[H]
+	\begin{center}
+		\caption{Übliche Spannung und Stromkreislänge der Spannungsebenen im deutschen Verteilnetz}
+		\begin{tabu} to \textwidth {X[1] X[1, r] X[1, r]}
+			\hline
+            Spannungsebene & Spannung               & Stromkreislänge   \\\hline
+            Hochspannung   & \SI{110}{\kv}          & \SI{95000}{\km}   \\
+            Mittelspannung & \SIrange{20}{10}{\kv}  & \SI{510000}{\km}  \\
+            Niederspannung & \SIrange{400}{230}{\V} & \SI{1100000}{\km} \\\hline
+            \multicolumn{3}{l}{Quelle: \cite{BDEW2016}}
+		\end{tabu}
+		\label{tab:Spannungsebenen}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
