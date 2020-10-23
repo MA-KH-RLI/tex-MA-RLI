@@ -239,7 +239,7 @@ Weiterhin wird diese Wahrscheinlichkeit auf verschiedene Ladeleistungen aufgetei
 Dabei wird grundsätzlich zwischen Normal- und Schnellladung unterschieden.
 Normalladung beschreibt in dieser Masterarbeit alle Ladevorgänge mit einer Leistung von bis zu einschließlich \SI{50}{\kw} und Schnellladung alle Ladevorgänge von größer \SIrange[range-phrase=~bis~einschließlich~]{50}{350}{\kw}.
 
-\subparagraph{Normalladung} beinhaltet die Leistungsklassen \SI{3.7}{\kw}, \SI{11}{\kw}, \SI{22}{\kw} und \SI{50}{\kw}.
+\subparagraph{Normalladung} beinhaltet in dieser Arbeit die Leistungsklassen \SI{3.7}{\kw}, \SI{11}{\kw}, \SI{22}{\kw} und \SI{50}{\kw}.
 Eine Zuordnung der Leistungsklassen auf die einzelnen Wegezwecke erfordert vorerst eine Zuordnung der \UCs auf die Wegezwecke.
 In \autoref{tab:WegLadeUseCase} findet sich die entsprechende prozentuale Aufteilung der \UCs auf die Wegezwecke.
 
@@ -275,16 +275,52 @@ In \autoref{tab:UCProbability2035} und \autoref{tab:UCProbability2050} die entsp
 
 \input{Ch03/tab/Ch03_tab_06_UCProbability}
 
-In allen \UCs wird davon ausgegangen, dass Ladevorgänge mit der Zeit mit immer höheren Ladeleistungen stattfinden werden.
+In allen \UCs wird davon ausgegangen, dass die Ladevorgänge mit der Zeit mit immer höheren Ladeleistungen stattfinden werden.
 Für den \UC \Eigenheim wird angenommen, dass jeder Besitzer eines \gls{EPKW} eine Ladevorrichtung vorhält, wenn die technischen Vorraussetzungen gegeben sind.
-Bei rund \SI{15}{\percent} der Stellplätze der Gebäude mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz.
+Bei rund \SI{15}{\percent} der Stellplätze der Gebäude mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz. \cite{dena2020}
 Es wird angenommen, dass dieser Bestand bis \num{2035} bestehen bleibt.
 Bis \num{2050} wird hingegen davon ausgegangen, dass alle Stellplätze mit einem Netzanschluss ausgerüstet werden.
 Die Aufteilung der Ladeleistungen erfolgt in Anlehnung an \cite{NPZMAVE2020}.
 Dabei wird der Anteil von Ladevorgängen mit \SI{3.7}{\kw} bis \num{2035} weiter abnehmen und \num{2050} keine Rolle mehr spielen.
 Der Anteil an Ladevorgängen mit \SI{11}{\kw} wird weiter wachsen, allerdings langsamer als der Anteil an Ladevorgängen mit \SI{22}{\kw}.
-Eine Ladung mit \SI{50}{\kw} wird im privaten Bereich keine Rolle spielen.\medskip
+Eine Ladung mit \SI{50}{\kw} wird im privaten Bereich keine Rolle spielen.
+\num{2035} beträgt das Verhältnis zwischen den Ladeleistungen \(20:70:10:0\) und verschiebt sich bis \num{2050} auf \(0:75:25:0\)\medskip
 
+Stellplätze von Mehrfamilienhäusern besitzen mit ungefähr \SI{50}{\percent} deutlich seltener Zugang zum Stromnetz. \cite{dena2020}
+Zusätzlich wird angenommen, dass bis \num{2035} nur die Hälfte aller Stellplätze mit Netzanschluss mit einer Ladevorrichtung ausgestattet werden.
+In \num{2050} werden \SI{75}{\percent} der Stellplätze mit einem Netzanschluss ausgestattet sein und es wird angenommen, dass alle Stellplätze mit den entsprechenden technischen Vorraussetzungen mit einer Ladevorrichtung ausgestattet werden.
+In Wohnanlagen werden hohe Ladeleistungen eine Ausnahme bleiben.
+In \num{2035} wird von einem Verhältnis der Ladeleistungen von \(15:80:5:0\) ausgegangen, welches sich bis \num{2050} auf \(10:80:10:0\) verschiebt.\medskip
+
+Bei Firmen- und Gewerbeparkplätzen wird von einer ähnlichen Entwicklung Ausgegangen.
+Bis \num{2035} werden Mitarbeiter bzw. Kunden in \SI{50}{\percent} der Fälle Zugriff auf einen Ladepunkt haben.
+Dieser Anteil steigt bis \num{2050} auf \SI{75}{\percent}.
+Die Verteilung der Ladeleistungen geschieht in Anlehnung an das Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} und der Stromtankstellen Statistik des \texttt{GoingElectric} Forums \cite[][Stand: \DTMdate{2020-10-21}]{Weemaes2020}.
+Demnach besitzt ein Großteil (\SIrange[range-phrase=~bzw.~]{80}{51}{\percent}) der öffentlich zugänglichen Ladepunkte eine Ladeleistung von \SIrange{22}{42}{\kw}.
+Es wird davon ausgegangen, dass sich der Trend zu hohen Ladeleistungen weiter fortsetzt.
+Dies gilt jedoch vor allem für Gewerbeparkplätze, da hohe Ladeleistungen und die Verfügbarkeit von Ladepunkten zur Kundenakquise genutzt werden.
+Bei Firmenparkplätzen wird \num{2035} mit einem Verhältnis von \(10:40:40:10\) gerechnet und \num{2050} von \(0:40:40:20\).
+Demgegenüber wird bei Gewerbeparkplätzen \num{2035} und \num{2050} mit einem Verhältnis von \(0:10:60:30\) gerechnet.\medskip
+
+Im Falle des \UCs \Straszenranddot, wird angenommen, dass \num{2035} noch in \SI{75}{\percent} der Fälle kein Ladepunkt zur Verfügung steht.
+Dieser Anteil sinkt bis \num{2050} auf \SI{50}{\percent}.
+Weiterhin entspricht das Verhältnis der Ladeleistungen dem der Firmenparkplätze mit moderateren Ladeleistungen.\medskip
+
+Aus den zuvor getroffenen Annahmen können nun die Wahrscheinlichkeiten für die Ladevorgänge je Wegezweck berechnet werden. Die entsprechenden Ergebnisse finden sich in \autoref{tab:WegezweckProbability2035} und \autoref{tab:WegezweckProbability2050}.
+
+\input{Ch03/tab/Ch03_tab_07_WegezweckProbability}
+
+\subparagraph{Schnellladung} entspricht in dieser Arbeit einer Art Notfallladung.
+Fällt der \gls{SOC} eines Fahrzeugs während einer Fahrt unter \SI{15}{\percent}, wird eine Schnellladestation angefahren und das Fahrzeug für \SI{15}{\Minuten} geladen.
+Bei Schnellladevorgängen wird in dieser Arbeit grundsätzlich zwischen einer Ladung mit \SI{150}{\kw} und mit \SI{350}{\kw} unterschieden.
+Nach dem Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} weisen bereits heute \SI{59}{\percent} der Ladeinfrastruktur mit einer Leistung von mehr als \SI{50}{\kw} eine Ladeleistung von über \SI{150}{\kw} auf.
+Es ist davon auszugehen, dass sich auch bei der Schnellladeinfrastruktur der Trend zu hohen Ladeleistungen fortsetzt.
+Weiterhin ist davon auszugehen, dass dies vor allem für Tankstellen außerhalb von Ortschaften gilt, da diese häufig an Autobahnen liegen.
+Auf Autobahnen werden häufig lange Strecken zurückgelegt und der Ladebedarf durch Schnellladeinfrastruktur ist somit besonders hoch.
+Innerhalb von Ortschaften ist eine kleinere Ladeleistung von \SI{150}{\kw} oftmals ausreichend.
+In \autoref{tab:SchnellProbability2035} und \autoref{tab:SchnellProbability2050} finden sich die getroffenen Annahmen für die Stützjahre \num{2035} und \num{2050}.
+
+\input{Ch03/tab/Ch03_tab_08_SchnellladungProbability}
 
 
 % Ladeleistung der Fahrzeuge
