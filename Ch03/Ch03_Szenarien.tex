@@ -111,7 +111,7 @@ Dabei steht die volkswirtschaftliche Kosteneffizienz und die Wettbewerbsfähigke
 Dabei werden die gleichen Sektoren, wie in der dena-Leitstudie betrachtet. \medskip
 
 Im Gegensatz zur dena-Leitstudie erfolgt für die Quantifizierung des Netzausbaubedarfs auf Grundlage eines vereinfachten Ansatzes.
-Der Netzausbaubedarf wird in Anlehnung an die dena-Verteilnetzstudie \cite{DEAGH2012} auf Grundlage der Zubauzahlen für \glspl{DEA} und neue Verbraucher abgeschätzt und die Kosten anschließend anhand spezifischer Investitionskosten berechnet. 
+Der Netzausbaubedarf wird in Anlehnung an die dena-Verteilnetzstudie \cite{DEAGH2012} auf Grundlage der Zubauzahlen für \glspl{DEA} und neue Verbraucher abgeschätzt und die Kosten anschließend anhand spezifischer Investitionskosten berechnet.
 
 \input{Ch03/tab/Ch03_tab_01_denaVSBCG}
 
@@ -184,11 +184,24 @@ Regionale Konzentrationen von Ladepunkten und somit eine regional stark untersch
 
 \subsubsection{Ausbau regenerativer Energien}
 
+Die Annahmen zu dem Hochlauf der regenerativen Erzeugerkapazitäten werden über die Szenarien hinweg für die Jahre \num{2035} und \num{2050} als konstant angenommen.
+Für das Jahr \num{2035} werden die Annahmen des Szenarios C~\num{2035} des Netzentwicklungsplans \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020} übernommen.
+Die Annahmen für das Jahr \num{2050} werden aus dem Szenario eGo \num{100} des open\_eGo Projektabschlussberichts \cite{Mueller2019} entnommen.
+
+\input{Ch03/tab/Ch03_tab_02_EE-RampUp}
+
 \subsubsection{Wärmepumpen}
+
+Der Hochlauf an Wärmepumpen in Deutschland wird ebenfalls über die Szenarien hinweg für die Jahre \num{2035} und \num{2050} als konstant angenommen.
+Die Hochlaufzahlen für das Jahr \num{2035} entsprechen dem Szenario C~\num{2035} des Netzentwicklungsplans \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020}.
+Für das Jahr \num{2050} werden die Hochlaufzahlen in \si{\MioStk} des Szenarios Effizienz \Plus WP der Studie \glqq Wert der Effizienz im Gebäudesektor in Zeiten der Sektorenkopplung\grqq{} \cite{ifeu2018} übernommen.
+Die hier draus entstehenden Leistungs- und Energiemengen entsprechen dem Verhältnis des Netzentwicklungsplans.
+
+\input{Ch03/tab/Ch03_tab_03_WP-RampUp}
 
 \subsubsection{Elektromobilität}
 
-Bei der Elektromobilität müssen neben Annahmen zu den Zahlen zum Fahrzeughochlauf auch die technischen Daten der Fahrzeuge und der Ladeinfrastruktur berücksichtigt werden.
+Bei der Elektromobilität müssen neben Annahmen zu den Zahlen zum Fahrzeughochlauf auch die technischen Daten der Fahrzeuge und die Verfügbarkeit der Ladeinfrastruktur berücksichtigt werden.
 
 \paragraph{Fahrzeughochlauf:}
 Der Fahrzeughochlauf unterscheidet sich je nach Szenario.
@@ -251,7 +264,8 @@ In Mehrfamilienhäusern haben hingegen nur \SI{55}{\percent} der Fahrzeugbesitze
 Unter der vereinfachenden Annahme einer gleichmäßigen Verteilung von Fahrzeugen zwischen Bewohnern von Ein- und Mehrfamilienhäusern ergibt sich hieraus die ermittelte Aufteilung der \UCs auf den Wegezweck \nHdot.\medskip
 
 Die Aufteilung der \UCs auf die Wegezwecke \Einkaufdot, \Erledigung und \Freizeitdot, ergeben sich aus den Wegeanteilen nach Fahrtzweck im \gls{MIV}-Privatverkehr. \cite{Rikus2015}
-Im Falle des Wegezwecks \Einkaufdot, wird angenommen, dass Lebensmittelgschäfte einen Gewerbeparkplatz für jeden Kunden vorhalten. Weiterhin wird angenommen, dass im Falle von sonstigen Waren und sonstigen Dienstleistungen in \SI{50}{\percent} der Fälle ein Gewerbeparkplatz zur Verfügung steht.
+Im Falle des Wegezwecks \Einkaufdot, wird angenommen, dass Lebensmittelgschäfte einen Gewerbeparkplatz für jeden Kunden vorhalten.
+Weiterhin wird angenommen, dass im Falle von sonstigen Waren und sonstigen Dienstleistungen in \SI{50}{\percent} der Fälle ein Gewerbeparkplatz zur Verfügung steht.
 Bei dem Wegezweck \Erledigungdot, wird davon ausgegangen, dass beim Besuch von Behörden, Banken, Post und Geldautomaten ein Gewerbeparkplatz vorhanden ist und bei sonstigen Erledigungen in \SI{50}{\percent} der Fälle.
 Für den Wegezweck \Freizeitdot, wird angenommen, dass bei kulturelle Einrichtungen und Veranstaltungen ein Gewerbeparkplatz vorhanden ist.
 Bei sonstigen Freizeitaktivitäten wird angenommen, dass in \SI{50}{\percent} der Fälle ein Gewerbeparkplatz vorhanden ist.
@@ -306,7 +320,8 @@ Im Falle des \UCs \Straszenranddot, wird angenommen, dass \num{2035} noch in \SI
 Dieser Anteil sinkt bis \num{2050} auf \SI{50}{\percent}.
 Weiterhin entspricht das Verhältnis der Ladeleistungen dem der Firmenparkplätze mit moderateren Ladeleistungen.\medskip
 
-Aus den zuvor getroffenen Annahmen können nun die Wahrscheinlichkeiten für die Ladevorgänge je Wegezweck berechnet werden. Die entsprechenden Ergebnisse finden sich in \autoref{tab:WegezweckProbability2035} und \autoref{tab:WegezweckProbability2050}.
+Aus den zuvor getroffenen Annahmen können nun die Wahrscheinlichkeiten für die Ladevorgänge je Wegezweck berechnet werden.
+Die entsprechenden Ergebnisse finden sich in \autoref{tab:WegezweckProbability2035} und \autoref{tab:WegezweckProbability2050}.
 
 \input{Ch03/tab/Ch03_tab_07_WegezweckProbability}
 
@@ -321,10 +336,6 @@ Innerhalb von Ortschaften ist eine kleinere Ladeleistung von \SI{150}{\kw} oftma
 In \autoref{tab:SchnellProbability2035} und \autoref{tab:SchnellProbability2050} finden sich die getroffenen Annahmen für die Stützjahre \num{2035} und \num{2050}.
 
 \input{Ch03/tab/Ch03_tab_08_SchnellladungProbability}
-
-
-% Ladeleistung der Fahrzeuge
-% 1/2/3ph laden
 
 \subsection{Szenariosteckbriefe}
 

@@ -1,0 +1,18 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Hochlaufzahlen für Wärmepumpen für die Stützjahre \num{2035} und \num{2050}}
+		\begin{tabu} to \textwidth {X[1] X[1, r] X[1, r]}
+			\hline
+			Wärmepumpen                  & \num{2035} & \num{2050} \\ \hline
+			Anzahl in \si{\MioStkSC}     & \num{7.0}  & \num{15.6} \\
+			Leistung in \si{\gw}         & \num{21.0} & \num{46.8} \\
+			Jahresverbrauch in \si{\twh} & \num{22.4} & \num{49.9} \\ \hline
+		\end{tabu}
+		\label{tab:WP-RampUp}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
