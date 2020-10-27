@@ -138,7 +138,9 @@
 \renewcommand*{\labelalphaothers}{\textsuperscript{+}}% superscript + instead of normal + in literature
 
 %%%%%%%%% Querverweise
-\usepackage{hyperref}% Links im pdf % Muss das letzte Paket sein was lädt, außer glossaries
+\usepackage[
+	breaklinks,% URLs/DOIs vernünftig brechen
+	]{hyperref}% Links im pdf % Muss das letzte Paket sein was lädt, außer glossaries
 \hypersetup{
     colorlinks,
     linkcolor={red!50!black},
