@@ -15,7 +15,7 @@
 
 %\input{07_Abstract}% Abstract Eng + De
 
-%\input{08_ToC}% ToC + Abbildungs-, Tabellen- und Abkürzungsverzeichnis
+\input{08_ToC}% ToC + Abbildungs-, Tabellen- und Abkürzungsverzeichnis
 
 %\input{Ch01/Ch01_Einleitung}
 
@@ -29,10 +29,12 @@
 
 \newpage
 
-%\printbibliography% Ausgabe der Literatur
+\begin{sloppypar}% erlaubt mehr whitespace, um URL's besser zu brechen
+	\printbibliography% Ausgabe der Literatur
+\end{sloppypar}%
 
 \newpage
 
-%\input{Appendix/Appendix}% Anhang
+\input{Appendix/Appendix}% Anhang
 
 \end{document}
