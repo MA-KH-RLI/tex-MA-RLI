@@ -1,0 +1,22 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Maximale Ladeleistung und nutzbare Batteriekapazität je Fahrzeugklasse}
+		\begin{tabu} to \textwidth {X[0.9] X[1.3, r] X[1.5, r]}
+				\hline
+				Fahrzeugklasse    & Maximale Ladeleistung in \si{\kw} & Nutzbare Batteriekapazität in \si{\kwh} \\ \hline
+				BEV Kleinwagen    & \num{120}                         & \num{70}                                \\
+				BEV Mittelklasse  & \num{350}                         & \num{100}                               \\
+				BEV Oberklasse    & \num{350}                         & \num{120}                               \\
+				PHEV Kleinwagen   & \num{120}                         & \num{25}                                \\
+				PHEV Mittelklasse & \num{120}                         & \num{30}                                \\
+				PHEV Oberklasse   & \num{120}                         & \num{40}                                \\ \hline
+            \multicolumn{3}{l}{Quelle: Szenario \glqq Verstärkte Elektrifizierung\grqq{} für das Jahr \num{2049} \cite{Kaul2019}}
+		\end{tabu}
+		\label{tab:TechPowerCap}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

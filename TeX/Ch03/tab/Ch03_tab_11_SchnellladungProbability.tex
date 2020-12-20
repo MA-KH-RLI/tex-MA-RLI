@@ -1,0 +1,35 @@
+%{
+%\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+%\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+%\begin{table}[H]
+%	\begin{center}
+%		\caption{Wahrscheinlichkeitverteilung der Ladeleistungen von Schnellladeinfrastruktur für das Stützjahr \num{2035}}
+%		\begin{tabu} to \textwidth {X[1] X[1, r] X[1, r]}
+%			\hline
+%			Lade Use   Case      & \SI{150}{\kw}       & \SI{350}{\kw}       \\ \hline
+%			Tankstelle innerorts & \SI{80.0}{\percent} & \SI{20.0}{\percent} \\
+%			Tankstelle außerorts & \SI{20.0}{\percent} & \SI{80.0}{\percent} \\ \hline
+%		\end{tabu}
+%		\label{tab:SchnellProbability2035}
+%	\end{center}
+%	\vspace{-3mm}%Put here to reduce too much white space after your table
+%\end{table}
+%}
+%
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Wahrscheinlichkeitverteilung der Ladeleistungen von Schnellladeinfrastruktur}
+		\begin{tabu} to 0.7\textwidth {X[1] X[1, r] X[1, r]}
+			\hline
+			Lade Use   Case      & \SI{150}{\kw}       & \SI{350}{\kw}       \\ \hline
+			Tankstelle innerorts & \SI{80.0}{\percent} & \SI{20.0}{\percent} \\
+			Tankstelle außerorts & \SI{0.0}{\percent}  & \SI{100.0}{\percent} \\ \hline
+		\end{tabu}
+		\label{tab:SchnellProbability2050}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

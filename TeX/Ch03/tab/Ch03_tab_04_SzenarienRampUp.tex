@@ -1,0 +1,19 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Hochlaufzahlen je Szenario für E-Pkw}
+		\begin{tabu} to 0.7\textwidth {X[1] X[1, r]}
+			\hline
+			Szenario         & E-PKW in \si{\MioStk}	\\ \hline
+			NEP C~\num{2035} & \num{14.0}               \\
+			Referenz         & \num{25.1}               \\
+			Mobilitätswende  & \num{37.7}               \\
+			Antriebswende    & \num{47.7}               \\ \hline
+		\end{tabu}
+		\label{tab:SzenarienRampUp}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
