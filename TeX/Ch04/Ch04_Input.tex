@@ -4,9 +4,12 @@
 
 Grundlage für die Lastflussberechnung durch \edisgo bilden verschiedene Modelleingangsdaten.
 Hierzu gehören in erster Linie die mit \simbev erzeugten Lastprofile der Ladevorgänge der \gls{EPKW}, sowie die Erzeugungsprofile erneuerbarer Energieanlagen in einem Netzgebiet.
-Weiterhin gehen auch die Lastprofile von Wärmepumpen in die Lastflussberechnung mit ein.
+Weiterhin gehen auch die Lastprofile von Wärmepumpen in die Lastflussberechnung mit ein. Dieses Kapitel soll einen Überblick über die Eingangsdaten und deren Entstehung geben.
 
 \subsection{Erzeugung der Lastzeitreihen der Ladevorgänge von E-Pkw}
+
+In diesem Kapitel wird auf die theoretischen Grundlagen und die simulative Erzeugung der Lastzeitreihen von \glspl{EPKW} eingegangen.
+Die Lastzeitreihen der \glspl{EPKW} und die Optimierung dieser hin zu einem möglichst netzfreundlichen Verhalten, bilden die wichtigste Grundlage der Simulationen dieser Masterarbeit.\medskip
 
 Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen der verschiedenen Klassen für einen Regionstypen erstellt werden.
 Die Fahrtprofile enthalten die gefahrenen Strecken und die Standzeiten am Zielort.
@@ -20,6 +23,7 @@ Ladepunkte die innerhalb dieser Schnittmenge liegen, werden dem jeweiligen Netzg
 \subsubsection{Erzeugung der Fahrtprofile mit simbev}
 
 % TODO: Regionstypen erklären RegioStaR7
+% TODO: pro­ba­bi­lis­tischen Ansatz mathematisch erklären
 
 Die Fahrtprofile werden über einen pro­ba­bi­lis­tischen Ansatz mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev erzeugt.
 Die Grundlage des pro­ba­bi­lis­tischen Ansatzes bildet die Befragung \gls{MID} \cite{ISGH2017}.
@@ -44,7 +48,7 @@ Schnellladeinfrastruktur besitzt aufgrund des zusätzlichen Fahrt- und Zeitaufwa
 Deshalb wird eine Schnellladung in dieser Simulation nur dann ausgelöst, wenn es wirklich nötig ist.
 Sinkt der \gls{SOC} eines Fahrzeugs unter \SI{15}{\percent}, wird eine Schnellladestation angefahren und das Fahrzeug wird für \SI{15}{\Minuten} geladen.
 Im Unterschied zu \glspl{BEV}, können \glspl{PHEV} auch mit einem \gls{SOC} von \SI{0}{\percent} ihre Fahrt mit Hilfe des Verbrennungsmotors fortsetzen.
-Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.
+Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.\medskip
 
 \subsubsection{Regionalisierung}
 
@@ -53,5 +57,9 @@ Es wird davon ausgegangen, dass es zu keiner Verschiebung des Anteils am Bestand
 Dies bedeutet, dass die Gesamtanzahl der Fahrzeuge je Fahrzeugklasse je Szenario entsprechend des heutigen Bestandes anteilig verteilt wird.
 
 \subsubsection{Implementierung der Ladestrategien in simbev}
+
+Bereits ohne 
+
+% TODO: Begründung warum eine kleineres Subset an Autos ausreicht, um auch größere Mengen von Fahrzeugen abzubilden
 
 \subsubsection{Localiser Tool}
