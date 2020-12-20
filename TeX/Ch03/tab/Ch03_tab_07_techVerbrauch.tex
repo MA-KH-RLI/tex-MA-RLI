@@ -1,0 +1,21 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Durchschnittlicher elektrischer Energieverbrauch je Fahrzeugklasse}
+		\begin{tabu} to 0.7\textwidth {X[1] X[1, r]}
+			\hline
+			Fahrzeugklasse    & Verbrauch in \si{\kwhkm} \\ \hline
+			BEV Kleinwagen    & \num{11.9}              \\
+			BEV Mittelklasse  & \num{14.8}              \\
+			BEV Oberklasse    & \num{17.8}              \\
+			PHEV Kleinwagen   & \num{12.1}              \\
+			PHEV Mittelklasse & \num{15.2}              \\
+			PHEV Oberklasse   & \num{18.2}              \\ \hline
+		\end{tabu}
+		\label{tab:TechVerbrauch}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

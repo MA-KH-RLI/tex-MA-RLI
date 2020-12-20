@@ -1,0 +1,18 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Anpassung der Wahrscheinlichkeitverteilung der Ladeleistungen je Wegezweck für die Szenarette}
+		\begin{tabu} to \textwidth {X[1.2] X[1.2, r] X[1, r] X[1, r] X[1, r] X[1, r]}
+			\hline
+			Wegezweck  & keine Ladung        & \SI{3.7}{\kw}      & \SI{11}{\kw}        & \SI{22}{\kw}        & \SI{50}{\kw}       \\ \hline
+			Arbeit     & \SI{66.1}{\percent} & \SI{0.0}{\percent} & \SI{13.5}{\percent} & \SI{13.5}{\percent} & \SI{6.8}{\percent} \\
+			dienstlich & \SI{58.0}{\percent} & \SI{0.0}{\percent} & \SI{15.5}{\percent} & \SI{17.7}{\percent} & \SI{8.9}{\percent} \\
+			Ausbildung & \SI{66.1}{\percent} & \SI{0.0}{\percent} & \SI{13.5}{\percent} & \SI{13.5}{\percent} & \SI{6.8}{\percent} \\ \hline
+		\end{tabu}
+		\label{tab:WegezweckProbabilitySzenarette}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

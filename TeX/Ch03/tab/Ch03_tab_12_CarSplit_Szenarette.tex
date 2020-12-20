@@ -1,0 +1,21 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Anpassung der Aufteilung der Fahrzeuge auf die einzelnen Fahrzeugklassen für die Szenarette}
+		\begin{tabu} to 0.7\textwidth {X[1] X[1, r]}
+			\hline
+			Fahrzeugklassen   & Anteil in \si{\percent} \\ \hline
+			BEV Kleinwagen    & \num{38}                \\
+			BEV Mittelklasse  & \num{26}                \\
+			BEV Oberklasse    & \num{11}                \\
+			PHEV Kleinwagen   & \num{13}                \\
+			PHEV Mittelklasse & \num{9}                 \\
+			PHEV Oberklasse   & \num{4}                 \\ \hline
+		\end{tabu}
+		\label{tab:CarSplitSzenarette}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

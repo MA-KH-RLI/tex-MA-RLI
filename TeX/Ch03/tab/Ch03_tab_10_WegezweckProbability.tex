@@ -1,0 +1,45 @@
+%{
+%\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+%\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+%\begin{table}[H]
+%	\begin{center}
+%		\caption{Wahrscheinlichkeitverteilung der Ladeleistungen je Wegezweck für das Stützjahr \num{2035}}
+%		\begin{tabu} to \textwidth {X[1.2] X[1.2, r] X[1, r] X[1, r] X[1, r] X[1, r]}
+%			\hline
+%			Wegezweck  & keine Ladung        & \SI{3.7}{\kw}      & \SI{11}{\kw}        & \SI{22}{\kw}        & \SI{50}{\kw}        \\ \hline
+%			Arbeit     & \SI{58.9}{\percent} & \SI{4.1}{\percent} & \SI{16.5}{\percent} & \SI{16.5}{\percent} & \SI{4.1}{\percent}  \\
+%			dienstlich & \SI{64.0}{\percent} & \SI{3.3}{\percent} & \SI{13.5}{\percent} & \SI{15.0}{\percent} & \SI{4.2}{\percent}  \\
+%			Ausbildung & \SI{58.9}{\percent} & \SI{4.1}{\percent} & \SI{16.5}{\percent} & \SI{16.5}{\percent} & \SI{4.1}{\percent}  \\
+%			Einkauf    & \SI{55.9}{\percent} & \SI{0.6}{\percent} & \SI{6.2}{\percent}  & \SI{25.3}{\percent} & \SI{12.1}{\percent} \\
+%			Erledigung & \SI{65.5}{\percent} & \SI{1.6}{\percent} & \SI{8.1}{\percent}  & \SI{17.6}{\percent} & \SI{7.3}{\percent}  \\
+%			Freizeit   & \SI{65.4}{\percent} & \SI{1.5}{\percent} & \SI{8.1}{\percent}  & \SI{17.7}{\percent} & \SI{7.3}{\percent}  \\
+%			nach Hause & \SI{48.9}{\percent} & \SI{9.1}{\percent} & \SI{34.0}{\percent} & \SI{7.1}{\percent}  & \SI{0.8}{\percent}  \\ \hline
+%		\end{tabu}
+%		\label{tab:WegezweckProbability2035}
+%	\end{center}
+%	\vspace{-3mm}%Put here to reduce too much white space after your table
+%\end{table}
+%}
+%
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Wahrscheinlichkeitverteilung der Ladeleistungen je Wegezweck}
+		\begin{tabu} to \textwidth {X[1.2] X[1.2, r] X[1, r] X[1, r] X[1, r] X[1, r]}
+			\hline
+			Wegezweck  & keine Ladung        & \SI{3.7}{\kw}      & \SI{11}{\kw}        & \SI{22}{\kw}        & \SI{50}{\kw}        \\ \hline
+			Arbeit     & \SI{33.9}{\percent} & \SI{0.0}{\percent} & \SI{26.5}{\percent} & \SI{26.5}{\percent} & \SI{13.2}{\percent} \\
+			dienstlich & \SI{39.0}{\percent} & \SI{0.0}{\percent} & \SI{23.1}{\percent} & \SI{25.3}{\percent} & \SI{12.7}{\percent} \\
+			Ausbildung & \SI{33.9}{\percent} & \SI{0.0}{\percent} & \SI{26.5}{\percent} & \SI{26.5}{\percent} & \SI{13.2}{\percent} \\
+			Einkauf    & \SI{30.9}{\percent} & \SI{0.0}{\percent} & \SI{10.4}{\percent} & \SI{39.1}{\percent} & \SI{19.6}{\percent} \\
+			Erledigung & \SI{40.5}{\percent} & \SI{0.0}{\percent} & \SI{15.3}{\percent} & \SI{29.5}{\percent} & \SI{14.8}{\percent} \\
+			Freizeit   & \SI{40.4}{\percent} & \SI{0.0}{\percent} & \SI{15.2}{\percent} & \SI{29.6}{\percent} & \SI{14.8}{\percent} \\
+			nach Hause & \SI{28.5}{\percent} & \SI{1.9}{\percent} & \SI{49.1}{\percent} & \SI{17.4}{\percent} & \SI{3.1}{\percent}  \\ \hline
+		\end{tabu}
+		\label{tab:WegezweckProbability2050}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
