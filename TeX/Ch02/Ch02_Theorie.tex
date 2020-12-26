@@ -10,7 +10,7 @@
 
 Innerhalb der Verteilnetze wird grundlegend zwischen drei Spannungsebenen unterschieden. Hierzu zählen die \glspl{HS}-, \glspl{MS}- und \glspl{NS}-Ebene.
 
-\input{Ch02/Ch02_tab_Spannungsebenen}
+\input{Ch02/tab/Ch02_tab_01_Spannungsebenen}
 
 \paragraph{Netztopologie:}
 
@@ -35,9 +35,45 @@ Der Ladevorgang von \glspl{EV} kann durch unterschiedliche äußere Anreize gest
 
 % präventiv, aktiv, kurativ
 
-\subsection{simBEV}
+\subsection{ding0}\label{chap:dingo_theo}
 
-\subsection{eDisGo}
+% TODO: k-means-Clusteralgorithmus
+% https://github.com/openego/ding0
+
+\subsection{simBEV}\label{chap:simbev_theo}
+
+% TODO: pro­ba­bi­lis­tischen Ansatz mathematisch erklären
+
+Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen verschiedener Fahrzeugklassen erstellt werden.
+Weiterhin kann hierbei zwischen den in \autoref{tab:RegioStaR} aufgelisteten \Regiostar Raumtypen unterschieden werden, um das raumtypenspezifische Fahrverhalten abzubilden.
+
+\input{Ch02/tab/Ch02_tab_02_RegioStaR}
+
+Die Fahrtprofile werden über einen pro­ba­bi­lis­tischen Ansatz auf Grundlage der Befragung \gls{MID} \cite{ISGH2017} erstellt.
+Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit für einen bestimmten Wegezweck eine Fahrt zu beginnen.
+Löst ein Fahrzeug eine Fahrt aus, wird abhängig vom Wegezweck und Regionstyp der Fahrt, ebenfalls pro­ba­bi­lis­tisch, eine Streckenlänge und eine anschließende Standzeit zugeteilt.
+Der hierbei entstehende Verbrauch des Fahrzeuges muss anschließend gedeckt werden.
+Ob am Zielort ein Ladevorgang stattfindet, hängt vom \gls{SOC} des Fahrzeuges und dem Vorhandensein eines Ladepunktes ab.
+Ob ein Ladepunkt am Zielort zur Verfügung steht und welche Ladeleistung dieser aufweist, wird mit Hilfe der Wahrscheinlichkeiten aus \autoref{tab:WegezweckProbability2050} ermittelt.
+Die Bestimmung des Vorhandenseins eines Ladepunktes zu Hause und am Arbeitsplatz erfolgt je \gls{EPKW} einmalig und wird anschließend konstant gehalten.
+Für alle anderen Wegezwecke, erfolgt die Bestimmung kontinuierlich.
+Wurde dem Zielort ein Ladepunkt zugeordnet wird davon ausgegangen, dass der Fahrzeugnutzer einen Ladevorgang erst ab einem bestimmten \gls{SOC} einleitet, da dies einen zusätzlichen Aufwand für den Nutzer bedeutet.
+Dabei wird angenommen, dass das Laden des Fahrzeuges am Wohnort und am Arbeitsplatz bereits ab einem \gls{SOC} von \SI{95}{\percent} stattfindet.
+Im öffentlichen Raum bedeutet das Anfahren und der Anschluss an einen Ladepunkt einen größeren Aufwand für den Nutzer als im privaten Raum.
+Deshalb wird angenommen, dass oberhalb eines \glspl{SOC} von \SI{80}{\percent} keine Ladevorgänge stattfinden.
+Es gilt je niedriger der \gls{SOC}, desto wahrscheinlicher ist es, dass die öffentliche Ladeinfrastruktur genutzt wird.
+Ab einem \gls{SOC} von \SI{50}{\percent} findet, wann immer möglich, eine Ladung des Fahrzeugs statt.
+Zwischen den beiden Stützwerten erfolgt eine lineare Interpolation, welche in \autoref{fig:soc_charging_prob} visualisiert wurde.
+
+\input{Ch02/fig/Ch02_fig_01_soc_charging_prob}
+
+Schnellladeinfrastruktur besitzt aufgrund des zusätzlichen Fahrt- und Zeitaufwandes eine geringe Attraktivität für den Nutzer.
+Deshalb wird eine Schnellladung in dieser Simulation nur dann ausgelöst, wenn es wirklich nötig ist.
+Sinkt der \gls{SOC} eines Fahrzeugs unter \SI{20}{\percent}, wird eine Schnellladestation angefahren und das Fahrzeug wird für \SI{15}{\Minuten} geladen.
+Im Unterschied zu \glspl{BEV}, können \glspl{PHEV} auch mit einem \gls{SOC} von \SI{0}{\percent} ihre Fahrt mit Hilfe des Verbrennungsmotors fortsetzen.
+Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.
+
+\subsection{eDisGo}\label{chap:edisgo_theo}
 
 \paragraph{Netzausbaubedarf:}
 
