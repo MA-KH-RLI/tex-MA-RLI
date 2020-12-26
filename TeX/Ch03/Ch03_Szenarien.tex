@@ -199,7 +199,7 @@ Das Antriebswende-Szenario spiegelt hingegen den Fahrzeugbestand von \SI{47.7}{\
 Die Aufteilung in \glspl{BEV} und \glspl{PHEV} Szenarien anhand des ermittelten Medians der Literaturrecherche für den Fahrzeughochlauf an \glspl{BEV} und \glspl{PHEV} für das Stützjahr \num{2050}.
 Innerhalb der Fahrzeugtypen erfolgt weiterhin eine Einteilung in die Fahrzeugklassen Kleinwagen, Mittelklasse und Oberklasse.
 Es wird davon ausgegangen, dass sich die Einteilung zwischen \glspl{BEV} und \glspl{PHEV} nicht unterscheidet.
-Die Einteilung in \autoref{tab:CarSlit} entspricht der Statistik des Kraftfahrt-Bundesamtes \cite{KBASegments2020} vom \DTMdate{2020-01-01}.
+Die Einteilung in \autoref{tab:CarSplit} entspricht der Statistik des Kraftfahrt-Bundesamtes \cite{KBASegments2020} vom \DTMdate{2020-01-01}.
 Es wird somit von einer Fortschreibung des aktuellen Verbraucherverhaltens ausgegangen.
 Eine genaue Zuordnung der \gls{PKW}-Segmente in die Klassen findet sich im Anhang (\autoref{tab:KBASegments} und \autoref{tab:Segments}).
 
@@ -270,25 +270,24 @@ In \autoref{tab:UCProbability2050} finden sich die entsprechenden Annahmen.
 
 In allen \UCs wird davon ausgegangen, dass die Ladevorgänge mit der Zeit mit immer höheren Ladeleistungen stattfinden werden.
 Für den \UC \Eigenheim wird angenommen, dass jeder Besitzer eines \gls{EPKW} eine Ladevorrichtung vorhält, wenn die technischen Voraussetzungen gegeben sind.
-Bei rund \SI{15}{\percent} der Stellplätze der Gebäude mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz. \cite{dena2020}
+Bei rund \SI{15}{\percent} der Stellplätze von Gebäuden mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz. \cite{dena2020}
 Es wird angenommen, dass dieser Bestand bestehen bleibt.
-Die Aufteilung der Ladeleistungen erfolgt in Anlehnung an \cite{NPZMAVE2020}.
-Dabei wird der Anteil von Ladevorgängen keine Rolle mehr spielen.
+Die Aufteilung der Ladeleistungen erfolgt hierbei in Anlehnung an \cite{NPZMAVE2020}.
+Es wird davon ausgegangen. dass der Anteil von Ladevorgängen mit einer Leistung von \SI{3.7}{\kw} keine Rolle mehr spielen.
 Der Anteil an Ladevorgängen mit \SI{11}{\kw} wird weiter wachsen, allerdings langsamer als der Anteil an Ladevorgängen mit \SI{22}{\kw}.
 Eine Ladung mit \SI{50}{\kw} wird im privaten Bereich ebenfalls keine Rolle spielen.
-Das Verhältnis zwischen den Ladeleistungen beträgt somit \(0:75:25:0\)\medskip
+Das prozentuale Verhältnis zwischen den Ladeleistungen beträgt \(0:75:25:0\)\medskip
 
 Stellplätze von Mehrfamilienhäusern besitzen mit ungefähr \SI{50}{\percent} deutlich seltener Zugang zum Stromnetz. \cite{dena2020}
-Es wird angenommen, dass zukünftig \SI{75}{\percent} der Stellplätze mit einem Netzanschluss ausgestattet sein werden.
-Weiterhin wird angenommen, dass alle Stellplätze mit den entsprechenden technischen Vorraussetzungen mit einer Ladevorrichtung ausgestattet werden.
+Es wird angenommen, dass alle Stellplätze mit den entsprechenden technischen Vorraussetzungen mit einer Ladevorrichtung ausgestattet werden.
 In Wohnanlagen werden hohe Ladeleistungen eine Ausnahme bleiben.
 Insgesamt wird von einem Verhältnis zwischen den Ladeleistungen von \(10:80:10:0\) ausgegangen.\medskip
 
-Bei der Entwicklung der Ladeinfrastruktur an Firmen- und Gewerbeparkplätzen wird von einer vergleichbaren Entwicklung ausgegangen.
-Zukünftig werden Mitarbeiter bzw. Kunden in \SI{75}{\percent} der Fälle Zugriff auf einen Ladepunkt haben.
+Bei Firmenparkplätzen wird davon ausgegangen, dass zukünftig Mitarbeiter in \SI{50}{\percent} der Fälle Zugriff auf einen Ladepunkt haben.
+Gewerbeparkplätze bieten hingegen in \SI{75}{\percent} der Fälle Zugriff auf einen Ladepunkt.
 Die Verteilung der Ladeleistungen geschieht in Anlehnung an das Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} und der Stromtankstellen Statistik des \texttt{GoingElectric} Forums \cite[][Stand: \DTMdate{2020-10-21}]{Weemaes2020}.
-Demnach besitzt ein Großteil (\SIrange[range-phrase=~bzw.~]{80}{51}{\percent}) der öffentlich zugänglichen Ladepunkte eine Ladeleistung von \SIrange{22}{42}{\kw}.
-Es wird davon ausgegangen, dass sich der Trend zu hohen Ladeleistungen weiter fortsetzt.
+Demnach besitzt ein Großteil (\SIrange[range-phrase=~bzw.~]{80}{51}{\percent}) der heutigen öffentlich zugänglichen Ladepunkte eine Ladeleistung von \SIrange{22}{42}{\kw}.
+Insgesamt wird davon ausgegangen, dass sich der Trend zu hohen Ladeleistungen weiter fortsetzt.
 Dies gilt jedoch vor allem für Gewerbeparkplätze, da hohe Ladeleistungen und die Verfügbarkeit von Ladepunkten zur Kundenakquise genutzt werden.
 Bei Firmenparkplätzen wird mit einem Verhältnis von \(0:40:40:20\) gerechnet.
 Demgegenüber wird bei Gewerbeparkplätzen mit einem Verhältnis von \(0:10:60:30\) gerechnet.\medskip
@@ -302,7 +301,7 @@ Die entsprechenden Ergebnisse finden sich in \autoref{tab:WegezweckProbability20
 \input{Ch03/tab/Ch03_tab_10_WegezweckProbability}
 
 \subparagraph{Schnellladung} entspricht in dieser Arbeit einer Art Notfallladung.
-Fällt der \gls{SOC} eines Fahrzeugs während einer Fahrt unter \SI{15}{\percent}, wird eine Schnellladestation angefahren und das Fahrzeug für \SI{15}{\Minuten} geladen.
+Fällt der \gls{SOC} eines Fahrzeugs während einer Fahrt unter \SI{20}{\percent}, wird eine Schnellladestation angefahren und das Fahrzeug für \SI{15}{\Minuten} geladen.
 Bei Schnellladevorgängen wird in dieser Arbeit grundsätzlich zwischen einer Ladung mit \SI{150}{\kw} und mit \SI{350}{\kw} unterschieden.
 Nach dem Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} weisen bereits heute \SI{59}{\percent} der Ladeinfrastruktur mit einer Leistung von mehr als \SI{50}{\kw} eine Ladeleistung von über \SI{150}{\kw} auf.
 Es ist davon auszugehen, dass sich auch bei der Schnellladeinfrastruktur der Trend zu hohen Ladeleistungen fortsetzt.
@@ -315,21 +314,29 @@ In \autoref{tab:SchnellProbability2050} finden sich die getroffenen Annahmen fü
 
 \subsection{Sensitivitäten}
 
-\subsubsection{Szenarette \glqq Kleinwagen\grqq}
+Zusätzlich zu den zuvor beschriebenen Szenarien sollen in dieser Arbeit zwei Sensitivitäten in Form von Szenaretten untersucht werden.
+Hierbei untersucht die \Kleinwagen den Einfluss einer weiter voranschreitenden Mobilitätswende und bei der \SzeFirmenparkplatz wird der Einfluss eines geringeren Anteils an Ladevorgängen am Arbeitsplatz untersucht.
+
+\subsubsection{\Kleinwagendot}
+
+Die \Kleinwagen basiert auf den Annahmen des Mobilitätswende-Szenarios.
+Hierbei werden die netzseitigen Auswirkungen einer Verschiebung der Fahrzeugklassen hin zu mehr Kleinwagen untersucht.
+Kleinwagen machen in dieser Szenarette \SI{50}{\percent}, Mittelklasse Fahrzeuge \SI{35}{\percent} und Oberklasse Fahrzeuge \SI{15}{\percent} des Gesamtbestandes aus.
+Zusätzlich wird ein Anwachsen des Anteils von \glspl{BEV} auf \SI{75}{\percent} der Fahrzeuge angenommen.
+Die hierdraus entstehende Aufteilung findet sich in \autoref{tab:CarSplitSzenarette}.
 
 \input{Ch03/tab/Ch03_tab_12_CarSplit_Szenarette}
 
-\subsubsection{Szenarette \glqq Firmenparkplatz\grqq}
+\subsubsection{\SzeFirmenparkplatzdot}
+
+Aufgrund der hohen Gleichzeitigkeit und der zeitlichen Überschneidung mit einer hohen Erzeugung aus \glspl{PVA} kommt dem Laden am Arbeitsplatz eine besondere Bedeutung zu.
+Die \SzeFirmenparkplatz soll die Sensitivität des Antriebswende-Szenarios auf die Verfügbarkeit von Ladepunkten auf Firmenparkplätzen untersuchen.
+Hierfür wird angenommen, dass nur noch in \SI{25}{\percent} der Fälle eine Ladung am Firmenparkplatz stattfinden kann.
+Die Annahme wird somit gegenüber des Antriebswende-Szenarios halbiert.
 
 \input{Ch03/tab/Ch03_tab_13_UCProbability_Szenarette}
 
+In \autoref{tab:UCProbabilitySzenarette} findet sich die hier draus entstehende Wahrscheinlichkeitsverteilung für den \UC \Firmeparkplatzdot.
+Dadurch kommt es für die Wegezwecke \Arbeitdot, \dienst und \Ausbildung zu einer veränderten Wahrscheinlichkeitsverteilung, welche in \autoref{tab:WegezweckProbabilitySzenarette} zu finden ist.
+
 \input{Ch03/tab/Ch03_tab_14_WegezweckProbability_Szenarette}
-
-
-%\subsection{Szenariosteckbriefe}
-%
-%\subsubsection{Referenz-Szenario}
-%
-%\subsubsection{Mobilitätswende-Szenario}
-%
-%\subsubsection{Antriebswende-Szenario}
