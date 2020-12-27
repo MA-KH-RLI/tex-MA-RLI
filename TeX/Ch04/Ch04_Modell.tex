@@ -40,7 +40,7 @@ Das Clustering erfolgt durch den während des \openego Projekt entwickelten k-me
 Hierfür wurden die kumulierte Wind- und kumulierte Photovoltaikkapazität, sowie die kumulierte Last im Netzgebiet als charakteristische Attribute der \gls{MS}-Netze festgelegt
 
 
-\subsubsection{Erstellung und Bewertung der Fahrtprofile mit simBEV}
+\subsubsection{Erstellung der Fahrtprofile mit simBEV}
 
 Mit Hilfe des Software Tools \simbev (s. \autoref{chap:simbev_theo}) können für die zuvor geclusterten Referenznetzgebiet die entsprechenden Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt werden.
 Um die Anzahl an Fahrzeugen je Netzgebiet zu bestimmen, muss der Gesamtbestand an Fahrzeugen je Szenario (s. \autoref{tab:SzenarienRampUp} und \autoref{tab:CarSplit}) regionalisiert werden.
@@ -56,18 +56,47 @@ Die Grundlage hierfür bildet der Datensatz \glqq Gemeindegrenzen 2017 mit Einwo
 Die Verteilung der Anzahl der Fahrzeuge erfolgt streng proportional zur Einwohnerzahl in der jeweiligen Gemeinde.\medskip
 
 Um abschließend die Fahrtprofile erzeugen zu können, muss jeder Gemeinde ein \Regiostar Raumtyp zugeordnet werden.
-Die entsprechende Zuordnung für das Jahr \num{2018} kann dem Datensatz \glqq Referenzdateien zur regionalstatistischen Raumtypologie\grqq{} \cite[][Stand: \DTMdate{2018-01-01}]{BMVIa2020} entnommen werden.\medskip
+Die entsprechende Zuordnung für das Jahr \num{2018} kann dem Datensatz \glqq Referenzdateien zur regionalstatistischen Raumtypologie\grqq{} \cite[][Stand: \DTMdate{2018-01-01}]{BMVIa2020} entnommen werden.
 
+
+\subsubsection{Charakteristik der Fahrtprofile}
 % TODO: Lastprofil und Dauerlastkurve erstellen für ein Beispiel
+% TODO: Anteile genau berechnen!
 % Kritik: zu wenig HPC und nur für eine Woche möglich
 
+Die Charakteristik der Fahrtprofile spielt eine entscheidende Rolle für die Wirksamkeit der unterschiedlichen Ladestrategien und die Auswirkungen auf die Netze.
+Hierbei steht vor allem der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge, sowie die Gleichzeitigkeit von Ladevorgängen im Vordergrund.\medskip
 
-\subsubsection{Implementierung der Ladestrategien in simbev}
+Der Anteil flexibilisierbarer Ladevorgänge entspricht dem Anteil am Gesamtenergiebedarf, der an privaten Ladepunkten zu Hause oder am Arbeitsplatz nachgeladen wird.
+Hierzu zählen alle Ladevorgänge die am Eigenheim, einer Wohnaalage oder auf einem Firmenparkplatz stattfinden.
+Demgegenüber stehen nicht-flexibilisierer Ladevorgänge im öffentlichen Raum und an Schnellladestationen.
+Je nach Raumtypen unterscheidet sich das Verhältnis leicht.
+Im Mittel liegt der Anteil nicht-flexibilisierer Ladevorgänge über alle Szenarien innerhalb der einzelnen Gemeinden bei \SI{30}{\percent}.
+Hiervon ausgenommen ist die \SzeFirmenparkplatzdot, bei der es aufgrund des geringeren Bestands an Ladeinfrastruktur am Arbeitsplatz zu mehr Ladevorgängen im öffentlichen Raum kommt.
+Der Anteil nicht-flexibilisierer Ladevorgänge liegt bei dieser Szenarette bei \SI{40}{\percent}.
+In \autoref{tab:ChargingShare} findet sich die entsprechende Aufteilung.
 
-Bereits ohne 
+\input{Ch04/tab/Ch04_tab_01_ChargingShare}
+
+In \autoref{fig:example_load_profile} findet sich stellvertretend das \gls{EV}-Lastprofil für ungesteuertes Laden einer mittelstädtischen Gemeinde mit \num{6443} \glspl{EV} über eine Woche im Elektrifizierungs-Szenario (links).
+Zusätzlich wurde die \SzeFirmenparkplatz (rechts) dargestellt.
+
+\input{Ch04/fig/Ch04_fig_01_example_load_profile}
+
+Die Lastgänge \zH und \Firmeparkplatz entsprechen den flexibilisierbaren Ladevorgängen im privaten Bereich. Unter dem Lastgang \oeffen sind hingegen alle öffentlichen Ladevorgänge mit Außnahme der Schnellladevorgänge (\gls{HPC}) zusammengefasst. Deutlich zu erkennen ist die hohe Gleichzeitigkeit am Vormittag sowohl am \Firmeparkplatz als auch im öffentlichen Raum, welche durch das Fahren zur Arbeit ausgelöst wird.
+Auch die Rückkehr zum Wohnort ist ab dem frühen Nachmittag in den Lastgängen \zH und im öffentlichen Raum deutlich zu erkennen. Die entsprechenden Dauerlastkurven für die Gemeinde über die gleiche Woche (s. \autoref{fig:example_load_curve}) zeigen dies nochmals deutlich.
+Schnellladevorgänge werden hingegen vermehrt am Wochenende ausgelöst, da verstärkt längere Fahrten angetreten werden.
+Am Wochenende kommt es zusätzlich zu deutlich geringeren Anteilen von Ladevorgängen \zH und am \Firmeparkplatzdot, wodurch das Flexibilisierungspotential am Wochenende geringer ausfällt.
+Gegenüber dem Elektrifizierungs-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot, jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
+Insgesamt können die Lastgänge als durchaus realistisch eingestuft werden.
+
+\input{Ch04/fig/Ch04_fig_02_example_load_curve}
+
+\subsection{Localiser Tool}
 
 
-\subsubsection{Localiser Tool}
+\subsection{eDisGo}
 
+\subsubsection{Implementierung der Ladestrategien}
 
-\subsection{eDisGo Lastflussberechnung}
+\subsubsection{Lastflussberechnung}
