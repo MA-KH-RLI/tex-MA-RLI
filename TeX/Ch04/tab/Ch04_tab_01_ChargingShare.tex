@@ -1,0 +1,18 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Aufteilung in flexibiliserbare und nicht-flexibiliserbare Ladevorgänge}
+		\begin{tabu} to \textwidth {X[1] X[1, r] X[1, r]}
+			\hline
+								  & \SzeFirmenparkplatzdot                              & Sonstige Szenarien                                  \\ \hline
+			Flexibiliserbar       & \SI[separate-uncertainty = true]{70.0(24)}{\percent} & \SI[separate-uncertainty = true]{75.2(14)}{\percent} \\
+			Nicht-flexibiliserbar & \SI[separate-uncertainty = true]{30.0(24)}{\percent} & \SI[separate-uncertainty = true]{24.8(14)}{\percent} \\ \hline
+			\multicolumn{3}{l}{Angabe als Anteil   vom Gesamtenergiebedarf der Fahrzeuge}
+		\end{tabu}
+		\label{tab:ChargingShare}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

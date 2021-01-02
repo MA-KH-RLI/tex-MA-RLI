@@ -15,6 +15,7 @@ Innerhalb der Verteilnetze wird grundlegend zwischen drei Spannungsebenen unters
 \paragraph{Netztopologie:}
 
 % Strahlen- und Ringnetze
+% offene Ringnetze!
 
 \paragraph{Gleichzeitigkeit:}
 
@@ -35,10 +36,39 @@ Der Ladevorgang von \glspl{EV} kann durch unterschiedliche äußere Anreize gest
 
 % präventiv, aktiv, kurativ
 
+
 \subsection{ding0}\label{chap:dingo_theo}
 
 % TODO: k-means-Clusteralgorithmus
 % https://github.com/openego/ding0
+
+Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \edisgodot, sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
+Aufgrund der mangelnden Datenlagen von reale Netztopologien werden, wird auf synthetisch erzeugte Netztopologien zurückgegriffen.
+die mit Hilfe des Software Tools \dingo erzeugt wurden.
+Das Tool ist in der Lage ländliche und suburbane Netzstrukturen zu synthetisieren und kann auf GitHub \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
+Weiterhin findet sich auf ReadTheDocs \cite{dingo-docs2019} eine ausführliche Dokumentation.
+Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \openego Projektes. \cite{Mueller2019} Die Netztopologien entsprechen dem Stand von \num{2015}.
+
+
+\paragraph{Mittelspannung}
+
+Auf der \gls{MS}-Ebene gibt es \num{3591} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
+Die einzelnen \gls{MS}-Netze werden alle als offene Ringnetze betrieben.
+Im städtischen Bereich werden hauptsächlich Erdkabel mit einer Nennspannung von \SI{10}{\kv} eingesetzt, während im ländlichen Raum größtenteils Freileitungen mit einer Nennspannung von \SI{20}{\kv} eingesetzt werden. \cite{Mueller2019}
+
+
+\paragraph{Niederspannung}
+
+Die \gls{NS}-Ebene wird mit Hilfe von \num{46} Referenznetzsträngen synthetisiert.
+Die Referenznetzsträngen stehen jeweils repräsentativ für eine bestimmte Anzahl an Hausanschlüssen und werdem einer Netzklasse zugeordnet.
+Hierbei wird auf Grundlage der Anzahl an Hausanschlüssen je Ortsnetzstation zwischen Land-, Dorf- und Vorstadtnetzen unterschieden.
+Die verschiedenen Referenznetzstränge werden so miteinander kombiniert, dass für eine bestimmte Zahl an Hausanschlüssen innerhalb einer Netzklasse ein typisches Netz generiert wird. \cite{Mueller2019}
+
+
+\subsection{k-means-Clustering}
+
+
+
 
 \subsection{simBEV}\label{chap:simbev_theo}
 
