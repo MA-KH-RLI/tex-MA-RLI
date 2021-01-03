@@ -1,16 +1,16 @@
 {
 \renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
-\sisetup{range-phrase=~oder~}
+\sisetup{range-phrase=~bis~}
 \begin{table}[H]
 	\begin{center}
 		\caption{Übliche Spannung und Stromkreislänge der Spannungsebenen im deutschen Verteilnetz}
 		\begin{tabu} to \textwidth {X[1] X[1, r] X[1, r]}
 			\hline
-            Spannungsebene & Spannung               & Stromkreislänge   \\\hline
-            Hochspannung   & \SI{110}{\kv}          & \SI{95000}{\km}   \\
-            Mittelspannung & \SIrange{20}{10}{\kv}  & \SI{510000}{\km}  \\
-            Niederspannung & \SIrange{400}{230}{\V} & \SI{1100000}{\km} \\\hline
-            \multicolumn{3}{l}{Quelle: \cite{BDEW2016}}
+            Spannungsebene & Spannung               	& Stromkreislänge   \\\hline
+            Hochspannung   & \SIrange{60}{110}{\kv}     & \SI{95000}{\km}   \\
+            Mittelspannung & \SIrange{6}{30}{\kv}  		& \SI{510000}{\km}  \\
+            Niederspannung & \SIrange{230}{400}{\V} 	& \SI{1100000}{\km} \\\hline
+            \multicolumn{3}{l}{Quellen: \cite{BDEW2016} und \cite{BMWiNetz}}
 		\end{tabu}
 		\label{tab:Spannungsebenen}
 	\end{center}
