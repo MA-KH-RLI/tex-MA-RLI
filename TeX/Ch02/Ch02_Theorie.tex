@@ -4,16 +4,14 @@
 
 \paragraph{Elektrische Flexibilität:}
 
-% TODO: Quelle Anyas Folien?
-
-Elektrische Flexibilität beschreibt die Fähigkeit des Stromsystems auf vorhergesehene oder unvorhergesehene Änderungen im Verbrauch oder der Erzeugung reagieren zu können.
-Dabei wird die Reaktion immer durch ein externes Signal ausgelöst.
-Bei dem externen Signal kann es sich beispielsweise um ein Preissignal, aber auch ein physikalisch messbares Signal, wie die Netzfrequenz, handeln. \cite{BNetzA2017} \medskip
+Elektrische Flexibilität beschreibt die Fähigkeit des Stromsystems, trotz einer vorhergesehene oder unvorhergesehene Änderungen im Verbrauch oder der Erzeugung einen Ausgleich zwischen Angebot und Nachfrage aufrecht zu erhalten.
+Dabei wird die Reaktion des Stromsystems durch ein externes Signal ausgelöst.
+Bei dem externen Signal kann es sich beispielsweise um ein Preissignal, aber auch ein physikalisch messbares Signal, wie die Netzfrequenz, handeln. \medskip
 
 Elektrische Flexibilität besitzt sowohl eine zeitliche als auch eine geografische Dimension.
 Die zeitliche Dimension beschreibt die zeitliche Verschiebung von Last oder Erzeugung und reicht von einer sekündlichen hin zu einer saisonalen Verschiebung.
 Unter der geografischen Dimension wird die gemeinsame Nutzung von räumlich verteilten Ressourcen verstanden.
-Dabei reicht die räumliche Skala von lokalen Quartierslösungen hin zu internationalen Verbundnetzen.
+Dabei reicht die räumliche Skala von lokalen Quartierslösungen hin zu internationalen Verbundnetzen. \cite{BNetzA2017} \cite{IEA2014}
 
 
 \paragraph{Netzebenen:}
@@ -47,6 +45,11 @@ Im Fehlerfall wird bei dieser Baumform maximal ungefähr die Hälfte der Verbrau
 Durch das Schließen der Trennstelle können dann wieder alle Verbraucher, mit Ausnahme des Fehlerfalls, versorgt werden. \cite{WNG2020} \cite{Westermann2019}
 
 \paragraph{Gleichzeitigkeit:}
+
+Die Gleichzeitigkeit beschreibt den Anteil der momentan anfallenden elektrischen Leistung im Bezugsgebiet von der maximalen elektrischen Leistung im Netzgebiet. \cite{Agora2019} 
+Im Rahmen dieser Masterarbeit beschreibt die Gleichzeitigeit in der Regel den Anteil der momentanen elektrischen Last von \glspl{EV} im Bezug auf die installierte Leistung von Ladepunkten in einem Netzgebiet.
+Ausnahmen sind entsprechend gekennzeichnet.
+
 
 \subsection{Elektromobilität}
 
@@ -116,17 +119,18 @@ In dieser Arbeit wird stellvertretend für das Cluster, dass Netzgebiet mit dem 
 
 \subsection{simBEV}\label{chap:simbev_theo}
 
-% TODO: pro­ba­bi­lis­tischen Ansatz mathematisch erklären
+% TODO: probabilistischen Ansatz mathematisch erklären
 % TODO: erwähnen, dass bisher nur 1 Woche simuliert werden kann
 
 Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen verschiedener Fahrzeugklassen erstellt werden.
 Weiterhin kann hierbei zwischen den in \autoref{tab:RegioStaR} aufgelisteten \Regiostar Raumtypen unterschieden werden, um das raumtypenspezifische Fahrverhalten abzubilden.
+Zum Zeitpunkt der Erstellung der Fahrtprofile war es noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
 
 \input{Ch02/tab/Ch02_tab_02_RegioStaR}
 
-Die Fahrtprofile werden über einen pro­ba­bi­lis­tischen Ansatz auf Grundlage der Befragung \gls{MID} \cite{ISGH2017} erstellt.
+Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \gls{MID} \cite{ISGH2017} erstellt.
 Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit für einen bestimmten Wegezweck eine Fahrt zu beginnen.
-Löst ein Fahrzeug eine Fahrt aus, wird abhängig vom Wegezweck und Regionstyp der Fahrt, ebenfalls pro­ba­bi­lis­tisch, eine Streckenlänge und eine anschließende Standzeit zugeteilt.
+Löst ein Fahrzeug eine Fahrt aus, wird abhängig vom Wegezweck und Regionstyp der Fahrt, ebenfalls probabilistisch, eine Streckenlänge und eine anschließende Standzeit zugeteilt.
 Der hierbei entstehende Verbrauch des Fahrzeuges muss anschließend gedeckt werden.
 Ob am Zielort ein Ladevorgang stattfindet, hängt vom \gls{SOC} des Fahrzeuges und dem Vorhandensein eines Ladepunktes ab.
 Ob ein Ladepunkt am Zielort zur Verfügung steht und welche Ladeleistung dieser aufweist, wird mit Hilfe der Wahrscheinlichkeiten aus \autoref{tab:WegezweckProbability2050} ermittelt.

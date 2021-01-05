@@ -18,7 +18,7 @@ Die Lastzeitreihen der \glspl{EPKW} und die Optimierung dieser hin zu einem mög
 Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen der verschiedenen Klassen für verschiedene Raumtypen erstellt werden (s. \autoref{chap:simbev_theo}.
 Die Fahrtprofile enthalten die gefahrenen Strecken und die Standzeiten am Zielort.
 Aus diesen können anschließend anhand des Verbrauchs und der gegebenen Ladeinfrastruktur die Ladebedarfe am Zielort abgeleitet werden.
-Abhängig von der Ladestrategie wird innerhalb der Standzeit die Last auf die Standzeit verteilt.
+Abhängig von der Ladestrategie wird die spezifische Last innerhalb der Standzeit verteilt.
 Die Zeitreihen der Ladelast der einzelnen Fahrzeuge werden innerhalb eines Landkreises berechnet und schlussendlich zu einer Gesamtlast je \UC zusammengeführt.
 Mit Hilfe des proprietär \localiserToolsKomma , werden die Zeitreihen der Gesamtlasten auf konkrete georeferenzierte Ladepunkte innerhalb des Landkreises verteilt.
 Um abschließend eine Lasflussrechnung eines Netzgebietes mit \edisgo durchführen zu können, muss die Schnittmenge eines Netzgebietes mit den Landkreisen bestimmt werden.
@@ -31,7 +31,7 @@ Da die Simulation aller Netzgebiete zu inakzeptabel hohen Rechenzeiten führt, w
 % TODO: Auswertungen von Birgit übernehmen
 % TODO: Karte mit den Netzgebieten
 % TODO: welche charakteristischen Attribute wurden verwendet? @Birgit
-% TODO: Schnittmenge Gemeinden <-> Netzgebiet erklären
+% TODO: Schnittmenge Gemeinden <-> Netzgebiet erklären -> Karte!
 
 Die Untersuchung der mit Hilfe des Software Tools \dingo synthetisierten \gls{MS}-Netzgebiete, führt aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten während der Optimierung und Simulation.
 Im Rahmen dieser Masterarbeit wurden sechs Referenznetzgebiete ausgewählt, welche einen Großteil der \num{3591} \gls{MS}-Netze repräsentieren.\medskip
@@ -60,9 +60,7 @@ Die entsprechende Zuordnung für das Jahr \num{2018} kann dem Datensatz \glqq Re
 
 
 \subsubsection{Charakteristik der Fahrtprofile}
-% TODO: Lastprofil und Dauerlastkurve erstellen für ein Beispiel
-% TODO: Anteile genau berechnen!
-% Kritik: zu wenig HPC und nur für eine Woche möglich
+% TODO: Fahrtstrecke berechnen mean +- Standardabweichung
 
 Die Charakteristik der Fahrtprofile spielt eine entscheidende Rolle für die Wirksamkeit der unterschiedlichen Ladestrategien und die Auswirkungen auf die Netze.
 Hierbei steht vor allem der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge, sowie die Gleichzeitigkeit von Ladevorgängen im Vordergrund.\medskip
@@ -94,7 +92,16 @@ Gegenüber dem Elektrifizierungs-Szenario sinkt die Höchstlast in der \SzeFirme
 
 \subsubsection{Kritik}
 
-
+Die erstellten Fahrtprofile spiegeln ein aus heutiger Sicht plausibel erscheinendes Bild wider.
+Dennoch existieren einzelne Kritikpunkte, die innerhalb des \simbev Projektes gelöst werden sollten.
+So war es zum Zeitpunkt der Erstellung der Fahrtprofile noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
+Da sich jedoch die Netzuntersuchungen im Rahmen dieser Masterarbeit auf einen Zeitraum von einem Jahr beziehen, wird die simulierte Woche stellvertretend für das gesamte Jahr verwendet.
+Hierfür wurde jedes Fahrtprofil solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge erreicht wurde.
+Dieses bringt jedoch einige Nachteile mit sich.
+Durch den kurzen simulierten Zeitraum fällt der \gls{SOC} einiger Fahrzeuge im Laufe der Woche nur geringfügig.
+Es ist zu vermuten, dass dies dazu führt, dass Ladevorgänge an Schnellladeinfrastruktur un­ter­re­prä­sen­tiert dargestellt werden.
+Auch nimmt der Ladebedarf im öffentlichen Raum im Laufe der Woche zu.
+Dies lässt sich durch die Abhängigkeit der Ladewahrscheinlichkeit vom \gls{SOC} erklären, da der \gls{SOC} im Mittel im Verlaufe des Woche sinkt.
 
 
 \subsection{Localiser Tool}
