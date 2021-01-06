@@ -99,9 +99,28 @@ Um die Komplexität des Modells zu reduzieren, werden mit Hilfe des \kmeans Refe
 Das \kmeans wurde im Rahmen des \openego Projektes entwickelt und wird in dieser Arbeit unverändert angewendet. \cite{Mueller2019}\medskip
 
 Grundlage des \kmeans bildet der \texttt{expectation–maximization-Algorithmus} (EM-Algorithmus) des Python Paketes \texttt{scikit learn}. \cite{scikit-learn2011}
-Der Algorithmus bildet durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren eine gewollte Anzahl \texttt{k} an Clustern.
-Die Gewichtung erfolgt hierbei anhand der angeschlossenen konventionellen und des angeschlossenen Verbrauchs am Netzknoten.
-Dabei werden folgende Schritte durch den Algorithmus durchlaufen:
+Jedes \gls{MS}-Netz kann durch die Definition mehrerer numerischer Attribute als Punkt im mehrdimensionalen Raum beschrieben werden.
+Der Algorithmus bildet anschließend eine gewollte Anzahl \texttt{k} an Clustern durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
+Die Gewichtung der einzelnen \gls{MS}-Netze erfolgt hierbei anhand der angeschlossenen konventionellen und des angeschlossenen Verbrauchs am Netzknoten.
+Damit jedoch alle Attribute die gleiche Gewichtung erhalten, müssen diese jeweils normiert werden.
+In \autoref{eq:norm_attributes} findet sich das entsprechende Vorgehen.
+
+\begin{equation}
+	x_{a, i} = \frac{x'_{a, i} - \text{min~} x^{'}_a}{\text{max~} x'_a - \text{min~} x'_a}
+	\label{eq:norm_attributes}
+\end{equation}
+
+\noindent Wobei:
+
+\addvbuffer[12pt 12pt]{
+	\begin{tabular}{>{$}r<{$}@{\ :\ }l}
+		x_{a, i} 	& normierter Wert des Attributes $a$ des Netzes $i$  \\
+		a	 		& Attribut Index \\
+		i			& Netz Index \\
+	\end{tabular}
+}
+
+\noindent Anschließend durchläuft der Algorithmus folgende Schritte:
 
 \begin{enumerate}
 	\item Zufällige Auswahl von Clusterzentren
@@ -120,7 +139,7 @@ In dieser Arbeit wird stellvertretend für das Cluster, dass Netzgebiet mit dem 
 
 \subsection{simBEV}\label{chap:simbev_theo}
 
-% TODO: probabilistischen Ansatz mathematisch erklären
+% TODO: probabilistischen Ansatz mathematisch erklären. @Tim wie wird die Wahrscheinlichkeit je ts konkret festgelegt?
 % TODO: erwähnen, dass bisher nur 1 Woche simuliert werden kann
 
 Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen verschiedener Fahrzeugklassen erstellt werden.
