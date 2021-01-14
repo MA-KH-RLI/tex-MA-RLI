@@ -1,6 +1,8 @@
 \section{Theoretischer Hintergrund}
 
-\subsection{Allgemeine Definitionen}
+
+\subsection{Stromnetz}
+
 
 \paragraph{Elektrische Flexibilität:}
 
@@ -44,6 +46,7 @@ Auf diese Weise können Ringnetze ebenso einfach überwacht werden wie Strahlenn
 Im Fehlerfall wird bei dieser Baumform maximal ungefähr die Hälfte der Verbraucher vom Netz getrennt.
 Durch das Schließen der Trennstelle können dann wieder alle Verbraucher, mit Ausnahme des Fehlerfalls, versorgt werden. \cite{WNG2020} \cite{Westermann2019}
 
+
 \paragraph{Gleichzeitigkeit:}
 
 Die Gleichzeitigkeit beschreibt den Anteil der momentan anfallenden elektrischen Leistung im Bezugsgebiet von der maximalen elektrischen Leistung im Netzgebiet. \cite{Agora2019} 
@@ -52,6 +55,33 @@ Ausnahmen sind entsprechend gekennzeichnet.
 
 
 \subsection{Elektromobilität}
+
+
+\paragraph{Ladetechnik:}
+
+Die Ladetechnik von \glspl{EV} und den korrespondierenden Ladepunkten lässt sich anhand verschiedener Kriterien klassifizieren.
+Innerhalb dieser Arbeit wird die Ladetechnik ausschließlich anhand der Höhe der \gls{P} unterschieden.
+In \autoref{fig:four-quadrant}, finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EV} in Abhängigkeit von ihrer Wirk- und Blindleistung.
+
+\input{Ch02/fig/Ch02_fig_01_four-quadrant}
+
+So können Ladevorgänge sowohl blindleistungfrei erfolgen, als auch induktiv oder kapazitiv und werden unter der Bezeichnung \gls{G2V} zusammengefasst.
+In \autoref{fig:four-quadrant} entspricht dieser Modus einer positiven Wirkleistung.
+Weiterhin können mit bidirektionaler Ladetechnik \glspl{EV} ebenfalls entladen werden, um beispielsweise Systemdienstleistungen zu erbringen.
+Ein solcher Modus wird allgemein unter der Bezeichnung \gls{V2G} zusammengefasst und kann ebenfalls blindleistungsfrei, induktiv oder kapazitiv erfolgen.
+In \autoref{fig:four-quadrant} entspricht dieser Modus einer negativen Wirkleistung. \cite{He2020} 
+Innerhalb dieser Arbeit erfolgen Ladevorgänge immer blindleistungsfrei, welches dem Betriebspunkt in \autoref{fig:four-quadrant} entspricht.
+Ebenfalls wird der Einsatz von bidirektionaler Ladetechnik nicht untersucht.\medskip
+
+Die einzelnen Ladevorgänge werden anhand ihrer Wirkleistung grob in Normal- und Schnellladevorgänge unterteilt.
+Normalladevorgänge finden bei einer Wirkleistung von maximal \SI{50}{\kw} statt, während Schnellladevorgänge bei einer Leistung von \SIrange[range-phrase=~{oder}~]{150}{350}{\kw} stattfinden.
+Dabei besitzen die Ladevorgänge pauschal einen Wirkungsgrad von \SI{90}{\percent}.
+Eine Übersicht der in dieser Arbeit verwendeten netz- und fahrzeugseitigen Wirkleistungen von Ladepunkten findet sich in \autoref{tab:charging_cap}.
+Weiterhin sind die in \autoref{tab:TechPowerCap} Limitierungen der \glspl{EV} zu berücksichtigen.
+
+\input{Ch02/tab/Ch02_tab_02_Ladeleistungen}
+
+% TODO: Stromart ist egal, weil am Netzverknüpfungspunkt eh AC
 
 \paragraph{Ladestrategien:}
 
@@ -130,11 +160,11 @@ In \autoref{eq:norm_attributes} findet sich das entsprechende Vorgehen.
 \end{enumerate}
 
 % TODO: enumerate ist komplett abgeschrieben. anders zitieren?
-% TODO: Grafik 5.3 aus open_ego Bericht einfügen
-% TODO: Alternative Grafiken https://scikit-learn.org/stable/modules/clustering.html
 
-In {\color{red} TODO} findet sich eine exemplarische Darstellung des EM-Algorithmus.
+In \autoref{fig:k-means} findet sich eine exemplarische Darstellung des EM-Algorithmus.
 In dieser Arbeit wird stellvertretend für das Cluster, dass Netzgebiet mit dem minimalen quadrierten gewichteten euklidischen Abstand zum Clusterzentrum verwendet.
+
+\input{Ch02/fig/Ch02_fig_02_k-means}
 
 
 \subsection{simBEV}\label{chap:simbev_theo}
@@ -146,7 +176,7 @@ Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simb
 Weiterhin kann hierbei zwischen den in \autoref{tab:RegioStaR} aufgelisteten \Regiostar Raumtypen unterschieden werden, um das raumtypenspezifische Fahrverhalten abzubilden.
 Zum Zeitpunkt der Erstellung der Fahrtprofile war es noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
 
-\input{Ch02/tab/Ch02_tab_02_RegioStaR}
+\input{Ch02/tab/Ch02_tab_03_RegioStaR}
 
 Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \gls{MID} \cite{ISGH2017} erstellt.
 Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit für einen bestimmten Wegezweck eine Fahrt zu beginnen.
@@ -165,7 +195,7 @@ Es gilt je niedriger der \gls{SOC}, desto wahrscheinlicher ist es, dass die öff
 Ab einem \gls{SOC} von \SI{50}{\percent} findet, wann immer möglich, eine Ladung des Fahrzeugs statt.
 Zwischen den beiden Stützwerten erfolgt eine lineare Interpolation, welche in \autoref{fig:soc_charging_prob} visualisiert wurde.
 
-\input{Ch02/fig/Ch02_fig_01_soc_charging_prob}
+\input{Ch02/fig/Ch02_fig_03_soc_charging_prob}
 
 Schnellladeinfrastruktur besitzt aufgrund des zusätzlichen Fahrt- und Zeitaufwandes eine geringe Attraktivität für den Nutzer.
 Deshalb wird eine Schnellladung in dieser Simulation nur dann ausgelöst, wenn es wirklich nötig ist.
