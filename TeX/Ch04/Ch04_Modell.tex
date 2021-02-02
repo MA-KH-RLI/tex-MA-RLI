@@ -1,4 +1,4 @@
-% Eingangsdaten der Simulation
+ % Eingangsdaten der Simulation
 
 \section{Modellbildung}
 
@@ -10,18 +10,16 @@ Dieses Kapitel soll einen Überblick über das verwendete Modell und die Eingang
 
 \subsection{Erzeugung der Lastzeitreihen der Ladevorgänge von E-Pkw}
 
-% TODO: ding0
-
 In diesem Kapitel wird auf die theoretischen Grundlagen und die simulative Erzeugung der Lastzeitreihen von \glspl{EPKW} eingegangen.
 Die Lastzeitreihen der \glspl{EPKW} und die Optimierung dieser hin zu einem möglichst netzfreundlichen Verhalten, bilden den flexiblen Anteil der Eingangsdaten für die Lastflussberechnung mit \edisgo.\medskip
 
 Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen der verschiedenen Klassen für verschiedene Raumtypen erstellt werden (s. \autoref{chap:simbev_theo}.
 Die Fahrtprofile enthalten die gefahrenen Strecken und die Standzeiten am Zielort.
 Aus diesen können anschließend anhand des Verbrauchs und der gegebenen Ladeinfrastruktur die Ladebedarfe am Zielort abgeleitet werden.
-Abhängig von der Ladestrategie wird die spezifische Last innerhalb der Standzeit verteilt.
-Die Zeitreihen der Ladelast der einzelnen Fahrzeuge werden innerhalb eines Landkreises berechnet und schlussendlich zu einer Gesamtlast je \UC zusammengeführt.
-Mit Hilfe des proprietär \localiserToolsKomma , werden die Zeitreihen der Gesamtlasten auf konkrete georeferenzierte Ladepunkte innerhalb des Landkreises verteilt.
-Um abschließend eine Lasflussrechnung eines Netzgebietes mit \edisgo durchführen zu können, muss die Schnittmenge eines Netzgebietes mit den Landkreisen bestimmt werden.
+Abhängig von der Ladestrategie wird die spezifische Last innerhalb der Standzeit unterschiedlich verteilt.
+Die Zeitreihen der Ladelast der einzelnen Fahrzeuge werden auf Ebene der Gemeinden berechnet.
+Innerhalb der Gemeinde werden die Standzeiten der Fahrzeuge auf konkrete georeferenzierte Ladepunkte verteilt.
+Um abschließend eine Lasflussberechnung eines Netzgebietes mit \edisgo durchführen zu können, muss die Schnittmenge eines \dingo Netzgebietes mit den Gemeinden bestimmt werden.
 Ladepunkte die innerhalb dieser Schnittmenge liegen, werden dem jeweiligen Netzgebiet zugeordnet und somit die entsprechende Last der Ladevorgänge.
 Da die Simulation aller Netzgebiete zu inakzeptabel hohen Rechenzeiten führt, werden die \dingo Netzgebiete vorerst geclustert und Referenznetzgebiete identifiziert.
 
@@ -29,20 +27,28 @@ Da die Simulation aller Netzgebiete zu inakzeptabel hohen Rechenzeiten führt, w
 \subsubsection{Clustering der ding0 Netzgebiete}
 
 % TODO: Auswertungen von Birgit übernehmen
-% TODO: Karte mit den Netzgebieten
 % TODO: welche charakteristischen Attribute wurden verwendet? @Birgit
-% TODO: Schnittmenge Gemeinden <-> Netzgebiet erklären -> Karte!
+% TODO: wurde vom elia Projekt übernommen
 
 Die Untersuchung der mit Hilfe des Software Tools \dingo synthetisierten \gls{MS}-Netzgebiete, führt aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten während der Optimierung und Simulation.
-Im Rahmen dieser Masterarbeit wurden sechs Referenznetzgebiete ausgewählt, welche einen Großteil der \num{3591} \gls{MS}-Netze repräsentieren.\medskip
+Im Rahmen dieser Masterarbeit wurden sechs Referenznetzgebiete ausgewählt, welche \num{1842} der \num{3591} \gls{MS}-Netze repräsentieren.\medskip
 
-Das Clustering erfolgt durch den während des \openego Projektes entwickelten k-means-Clusteralgorithmus (s. \autoref{chap:dingo_theo}).
-Hierfür wurden die kumulierte Wind- und kumulierte Photovoltaikkapazität, sowie die kumulierte Last im Netzgebiet als charakteristische Attribute der \gls{MS}-Netze festgelegt.
-Zusätzlich wurde überschlägig der zu erwartende Energiebedarf aufgrund der Eektromobilität im Elektrifizierungs-Szenario als Attribut festgelegt.
+Das Clustering erfolgte innerhalb des {\color{red} TODO elia Projektes} durch den während des \openego Projektes entwickelten k-means-Clusteralgorithmus (s. \autoref{chap:dingo_theo}).
+Hierfür wurden die kumulierte Wind- und kumulierte \gls{PV}-kapazität, sowie die kumulierte Last im Netzgebiet als charakteristische Attribute der \gls{MS}-Netze festgelegt.
+Zusätzlich wurde überschlägig der zu erwartende Energiebedarf aufgrund der Eektromobilität im Elektrifizierungs-Szenario als Attribut festgelegt.\medskip
 
 % TODO: Formel oder genauer erklären
 
-Mit Hilfe 
+Um mit dieser Arbeit eine Ergänzung zu dem {\color{red} TODO elia Projekt} zu bilden wurde das Clustering des {\color{red} TODO elia Projektes} übernommen.
+Damit die Rechenzeiten in einem akzeptablen Rahmen gehalten werden können, wurde eine Teilmenge der \num{15} identifizierten repräsentativen Netzgebiete ausgewählt.
+Bei der Auswahl wurden jeweils zwei Netzgebiete der Kategorien Wind-, PV- und Last-dominiert ausgewählt, damit die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze gezeigt werden kann.
+Somit wurden insgesamt \num{6} Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
+In \autoref{tab:grid_IDs} finden sich die untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
+Weiterhin findet sich in \autoref{fig:map_representatives} Karte der repräsentierten Netzgebiete eingeteilt in die Kategorien Wind-, PV- und Last-dominiert.
+
+\input{Ch04/tab/Ch04_tab_01_grid_IDs}
+
+\input{Ch04/fig/Ch04_fig_01_map_representatives}
 
 
 \subsubsection{Erstellung der Fahrtprofile mit simBEV}
@@ -79,12 +85,12 @@ Hiervon ausgenommen ist die \SzeFirmenparkplatzdot, bei der es aufgrund des geri
 Der Anteil nicht-flexibilisierer Ladevorgänge liegt bei dieser Szenarette bei \SI{40}{\percent}.
 In \autoref{tab:ChargingShare} findet sich die entsprechende Aufteilung.
 
-\input{Ch04/tab/Ch04_tab_01_ChargingShare}
+\input{Ch04/tab/Ch04_tab_02_ChargingShare}
 
 In \autoref{fig:example_load_profile} findet sich stellvertretend das \gls{EV}-Lastprofil für ungesteuertes Laden einer mittelstädtischen Gemeinde mit \num{6443} \glspl{EV} über eine Woche im Elektrifizierungs-Szenario (links).
 Zusätzlich wurde die \SzeFirmenparkplatz (rechts) dargestellt.
 
-\input{Ch04/fig/Ch04_fig_01_example_load_profile}
+\input{Ch04/fig/Ch04_fig_02_example_load_profile}
 
 Die Lastgänge \zH und \Firmeparkplatz entsprechen den flexibilisierbaren Ladevorgängen im privaten Bereich. Unter dem Lastgang \oeffen sind hingegen alle öffentlichen Ladevorgänge mit Außnahme der Schnellladevorgänge (\gls{HPC}) zusammengefasst. Deutlich zu erkennen ist die hohe Gleichzeitigkeit am Vormittag sowohl am \Firmeparkplatz als auch im öffentlichen Raum, welche durch das Fahren zur Arbeit ausgelöst wird.
 Auch die Rückkehr zum Wohnort ist ab dem frühen Nachmittag in den Lastgängen \zH und im öffentlichen Raum deutlich zu erkennen. Die entsprechenden Dauerlastkurven für die Gemeinde über die gleiche Woche (s. \autoref{fig:example_load_curve}) zeigen dies nochmals deutlich.
@@ -92,7 +98,7 @@ Schnellladevorgänge werden hingegen vermehrt am Wochenende ausgelöst, da verst
 Am Wochenende kommt es zusätzlich zu deutlich geringeren Anteilen von Ladevorgängen \zH und am \Firmeparkplatzdot, wodurch das Flexibilisierungspotential am Wochenende geringer ausfällt.
 Gegenüber dem Elektrifizierungs-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot, jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
 
-\input{Ch04/fig/Ch04_fig_02_example_load_curve}
+\input{Ch04/fig/Ch04_fig_03_example_load_curve}
 
 
 \subsubsection{Kritik}
@@ -109,7 +115,9 @@ Auch nimmt der Ladebedarf im öffentlichen Raum im Laufe der Woche zu.
 Dies lässt sich durch die Abhängigkeit der Ladewahrscheinlichkeit vom \gls{SOC} erklären, da der \gls{SOC} im Mittel im Verlaufe des Woche sinkt.
 
 
-\subsection{Localiser Tool}
+\subsection{Verteilung der Last auf die Ladeinfrastruktur}
+
+% TODO: Schnittmenge Gemeinden <-> Netzgebiet erklären -> Karte!
 
 
 \subsection{eDisGo}

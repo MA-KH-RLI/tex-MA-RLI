@@ -60,8 +60,8 @@ Ausnahmen sind entsprechend gekennzeichnet.
 \paragraph{Ladetechnik:}
 
 Die Ladetechnik von \glspl{EV} und den korrespondierenden Ladepunkten lässt sich anhand verschiedener Kriterien klassifizieren.
-Innerhalb dieser Arbeit wird die Ladetechnik ausschließlich anhand der Höhe der \gls{P} unterschieden.
-In \autoref{fig:four-quadrant}, finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EV} in Abhängigkeit von ihrer Wirk- und Blindleistung.
+Innerhalb dieser Arbeit wird die Ladetechnik ausschließlich anhand der Höhe ihrer Wirkleistung unterschieden.
+In \autoref{fig:four-quadrant}, finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EV} in Abhängigkeit von ihrer \gls{P} und ihrer \gls{Q}.
 
 \input{Ch02/fig/Ch02_fig_01_four-quadrant}
 
@@ -78,10 +78,10 @@ Normalladevorgänge finden bei einer Wirkleistung von maximal \SI{50}{\kw} statt
 Dabei besitzen die Ladevorgänge pauschal einen Wirkungsgrad von \SI{90}{\percent}.
 Eine Übersicht der in dieser Arbeit verwendeten netz- und fahrzeugseitigen Wirkleistungen von Ladepunkten findet sich in \autoref{tab:charging_cap}.
 Weiterhin sind die in \autoref{tab:TechPowerCap} Limitierungen der \glspl{EV} zu berücksichtigen.
+Unabhängig von der Ladetechnik wird angenommen, dass am Netzverknüpfungspunkt immer einer symmetrische dreiphasige Last anliegt.
 
 \input{Ch02/tab/Ch02_tab_02_Ladeleistungen}
 
-% TODO: Stromart ist egal, weil am Netzverknüpfungspunkt eh AC
 
 \paragraph{Ladestrategien:}
 
@@ -170,7 +170,6 @@ In dieser Arbeit wird stellvertretend für das Cluster, dass Netzgebiet mit dem 
 \subsection{simBEV}\label{chap:simbev_theo}
 
 % TODO: probabilistischen Ansatz mathematisch erklären. @Tim wie wird die Wahrscheinlichkeit je ts konkret festgelegt?
-% TODO: erwähnen, dass bisher nur 1 Woche simuliert werden kann
 
 Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen verschiedener Fahrzeugklassen erstellt werden.
 Weiterhin kann hierbei zwischen den in \autoref{tab:RegioStaR} aufgelisteten \Regiostar Raumtypen unterschieden werden, um das raumtypenspezifische Fahrverhalten abzubilden.
