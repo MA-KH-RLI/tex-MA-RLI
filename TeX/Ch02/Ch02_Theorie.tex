@@ -103,20 +103,32 @@ Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \edisgodot, sin
 Aufgrund der mangelnden Datenlagen von reale Netztopologien werden, wird auf synthetisch erzeugte Netztopologien zurückgegriffen.
 die mit Hilfe des Software Tools \dingo erzeugt wurden.
 Das Tool ist in der Lage ländliche und suburbane Netzstrukturen zu synthetisieren und kann auf GitHub \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
-Weiterhin findet sich auf ReadTheDocs \cite{dingo-docs2019} eine ausführliche Dokumentation.
-Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \openego Projektes. \cite{Mueller2019} Die Netztopologien entsprechen dem Stand von \num{2015}.
+Weiterhin findet sich auf Read the Docs \cite{dingo-docs2019} eine ausführliche Dokumentation.\medskip
+
+Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \openego Projektes. \cite{Mueller2019}
+Die Netztopologien werden auf der Datengrundlage des Jahres \num{2015} gebildet und werden anschließend mit dem aktuellen Stand der regenerativen Erzeugerkapazitäten ausgestattet.
+Im Falle von hierdurch entstehenden Netzproblemen, erfolgt ein Ausbau des entsprechenden Netzes, um diese zu beheben. {\color{red} TODO: gilt dies auch bei mir?}
+Urbane Netzgebiete können derzeit nicht durch \dingo abgebildet werden und werden deshalb innerhalb dieser Masterarbeit nicht betrachtet.
 
 
 \paragraph{Mittelspannung}
 
 Auf der \gls{MS}-Ebene gibt es \num{3591} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
 Die einzelnen \gls{MS}-Netze werden alle als offene Ringnetze betrieben.
-Im städtischen Bereich werden hauptsächlich Erdkabel mit einer Nennspannung von \SI{10}{\kv} eingesetzt, während im ländlichen Raum größtenteils Freileitungen mit einer Nennspannung von \SI{20}{\kv} eingesetzt werden. \cite{Mueller2019}
+Im städtischen Bereich werden hauptsächlich Erdkabel mit einer Nennspannung von \SI{10}{\kv} eingesetzt, während im ländlichen Raum größtenteils Freileitungen mit einer Nennspannung von \SI{20}{\kv} eingesetzt werden. \cite{Mueller2019}\medskip
+
+% TODO: Grafik elia study
+
+{\color{red} TODO} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \dingo erzeugt wurde.
+Die Modellierung der Mittelspannungstopologie erfolgt als Tourenplanungsproblem (Capacitated Vehicle Routing
+Problem (CVRP)) in Kombination mit der Beachtung der historischen lastorientierten Entwicklung und den Planungsprinzipien von Verteilnetzen.
+Ein besondere Fokus liegt dabei auf der Beachtung von Leitungsüberlastungen und Verletzungen des Spannungsbandes.
+Eine genau Beschreibung der Methodik findet sich in \cite{Amme2018}.
 
 
 \paragraph{Niederspannung}
 
-Die \gls{NS}-Ebene wird mit Hilfe von \num{46} Referenznetzsträngen synthetisiert.
+Die \gls{NS}-Ebene wird mit Hilfe von \num{46} Referenznetzsträngen synthetisiert und als Strahlennetze betrieben.
 Die Referenznetzsträngen stehen repräsentativ für eine bestimmte Anzahl an Hausanschlüssen und werden jeweils einer Netzklasse zugeordnet.
 Hierbei wird auf Grundlage der Anzahl an Hausanschlüssen je Ortsnetzstation zwischen Land-, Dorf- und Vorstadtnetzen unterschieden.
 Die verschiedenen Referenznetzstränge werden so miteinander kombiniert, dass für eine bestimmte Zahl an Hausanschlüssen innerhalb einer Netzklasse ein typisches Netz generiert wird. \cite{Mueller2019}
@@ -205,34 +217,22 @@ Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.
 
 \subsection{eDisGo}\label{chap:edisgo_theo}
 
-\paragraph{Netzausbaubedarf:}
+Das Software Tool \edisgo (\textbf{e}lectricity \textbf{Dis}tribution \textbf{G}rid \textbf{o}ptimization) stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzfehler zu untersuchen.
+Gleichzeitig können mit \edisgo Maßnahmen zur Behebung der Netzfehler bewertet werden.
+Dabei bilden synthetische Netztopologien, die mit Hilfe des Software Tools \dingo erzeugt wurden, die Grundlage für die Berechnungen mit \edisgodot.
+\edisgo kann über GitHub \cite{edisgoGit2019} abgerufen werden und ist auf Read the Docs \cite{edisgoDocs2017} dokumentiert.
+Innerhalb dieses Kapitels werden die wichtigsten Funktionalitäten \texttt{eDisGo}~ für die Durchführung der Berechnungen innerhalb dieser Masterarbeit dargestellt und erläutert.
 
+
+\paragraph{Ermittlung von Netzüberlastungen:}
+
+% TODO: Methodik PyPSA
 % s. Verteilnetzstudie BW
 % Die festgestellten Grenzwertverletzungen werden wie folgt priorisiert:
 % 1. Verletzung der thermischen Transformatorbetriebsgrenzen
 % 2. Verletzungen des Spannungsbandes
 % 3. Verletzung der thermischen Leitungsbetriebsgrenzen
 
-\subparagraph{Minimaler Residuallastfall und Maximaler Residuallastfall}
+\paragraph{Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen:}
 
-\subparagraph{Thermischen Betriebsmittelbelastung}
-
-\subparagraph{Maximale Knotenspannungen}
-
-% Spannungsband
-
-\subparagraph{n-1}
-
-\paragraph{Netzausbaumaßnahmen:}
-
-% BW: In der klassischen Netzplanung erfolgt die Bestimmung der auslegungsrelevanten Betriebsfälle anhand der installierten Leistung einzelner Verbraucher, gemessenen Spitzenlasten oder auf Basis von Erfahrungswerten bezüglich der Gleichzeitigkeit bestimmter Verbraucher. Eine Netzplanung auf Basis von Zeitreihen findet in Verteilnetzen in der Regel nicht statt. Da die Analyse des Betriebsverhaltens von Flexibilitätsoptionen jedoch auf der Betrachtung von Zeitreihen aufbaut, ergibt sich das Problem der Übertragbarkeit von Erkenntnissen aus der Zeitreihenanalyse auf die Netzplanung.
-
-\subparagraph{rONT}
-
-% Ergebnis Workshop: i.d.R. zu teuer und unnötig
-
-% BW: Eine häufige Ursache für Netzausbaubedarf bzw. auftretende restriktive Randbedingung für die Integration von DEA in NS-Netze ist die Einhaltung der Spannungsqualität beim Verbraucher gemäß DIN EN 50160 [16]. 
-
-\subparagraph{Spannungsbandaufteilung}
-
-\subparagraph{Optimierte Einstellung eines lastfrei stufbaren Transformators}
+% TODO: Methodik

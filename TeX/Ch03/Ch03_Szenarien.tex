@@ -180,25 +180,37 @@ Die folgende Auflistung entspricht den relevanten Ergebnissen mehrerer Diskussio
 Die Annahmen zu dem Hochlauf der regenerativen Erzeugerkapazitäten werden über die Szenarien hinweg als konstant angenommen.
 Hierdurch werden Vermischungseffekte durch die Änderung mehrere Eingangsparameter verhindert und der Einfluss der Elektromobilität kann getrennt bewertet werden.
 Die Annahmen werden aus dem Szenario \ego des \openego Projektabschlussberichts \cite{Mueller2019} entnommen.
+Die Regionalisierung der Erzeugerkapazitäten erfolgte im Rahmen des \openego Projektes und ist nicht Teil dieser Masterarbeit und soll an dieser Stelle zusammenfassend beschrieben werden.
+Eine genaue Beschreibung der Regionalisierung findet sich im \openego Projektabschlussbericht \cite{Mueller2019}.\medskip
+
+Um den Status Quo abzubilden, werden offizielle, öffentliche Verzeichnisse, welche Informationen zu den einzelnen Kraftwerken bereitstellen zusammengeführt.
+Da die Daten hierbei in unterschiedlichen Qualitäten und Detailgraden vorliegen, müssen diese auf ein einheitliches Format ergänzt werden.
+Ziel ist es dabei allen Anlagen geografischen Bezugspunkt, sowie eine Netzebene zuzuordnen.
+Je nach Datensatz werden hierbei die angegebene Spannungsebene, die eingetragene Technologie und die installierte Leistung der Kraftwerke als Identifikator genutzt.\medskip
+
+Für das Szenario \ego werden die Hochlaufzahlen für regenerative Erzeugerkapazitäten aus der Studie \texttt{e-Highway 2050 - Modular Development Plan of the Pan-European Transmission System 2050} \cite{EEHPG2015} übernommen und finden sich in \autoref{tab:EE-RampUp}.
+Auf Grundlage des zuvor erstellten Status Quo werden die Erzeugerkapazitäten entsprechend des aktuellen Standes gewichtet verteilt.
+Hierbei werden maximale Ausbaupotentiale berücksichtigt, indem beispielsweise Weißflächen für den Ausbau von onshore Windkraftanlagen berücksichtigt werden.
+
 
 \input{Ch03/tab/Ch03_tab_02_EE-RampUp}
 
-Die Regionalisierung der Erzeugerkapazitäten erfolgte ebenfalls im Rahmen des \openego Projektes.
-Als Grundlage dienen offizielle, öffentliche Verzeichnisse, welche Informationen zu den einzelnen Kraftwerken bereitstellen.
-Da die Daten hierbei in unterschiedlichen Qualitäten und Detailgraden vorliegen, müssen diese auf ein einheitliches Format ergänzt werden.
-Ziel ist es dabei allen Anlagen geografischen Bezugspunkt, sowie eine Netzebene zuzuordnen.
-Je nach Datensatz werden hierbei die angegebene Spannungsebene, die eingetragene Technologie und die installierte Leistung der Kraftwerke als Identifikator genutzt.
-Eine genaue Beschreibung der Regionalisierung findet sich im \openego Projektabschlussbericht \cite{Mueller2019}.
+
+\subsubsection{Stromverbrauch}
+
+{\color{red} TODO}
 
 
 \subsubsection{Wärmepumpen}
 
-Der Hochlauf an Wärmepumpen in Deutschland wird ebenfalls über die Szenarien hinweg als konstant angenommen.
-Die Hochlaufzahlen und der Jahresverbrauch entsprechen dem Szenario C~\num{2035} des Netzentwicklungsplans \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020}.
+Der Hochlauf an Wärmepumpen in Deutschland wird über die Szenarien hinweg als feste Eingangsgröße angenommen.
+Die Hochlaufzahlen und der Jahresverbrauch entsprechen dem Szenario C~\num{2035} des Netzentwicklungsplans \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020} und finden sich in \autoref{tab:WP-RampUp}.
 
 \input{Ch03/tab/Ch03_tab_03_WP-RampUp}
 
-{\color{red} TODO: Regionalisierung erklären}
+Der Jahresstromverbrauches der Wärmepumpen wird anhand des Anteils des Stromverbrauches des Haushaltssektors eines Netzgebietes bezogen auf den Gesamtstromverbrauch des Haushaltssektors im Szenario \ego auf die einzelnen Netzgebiete verteilt.
+Innerhalb eines Netzgebietes erfolgt die Regionalisierung ebenfalls gewichtet anhand des Stromverbrauches der einzelnen Haushaltslasten.
+Die zeitliche Verteilung der Last wird der nichtöffentlichen Studie \texttt{E-Mobility Study {--} Assessment of coordinated charging considering distribution grid restrictions} \cite{Schachler} entnommen.
 
 
 \subsubsection{Elektromobilität}\label{chap:EMob_Szenarien}
