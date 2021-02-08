@@ -1,19 +1,10 @@
 \section{Theoretischer Hintergrund}
 
+In diesem Kapitel sollen die wichtigsten theoretischen Grundlagen für die softwaregestützten Analyse des Einflusses der zunehmenden Netzintegration von Elektrofahrzeugen auf die Verteilnetze dargestellt und erläutert werden.
+Hierzu zählen die Definition von grundlegenden Begriffen im Bezug auf Stromnetze und Elektromobilität, sowie die Vorstellung der verwendeten Softwarelandschaft mitsamt den wichtigsten Algorithmen.
+
 
 \subsection{Stromnetz}
-
-
-\paragraph{Elektrische Flexibilität:}
-
-Elektrische Flexibilität beschreibt die Fähigkeit des Stromsystems, trotz einer vorhergesehene oder unvorhergesehene Änderungen im Verbrauch oder der Erzeugung einen Ausgleich zwischen Angebot und Nachfrage aufrecht zu erhalten.
-Dabei wird die Reaktion des Stromsystems durch ein externes Signal ausgelöst.
-Bei dem externen Signal kann es sich beispielsweise um ein Preissignal, aber auch ein physikalisch messbares Signal, wie die Netzfrequenz, handeln. \medskip
-
-Elektrische Flexibilität besitzt sowohl eine zeitliche als auch eine geografische Dimension.
-Die zeitliche Dimension beschreibt die zeitliche Verschiebung von Last oder Erzeugung und reicht von einer sekündlichen hin zu einer saisonalen Verschiebung.
-Unter der geografischen Dimension wird die gemeinsame Nutzung von räumlich verteilten Ressourcen verstanden.
-Dabei reicht die räumliche Skala von lokalen Quartierslösungen hin zu internationalen Verbundnetzen. \cite{BNetzA2017} \cite{IEA2014}
 
 
 \paragraph{Netzebenen:}
@@ -45,6 +36,18 @@ Dies bedeutet, dass sich etwa in der Mitte des Rings eine offene Trennstelle bef
 Auf diese Weise können Ringnetze ebenso einfach überwacht werden wie Strahlennetze.
 Im Fehlerfall wird bei dieser Baumform maximal ungefähr die Hälfte der Verbraucher vom Netz getrennt.
 Durch das Schließen der Trennstelle können dann wieder alle Verbraucher, mit Ausnahme des Fehlerfalls, versorgt werden. \cite{WNG2020} \cite{Westermann2019}
+
+
+\paragraph{Elektrische Flexibilität:}
+
+Elektrische Flexibilität beschreibt die Fähigkeit des Stromsystems, trotz einer vorhergesehene oder unvorhergesehene Änderungen im Verbrauch oder der Erzeugung einen Ausgleich zwischen Angebot und Nachfrage aufrecht zu erhalten.
+Dabei wird die Reaktion des Stromsystems durch ein externes Signal ausgelöst.
+Bei dem externen Signal kann es sich beispielsweise um ein Preissignal, aber auch ein physikalisch messbares Signal, wie die Netzfrequenz, handeln. \medskip
+
+Elektrische Flexibilität besitzt sowohl eine zeitliche als auch eine geografische Dimension.
+Die zeitliche Dimension beschreibt die zeitliche Verschiebung von Last oder Erzeugung und reicht von einer sekündlichen hin zu einer saisonalen Verschiebung.
+Unter der geografischen Dimension wird die gemeinsame Nutzung von räumlich verteilten Ressourcen verstanden.
+Dabei reicht die räumliche Skala von lokalen Quartierslösungen hin zu internationalen Verbundnetzen. \cite{BNetzA2017} \cite{IEA2014}
 
 
 \paragraph{Gleichzeitigkeit:}
@@ -88,10 +91,7 @@ Unabhängig von der Ladetechnik wird angenommen, dass am Netzverknüpfungspunkt 
 Der Ladevorgang von \glspl{EV} kann durch unterschiedliche äußere Anreize gesteuert werden. Grundsätzlich lassen sich hierbei marktorientierte und netzdienliche Ladestrategien unterscheiden.
 
 
-\subparagraph{Marktorientierte Ladestrategien} haben als Fokus die Minimierung der Kosten für den Strombezug. Dies bedeutet konkret, dass die Ladevorgänge durch ein Preissignal am Großhandelsmarkt ausgelöst beziehungsweise unterbrochen werden. Eine solche Ladestrategie kann sowohl positive als auch negative Effekte aufweisen und erfordern einen geeigneten rechtlichen Rahmen. So führt beispielsweise ein hohes Stromangebot zu niedrigen Großhandelsmarktpreisen, wodurch das beladen der \glspl{EV} ausgelöst wird und ein Ausgleich zwischen Angebot und Nachfrage angestrebt wird. Auf der anderen Seite werden lokale Netzengpässe nicht berücksichtigt und die Gleichzeitigkeit der Ladevorgänge erhöht sich, wodurch sich der Netzausbaubedarf erhöhen kann. \cite{Agora2019} \cite{Dorendorf2019}
-
-% BW Verteilnetzstudie: Bei einem marktorientierten Betrieb von Flexibilitätsoptionen richten sich diese in ihrem Betriebsverhalten nach den Anforderungen eines überregionalen Marktes.
-% Als Ergebnis des Analyseschrittes ist bekannt, welches Betriebsverhalten die betrachteten Flexibilitätsoptionen bei einer marktorientierten Nutzung aufweisen können. Hierbei zeigt sich, dass die überregionalen Flexibilitätssignale eine hohe Gleichzeitigkeit im Betrieb insbesondere der lastseitigen Flexibilitätsoptionen auslösen. Besonders bei EV findet eine starke Konzentration der Ladevorgänge auf die frühen Morgenstunden statt (siehe Abbildung 6.6). 
+\subparagraph{Marktorientierte Ladestrategien} haben als Fokus die Minimierung der Kosten für den Strombezug. Dies bedeutet konkret, dass die Ladevorgänge durch ein Preissignal am überregionalen Großhandelsmarkt ausgelöst beziehungsweise unterbrochen werden. Eine solche Ladestrategie kann sowohl positive als auch negative Effekte auf das Stromnetz aufweisen und erfordert einen geeigneten rechtlichen Rahmen. So führt beispielsweise ein hohes Stromangebot zu niedrigen Großhandelsmarktpreisen, wodurch das beladen der \glspl{EV} ausgelöst wird und ein Ausgleich zwischen Angebot und Nachfrage angestrebt wird. Auf der anderen Seite werden lokale Netzengpässe nicht berücksichtigt und die Gleichzeitigkeit der Ladevorgänge erhöht sich, wodurch sich der lokale Netzausbaubedarf erhöhen kann. \cite{Agora2019} \cite{Dorendorf2019} \cite{Rehtanz2017}
 
 
 \subparagraph{Netzdienliche Ladestrategien} setzen hingegen auf die Vermeidung von lokalen Engpässen, welche durch eine hohe Nachfrage entstehen können. Hierbei kann zwischen präventiven und kurative Maßnahmen unterschieden werden. Präventive Maßnahmen sollen Kunden dazu bewegen, ihre Ladevorgänge in Zeiten geringer Netzauslastung zu verlegen. Dies kann zum Beispiel über monetäre Anreize aber auch über Quoten erfolgen. Bei kurativen Maßnahmen handelt es sich hingegen um ein aktives Eingreifen durch den Netzbetreiber, welcher bei drohenden Netzengpässen in den Ladevorgang eingreift. \cite{Agora2019}
@@ -165,16 +165,15 @@ In \autoref{eq:norm_attributes} findet sich das entsprechende Vorgehen.
 \noindent Anschließend durchläuft der Algorithmus folgende Schritte:
 
 \begin{enumerate}
-	\item Zufällige Auswahl von Clusterzentren
-	\item E-Step: Alle Netzknoten dem nächstgelegenen Clusterzentrum zuweisen
-	\item M-Step: Neues Clusterzentrum auf den Schwerpunkt der zugewiesenen Netzknoten setzen
+	\item Zufallsinitialisierung von Clusterzentren
+	\item E-Step: Die Netzknoten werden dem nächstgelegenen Clusterzentrum zugewiesen
+	\item M-Step: Als jeweils neues Clusterzentrum wird der Schwerpunkt der zugewiesenen Netzknoten eines Clusters verwendet
 	\item Die Schritte E und M werden so lange wiederholt, bis Konvergenz auftritt
 \end{enumerate}
 
-% TODO: enumerate ist komplett abgeschrieben. anders zitieren?
 
 In \autoref{fig:k-means} findet sich eine exemplarische Darstellung des EM-Algorithmus.
-In dieser Arbeit wird stellvertretend für das Cluster, dass Netzgebiet mit dem minimalen quadrierten gewichteten euklidischen Abstand zum Clusterzentrum verwendet.
+In dieser Arbeit wird stellvertretend für das Cluster, dass Netzgebiet mit dem minimalen quadrierten gewichteten euklidischen Abstand zum Clusterzentrum verwendet. \cite{Mueller2019}
 
 \input{Ch02/fig/Ch02_fig_02_k-means}
 
@@ -213,6 +212,11 @@ Deshalb wird eine Schnellladung in dieser Simulation nur dann ausgelöst, wenn e
 Sinkt der \gls{SOC} eines Fahrzeugs unter \SI{20}{\percent}, wird eine Schnellladestation angefahren und das Fahrzeug wird für \SI{15}{\Minuten} geladen.
 Im Unterschied zu \glspl{BEV}, können \glspl{PHEV} auch mit einem \gls{SOC} von \SI{0}{\percent} ihre Fahrt mit Hilfe des Verbrennungsmotors fortsetzen.
 Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.
+
+
+\subsection{Räumliche Verteilung der Ladelast}
+
+{\color{red} TODO}
 
 
 \subsection{eDisGo}\label{chap:edisgo_theo}
