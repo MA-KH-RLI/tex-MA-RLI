@@ -1,0 +1,20 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~bis~}
+\begin{table}[H]
+	\begin{center}
+		\caption{Zulässige Belastungsfaktoren der Betriebsmittel in der Mittel- und Niederspannung}
+		\begin{tabu} to 0.7\textwidth {X[1.2] X[1, r] X[1, r]}
+			\hline
+			Betriebsmittel      & Lastfall           & Rückspeisefall     \\ \hline
+			MS Kabel            & \SI{50}{\percent}  & \SI{100}{\percent} \\
+			NS Kabel            & \SI{100}{\percent} & \SI{100}{\percent} \\
+			HS-MS-Transformator & \SI{50}{\percent}  & \SI{100}{\percent} \\
+			MS-NS-Transformator & \SI{100}{\percent} & \SI{100}{\percent} \\ \hline
+            \multicolumn{3}{l}{Quelle: \cite{Rehtanz2017}}
+		\end{tabu}
+		\label{tab:Belastungsfaktoren}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

@@ -6,6 +6,10 @@ Hierzu zählen die Definition von grundlegenden Begriffen im Bezug auf Stromnetz
 
 \subsection{Stromnetz}
 
+Das Stromnetz dient der Übertragung und Verteilung von elektrischer Energie. \cite{Paschotta2020}
+Dabei lässt sich das Stromnetz in verschiedene Netzebenen aufteilen, welche jeweils typische Charakteristika aufweisen.
+Innerhalb dieses Kapitels sollen diese kurz beschrieben werden und weitere wichtige Begriffe im Zusammenhang mit Stromnetzen erläutert werden.
+
 
 \paragraph{Netzebenen:}
 
@@ -15,7 +19,8 @@ Ergänzend erfolgt in den Verteilnetzen die regionale Feinverteilung bei geringe
 
 Innerhalb der Verteilnetze wird zwischen drei Spannungsebenen unterschieden. Hierzu zählen die \glspl{HS}-, \glspl{MS}- und \glspl{NS}-Ebene.
 In \autoref{tab:Spannungsebenen} finden sich die üblichen Spannungen je Spannungsebene und die verbaute Stromkreislänge in Deutschland je Spannungsebene.
-Innerhalb dieser Masterarbeit werden ausschließlich die Effekte auf die Verteilnetze auf \glspl{MS}- und \glspl{NS}-Ebene untersucht.
+Innerhalb dieser Masterarbeit werden ausschließlich die Effekte auf die Verteilnetze auf der \glspl{MS}- und \glspl{NS}-Ebene untersucht.
+Zusätzlich erfolgt eine Betrachtung der Effekte auf die Umspannebene der \gls{MS}-\gls{NS}-Umspannwerke.
 
 \input{Ch02/tab/Ch02_tab_01_Spannungsebenen}
 
@@ -38,6 +43,13 @@ Im Fehlerfall wird bei dieser Baumform maximal ungefähr die Hälfte der Verbrau
 Durch das Schließen der Trennstelle können dann wieder alle Verbraucher, mit Ausnahme des Fehlerfalls, versorgt werden. \cite{WNG2020} \cite{Westermann2019}
 
 
+\paragraph{Gleichzeitigkeit:}
+
+Die Gleichzeitigkeit beschreibt den Anteil der momentan anfallenden elektrischen Leistung im Bezugsgebiet von der maximalen elektrischen Leistung im Netzgebiet. \cite{Agora2019} 
+Im Rahmen dieser Masterarbeit beschreibt die Gleichzeitigeit in der Regel den Anteil der momentanen elektrischen Last von \glspl{EV} im Bezug auf die installierte Leistung von Ladepunkten in einem Netzgebiet.
+Ausnahmen sind entsprechend gekennzeichnet.
+
+
 \paragraph{Elektrische Flexibilität:}
 
 Elektrische Flexibilität beschreibt die Fähigkeit des Stromsystems, trotz einer vorhergesehene oder unvorhergesehene Änderungen im Verbrauch oder der Erzeugung einen Ausgleich zwischen Angebot und Nachfrage aufrecht zu erhalten.
@@ -50,14 +62,36 @@ Unter der geografischen Dimension wird die gemeinsame Nutzung von räumlich vert
 Dabei reicht die räumliche Skala von lokalen Quartierslösungen hin zu internationalen Verbundnetzen. \cite{BNetzA2017} \cite{IEA2014}
 
 
-\paragraph{Gleichzeitigkeit:}
+\paragraph{Netzprobleme:}
 
-Die Gleichzeitigkeit beschreibt den Anteil der momentan anfallenden elektrischen Leistung im Bezugsgebiet von der maximalen elektrischen Leistung im Netzgebiet. \cite{Agora2019} 
-Im Rahmen dieser Masterarbeit beschreibt die Gleichzeitigeit in der Regel den Anteil der momentanen elektrischen Last von \glspl{EV} im Bezug auf die installierte Leistung von Ladepunkten in einem Netzgebiet.
-Ausnahmen sind entsprechend gekennzeichnet.
+Bei der Ermittlung von Netzproblemen müssen grundlegend zwei Fälle unterschieden werden.
+Im Lastfall überwiegt der Energiebedarf der Verbraucher gegenüber der Energiebereitstellung der Erzeugerkapazitäten im Netzgebiet.
+Das Netz muss in diesem Fall in der Lage sein, bereitgestellte Energie aus den überlagerten Netzebenen an die Verbraucher weiterzuleiten.
+Im Rückspeisefall überwiegt hingegen die Energiebereitstellung der Erzeugerkapazitäten gegenüber dem Energiebedarf der Verbraucher und der erzeugte Strom muss an die überlagerten Netzebenen weitergeleitet werden können. \cite{Agora2019}
+Für die Betriebsmittel gelten die in \autoref{tab:Belastungsfaktoren} und \autoref{tab:Spannungsband} zulässigen Belastungsfaktoren und Spannungsabweichungen, welche aus \cite{Mueller2019a} entnommen wurden und auf der Verteilnetzstudie für das Land Baden-Württemberg \cite{Rehtanz2017} basieren.
+
+\subparagraph{Verletzungen der thermische Betriebsmittelbelastungen} treten auf, wenn die physikalischen Grenzen von Betriebsmitteln bezüglich ihrer Scheinleistungsbelastung übertreten werden.
+Der Belastungsfaktor eines Betriebsmittels gibt an, inwieweit ein Betriebsmittel mit Nennscheinleistung belastet werden kann.
+Dabei spiegeln die Belastungsfaktoren wieder, dass für Verbraucher, welche im \gls{MS}-Netz angeschlossen sind, das (n-1)-Kriterium  gilt.
+Dies gilt in der Regel jedoch nicht für Verbraucher im \gls{NS}-Netz und Erzeugerkapazitäten, welche im \gls{MS}- oder \gls{NS}-Netz angeschlossen sind.
+Die Belastungsfaktoren der einzelnen Betriebsmittel sind in \autoref{tab:Belastungsfaktoren} zusammengefasst. \cite{Schachler} \cite{Rehtanz2017}
+
+
+\input{Ch02/tab/Ch02_tab_02_Belastungsfakoren}
+
+\subparagraph{Verletzungen des Spannungsbandes} treten bei einer starken Abweichung der Spannung am Betriebsmittel von der Nennspannung auf.
+Die zulässigen Spannungsabweichungen liegen für Endkunden in der \gls{NS} bei \SI{\pm 10}{\percent} und wird nach \autoref{tab:Spannungsband} auf die \gls{MS}, \gls{MS}-\gls{NS} und \gls{NS}-Ebene aufgeteilt.
+Dabei spiegelt das in der \gls{NS}-Ebene größere zulässige Spannungsband im Lastfall wieder, dass in dieser die Mehrheit der Verbraucher angeschlossen ist.
+Demgegenüber wird im Rückspeisefall ein größeres Spannungsband für die \gls{MS}-Ebene reserviert. \cite{Schachler} \cite{Rehtanz2017}
+
+\input{Ch02/tab/Ch02_tab_03_Spannungsband}
 
 
 \subsection{Elektromobilität}
+
+Innerhalb dieses Kapitels werden die für diese Masterarbeit wichtigsten Begriffe im Bezug auf die Elektromobilität erläutert und definiert.
+Innerhalb dieser Arbeit werden ausschließlich die Auswirkungen der Netzintegration von \gls{EPKW} untersucht.
+Der Einfluss der sonstigen Bereiche der Elektromobilität ist nicht Teil dieser Arbeit.
 
 
 \paragraph{Ladetechnik:}
@@ -83,7 +117,7 @@ Eine Übersicht der in dieser Arbeit verwendeten netz- und fahrzeugseitigen Wirk
 Weiterhin sind die in \autoref{tab:TechPowerCap} Limitierungen der \glspl{EV} zu berücksichtigen.
 Unabhängig von der Ladetechnik wird angenommen, dass am Netzverknüpfungspunkt immer einer symmetrische dreiphasige Last anliegt.
 
-\input{Ch02/tab/Ch02_tab_02_Ladeleistungen}
+\input{Ch02/tab/Ch02_tab_04_Ladeleistungen}
 
 
 \paragraph{Ladestrategien:}
@@ -101,13 +135,12 @@ Der Ladevorgang von \glspl{EV} kann durch unterschiedliche äußere Anreize gest
 
 Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \edisgodot, sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
 Aufgrund der mangelnden Datenlagen von reale Netztopologien werden, wird auf synthetisch erzeugte Netztopologien zurückgegriffen.
-die mit Hilfe des Software Tools \dingo erzeugt wurden.
+die mit Hilfe des Open Source Tools \dingo erzeugt wurden.
 Das Tool ist in der Lage ländliche und suburbane Netzstrukturen zu synthetisieren und kann auf GitHub \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
 Weiterhin findet sich auf Read the Docs \cite{dingo-docs2019} eine ausführliche Dokumentation.\medskip
 
 Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \openego Projektes. \cite{Mueller2019}
-Die Netztopologien werden auf der Datengrundlage des Jahres \num{2015} gebildet und werden anschließend mit dem aktuellen Stand der regenerativen Erzeugerkapazitäten ausgestattet.
-Im Falle von hierdurch entstehenden Netzproblemen, erfolgt ein Ausbau des entsprechenden Netzes, um diese zu beheben. {\color{red} TODO: gilt dies auch bei mir?}
+Die Netztopologien werden auf der Datengrundlage des Jahres \num{2015} gebildet und entsprechend ausgebaut.
 Urbane Netzgebiete können derzeit nicht durch \dingo abgebildet werden und werden deshalb innerhalb dieser Masterarbeit nicht betrachtet.
 
 
@@ -186,7 +219,7 @@ Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simb
 Weiterhin kann hierbei zwischen den in \autoref{tab:RegioStaR} aufgelisteten \Regiostar Raumtypen unterschieden werden, um das raumtypenspezifische Fahrverhalten abzubilden.
 Zum Zeitpunkt der Erstellung der Fahrtprofile war es noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
 
-\input{Ch02/tab/Ch02_tab_03_RegioStaR}
+\input{Ch02/tab/Ch02_tab_05_RegioStaR}
 
 Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \gls{MID} \cite{ISGH2017} erstellt.
 Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit für einen bestimmten Wegezweck eine Fahrt zu beginnen.
@@ -216,27 +249,86 @@ Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.
 
 \subsection{Räumliche Verteilung der Ladelast}
 
-{\color{red} TODO}
+{\color{red} TODO: Johannes Tool}
 
 
 \subsection{eDisGo}\label{chap:edisgo_theo}
 
-Das Software Tool \edisgo (\textbf{e}lectricity \textbf{Dis}tribution \textbf{G}rid \textbf{o}ptimization) stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzfehler zu untersuchen.
-Gleichzeitig können mit \edisgo Maßnahmen zur Behebung der Netzfehler bewertet werden.
-Dabei bilden synthetische Netztopologien, die mit Hilfe des Software Tools \dingo erzeugt wurden, die Grundlage für die Berechnungen mit \edisgodot.
+Das Open Source Tool \edisgo (\textbf{e}lectricity \textbf{Dis}tribution \textbf{G}rid \textbf{o}ptimization) stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
+Gleichzeitig können mit \edisgo Maßnahmen zur Behebung der Netzprobleme bewertet werden.
+Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \dingo erzeugt wurden, die Grundlage für die Berechnungen mit \edisgodot.
 \edisgo kann über GitHub \cite{edisgoGit2019} abgerufen werden und ist auf Read the Docs \cite{edisgoDocs2017} dokumentiert.
 Innerhalb dieses Kapitels werden die wichtigsten Funktionalitäten \texttt{eDisGo}~ für die Durchführung der Berechnungen innerhalb dieser Masterarbeit dargestellt und erläutert.
 
 
-\paragraph{Ermittlung von Netzüberlastungen:}
+\paragraph{Ermittlung von Netzproblemen:}\label{chap:grid_issues}
 
-% TODO: Methodik PyPSA
-% s. Verteilnetzstudie BW
-% Die festgestellten Grenzwertverletzungen werden wie folgt priorisiert:
-% 1. Verletzung der thermischen Transformatorbetriebsgrenzen
-% 2. Verletzungen des Spannungsbandes
-% 3. Verletzung der thermischen Leitungsbetriebsgrenzen
+Die Überprüfung der einzelnen Netze auf Netzprobleme erfolgt in zwei Schritten.
+Vorerst wird eine nichtlineare Lastflussberechnung durchgeführt, um anschließend die Einhaltung der Spannungsanforderungen und technischen Richtlinien bezüglich der Gerätebelastungen zu überprüfen.
+Die Durchführung der Lastflussberechnung erfolgt mit Hilfe des Open Source Tools \texttt{PyPSA} \cite{Brown2020}.
+In diesem Kapitel soll auf die theoretischen Grundlagen der Lastflussberechnung, den Umfang der Analyse und die Spannungsanforderungen und technischen Richtlinien bezüglich der Gerätebelastungen eingegangen werden.\medskip
+
+Das Ziel der Lastflussberechnung ist es, das für jeden Netzknoten $i$ und etwaige Querleitwerte $j$ die folgende Gleichung erfüllt wird:
+
+\begin{equation}
+	S_i = P_i + j Q_i = V_i I_i^* = V_i \left(\sum_j Y_{ij} V_j \right)^*
+	\label{eq:pf}
+\end{equation}
+
+\noindent Wobei:
+
+\addvbuffer[12pt 12pt]{
+	\begin{tabular}{>{$}r<{$}@{\ :\ }l}
+		S_i 		& Scheinleistung am Netzknoten $i$ \\
+		P_i	 		& Wirkleistung am Netzknoten $i$ \\
+		Q_i			& Blindleistung am Netzknoten $i$ \\
+		V_i			& Komplexe Spannung am Netzknoten, wobei $V_i = \left| V_i \right|e^{j \theta_i}$ \\
+		I_i			& Stromstärke am Netzknoten \\
+		Y_{ij}		& Admittanzmatrix am Netzknoten \\
+	\end{tabular}
+}
+
+Der Winkel der komplexen Spannung ist relativ zum Potentialknoten.
+Unter dem Potentialknoten wird ein Netzknoten verstanden, an welchem der Wirk- und Blindleistungsfluss frei eingestellt werden kann.
+Mit Hilfe des Potentialknotens kann über einen iterativen Prozess die Konvergenz nach \autoref{eq:pf} des Systems erreicht werden.
+Eine genau Beschreibung der Lastflussberechnung des Open Source Tools \texttt{PyPSA} kann auf Read the Docs \cite{Brown2020a} abgerufen werden.
+Innerhalb dieser Masterarbeit wird als Potentialknoten die Sekundärseite des \gls{HS}-\gls{MS}-Umspannwerkes eines \gls{MS}-Netzes verwendet.
+Alle weiteren Netzknoten werden mit gegebenen Wirk- und Blindleistungen modelliert. \cite{Schachler}\medskip
+
+Die Lastflussanalyse der Netze berücksichtigt sowohl \gls{MS}- und \gls{NS}-Leitungen als auch die \gls{MS}-\gls{NS}-Umspannebene.
+Gegenüber einer Aggregation der Erzeugung und des Bedarfs der einzelnen \gls{NS}-Netze an dem jeweiligen \gls{MS}-\gls{NS}-Umspannwerk bietet diese besonders tiefgehende Betrachtung die Möglichkeit, die Auswirkungen der teilweise hohen Ladeleistungen der Ladeinfrastruktur genauer zu betrachten und den Einfluss verschiedener Ladestrategien besser bestimmen zu können.
+Da die Sekundärseite des \gls{HS}-\gls{MS}-Umspannwerkes als Potentialknoten modelliert wird, können an dieser keine Spannungsprobleme auftreten.
+Jedoch entspricht die Scheinleistung des Potentialknotens der Leistung, die über das \gls{HS}-\gls{MS}-Umspannwerk geleitet wird.
+Anhand dieses Wertes können zusätzlich Aussagen über die Überlastung des \gls{HS}-\gls{MS}-Umspannwerks getroffen werden.
+Eine Übersicht über den Umfang der Lastflussanalyse findet sich in {\color{red} TODO}. \cite{Schachler}
+
+{\color{red} TODO}
+
+Mit Hilfe der durch die Lastflussanalyse ermittelten Belastungen und Spannungsabweichungen an den Betriebsmitteln, können Überlastungen und Spannungsprobleme festgestellt werden.
+
+
 
 \paragraph{Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen:}
 
-% TODO: Methodik
+Die Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen erfolgt in einem iterativen Prozess.
+Vorerst werden etwaige Netzprobleme und die entsprechenden Zeitschritten in denen die Netzprobleme auftreten mit Hilfe der zuvor beschriebenen Lastflussanalyse ermittelt.
+Anschließend wird die Last bzw. die Einspeisung in Schritten von \SI{10}{\percent} innerhalb der ermittelten Zeitschritte gekürzt.
+Die beiden Schritte werden so lange wiederholt, bis keine Netzprobleme mehr auftreten.\medskip
+
+Bei der Lösung der Netzprobleme werden vorerst Überlastungen gelöst und erst anschließend Spannungsprobleme.
+Weiterhin werden Probleme in der \gls{NS}-Ebene gelöst, bevor Probleme in der \gls{MS}-\gls{NS}-Umspannebene und abschließend in der \gls{MS}-Ebene gelöst werden.
+Durch die Lösung von Netzproblemen auf tieferen Spannungsebenen können unter Umständen bereits Netzprobleme in darüber liegenden Spannungsebenen gelöst oder entspannst werden.
+Weiterhin werden Netzprobleme innerhalb der \gls{NS}- bzw. \gls{MS}-Ebene anhand ihrer Entfernung zur übergeordneten Umspannebene priorisiert.
+So kann auch hier die Lösung von weiter entfernten Netzproblemen bereits vorgeschaltete Netzprobleme auflösen oder entspannen.
+Für jeden Zeitschritt, in dem Überlastungs- oder Spannungsprobleme an einem Netzknoten auftreten, wird geprüft, ob die Netzprobleme durch hohe Nachfrage oder hohe Einspeisung entstehen.
+Anhand dieser Information wird entscheiden, ob Last oder Einspeisung abgeregelt werden soll.
+Die gesamte notwendige Abregelung für das \gls{MS}-Netz erfolgt abschließend über die Summierung aller nötigen Abregelungen von Last und Erzeugung am \gls{MS}-Netzanschlusspunkt.
+In {\color{red} TODO} findet sich eine Darstellung des Vorgehens.
+
+{\color{red} TODO}
+
+
+\subsection{Untersuchte Ladestrategien}
+
+{\color{red} TODO: untersuchte Ladestrategien}
+
