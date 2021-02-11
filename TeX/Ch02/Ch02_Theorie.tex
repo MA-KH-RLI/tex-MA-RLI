@@ -62,6 +62,19 @@ Unter der geografischen Dimension wird die gemeinsame Nutzung von räumlich vert
 Dabei reicht die räumliche Skala von lokalen Quartierslösungen hin zu internationalen Verbundnetzen. \cite{BNetzA2017} \cite{IEA2014}
 
 
+\paragraph{Residuallast:}
+
+Die Residuallast beschreibt beschreibt die Differenz zwischen der benötigten Leistung innerhalb eines Betrachtungsgebietes und der erbrachten Leistung von nicht steuerbaren Kraftwerken.
+Aufgrund des zunehmenden Anteils von nicht steuerbaren regenerativen Kraftwerken im Stromnetz und der fortschreitenden Sektorkopplung steigt zunehmend die Spreizung zwischen dem maximalen Wert und dem minimalen Wert der Residuallast.
+Diese Entwicklung ist in {\color{red} TODO} dargestellt.
+
+{\color{red} TODO: Darstellung}
+
+Positive Residuallast wird derzeit zu großen Teilen durch regelbare Kraftwerke gedeckt, während negative Residuallast durch die Abregelung von nicht steuerbaren Kraftwerken ausgeglichen wird.
+Alternativ kann eine Glättung der Residuallast auch durch die Steuerung des Verbrauches erreicht werden und vor allem negative Residuallast verhindert werden.
+Hierfür bieten Elektrofahrzeuge aufgrund der hohen Ladeleistungen ein großes Potential. \cite{Paschotta2020a}
+
+
 \paragraph{Netzprobleme:}
 
 Bei der Ermittlung von Netzproblemen müssen grundlegend zwei Fälle unterschieden werden.
@@ -69,6 +82,7 @@ Im Lastfall überwiegt der Energiebedarf der Verbraucher gegenüber der Energieb
 Das Netz muss in diesem Fall in der Lage sein, bereitgestellte Energie aus den überlagerten Netzebenen an die Verbraucher weiterzuleiten.
 Im Rückspeisefall überwiegt hingegen die Energiebereitstellung der Erzeugerkapazitäten gegenüber dem Energiebedarf der Verbraucher und der erzeugte Strom muss an die überlagerten Netzebenen weitergeleitet werden können. \cite{Agora2019}
 Für die Betriebsmittel gelten die in \autoref{tab:Belastungsfaktoren} und \autoref{tab:Spannungsband} zulässigen Belastungsfaktoren und Spannungsabweichungen, welche aus \cite{Mueller2019a} entnommen wurden und auf der Verteilnetzstudie für das Land Baden-Württemberg \cite{Rehtanz2017} basieren.
+
 
 \subparagraph{Verletzungen der thermische Betriebsmittelbelastungen} treten auf, wenn die physikalischen Grenzen von Betriebsmitteln bezüglich ihrer Scheinleistungsbelastung übertreten werden.
 Der Belastungsfaktor eines Betriebsmittels gibt an, inwieweit ein Betriebsmittel mit Nennscheinleistung belastet werden kann.
@@ -79,8 +93,9 @@ Die Belastungsfaktoren der einzelnen Betriebsmittel sind in \autoref{tab:Belastu
 
 \input{Ch02/tab/Ch02_tab_02_Belastungsfakoren}
 
+
 \subparagraph{Verletzungen des Spannungsbandes} treten bei einer starken Abweichung der Spannung am Betriebsmittel von der Nennspannung auf.
-Die zulässigen Spannungsabweichungen liegen für Endkunden in der \gls{NS} bei \SI{\pm 10}{\percent} und wird nach \autoref{tab:Spannungsband} auf die \gls{MS}, \gls{MS}-\gls{NS} und \gls{NS}-Ebene aufgeteilt.
+Die zulässigen Spannungsabweichungen liegen für Endkunden in der \gls{NS} bei \SI{\pm 10}{\percent} und wird nach \autoref{tab:Spannungsband} auf die \gls{MS}, \gls{MS}-\gls{NS}- und \gls{NS}-Ebene aufgeteilt.
 Dabei spiegelt das in der \gls{NS}-Ebene größere zulässige Spannungsband im Lastfall wieder, dass in dieser die Mehrheit der Verbraucher angeschlossen ist.
 Demgegenüber wird im Rückspeisefall ein größeres Spannungsband für die \gls{MS}-Ebene reserviert. \cite{Schachler} \cite{Rehtanz2017}
 
@@ -227,7 +242,7 @@ Löst ein Fahrzeug eine Fahrt aus, wird abhängig vom Wegezweck und Regionstyp d
 Der hierbei entstehende Verbrauch des Fahrzeuges muss anschließend gedeckt werden.
 Ob am Zielort ein Ladevorgang stattfindet, hängt vom \gls{SOC} des Fahrzeuges und dem Vorhandensein eines Ladepunktes ab.
 Ob ein Ladepunkt am Zielort zur Verfügung steht und welche Ladeleistung dieser aufweist, wird mit Hilfe der Wahrscheinlichkeiten aus \autoref{tab:WegezweckProbability2050} ermittelt.
-Ladepunkte besitzen pauschal einen Wirkungsgrad von \SI{90}{\percent}. % TODO: Quelle
+Ladepunkte besitzen pauschal einen Wirkungsgrad von \SI{90}{\percent}. \cite{EliaGroup2020}
 Die Bestimmung des Vorhandenseins eines Ladepunktes zu Hause und am Arbeitsplatz erfolgt je \gls{EPKW} einmalig und wird anschließend konstant gehalten.
 Für alle anderen Wegezwecke, erfolgt die Bestimmung kontinuierlich.
 Wurde dem Zielort ein Ladepunkt zugeordnet wird davon ausgegangen, dass der Fahrzeugnutzer einen Ladevorgang erst ab einem bestimmten \gls{SOC} einleitet, da dies einen zusätzlichen Aufwand für den Nutzer bedeutet.
@@ -249,7 +264,51 @@ Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.
 
 \subsection{Räumliche Verteilung der Ladelast}
 
-{\color{red} TODO: Johannes Tool}
+Die räumliche Verteilung der Ladelast innerhalb eines geographischen Gebietes kann starken Einfluss auf die Auswirkungen der Netzintegration von Elektrofahrzeugen haben.
+So können beispielsweise regionale Konzentration von Ladepunkten einzelne Leitungen stark beanspruchen und den Netzausbaubedarf erhöhen.\medskip
+
+Innerhalb dieser Arbeit erfolgt die Verteilung der Ladelast immer innerhalb des untersuchten Gebietes.
+Ein Laden in anderen geographischen Gebieten, oder das Laden von \glqq Fremdfahrzeugen\grqq{} im untersuchten Gebiet kann nicht abgebildet werden.
+Grundlage für die Ermittlung von möglichen Standorten bietet eine geoinformatische Auswertung der untersuchten geographischen Gebiete.
+Das hierfür verwendete Software Tool, wurde unabhängig von dieser Arbeit am Reiner Lemoine Institut entwickelt und wurde noch nicht veröffentlicht.
+An dieser Stelle soll die grundlegende Methodik für die Ermittlung von möglichen Standorten und deren Gewichtung für private und öffentliche Ladeinfrastruktur erläutert werden.
+Eine genauere Beschreibung der Unterteilung in private und öffentliche Ladeinfrastruktur erfolgt in \autoref{chap:EMob_Szenarien} und die Ergebnisse der Verteilung werden in \autoref{chap:distribute_demand_ev} betrachtet.
+
+
+\paragraph{Private Ladeinfrastruktur:}
+
+Die private Ladeinfrastruktur beinhaltet alle Ladevorgänge, die an privater Ladeinfrastruktur am Eigenheim, in Wohnanlagen oder am Arbeitsplatz stattfinden.
+Um mögliche Standorte für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen identifizieren zu können, werden die Anzahl an Wohneinheiten auf einem \SI{100 x 100}{\m} Raster aus dem Zensus 2011 \cite{StatistischesBundesamt2011} verwendet.
+So wird jedem Raster mit mehr als einer Wohneinheit ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet und anhand der Gesamtanzahl von Wohneinheiten im Raster gewichtet.\medskip
+
+Für private Ladeinfrastruktur am Arbeitsplatz werden die Klassifizierungen der Landflächen nach Nutzungsart nach der \gls{OSM} \cite{OpenStreetMapFoundation} verwendet.
+Hierbei wird jeder Landfläche mit der Nutzungsart \glqq commercial\grqq , \glqq retail\grqq{} und \glqq industrial\grqq{} ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
+Die Gewichtung erfolgt anhand der Fläche des Gebietes multipliziert mit einem Flächnutzungsfaktor.
+Der Flächennutzungsfaktor liegt für \glqq commercial\grqq{} bei \num{3}, für \glqq retail\grqq{} bei \num{2} und für \glqq industrial\grqq{} bei \num{1}.
+
+
+\paragraph{Öffentliche Ladeinfrastruktur:}
+
+Die öffentliche Ladeinfrastruktur beinhaltet Ladeinfrastruktur, die nicht der privaten Ladeinfrastruktur zugeordnet werden kann.
+Grundsätzlich lässt sich hierbei zwischen Normal- und Schnellladeinfrastruktur unterscheiden.
+Für die Normalladeinfrastruktur werden allen \glspl{POI} aus der \gls{OSM} \cite{OpenStreetMapFoundation} in dem untersuchten Gebiet jeweils ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
+Die Gewichtung der Anschlusspunkt erfolgt hierbei anhand der Gesamtanzahl an \glspl{POI} in der Nähe des Anschlusspunktes.\medskip
+
+Für Schnellladeinfrastruktur werden jeder Tankstelle aus der \gls{OSM} \cite{OpenStreetMapFoundation} im untersuchten Gebiet jeweils ein Anschlusspunkt zugeordnet.
+Eine Gewichtung findet in diesem Fall nicht statt.
+
+
+\paragraph{Zuteilung der Ladevorgänge auf die Ladeinfrastruktur:}
+
+Die Zuteilung der Ladevorgänge auf die Ladeinfrastruktur erfolgt mit Hilfe des Gewichtungsfaktors der verschiedenen Ladeinfrastrukturen.
+Mit Hilfe des Zufallsmoduls des Open Source Tools \texttt{NumPy}, erfolgt eine zufällige und gewichtete Auswahl eines Anschlusspunktes je Ladevorgang.
+Im Falle der privaten Ladeinfrastruktur wird für jedes Fahrzeug ein eigener Ladepunkt eingerichtet, wenn diese Ladevorgänge am Eigenheim, in Wohnanlagen oder am Arbeitsplatz aufweisen.
+Diesem Ladepunkt werden alle Ladevorgänge des jeweiligen Fahrzeuges und \UCs zugeordnet.
+Nachdem einem Anschlusspunkt ein Ladepunkt zugeordnet wurde, wird die Gewichtung des Anschlusspunktes leicht abgesenkt.
+Für die öffentliche Ladeinfrastruktur erfolgt die Zuweisung dezidiert je Ladevorgang.
+Je Ladevorgang wird untersucht, ob bereits ein passender Ladepunkt zur Verfügung steht.
+Hierbei wird beachtet, ob in diesem Zeitraum der Ladepunkt durch ein anderes Fahrzeug besetzt ist und ob der Ladepunkt die entsprechende Ladeleistung zur Verfügung stellen kann.
+Sollte kein passender Ladepunkt zur Verfügung stehen, wird analog zum Vorgehen bei der privaten Ladeinfrastruktur ein Ladepunkt zufällig und gewichtet ausgewählt und eingerichtet.
 
 
 \subsection{eDisGo}\label{chap:edisgo_theo}
@@ -300,12 +359,10 @@ Gegenüber einer Aggregation der Erzeugung und des Bedarfs der einzelnen \gls{NS
 Da die Sekundärseite des \gls{HS}-\gls{MS}-Umspannwerkes als Potentialknoten modelliert wird, können an dieser keine Spannungsprobleme auftreten.
 Jedoch entspricht die Scheinleistung des Potentialknotens der Leistung, die über das \gls{HS}-\gls{MS}-Umspannwerk geleitet wird.
 Anhand dieses Wertes können zusätzlich Aussagen über die Überlastung des \gls{HS}-\gls{MS}-Umspannwerks getroffen werden.
+Mit Hilfe der durch die Lastflussanalyse ermittelten Belastungen und Spannungsabweichungen an den Betriebsmitteln, können abschließend Überlastungen und Spannungsprobleme festgestellt werden.
 Eine Übersicht über den Umfang der Lastflussanalyse findet sich in {\color{red} TODO}. \cite{Schachler}
 
 {\color{red} TODO}
-
-Mit Hilfe der durch die Lastflussanalyse ermittelten Belastungen und Spannungsabweichungen an den Betriebsmitteln, können Überlastungen und Spannungsprobleme festgestellt werden.
-
 
 
 \paragraph{Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen:}
@@ -330,5 +387,67 @@ In {\color{red} TODO} findet sich eine Darstellung des Vorgehens.
 
 \subsection{Untersuchte Ladestrategien}
 
-{\color{red} TODO: untersuchte Ladestrategien}
+Innerhalb dieser Arbeit werden zwei präventive Ladestrategien und eine kurative Ladestrategie untersucht.
+Das Ziel der Ladestrategien ist es, ein möglichst netzfreundliches Verhalten aufzuweisen, ohne den Nutzen des Fahrzeuges einzuschränken.
+Deshalb gilt als Randbedingung aller Ladestrategien, dass der Ladebedarf jedes Ladevorgangs zu \SI{100}{\percent} gedeckt werden muss.
+Dies bedeutet, dass Ladevorgänge nur dann flexibilisiert werden können, wenn innerhalb der Standzeit eine Vollladung möglich ist.
+Weiterhin können nur private Ladevorgänge flexibilisiert werden, da bei öffentlichen Ladevorgängen die Erfüllung der Dienstleistung im Vordergrund steht.\medskip
 
+Um die drei Ladestrategien miteinander vergleichen zu können, wird zusätzlich ein vollkommen ungesteuertes Laden der Fahrzeuge untersucht, welches als Vergleichspunkt verwendet wird.
+Auf diese Weise soll untersucht werden, inwieweit eine kurative Ladestrategie gegenüber präventiven Ladestrategien Vorteile aufweist.
+Dies ist deshalb von Bedeutung, da für kurative Eingriffe zusätzliche Technik eingesetzt und die  Betriebsführung dieser abgebildet werden muss, wodurch die Kosten einer kurative Ladestrategie deutlich über den Kosten einer präventiven Ladestrategie liegen.
+
+
+\paragraph{Gruppiertes Laden:}
+
+Das Ziel des gruppierten Ladens ist es, die Netzbelastung durch die Senkung der Gleichzeitigkeit der Ladevorgänge zu reduzieren.
+Hierfür werden die einzelnen Ladepunkte in zwei Gruppen eingeteilt.
+Beiden Gruppen werden alternierend 15-minütige Ladezeitfenster zugewiesen, in denen bei voller Ladeleistung der Ladebedarf gedeckt wird.
+Es wird darauf geachtet, dass die Zuweisung der Gruppen nicht nur innerhalb eines Netzgebietes ausgeglichen erfolgt, sondern detailliert bis in die einzelnen Stränge der \gls{NS}-Ebene.
+Innerhalb eines \gls{NS}-Stranges wird weiterhin darauf geachtet, dass auch die einzelnen Leistungsklassen der Ladeinfrastruktur gleichmäßig auf die Gruppen verteilt werden.
+In {\color{red} TODO} findet sich eine beispielhafte Einteilung von Ladepunkten auf die zwei Gruppen innerhalb eines \gls{NS}-Stranges.
+
+
+{\color{red} TODO: Veranschaulichung}
+
+
+\paragraph{Reduziertes Laden:}
+
+Im Gegensatz zum gruppierten Laden soll beim reduzierten Laden die Senkung der Netzbelastung durch die Reduzierung der Ladeleistung der einzelnen Ladevorgänge erreicht werden.
+Hierbei wird durch eine Absenkung der Ladeleistung möglichst die gesamte Standzeit des Fahrzeuges für den Ladevorgang ausgenutzt.
+Die Flexibilität dieser Ladestrategie wird durch eine Mindestladeleistung von \SI{10}{\percent} der Nennleistung des angefahrenen Ladepunktes technisch begrenzt.
+
+% TODO: Quelle Konferenzpaper Birgit?
+
+
+\paragraph{Residuallast-Laden:}
+
+Bei dem Residuallast-Laden handelt es sich um eine kurative Ladestrategie.
+Der Ladevorgang eines Fahrzeuges findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
+Die Zuweisung findet auf Viertelstundenbasis statt und die Ladevorgänge finden immer bei voller Ladeleistung statt.
+Das Ziel der Optimierung kann nach \autoref{eq:residual} so formuliert werden, dass eine Minimierung der \gls{MQA} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
+
+\begin{equation}
+	\text{MQA} = \frac{1}{n} \sum_i^n \left( P_{\text{R}_i} - \overline{P}_{\text{R}} \right)^2 \stackrel{!}{=} \text{min}
+	\label{eq:residual}
+\end{equation}
+
+\noindent Wobei:
+
+\addvbuffer[12pt 12pt]{
+	\begin{tabular}{>{$}r<{$}@{\ :\ }l}
+		P_{\text{R}_i}				& Residuallast zum Zeitschritt $i$  \\
+		\overline{P}_{\text{R}}		& Mittelwert der Residuallast 		\\
+		n							& Anzahl an Zeitschritten			\\
+		i							& Index des Zeitschrittes 			\\
+	\end{tabular}
+}
+
+Durch die Abhängigkeit der Residuallast von den einzelnen Ladevorgängen sind auch die Ergebnisse der Optimierung der einzelnen Ladevorgänge voneinander Abhängig.
+Hierdurch entsteht ein komplexes Optimierungsproblem.
+Um die Rechenzeit in einem akzeptablen Maß zu halten, wird eine Näherung an eine optimale Lösung angestrebt.
+So wird für jeden Ladevorgang ermittelt, wie viel überschüssige Standzeit zur Flexibilisierung der Ladevorgänge zur Verfügung steht.
+Die Ladevorgänge werden anschließend in Abhängigkeit dieses Kriteriums in aufsteigender Reihenfolge sortiert und einzeln optimiert.
+Auf diese Weise werden Ladevorgänge mit einem geringen Flexibilitätsband vorrangig behandelt und eine möglichst optimale Lösung bei einem geringen Rechenaufwand erreicht.
+
+% TODO: kurativ vs aktiv. Was ist das bessere Wort?
