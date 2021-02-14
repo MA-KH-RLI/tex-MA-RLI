@@ -275,3 +275,7 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# Sonstiges
+TeX/Bilder/grid_issues_scope.pdf
+TeX/Bilder/grouped_charging_vis.pdf
