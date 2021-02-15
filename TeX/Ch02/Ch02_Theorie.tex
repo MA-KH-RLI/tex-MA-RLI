@@ -8,7 +8,7 @@ Hierzu zählen die Definition von grundlegenden Begriffen im Bezug auf Stromnetz
 
 Das Stromnetz dient der Übertragung und Verteilung von elektrischer Energie. \cite{Paschotta2020}
 Dabei lässt sich das Stromnetz in verschiedene Netzebenen aufteilen, welche jeweils typische Charakteristika aufweisen.
-Innerhalb dieses Kapitels sollen diese kurz beschrieben werden und weitere wichtige Begriffe im Zusammenhang mit Stromnetzen erläutert werden.
+Innerhalb dieses Kapitels sollen diese kurz beschrieben und weitere wichtige Begriffe im Zusammenhang mit Stromnetzen erläutert werden.
 
 
 \paragraph{Netzebenen:}
@@ -27,25 +27,25 @@ Zusätzlich erfolgt eine Betrachtung der Effekte auf die Umspannebene der \gls{M
 
 \paragraph{Netztopologie:}
 
-\gls{NS}-Netze werden in dieser Arbeit ausschließlich als Strahlennetze ausgelegt.
+\gls{NS}-Netze werden in dieser Arbeit als Strahlennetze ausgelegt.
 Strahlennetze werden so genannt, weil die einzelnen Stränge der Netze strahlenförmig vom Ortsnetztransformator zu den Endverbrauchern verlaufen. \cite{Agora2019}
 Vorteil dieser Form von Netzen ist die leichte Berechenbarkeit und die einfache Überwachung des Netzzustandes.
-Jedoch führt bereits ein einziger Fehlerfall an einer Einspeisestelle eines Verbrauchers dazu, dass das auch alle nachfolgenden Verbraucher vom Netz getrennt sind.
+Jedoch führt bereits ein einziger Fehlerfall an einer Einspeisestelle eines Verbrauchers dazu, dass auch alle nachfolgenden Verbraucher vom Netz getrennt werden.
 Auch nimmt der Spannungsabfall über die Länge der Leitung immer weiter zu, was zu einer geringeren Belastbarkeit am Ende der Leitung führt. \cite{WNG2020}\medskip
 
-Im Gegensatz dazu werden \gls{MS}-Netze als Ringnetze betrieben.
+Im Gegensatz zu \gls{NS}-Netzen werden \gls{MS}-Netze als Ringnetze ausgelegt.
 Ringnetze bieten den Vorteil, dass diese von zwei Seiten gespeist werden, wodurch ein Ringform entsteht.
 Hierdurch können im Falle einer Störung weiterhin alle anderen Verbraucher versorgt werden.
-Jedoch werden diese Ringnetze in der Regel offen betrieben.
+Jedoch werden Ringnetze in der Praxis meist offen betrieben.
 Dies bedeutet, dass sich etwa in der Mitte des Rings eine offene Trennstelle befindet.
 Auf diese Weise können Ringnetze ebenso einfach überwacht werden wie Strahlennetze.
-Im Fehlerfall wird bei dieser Baumform maximal ungefähr die Hälfte der Verbraucher vom Netz getrennt.
+Im Fehlerfall wird so maximal ungefähr die Hälfte der Verbraucher vom Netz getrennt.
 Durch das Schließen der Trennstelle können dann wieder alle Verbraucher, mit Ausnahme des Fehlerfalls, versorgt werden. \cite{WNG2020} \cite{Westermann2019}
 
 
 \paragraph{Gleichzeitigkeit:}
 
-Die Gleichzeitigkeit beschreibt den Anteil der momentan anfallenden elektrischen Leistung im Bezugsgebiet von der maximalen elektrischen Leistung im Netzgebiet. \cite{Agora2019} 
+Die Gleichzeitigkeit beschreibt den Anteil der momentan anfallenden elektrischen Leistung von der maximalen elektrischen Leistung im Netzgebiet. \cite{Agora2019} 
 Im Rahmen dieser Masterarbeit beschreibt die Gleichzeitigeit in der Regel den Anteil der momentanen elektrischen Last von \glspl{EV} im Bezug auf die installierte Leistung von Ladepunkten in einem Netzgebiet.
 Ausnahmen sind entsprechend gekennzeichnet.
 
@@ -64,11 +64,10 @@ Dabei reicht die räumliche Skala von lokalen Quartierslösungen hin zu internat
 
 \paragraph{Residuallast:}
 
-Die Residuallast beschreibt beschreibt die Differenz zwischen der benötigten Leistung innerhalb eines Betrachtungsgebietes und der erbrachten Leistung von nicht steuerbaren Kraftwerken.
-Aufgrund des zunehmenden Anteils von nicht steuerbaren regenerativen Kraftwerken im Stromnetz und der fortschreitenden Sektorkopplung steigt zunehmend die Spreizung zwischen dem maximalen Wert und dem minimalen Wert der Residuallast.
-Diese Entwicklung ist in {\color{red} TODO} dargestellt.
+Die Residuallast beschreibt die Differenz zwischen der benötigten Leistung innerhalb eines Betrachtungsgebietes und der erbrachten Leistung von nicht steuerbaren Kraftwerken.
+Aufgrund des zunehmenden Anteils von nicht steuerbaren regenerativen Kraftwerken im Stromnetz und der fortschreitenden Sektorkopplung steigt zunehmend die Spreizung zwischen dem maximalen Wert und dem minimalen Wert der Residuallast.\medskip
 
-{\color{red} TODO: Darstellung}
+% TODO: Eventuell Entwicklung drastellen
 
 Positive Residuallast wird derzeit zu großen Teilen durch regelbare Kraftwerke gedeckt, während negative Residuallast durch die Abregelung von nicht steuerbaren Kraftwerken ausgeglichen wird.
 Alternativ kann eine Glättung der Residuallast auch durch die Steuerung des Verbrauches erreicht werden und vor allem negative Residuallast verhindert werden.
