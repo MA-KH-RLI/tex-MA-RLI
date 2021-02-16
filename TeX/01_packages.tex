@@ -23,6 +23,7 @@
 	maxalphanames=3,% Kurzform besteht aus maximal den ersten Buchstaben der Nachnamen der ersten drei Autoren (wenn min. 3 gegeben)
 	minalphanames=3,% Kurzform besteht aus minimal drei Buchstaben der Nachnamen der Autoren
 	]{biblatex}% Nützliche Anleitung: http://www.nagel-net.de/Latex/DOKU/DTK-2_2008-biblatex-Teil1.pdf
+\usepackage{notoccite}% don't show cites in toc, list of figures, etc.
 
 %%%%%%%%% Code
 \usepackage[
@@ -120,6 +121,7 @@
 \usepackage{abstract}% Abstract-Umgebung
 \usepackage{setspace}% Spacing-Umgebung
 \usepackage{verbatimbox}
+\usepackage[htt]{hyphenat}% better linebreaks in long \texttt{•} etc.
 
 %%%%%%%%% Tabellenumgebung
 \usepackage{booktabs}% enhances the quality of tables
@@ -187,6 +189,7 @@
 \def\Gewerbeparkplatzdot{\glqq Gewerbeparkplatz\grqq}
 \def\Kleinwagen{Szenarette \glqq Kleinwagen\grqq{}~}
 \def\Kleinwagendot{Szenarette \glqq Kleinwagen\grqq}
+\def\kmean{\texttt{k-means-Clustering}~}
 \def\kmeans{\texttt{k-means-Clusterings}~}
 \def\kmeansdot{\texttt{k-means-Clusterings}}
 \def\Lastgebiet{\glqq Lastgebiet\grqq{}~}
