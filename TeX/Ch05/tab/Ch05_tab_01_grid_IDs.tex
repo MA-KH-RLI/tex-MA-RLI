@@ -1,0 +1,21 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Anzahl der repräsentierten Netzgebiete und Kategorie der untersuchte Mittelspannungsnetze}
+		\begin{tabu} to \textwidth {X[1] X[1] X[1, r] }
+			\hline
+			Netz ID    & Kategorie      & Anzahl repräsentierter Netze \\ \hline
+			\num{176}  & PV-dominiert   & \num{413}                    \\
+			\num{177}  & Last-dominiert & \num{666}                    \\
+			\num{1056} & PV-dominiert   & \num{197}                    \\
+			\num{1690} & Wind-dominiert & \num{141}                    \\
+			\num{1811} & Wind-dominiert & \num{78}                     \\
+			\num{2534} & Last-dominiert & \num{347}                    \\ \hline
+		\end{tabu}
+		\label{tab:grid_IDs}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
