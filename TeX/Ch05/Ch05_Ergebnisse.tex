@@ -1,3 +1,4 @@
+
 \section{Ergebnisse}
 
 In diesem Kapitel werden die Ergebnisse der einzelnen Zwischenschritte der Methodik nach \autoref{chap:Methodik} dargestellt und kritisch betrachtet.
@@ -9,18 +10,24 @@ Abschließend erfolgt eine detaillierte Betrachtung der Ergebnisse der Ermittlun
 
 % TODO: Auswertungen von Birgit übernehmen. Balkendiagramm
 
-Die Untersuchung der mit Hilfe des Software Tools \dingo synthetisierten \gls{MS}-Netzgebiete, führt aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten.
+Die vollständige Untersuchung der mit Hilfe des Software Tools \dingo synthetisierten \gls{MS}-Netzgebiete, würde aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten führen.
 Im Rahmen dieser Masterarbeit wurden sechs Referenznetzgebiete ausgewählt, welche \num{1842} der \num{3591} {\color{red} TODO 3354?} \gls{MS}-Netze repräsentieren.
-Das Clustering erfolgte innerhalb \cite{Schachler} durch den während des \openego Projektes entwickelten k-means-Clusteralgorithmus nach \autoref{chap:dingo_theo}. \medskip
+Das Clustering erfolgte innerhalb \cite{Schachler} durch den während des \openego Projektes entwickelten k-means-Clusteralgorithmus nach \autoref{chap:dingo_theo}.\medskip
 
 Um mit dieser Arbeit eine Ergänzung zu \cite{Schachler} zu liefern, wurde das Clustering übernommen.
-Damit die Rechenzeiten in einem akzeptablen Rahmen gehalten werden konnte, wurde eine Teilmenge der \num{15} identifizierten repräsentativen Netzgebiete ausgewählt.
-Bei der Auswahl wurden jeweils zwei Netzgebiete der Kategorien Wind-, \gls{PV}- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren, damit die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze gezeigt werden kann.
-Somit wurden insgesamt \num{6} Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
-In \autoref{tab:grid_IDs} finden sich die untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
-Weiterhin findet sich in \autoref{fig:map_representatives} eine Karte der repräsentierten Netzgebiete eingeteilt in die Kategorien Wind-, \gls{PV}- und Last-dominiert.
+Von den \num{15} identifizierten repräsentativen Netzgebieten wurde eine Teilmenge für die Untersuchung ausgewählt.
+So wurden jeweils zwei Netzgebiete der Kategorien Wind-, \gls{PV}- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren, damit die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze gezeigt werden kann.
+Insgesamt wurden somit \num{6} Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
+In \autoref{tab:grid_IDs} finden sich die \glspl{ID} der untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
 
 \input{Ch05/tab/Ch05_tab_01_grid_IDs}
+
+
+In {\color{red} TODO} findet sich eine Darstellung der wichtigsten Charakteristika der untersuchten Netzgebiete.
+Hierzu zählen die installierten \gls{PV}- und Wind-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} und \glspl{WP}.
+Weiterhin findet sich in \autoref{fig:map_representatives} eine Karte der repräsentierten Netzgebiete eingeteilt in die Kategorien Wind-, \gls{PV}- und Last-dominiert.
+
+{\color{red} TODO: BAR Plot grids}
 
 \input{Ch05/fig/Ch05_fig_01_map_representatives}
 
