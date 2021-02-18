@@ -1,34 +1,29 @@
 \section{Methodik}\label{chap:Methodik}
 
-Für die Untersuchung der Auswirkungen der Netzintegration von \glspl{EPKW} auf die Verteilnetze, wird vorerst die Schaffung entsprechende Netztopologien und deren Clusterung beschrieben.
-Anschließend erfolgt eine Beschreibung der Erstellung der Fahrtprofile von \glspl{EPKW} und der untersuchten Ladestrategien.
-Daraufhin erfolgt eine räumliche Verteilung des entstehenden Ladebedarfes auf eine entsprechende Ladeinfrastruktur, damit dieser in das Netzmodell integriert werden kann.
-Abschließend erfolgt eine Beschreibung der Methodik zur Bestimmung von Netzproblemen und der Ermittlung des Abregelungsbedarfs im Netzgebiet.
+Für die Untersuchung der Auswirkungen der Netzintegration von \glspl{EPKW} auf die Verteilnetze, wird vorerst die Schaffung entsprechende Netztopologien mit Hilfe des Open Source Tools \gls{DINGO} und deren Clusterung beschrieben.
+Anschließend werden mit Hilfe des Software Tools \gls{SIMBEV} Fahrtprofile von \glspl{EPKW} erstellt und die untersuchten Ladestrategien beschrieben.
+Damit der Ladebedarf in die Netzmodelle integriert werden kann, muss dieser anschließend räumlich auf eine entsprechende georeferenzierte Ladeinfrastruktur verteilt werden.
+Abschließend erfolgt eine Beschreibung der Methodik zur Bestimmung von Netzproblemen und der Ermittlung des Abregelungsbedarfs im Netzgebiet mit Hilfe des Open Source Tools \gls{EDISGO}.
 
 
 \subsection{Erstellung der Verteilnetztopologien}\label{chap:dingo_theo}
 
-Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \edisgodot, sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
-Aufgrund der mangelnden Datenlagen von reale Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die mit Hilfe des Open Source Tools \dingo erzeugt werden.
+Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glspl{EDISGO}, sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
+Aufgrund der mangelnden Datenlagen von reale Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt werden.
 Das Tool ist in der Lage ländliche und suburbane Netzstrukturen zu synthetisieren und kann auf GitHub \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
 Weiterhin findet sich auf Read the Docs \cite{dingo-docs2019} eine ausführliche Dokumentation.\medskip
 
 Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \openego Projektes. \cite{Mueller2019}
 Die Netztopologien werden auf der Datengrundlage des Jahres \num{2015} gebildet und entsprechend ausgebaut.
-Urbane Netzgebiete können derzeit nicht durch \dingo abgebildet werden und werden deshalb innerhalb dieser Masterarbeit nicht betrachtet.
+Urbane Netzgebiete können derzeit nicht durch \gls{DINGO} abgebildet werden und werden deshalb innerhalb dieser Masterarbeit nicht betrachtet.
 
 
 \paragraph{Mittelspannung:}
 
-Auf der \gls{MS}-Ebene gibt es \num{3591} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
 Die einzelnen \gls{MS}-Netze werden alle als offene Ringnetze betrieben.
 Im städtischen Bereich werden hauptsächlich Erdkabel mit einer Nennspannung von \SI{10}{\kv} eingesetzt, während im ländlichen Raum größtenteils Freileitungen mit einer Nennspannung von \SI{20}{\kv} eingesetzt werden. \cite{Mueller2019}\medskip
 
-\input{Ch04/fig/Ch04_fig_01_grid_176_map}
-
-\autoref{fig:grid_176_map} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \dingo erzeugt wurde und innerhalb dieser Arbeit untersucht wurde.
-Die Modellierung der Mittelspannungstopologie erfolgt als Tourenplanungsproblem (Capacitated Vehicle Routing
-Problem (CVRP)) in Kombination mit der Beachtung der historischen lastorientierten Entwicklung und den Planungsprinzipien von Verteilnetzen.
+Die Modellierung der Mittelspannungstopologie erfolgt als Tourenplanungsproblem (\gls{CVRP}) in Kombination mit der Beachtung der historischen lastorientierten Entwicklung und den Planungsprinzipien von Verteilnetzen.
 Ein besondere Fokus liegt dabei auf der Beachtung von Leitungsüberlastungen und Verletzungen des Spannungsbandes.
 Eine genau Beschreibung der Methodik findet sich in \cite{Amme2018}.
 
@@ -50,9 +45,9 @@ Das \kmean wurde im Rahmen des \openego Projektes \cite{Mueller2019} entwickelt 
 Innerhalb dieser Arbeit soll eine Teilmenge dieser \num{15} Netzgebiete mit stark unterschiedlichen Charakteristiken untersucht werden.
 An dieser Stelle soll das grundlegende Vorgehen erläutert werden. \medskip
 
-Grundlage des \kmeans bildet der \texttt{expectation–maximization-Algorithmus} (EM-Algorithmus) des Python Paketes \texttt{scikit learn}. \cite{scikit-learn2011}
+Grundlage des \kmeans bildet der \gls{EMA} des Python Paketes \textit{scikit learn}. \cite{scikit-learn2011}
 Hierbei kann jedes \gls{MS}-Netz durch die Definition mehrerer numerischer Attribute als Punkt im mehrdimensionalen Raum beschrieben werden.
-Der Algorithmus bildet anschließend eine vorgegebene Anzahl \texttt{k} an Clustern durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
+Der Algorithmus bildet anschließend eine vorgegebene Anzahl \textit{k} an Clustern durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
 Für die Bildung der Cluster werden die folgenden vier Attribute verwendet, um die einzelnen \gls{MS}-Netze zu repräsentieren:
 
 \begin{itemize}
@@ -100,14 +95,14 @@ In \autoref{eq:norm_attributes} findet sich das entsprechende Vorgehen.
 In \autoref{fig:k-means} findet sich eine exemplarische Darstellung des EM-Algorithmus.
 In dieser Arbeit wird stellvertretend für das Cluster, dass Netzgebiet mit dem minimalen quadrierten gewichteten euklidischen Abstand zum Clusterzentrum verwendet. \cite{Mueller2019}
 
-\input{Ch04/fig/Ch04_fig_02_k-means}
+\input{Ch04/fig/Ch04_fig_01_k-means}
 
 
-\subsection{Erstellung von Fahrtprofilen von E-Pkw}\label{chap:simbev_theo}
+\subsection{Erstellung der Fahrtprofile von E-Pkw}\label{chap:simbev_theo}
 
 % TODO: probabilistischen Ansatz mathematisch erklären. @Tim wie wird die Wahrscheinlichkeit je ts konkret festgelegt?
 
-Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \simbev können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen verschiedener Fahrzeugklassen erstellt werden.
+Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \gls{SIMBEV} können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen verschiedener Fahrzeugklassen erstellt werden.
 Weiterhin kann hierbei zwischen den in \autoref{tab:RegioStaR} aufgelisteten \glspl{REGIOSTAR} unterschieden werden, um das raumtypenspezifische Fahrverhalten abzubilden.
 Zum Zeitpunkt der Erstellung der Fahrtprofile war es noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
 
@@ -130,7 +125,7 @@ Es gilt je niedriger der \gls{SOC}, desto wahrscheinlicher ist es, dass die öff
 Ab einem \gls{SOC} von \SI{50}{\percent} findet, wann immer möglich, eine Ladung des Fahrzeugs statt.
 Zwischen den beiden Stützwerten erfolgt eine lineare Interpolation, welche in \autoref{fig:soc_charging_prob} visualisiert wurde.
 
-\input{Ch04/fig/Ch04_fig_03_soc_charging_prob}
+\input{Ch04/fig/Ch04_fig_02_soc_charging_prob}
 
 Schnellladeinfrastruktur besitzt aufgrund des zusätzlichen Fahrt- und Zeitaufwandes eine geringe Attraktivität für den Nutzer.
 Deshalb wird eine Schnellladung in dieser Simulation nur dann ausgelöst, wenn es wirklich nötig ist.
@@ -176,7 +171,7 @@ Es wird darauf geachtet, dass die Zuweisung der Gruppen nicht nur innerhalb eine
 Innerhalb eines \gls{NS}-Stranges wird weiterhin darauf geachtet, dass auch die einzelnen Leistungsklassen der Ladeinfrastruktur gleichmäßig auf die Gruppen verteilt werden.
 In \autoref{fig:group_vis} findet sich eine beispielhafte Einteilung von Ladepunkten auf die zwei Gruppen innerhalb eines \gls{NS}-Stranges.
 
-\input{Ch04/fig/Ch04_fig_04_grouped_charging}
+\input{Ch04/fig/Ch04_fig_03_grouped_charging}
 
 
 \paragraph{Reduziertes Laden:}
@@ -229,7 +224,7 @@ Ein Laden in anderen geographischen Gebieten, oder das Laden von \glqq Fremdfahr
 Grundlage für die Ermittlung von möglichen Standorten bietet eine geoinformatische Auswertung der untersuchten geographischen Gebiete.
 Das hierfür verwendete Software Tool, wurde unabhängig von dieser Arbeit am Reiner Lemoine Institut entwickelt und wurde noch nicht veröffentlicht.
 An dieser Stelle soll die Methodik für die Ermittlung von möglichen Standorten und deren Gewichtung für private und öffentliche Ladeinfrastruktur erläutert werden.
-Eine genauere Beschreibung der Unterteilung in private und öffentliche Ladeinfrastruktur erfolgte in \autoref{chap:EMob_Szenarien}.
+Eine genauere Beschreibung der Unterteilung in private und öffentliche Ladeinfrastruktur findet sich in \autoref{chap:EMob_Szenarien}.
 
 
 \paragraph{Private Ladeinfrastruktur:}
@@ -261,7 +256,7 @@ Eine Gewichtung findet in diesem Fall nicht statt.
 \paragraph{Zuteilung der Ladevorgänge auf die Ladeinfrastruktur:}
 
 Die Zuteilung der Ladevorgänge auf die Ladeinfrastruktur erfolgt mit Hilfe des Gewichtungsfaktors der verschiedenen Anschlusspunkte.
-Mit Hilfe des Zufallsmoduls des Open Source Tools \texttt{NumPy} \cite{harris2020array}, erfolgt eine zufällige und gewichtete Auswahl eines Anschlusspunktes je Ladevorgang.
+Mit Hilfe des Zufallsmoduls des Open Source Tools \textit{NumPy} \cite{harris2020array}, erfolgt eine zufällige und gewichtete Auswahl eines Anschlusspunktes je Ladevorgang.
 Im Falle der privaten Ladeinfrastruktur wird für jedes Fahrzeug ein eigener Ladepunkt eingerichtet.
 Diesem Ladepunkt werden alle Ladevorgänge des jeweiligen Fahrzeuges und \UCs zugeordnet.
 Nachdem einem Anschlusspunkt ein Ladepunkt zugeordnet wurde, wird die Gewichtung des Anschlusspunktes leicht abgesenkt.\medskip
@@ -274,18 +269,18 @@ Sollte kein passender Ladepunkt zur Verfügung stehen, wird analog zum Vorgehen 
 
 \subsection{Netzuntersuchung}\label{chap:edisgo_theo}
 
-Das Open Source Tool \edisgo (\textbf{e}lectricity \textbf{Dis}tribution \textbf{G}rid \textbf{o}ptimization) stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
-Gleichzeitig können mit \edisgo Maßnahmen zur Behebung der Netzprobleme bewertet werden.
-Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \dingo erzeugt wurden, die Grundlage für die Berechnungen mit \edisgodot.
-\edisgo kann über GitHub \cite{edisgoGit2019} abgerufen werden und ist auf Read the Docs \cite{edisgoDocs2017} dokumentiert.
-Innerhalb dieses Kapitels werden die wichtigsten Funktionalitäten \texttt{eDisGo}s für die Durchführung der Berechnungen innerhalb dieser Masterarbeit dargestellt und erläutert.
+Das Open Source Tool \gls{EDISGO} stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
+Gleichzeitig können mit \gls{EDISGO} Maßnahmen zur Behebung der Netzprobleme bewertet werden.
+Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt wurden, die Grundlage für die Berechnungen mit \gls{EDISGO}.
+\gls{EDISGO} kann über GitHub \cite{edisgoGit2019} abgerufen werden und ist auf Read the Docs \cite{edisgoDocs2017} dokumentiert.
+Innerhalb dieses Kapitels werden die wichtigsten Funktionalitäten \glspl{EDISGO} für die Durchführung der Berechnungen innerhalb dieser Masterarbeit dargestellt und erläutert.
 
 
 \paragraph{Ermittlung von Netzproblemen:}\label{chap:grid_issues}
 
 Die Überprüfung der einzelnen Netze auf Netzprobleme erfolgt in zwei Schritten.
 Vorerst wird eine nichtlineare Lastflussberechnung durchgeführt, um anschließend die Einhaltung der Spannungsanforderungen und technischen Richtlinien bezüglich der Gerätebelastungen zu überprüfen.
-Die Durchführung der Lastflussberechnung erfolgt mit Hilfe des Open Source Tools \texttt{PyPSA} \cite{Brown2020}.
+Die Durchführung der Lastflussberechnung erfolgt mit Hilfe des Open Source Tools \textit{PyPSA} \cite{Brown2020}.
 In diesem Kapitel soll auf die theoretischen Grundlagen der Lastflussberechnung, den Umfang der Analyse und die Spannungsanforderungen und technischen Richtlinien bezüglich der Gerätebelastungen eingegangen werden.\medskip
 
 Das Ziel der Lastflussberechnung ist es, das für jeden Netzknoten $i$ und etwaige Querleitwerte $j$ die folgende Gleichung erfüllt wird:
@@ -311,7 +306,7 @@ Das Ziel der Lastflussberechnung ist es, das für jeden Netzknoten $i$ und etwai
 Der Winkel der komplexen Spannung ist relativ zum Potentialknoten.
 Unter dem Potentialknoten wird ein Netzknoten verstanden, an welchem der Wirk- und Blindleistungsfluss frei eingestellt werden kann.
 Mit Hilfe des Potentialknotens kann über einen iterativen Prozess die Konvergenz nach \autoref{eq:pf} des Systems erreicht werden.
-Eine genau Beschreibung der Lastflussberechnung des Open Source Tools \texttt{PyPSA} kann auf Read the Docs \cite{Brown2020a} abgerufen werden.
+Eine genau Beschreibung der Lastflussberechnung des Open Source Tools \textit{PyPSA} kann auf Read the Docs \cite{Brown2020a} abgerufen werden.
 Innerhalb dieser Masterarbeit wird als Potentialknoten die Sekundärseite des \gls{HS}-\gls{MS}-\glspl{USW} eines \gls{MS}-Netzes verwendet.
 Alle weiteren Netzknoten werden mit gegebenen Wirk- und Blindleistungen modelliert. \cite{Schachler}\medskip
 
@@ -324,7 +319,7 @@ Anhand dieses Wertes können zusätzlich Aussagen über die Überlastung des \gl
 Mit Hilfe der durch die Lastflussanalyse ermittelten Belastungen und Spannungsabweichungen an den Betriebsmitteln, können abschließend Überlastungen und Spannungsprobleme festgestellt werden.
 Eine Übersicht über den Umfang der Lastflussanalyse findet sich in \autoref{fig:scope}. \cite{Schachler}
 
-\input{Ch04/fig/Ch04_fig_05_scope_grid_issues}
+\input{Ch04/fig/Ch04_fig_04_scope_grid_issues}
 
 
 \paragraph{Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen:}
@@ -353,5 +348,5 @@ In diesen Fällen lässt sich dieser Abregelungsbedarf keiner der Netzebenen zuo
 Die gesamte notwendige Abregelung für das \gls{MS}-Netz ergibt sich aus der Summierung aller nötigen Abregelungen von Last und Erzeugung am \gls{MS}-Netzanschlusspunkt.
 In \autoref{fig:scope_curtailment} findet sich eine Veranschaulichung des Vorgehens.
 
-\input{Ch04/fig/Ch04_fig_06_scope_curtailment}
+\input{Ch04/fig/Ch04_fig_05_scope_curtailment}
 

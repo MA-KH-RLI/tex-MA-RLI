@@ -2,34 +2,36 @@
 \section{Ergebnisse}
 
 In diesem Kapitel werden die Ergebnisse der einzelnen Zwischenschritte der Methodik nach \autoref{chap:Methodik} dargestellt und kritisch betrachtet.
-Hierzu gehören vorerst die Ergebnisse der Clusterung der \gls{MS}-Netzgebiete, die mit \simbev erzeugten Fahrtprofile und Standzeiten von \gls{EPKW} und deren räumlicher Verteilung, sowie die Ergebnisse der Implementierung der verschiedenen Ladestrategien.
+Hierzu gehören vorerst die Ergebnisse der Clusterung der \gls{MS}-Netzgebiete, die mit \gls{SIMBEV} erzeugten Fahrtprofile und Standzeiten von \gls{EPKW} und deren räumlicher Verteilung, sowie die Ergebnisse der Implementierung der verschiedenen Ladestrategien.
 Abschließend erfolgt eine detaillierte Betrachtung der Ergebnisse der Ermittlung des Abregelungsbedarfes aufgrund der Integration von \glspl{EPKW} für die untersuchten Netze.
 
 
 \subsection{Clusterung der MS-Netzgebiete}
 
-% TODO: Auswertungen von Birgit übernehmen. Balkendiagramm
+Auf der \gls{MS}-Ebene gibt es \num{3591} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
+Die vollständige Untersuchung der mit Hilfe des Open Source Tools \gls{DINGO} synthetisierten \gls{MS}-Netzgebiete, würde aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten führen.
+Im Rahmen dieser Masterarbeit wurden sechs Referenznetzgebiete ausgewählt, welche \num{1842} der \num{3591} {\color{red} TODO 3354?} \gls{MS}-Netzgebiete repräsentieren.
+Das Clustering erfolgte innerhalb \cite{Schachler} durch den während des \openego Projektes entwickelten k-means-Clusteralgorithmus nach \autoref{chap:dingo_theo}.
 
-Die vollständige Untersuchung der mit Hilfe des Software Tools \dingo synthetisierten \gls{MS}-Netzgebiete, würde aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten führen.
-Im Rahmen dieser Masterarbeit wurden sechs Referenznetzgebiete ausgewählt, welche \num{1842} der \num{3591} {\color{red} TODO 3354?} \gls{MS}-Netze repräsentieren.
-Das Clustering erfolgte innerhalb \cite{Schachler} durch den während des \openego Projektes entwickelten k-means-Clusteralgorithmus nach \autoref{chap:dingo_theo}.\medskip
+\input{Ch05/fig/Ch05_fig_01_grid_176_map}
 
-Um mit dieser Arbeit eine Ergänzung zu \cite{Schachler} zu liefern, wurde das Clustering übernommen.
+\autoref{fig:grid_176_map} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \gls{DINGO} erzeugt wurde und innerhalb dieser Arbeit untersucht wurde.
+Um mit dieser Arbeit eine Ergänzung zu \cite{Schachler} zu liefern, wurde das Clustering dieser Arbeit übernommen.
 Von den \num{15} identifizierten repräsentativen Netzgebieten wurde eine Teilmenge für die Untersuchung ausgewählt.
-So wurden jeweils zwei Netzgebiete der Kategorien Wind-, \gls{PV}- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren, damit die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze gezeigt werden kann.
+So wurden jeweils zwei Netzgebiete der Kategorien Wind-, \gls{PV}- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren.
+Auf diese Weise wurde sichergestellt, dass die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze aufgezeigt werden können.
 Insgesamt wurden somit \num{6} Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
 In \autoref{tab:grid_IDs} finden sich die \glspl{ID} der untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
 
 \input{Ch05/tab/Ch05_tab_01_grid_IDs}
 
-
-In {\color{red} TODO} findet sich eine Darstellung der wichtigsten Charakteristika der untersuchten Netzgebiete.
-Hierzu zählen die installierten \gls{PV}- und Wind-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} und \glspl{WP}.
+In \autoref{fig:bar_representatives} findet sich eine Darstellung der wichtigsten Charakteristika der untersuchten Netzgebiete.
+Hierzu zählen die installierten \gls{PV}- und Wind-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} bei einem ungesteuerten Laden im Elektrifizierungsszenario und die Spitzenlast des konventionellen Stromverbrauchs inklusive \glspl{WP}.
 Weiterhin findet sich in \autoref{fig:map_representatives} eine Karte der repräsentierten Netzgebiete eingeteilt in die Kategorien Wind-, \gls{PV}- und Last-dominiert.
 
-{\color{red} TODO: BAR Plot grids}
+\input{Ch05/fig/Ch05_fig_02_bar_representatives}
 
-\input{Ch05/fig/Ch05_fig_01_map_representatives}
+\input{Ch05/fig/Ch05_fig_03_map_representatives}
 
 
 % TODO: Fahrzeuge je Netzgebiet und Szenario
@@ -40,7 +42,7 @@ Weiterhin findet sich in \autoref{fig:map_representatives} eine Karte der reprä
 % TODO: Standzeit je Wegezweck mean +- Standardabweichung
 
 
-Mit Hilfe des Software Tools \simbev (s. \autoref{chap:simbev_theo}) wurden für die zuvor geclusterten Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt.
+Mit Hilfe des Software Tools \gls{SIMBEV} (s. \autoref{chap:simbev_theo}) wurden für die zuvor geclusterten Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt.
 Die Charakteristik der Fahrtprofile spielt eine entscheidende Rolle für die Wirksamkeit der unterschiedlichen Ladestrategien und die Auswirkungen auf die Netze.
 Hierbei steht vor allem der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge, sowie die Gleichzeitigkeit von Ladevorgängen im Vordergrund.\medskip
 
@@ -55,10 +57,10 @@ In \autoref{tab:ChargingShare} findet sich die entsprechende Aufteilung.
 
 \input{Ch05/tab/Ch05_tab_02_ChargingShare}
 
-In \autoref{fig:example_load_profile} findet sich stellvertretend das \glspl{EPKW}-Lastprofil für ungesteuertes Laden einer mittelstädtischen Gemeinde (Raumtyp Nummer \num{73}) mit \num{6443} \glspl{EPKW} über eine Woche im Elektrifizierungs-Szenario (links).
+In \autoref{fig:example_load_profile} findet sich stellvertretend das \glspl{EPKW}-Lastprofil für ungesteuertes Laden einer mittelstädtischen Gemeinde (Raumtyp Nummer \num{73}) mit \num{6443} \glspl{EPKW} über eine Woche im Elektrifizierungsszenario (links).
 Zusätzlich wurde die \SzeFirmenparkplatz (rechts) dargestellt.
 
-\input{Ch05/fig/Ch05_fig_02_example_load_profile}
+\input{Ch05/fig/Ch05_fig_04_example_load_profile}
 
 Die Lastgänge \zH und \Firmeparkplatz entsprechen den flexibilisierbaren Ladevorgängen im privaten Bereich. Unter dem Lastgang \oeffen sind hingegen alle öffentlichen Ladevorgänge mit Außnahme der Schnellladevorgänge (\gls{HPC}) zusammengefasst. Deutlich zu erkennen ist die hohe Gleichzeitigkeit am Vormittag sowohl am \Firmeparkplatz als auch im öffentlichen Raum, welche durch das Fahren zur Arbeit ausgelöst wird.
 Auch die Rückkehr zum Wohnort ist ab dem frühen Nachmittag in den Lastgängen \zH und im öffentlichen Raum deutlich zu erkennen. Die entsprechenden Dauerlastkurven für die Gemeinde über die gleiche Woche (s. \autoref{fig:example_load_curve}) zeigen dies nochmals deutlich.
@@ -66,13 +68,13 @@ Schnellladevorgänge werden hingegen vermehrt am Wochenende ausgelöst, da verst
 Am Wochenende kommt es zusätzlich zu deutlich geringeren Anteilen von Ladevorgängen \zH und am \Firmeparkplatzdot, wodurch das Flexibilisierungspotential am Wochenende geringer ausfällt.
 Gegenüber dem Elektrifizierungs-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot, jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
 
-\input{Ch05/fig/Ch05_fig_03_example_load_curve}
+\input{Ch05/fig/Ch05_fig_05_example_load_curve}
 
 
 \subsubsection{Kritik}
 
 Die erstellten Fahrtprofile spiegeln ein aus heutiger Sicht plausibel erscheinendes Bild wider.
-Dennoch existieren einzelne Kritikpunkte, die innerhalb des \simbev Projektes gelöst werden sollten.
+Dennoch existieren einzelne Kritikpunkte, die innerhalb des \gls{SIMBEV} Projektes gelöst werden sollten.
 So war es zum Zeitpunkt der Erstellung der Fahrtprofile noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
 Da sich jedoch die Netzuntersuchungen im Rahmen dieser Masterarbeit auf einen Zeitraum von einem Jahr beziehen, wird die simulierte Woche stellvertretend für das gesamte Jahr verwendet.
 Hierfür wurde jedes Fahrtprofil solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge erreicht wurde.

@@ -148,6 +148,7 @@
 \makeatother
 \renewcommand*{\labelalphaothers}{\textsuperscript{+}}% superscript + instead of normal + in literature
 
+
 %%%%%%%%% Querverweise
 \usepackage[
 	breaklinks,% URLs/DOIs vernünftig brechen
@@ -157,6 +158,20 @@
     linkcolor={red!50!black},
     citecolor={blue!50!black},
     urlcolor={blue!80!black}
+}
+
+% Kapitel, statt Abschnitt, Unterabschnitt, etc.
+\addto\extrasngerman{
+	\def
+	\sectionautorefname{Kapitel}
+}
+\addto\extrasngerman{
+	\def
+	\subsectionautorefname{Kapitel}
+}
+\addto\extrasngerman{
+	\def
+	\subsubsectionautorefname{Kapitel}
 }
 
 %%%%%%%%% Abkürzungsverzeichnis:
@@ -176,12 +191,8 @@
 \def\Ausbildung{\glqq Ausbildung\grqq{}~}
 \def\dienst{\glqq dienstlich\grqq{}~}
 \def\dienstdot{\glqq dienstlich\grqq}
-\def\dingo{\texttt{ding0}~}
-\def\dingodot{\texttt{ding0}}
-\def\edisgo{\texttt{eDisGo}~}
-\def\edisgodot{\texttt{eDisGo}}
-\def\ego{\texttt{eGo~100}~}
-\def\egodot{\texttt{eGo~100}}
+\def\ego{\textit{eGo~100}~}
+\def\egodot{\textit{eGo~100}}
 \def\Eigenheim{\glqq Eigenheim\grqq{}~}
 \def\Eigenheimdot{\glqq Eigenheim\grqq}
 \def\Einkauf{\glqq Einkauf\grqq{}~}
@@ -196,33 +207,27 @@
 \def\Gewerbeparkplatzdot{\glqq Gewerbeparkplatz\grqq}
 \def\Kleinwagen{Szenarette \glqq Kleinwagen\grqq{}~}
 \def\Kleinwagendot{Szenarette \glqq Kleinwagen\grqq}
-\def\kmean{\texttt{k-means-Clustering}~}
-\def\kmeans{\texttt{k-means-Clusterings}~}
-\def\kmeansdot{\texttt{k-means-Clusterings}}
+\def\kmean{\textit{k-means-Clustering}~}
+\def\kmeans{\textit{k-means-Clusterings}~}
+\def\kmeansdot{\textit{k-means-Clusterings}}
 \def\Lastgebiet{\glqq Lastgebiet\grqq{}~}
 \def\Lastgebiete{\glqq Lastgebiete\grqq{}~}
 \def\Lastgebietedot{\glqq Lastgebiete\grqq}
 \def\Lastgebietes{\glqq Lastgebietes\grqq{}~}
 \def\Lastgebieten{\glqq Lastgebieten\grqq{}~}
-\def\localiserTool{\texttt{Localiser~Tool}~}
-\def\localiserTools{\texttt{Localiser~Tools}~}
-\def\localiserToolsKomma{\texttt{Localiser~Tools}}
 \def\nH{\glqq nach Hause\grqq{}~}
 \def\nHdot{\glqq nach Hause\grqq}
 \def\oeffen{\glqq Öffentlich\grqq{}~}
 \def\oeffendot{\glqq Öffentlich\grqq}
-\def\openego{\texttt{open\_eGo}~}
-\def\openegodot{\texttt{open\_eGo}}
+\def\openego{\textit{open\_eGo}~}
+\def\openegodot{\textit{open\_eGo}}
 \def\Plus{\texttt{+}}
-\def\Regiostar{\texttt{RegioStaR~7}~}
-\def\Regiostardot{\texttt{RegioStaR~7}}
-\def\simbev{\texttt{simBEV}~}
 \def\Straszenrand{\glqq Straßenrand\grqq{}~}
 \def\Straszenranddot{\glqq Straßenrand\grqq}
 \def\SzeFirmenparkplatz{Szenarette \glqq Firmenparkplatz\grqq{}~}
 \def\SzeFirmenparkplatzdot{Szenarette \glqq Firmenparkplatz\grqq}
-\def\UC{Lade~\texttt{Use}~\texttt{case}~}
-\def\UCs{Lade~\texttt{Use}~\texttt{cases}~}
+\def\UC{Lade~\textit{Use}~\textit{case}~}
+\def\UCs{Lade~\textit{Use}~\textit{cases}~}
 \def\Wohnanlage{\glqq Wohnanlage\grqq{}~}
 \def\Wohnanlagedot{\glqq Wohnanlage\grqq}
 \def\zH{\glqq zu Hause\grqq{}~}
