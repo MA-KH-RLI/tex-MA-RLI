@@ -1,0 +1,48 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Szenarienvergleich des Fahrzeugbestands von BEV bis zum Jahr \num{2050}}
+		\begin{tabu} to \textwidth {X[5] X[1, r] X[1, r] X[1, r]}
+			\hline
+            Studie                                                                                          & \num{2030}     & \num{2040}     & \num{2050}     \\\hline
+            \num{2014} {--} BMWi {--} Energiereferenzprognose \cite{PrognosAG2014}                          & \num{1755000}  & \num{3777000}  & \num{5514000}  \\
+            \num{2014} {--} Öko{--}Institut e.V. {--} Grenzenlos \cite{Hacker2014}                          & \num{2000000}  & \num{16000000} & \num{29000000} \\
+            \num{2014} {--} Öko{--}Institut e.V. {--} Regional \cite{Hacker2014}                            & \num{3000000}  & \num{11000000} & \num{15000000} \\
+            \num{2014} {--} Shell {--} Alternativ \cite{Shell2014}                                          & \num{1200000}  & \num{3130000}  &                \\
+            \num{2014} {--} Shell {--} Trend \cite{Shell2014}                                               & \num{730000}   & \num{1610000}  &                \\
+            \num{2015} {--} DIW {--} BAU \cite{Schill2015}                                                  & \num{900000}   &                &                \\
+            \num{2015} {--} DIW {--} EM\Plus~\cite{Schill2015}                                              & \num{1000000}  &                &                \\
+            \num{2015} {--} Öko-Institut e.V. {--} KSZ {--} \SI{80}{\percent}-Pfad \cite{OekoInstitut2015}  &                &                & \num{19982000} \\
+            \num{2015} {--} Öko-Institut e.V. {--} KSZ {--} \SI{95}{\percent}-Pfad \cite{OekoInstitut2015}  &                &                & \num{21619000} \\
+            \num{2015} {--} Öko-Institut e.V. {--} KSZ {--} Referenz \cite{OekoInstitut2015}                &                &                & \num{3192000}  \\
+            \num{2015} {--} SCelecTRA {--} konservativ \cite{Kanudia2016}                                   & \num{1060359}  &                &                \\
+            \num{2015} {--} SCelecTRA {--} optimistisch \cite{Kanudia2016}                                  & \num{5197630}  &                &                \\
+            \num{2016} {--} Renewbility {--} Basis \cite{Institut2016}                                      & \num{449000}   &                & \num{3203000}  \\
+            \num{2016} {--} Renewbility {--} Effizienz \cite{Institut2016}                                  & \num{1001000}  &                & \num{17794000} \\
+            \num{2016} {--} Renewbility {--} Effizienz-Plus \cite{Institut2016}                             & \num{1037000}  &                & \num{15452000} \\
+            \num{2016} {--} TREMOD \cite{Knoerr2016}                                                        & \num{1960000}  &                &                \\
+            \num{2016} {--} UBA {--} E\Plus~\cite{Kasten2016}                                               & \num{1629834}  & \num{11450915} & \num{23849848} \\
+            \num{2016} {--} UBA {--} Fl\Plus~\cite{Kasten2016}                                              & \num{434355}   & \num{1341568}  & \num{2744870}  \\
+            \num{2017} {--} BMWi {--} LFS {--} \SI{80}{\percent}-Pfad \cite{Pfluger2017}                    &                &                & \num{15500000} \\
+            \num{2017} {--} BMWi {--} LFS {--} \SI{95}{\percent}-Pfad \cite{Pfluger2017}                    &                &                & \num{7200000}  \\
+            \num{2017} {--} Öko-Institut e.V. \cite{Timpe2017}                                              & \num{1035900}  &                &                \\
+            \num{2018} {--} BCG/prognos {--} \SI{80}{\percent}-Pfad \cite{BCG2018}                          & \num{4000000}  & \num{11000000} & \num{21000000} \\
+            \num{2018} {--} BCG/prognos {--} \SI{95}{\percent}-Pfad \cite{BCG2018}                          & \num{4000000}  & \num{13000000} & \num{28000000} \\
+            \num{2018} {--} BCG/prognos {--} Referenz \cite{BCG2018}                                        & \num{2000000}  & \num{5000000}  & \num{9000000}  \\
+            \num{2018} {--} dena-Leitstudie {--} EL \cite{DEAGH2018}                                        & \num{13300000} &                & \num{30200000} \\
+            \num{2018} {--} dena-Leitstudie {--} Referenz \cite{DEAGH2018}                                  & \num{1900000}  &                & \num{5300000}  \\
+            \num{2018} {--} dena-Leitstudie {--} TM \cite{DEAGH2018}                                        & \num{5600000}  &                & \num{12100000} \\
+            \num{2018} {--} NPE {--} konservativ \cite{NPE2018}                                             & \num{4200000}  &                &                \\
+            \num{2018} {--} NPE {--} optimistisch \cite{NPE2018}                                            & \num{7000000}  &                &                \\
+            \num{2019} {--} Dynamis fuEL \cite{Fattler2019}                                                 & \num{9457200}  & \num{24440400} & \num{27410400} \\
+            \num{2020} {--} BNetzA {--} B \num{2040} \cite{BNetzA2020}                                      &                & \num{14100000} &                \\
+            \num{2020} {--} NPM \cite{NPZMAVE2020}                                                          & \num{7231000}  &                &                \\\hline
+            \multicolumn{4}{l}{Erweiterung der Metastudie des FfE e.V. \cite{Ebner2019}}
+		\end{tabu}
+		\label{tab:RampUpBEV}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

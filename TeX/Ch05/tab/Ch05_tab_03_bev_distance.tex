@@ -1,0 +1,18 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Durchschnittliche und maximale Jahresfahrleistung von BEVs je untersuchter Raumtypologie}
+		\begin{tabu} to \textwidth {X[1] X[1.5, r] X[1.5, r]}
+			\hline
+			Raumtypologie ID 	   & Durchschnittle Jahresfahrleistung                  & Maximale Jahresfahrleistung \\ \hline
+			\num{77}               & \SI[separate-uncertainty = true]{12353(6395)}{\km} & \SI{55.426}{\km}            \\
+			\num{76}               & \SI[separate-uncertainty = true]{11500(6243)}{\km} & \SI{54.204}{\km}            \\
+			\num{73}               & \SI[separate-uncertainty = true]{11660(6408)}{\km} & \SI{58.575}{\km}            \\ \hline
+		\end{tabu}
+		\label{tab:bev_distance}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
