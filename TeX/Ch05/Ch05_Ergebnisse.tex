@@ -20,13 +20,13 @@ Um mit dieser Arbeit eine Ergänzung zu \cite{Schachler} zu liefern, wurde das C
 Von den \num{15} identifizierten repräsentativen Netzgebieten wurde eine Teilmenge für die Untersuchung ausgewählt.
 So wurden jeweils zwei Netzgebiete der Kategorien Wind-, \gls{PV}- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren.
 Auf diese Weise wurde sichergestellt, dass die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze aufgezeigt werden können.
-Insgesamt wurden somit \num{6} Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
+Insgesamt wurden somit sechs Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
 In \autoref{tab:grid_IDs} finden sich die \glspl{ID} der untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
 
 \input{Ch05/tab/Ch05_tab_01_grid_IDs}
 
 In \autoref{fig:bar_representatives} findet sich eine Darstellung der wichtigsten Charakteristika der untersuchten Netzgebiete.
-Hierzu zählen die installierten \gls{PV}- und Wind-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} bei einem ungesteuerten Laden im Elektrifizierungsszenario und die Spitzenlast des konventionellen Stromverbrauchs inklusive \glspl{WP}.
+Hierzu zählen die installierten \gls{PV}- und Wind-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} bei einem ungesteuerten Laden im Antriebswende-Szenario und die Spitzenlast des konventionellen Stromverbrauchs inklusive \glspl{WP}.
 Weiterhin findet sich in \autoref{fig:map_representatives} eine Karte der repräsentierten Netzgebiete eingeteilt in die Kategorien Wind-, \gls{PV}- und Last-dominiert.
 
 \input{Ch05/fig/Ch05_fig_02_bar_representatives}
@@ -34,39 +34,53 @@ Weiterhin findet sich in \autoref{fig:map_representatives} eine Karte der reprä
 \input{Ch05/fig/Ch05_fig_03_map_representatives}
 
 
-% TODO: Fahrzeuge je Netzgebiet und Szenario
+\subsection{Erzeugung und Charakteristik der Fahrtprofile}
 
-\subsection{Charakteristik der Fahrtprofile}
-
-% TODO: Fahrtstrecke berechnen mean +- Standardabweichung (je Regiotype?)
 % TODO: Standzeit je Wegezweck mean +- Standardabweichung
 
-
-Mit Hilfe des Software Tools \gls{SIMBEV} (s. \autoref{chap:simbev_theo}) wurden für die zuvor geclusterten Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt.
+Mit Hilfe des Software Tools \gls{SIMBEV} können für die zuvor geclusterten Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt werden.
 Die Charakteristik der Fahrtprofile spielt eine entscheidende Rolle für die Wirksamkeit der unterschiedlichen Ladestrategien und die Auswirkungen auf die Netze.
-Hierbei steht vor allem der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge, sowie die Gleichzeitigkeit von Ladevorgängen im Vordergrund.\medskip
+Hierbei steht vor allem die Jahresfahrleistung der \glspl{EPKW} und der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge im Vordergrund.\medskip
 
-Der Anteil flexibilisierbarer Ladevorgänge entspricht dem Anteil am Gesamtenergiebedarf, der an privaten Ladepunkten zu Hause oder am Arbeitsplatz nachgeladen wird.
+Die Ermittlung der Anzahl der Fahrzeuge erfolgt nach \autoref{chap:simbev_theo} auf Gemeindeebene.
+In der Regel liegen innerhalb eines Netzgebietes mehrere Gemeinden und insgesamt liegen \num{35} Gemeinden innerhalb der sechs Referenznetzgebiete.
+Die Auswertung ergibt die Anzahl der simulierten Fahrzeuge nach \autoref{tab:car_count} je Fahrzeugtyp und Szenario.
+Zusätzlich findet sich im Anhang in \autoref{tab:car_count_long} eine detailliertere Aufteilung je Fahrzeugtyp, -klasse und Szenario.
+
+\input{Ch05/tab/Ch05_tab_02_car_count}
+
+Die \num{35} Gemeinden weisen drei der sieben \gls{REGIOSTAR} (s. \autoref{tab:RegioStaR}) auf.
+Hierzu zählen der kleinstädtische, dörfliche Raum einer ländlichen Region (\gls{ID} \num{77}), Mittelstädte, städitscher Raum (\gls{ID} \num{76}) und Mittelstädte, städitscher Raum einer Stadtregion (\gls{ID} \num{73}).
+Eine Analyse der erzeugten Fahrtprofile zeigt, dass in \gls{ID} \num{77} im Schnitt die weitesten Strecken zurückgelegt werden, welches den Erwartungen nach \gls{MID} \cite{Nobis2019} entspricht.
+Jedoch liegen die Jahresfahrleistungen insgesamt unter den Angaben des \gls{MID} von durchschnittlich \SI{14700}{\km}, aber auf einem ähnlichen Niveau zu einer Auswertung von Kfz-Versicherungen des Vergleichsportals \textit{Check24} \cite{CHECK24GmbH2018}, wonach die durchschnittliche Jahresfahrleistung in Deutschland im Jahr \num{2017} bei \SI{11888}{\km} lag.
+Insgesamt spiegeln die Jahresfahrleistungen \glspl{SIMBEV} somit ein progressives Szenario mit einer sinkenden Jahresfahrleistung wider.
+Die Jahresfahrleistung von \glspl{BEV} je \gls{REGIOSTAR} \gls{ID} wurde zusammenfassend über alle Szenarien hinweg berechnet und findet sich in \autoref{tab:bev_distance}.
+
+\input{Ch05/tab/Ch05_tab_03_bev_distance}
+
+Der Anteil flexibilisierbarer Ladevorgänge entspricht dem Anteil an Energie am Gesamtenergiebedarf der \glspl{EPKW}, der an privaten Ladepunkten zu Hause oder am Arbeitsplatz nachgeladen wird.
 Hierzu zählen alle Ladevorgänge die am Eigenheim, einer Wohnaalage oder auf einem Firmenparkplatz stattfinden.
-Demgegenüber stehen nicht-flexibilisierer Ladevorgänge im öffentlichen Raum und an Schnellladestationen.
-Je nach Raumtypen unterscheidet sich das Verhältnis leicht.
-Im Mittel liegt der Anteil flexibilisierer Ladevorgänge über alle Szenarien innerhalb der einzelnen Gemeinden bei \SI{75.2}{\percent}.
+Zusätzlich sind nur Ladevorgänge flexibilisierbar, deren Standzeit größer ist als die Mindestladedauer.
+Demgegenüber stehen nicht-flexibilisierer Ladevorgänge im öffentlichen Raum und an Schnellladestationen bzw. Ladevorgänge deren Standzeit der Mindestladedauer entspricht.
+Im Mittel liegt der Anteil flexibilisierer Ladevorgänge über alle Szenarien je Gemeinde bei \SI{75.2}{\percent}.
 Hiervon ausgenommen ist die \SzeFirmenparkplatzdot, bei der es aufgrund des geringeren Bestands an Ladeinfrastruktur am Arbeitsplatz zu mehr Ladevorgängen im öffentlichen Raum kommt.
-Der Anteil nicht-flexibilisierer Ladevorgänge liegt bei dieser Szenarette bei \SI{70.0}{\percent}.
+Der Anteil flexibilisierer Ladevorgänge liegt bei dieser Szenarette bei \SI{70.0}{\percent}.
 In \autoref{tab:ChargingShare} findet sich die entsprechende Aufteilung.
 
-\input{Ch05/tab/Ch05_tab_02_ChargingShare}
+\input{Ch05/tab/Ch05_tab_04_ChargingShare}
 
-In \autoref{fig:example_load_profile} findet sich stellvertretend das \glspl{EPKW}-Lastprofil für ungesteuertes Laden einer mittelstädtischen Gemeinde (Raumtyp Nummer \num{73}) mit \num{6443} \glspl{EPKW} über eine Woche im Elektrifizierungsszenario (links).
-Zusätzlich wurde die \SzeFirmenparkplatz (rechts) dargestellt.
+In \autoref{fig:example_load_profile} findet sich ein beispielhaftes \gls{EPKW}-Lastprofil für ungesteuertes Laden einer mittelstädtischen Gemeinde (\gls{ID} \num{73}) mit \num{6443} \glspl{EPKW} über eine Woche im Antriebswende-Szenario (links).
+Zusätzlich findet sich das \gls{EPKW}-Lastprofil der gleichen Gemeinde in der \SzeFirmenparkplatz (rechts).
 
 \input{Ch05/fig/Ch05_fig_04_example_load_profile}
 
-Die Lastgänge \zH und \Firmeparkplatz entsprechen den flexibilisierbaren Ladevorgängen im privaten Bereich. Unter dem Lastgang \oeffen sind hingegen alle öffentlichen Ladevorgänge mit Außnahme der Schnellladevorgänge (\gls{HPC}) zusammengefasst. Deutlich zu erkennen ist die hohe Gleichzeitigkeit am Vormittag sowohl am \Firmeparkplatz als auch im öffentlichen Raum, welche durch das Fahren zur Arbeit ausgelöst wird.
+Die Lastgänge \zH und \Firmeparkplatz entsprechen den flexibilisierbaren Ladevorgängen im privaten Bereich.
+Unter dem Lastgang \oeffen sind hingegen alle öffentlichen Ladevorgänge mit Außnahme der Schnellladevorgänge (\gls{HPC}) zusammengefasst.
+Deutlich zu erkennen ist die hohe Gleichzeitigkeit am Vormittag sowohl am \Firmeparkplatz als auch im öffentlichen Raum, welche durch das Fahren zur Arbeit ausgelöst wird.
 Auch die Rückkehr zum Wohnort ist ab dem frühen Nachmittag in den Lastgängen \zH und im öffentlichen Raum deutlich zu erkennen. Die entsprechenden Dauerlastkurven für die Gemeinde über die gleiche Woche (s. \autoref{fig:example_load_curve}) zeigen dies nochmals deutlich.
 Schnellladevorgänge werden hingegen vermehrt am Wochenende ausgelöst, da verstärkt längere Fahrten angetreten werden.
 Am Wochenende kommt es zusätzlich zu deutlich geringeren Anteilen von Ladevorgängen \zH und am \Firmeparkplatzdot, wodurch das Flexibilisierungspotential am Wochenende geringer ausfällt.
-Gegenüber dem Elektrifizierungs-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot, jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
+Gegenüber dem Antriebswende-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot, jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
 
 \input{Ch05/fig/Ch05_fig_05_example_load_curve}
 

@@ -58,11 +58,10 @@ Für die Bildung der Cluster werden die folgenden vier Attribute verwendet, um d
 \end{itemize}
 
 Die Regionalisierung der \gls{PV}-, Wind- und \gls{WP}-Kapazitäten erfolgt nach \autoref{chap:Szenariorahmen}.
-Für die Spitzenlast durch \gls{EPKW} müssen somit bereits vor der eigentlich simulativen Ermittlung in den nachfolgenden Kapiteln Annahmen getroffen werden, da dieser Ansatz aufgrund seiner Komplexität nicht für jedes \gls{MS}-Netzgebiet durchgeführt werden kann.
-Stattdessen erfolgt eine Abschätzung anhand des heutigen Fahrzeugbestandes.
-So wird angenommen, dass nach dem Elektrifizierungsszenario jeder \gls{PKW} durch einen \gls{EPKW} ersetzt wird und jeder \gls{EPKW} im Jahr \SI{12000}{\km} zurücklegt.
+Da die Simulation aller \gls{EPKW} aufgrund der großen Anzahl nicht für jedes \gls{MS}-Netzgebiet durchgeführt werden kann, muss die Spitzenlast durch \gls{EPKW} bereits im Voraus abgeschätzt werden.
+So wird angenommen, dass nach den Hochlaufzahlen des Antriebswende-Szenarios jeder \gls{PKW} durch einen \gls{EPKW} ersetzt wird und jeder \gls{EPKW} im Jahr \SI{12000}{\km} zurücklegt.
 Anhand eines durchschnittlichen Verbrauches von \SI{20}{\kwhkm} wird anschließend der Ladebedarf je Gemeinde abgeschätzt.
-Anschließend wird der Ladebedarf auf die Netzgebiete anhand des Flächenanteils der Gemeinde im Netzgebiete verteilt.\medskip
+Anschließend wird der Ladebedarf mit einem beispielhaften Lastprofil auf die Netzgebiete anhand des Flächenanteils der Gemeinde im Netzgebiete verteilt.\medskip
 
 Damit alle Attribute die gleiche Gewichtung erhalten, müssen diese jeweils normiert werden.
 In \autoref{eq:norm_attributes} findet sich das entsprechende Vorgehen.
@@ -143,7 +142,8 @@ Die Aufteilung der Fahrzeuge in Klassen erfolgt anhand der Einteilung des Fahrze
 Die geographische Einteilung der Landfläche in \glspl{REGIOSTAR} erfolgt auf Gemeindeebene, weshalb eine weitere Regionalisierung der Fahrzeuge innerhalb eines Landkreises auf die jeweiligen Gemeinden nötig ist.
 Da auf Gemeindeebene keine Daten zum Fahrzeugbestand vorliegen, erfolgt die Regionalisierung anhand der Einwohnerzahl der Gemeinden.
 Die Grundlage hierfür bildet der Datensatz \glqq Gemeindegrenzen 2017 mit Einwohnerzahl\grqq{} \cite[][Stand: \DTMdate{2017-12-31}]{EDG2020}.
-Die Verteilung der Anzahl der Fahrzeuge erfolgt streng proportional zur Einwohnerzahl in der jeweiligen Gemeinde.\medskip
+Die Verteilung der Anzahl der Fahrzeuge erfolgt streng proportional zur Einwohnerzahl in der jeweiligen Gemeinde.
+Jedes \gls{MS}-Netzgebiet streckt sich dabei in der Regel über mehrere Gemeinden, wobei einzelne Gemeinden auch nur anteilig innerhalb eines Netzgebietes liegen können.\medskip
 
 Um abschließend die Fahrtprofile erzeugen zu können, muss jeder Gemeinde eine \gls{REGIOSTAR} Nummer zugeordnet werden.
 Die entsprechende Zuordnung für das Jahr \num{2018} kann dem Datensatz \glqq Referenzdateien zur regionalstatistischen Raumtypologie\grqq{} \cite[][Stand: \DTMdate{2018-01-01}]{BMVIa2020} entnommen werden.
@@ -264,7 +264,11 @@ Nachdem einem Anschlusspunkt ein Ladepunkt zugeordnet wurde, wird die Gewichtung
 Für die öffentliche Ladeinfrastruktur erfolgt die Zuweisung dezidiert pro Ladevorgang.
 So wird je Ladevorgang untersucht, ob bereits ein passender Ladepunkt zur Verfügung steht.
 Hierbei wird beachtet, ob in dem entsprechenden Zeitraum der Ladepunkt durch ein anderes Fahrzeug besetzt ist und ob der Ladepunkt die entsprechende Ladeleistung zur Verfügung stellen kann.
-Sollte kein passender Ladepunkt zur Verfügung stehen, wird analog zum Vorgehen bei der privaten Ladeinfrastruktur ein Ladepunkt zufällig und gewichtet ausgewählt und eingerichtet.
+Sollte kein passender Ladepunkt zur Verfügung stehen, wird analog zum Vorgehen bei der privaten Ladeinfrastruktur ein Ladepunkt zufällig und gewichtet ausgewählt und eingerichtet.\medskip
+
+Da die \gls{MS}-Netzgebiete nicht immer die Gesamtfläche einer Gemeinde abdecken, muss abschließend geprüft werden, ob die generierten Anschlusspunkte innerhalb des Netzgebietes liegen.
+Liegt ein Anschlusspunkt innerhalb eines \gls{MS}-Netzgebietes, so wird er diesem zugeordnet.
+Tut dieser es nicht, dann entfällt die Ladelast auf ein angrenzendes Netzgebiet und ist somit nicht Teil der nachfolgenden Auswertungen.
 
 
 \subsection{Netzuntersuchung}\label{chap:edisgo_theo}
