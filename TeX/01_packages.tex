@@ -5,6 +5,7 @@
 	paper=a4,
 	]{scrartcl}
 
+
 %%%%%%%%% HTW Anforderungen
 \usepackage[
 	margin=2.5cm,% Seitenränder auf 2,5cm setzen
@@ -16,6 +17,7 @@
 %\renewcommand{\familydefault}{\sfdefault}
 %\usepackage{roboto}% Roboto Font
 
+
 %%%%%%%%% Literatur
 \usepackage[
 	backend = biber,
@@ -24,6 +26,7 @@
 	minalphanames=3,% Kurzform besteht aus minimal drei Buchstaben der Nachnamen der Autoren
 	]{biblatex}% Nützliche Anleitung: http://www.nagel-net.de/Latex/DOKU/DTK-2_2008-biblatex-Teil1.pdf
 \usepackage{notoccite}% don't show cites in toc, list of figures, etc.
+
 
 %%%%%%%%% Code
 \usepackage[
@@ -34,6 +37,7 @@
 \usepackage{caption}% Neue Environment um Code-Blöcken eine Caption zu geben
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=Quellcode}
+
 
 %%%%%%%%% Sprachpackages
 \usepackage[
@@ -55,6 +59,7 @@
 	official
 	]{eurosym}% €-Symbol
 
+
 %%%%%%%%% Blind-Text
 \usepackage{lipsum}
 \usepackage{draftwatermark}
@@ -64,6 +69,7 @@
 \SetWatermarkFontSize{1cm}
 \SetWatermarkAngle{90}
 \SetWatermarkHorCenter{20cm}
+
 
 %%%%%%%%% Mathe & Naturwissenschaften
 \usepackage[
@@ -88,6 +94,7 @@
 	version=4,
 	]{mhchem}% chemische Gleichungen/Summenformeln
 
+
 %%%%%%%%% Grafiken und Farben
 \usepackage{graphicx}% viele grafische Befehle, z.B. \scalebox
 \usepackage{
@@ -103,6 +110,7 @@
 \usepackage{subfigure}% support for the manipulation and reference of small or ‘sub’ figures and tables within a single figure or table environment
 \usepackage{svg}% einbinden von svg Grafiken
 
+
 %%%%%%%%% Diagramme
 \usepackage{
 	tikz,% Grafik-Paket
@@ -111,6 +119,7 @@
 \usepackage{pgfplots}% Plots
 \pgfplotsset{compat=1.14}% Soll man wohl machen
 \usetikzlibrary{patterns}% Patterns anstatt Farben
+
 
 %%%%%%%%% Seitenformatierung
 \makeatletter
@@ -130,6 +139,7 @@
 \usepackage{verbatimbox}
 \usepackage[htt]{hyphenat}% better linebreaks in long \texttt{•} etc.
 
+
 %%%%%%%%% Tabellenumgebung
 \usepackage{booktabs}% enhances the quality of tables
 \usepackage{array}% extends the options for column formats
@@ -138,6 +148,7 @@
 	makecell
 	}% mehrzeilige Tabellenzellen
 \usepackage{tabu}% Moderneres tabularx
+
 
 %%%%%%%%% Custom
 \newenvironment{conditions}% New environment - Für saubere Darstellung gegebener Variablen
@@ -160,6 +171,7 @@
     urlcolor={blue!80!black}
 }
 
+
 % Kapitel, statt Abschnitt, Unterabschnitt, etc.
 \addto\extrasngerman{
 	\def
@@ -174,6 +186,7 @@
 	\subsubsectionautorefname{Kapitel}
 }
 
+
 %%%%%%%%% Abkürzungsverzeichnis:
 \usepackage[% Paket für Glossaries und Acronym-Glossaries % Muss das letzte Paket sein was lädt
 	acronym,
@@ -184,6 +197,7 @@
 	shortcuts,
 	nogroupskip,
 	]{glossaries}
+
 
 %%%%%%%%% Sonstige Custom Befehle:
 \def\Arbeit{\glqq Arbeit\grqq{}~}

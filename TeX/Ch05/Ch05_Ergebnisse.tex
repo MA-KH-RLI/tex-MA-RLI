@@ -16,11 +16,10 @@ Das Clustering erfolgte innerhalb \cite{Schachler} durch den während des \opene
 \input{Ch05/fig/Ch05_fig_01_grid_176_map}
 
 \autoref{fig:grid_176_map} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \gls{DINGO} erzeugt wurde und innerhalb dieser Arbeit untersucht wurde.
-Um mit dieser Arbeit eine Ergänzung zu \cite{Schachler} zu liefern, wurde das Clustering dieser Arbeit übernommen.
-Von den \num{15} identifizierten repräsentativen Netzgebieten wurde eine Teilmenge für die Untersuchung ausgewählt.
-So wurden jeweils zwei Netzgebiete der Kategorien Wind-, \gls{PV}- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren.
-Auf diese Weise wurde sichergestellt, dass die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze aufgezeigt werden können.
-Insgesamt wurden somit sechs Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
+Um mit dieser Arbeit eine Ergänzung zu \cite{Schachler} zu liefern, wird das Clustering \cite{Schachler} übernommen und von den \num{15} identifizierten repräsentativen Netzgebieten eine Teilmenge untersucht.
+So werden jeweils zwei Netzgebiete der Kategorien Wind-, \gls{PV}- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren.
+Auf diese Weise wird sichergestellt, dass die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze aufgezeigt werden können.
+Insgesamt werden somit sechs Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
 In \autoref{tab:grid_IDs} finden sich die \glspl{ID} der untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
 
 \input{Ch05/tab/Ch05_tab_01_grid_IDs}
@@ -35,8 +34,6 @@ Weiterhin findet sich in \autoref{fig:map_representatives} eine Karte der reprä
 
 
 \subsection{Erzeugung und Charakteristik der Fahrtprofile}
-
-% TODO: Standzeit je Wegezweck mean +- Standardabweichung
 
 Mit Hilfe des Software Tools \gls{SIMBEV} können für die zuvor geclusterten Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt werden.
 Die Charakteristik der Fahrtprofile spielt eine entscheidende Rolle für die Wirksamkeit der unterschiedlichen Ladestrategien und die Auswirkungen auf die Netze.
@@ -58,54 +55,63 @@ Die Jahresfahrleistung von \glspl{BEV} je \gls{REGIOSTAR} \gls{ID} wurde zusamme
 
 \input{Ch05/tab/Ch05_tab_03_bev_distance}
 
+Eine Betrachtung der durchschnittlichen Stand- und Ladezeiten bei maximal möglicher Ladeleistung der \gls{EPKW} je Wegezweck (s. \autoref{tab:StandingTime}) zeigt, dass die \gls{EPKW} vor allem im privaten Bereich einen Großteil der Standzeit nicht geladen werden.
+So macht die durchschnittliche Ladezeit zu Hause oder am Arbeitsplatz nur etwa \SI{8}{\percent} der Standzeit aus.
+Dies zeigt deutlich das große Flexibilisierungspotential im privaten Bereich.
+Allerdings fällt auf, dass die mit \gls{SIMBEV} ermittelten Standzeiten im öffentlichen Bereich unrealistisch lang erscheinen.
+
+\input{Ch05/tab/Ch05_tab_04_standing_times}
+
 Der Anteil flexibilisierbarer Ladevorgänge entspricht dem Anteil an Energie am Gesamtenergiebedarf der \glspl{EPKW}, der an privaten Ladepunkten zu Hause oder am Arbeitsplatz nachgeladen wird.
 Hierzu zählen alle Ladevorgänge die am Eigenheim, einer Wohnaalage oder auf einem Firmenparkplatz stattfinden.
 Zusätzlich sind nur Ladevorgänge flexibilisierbar, deren Standzeit größer ist als die Mindestladedauer.
 Demgegenüber stehen nicht-flexibilisierer Ladevorgänge im öffentlichen Raum und an Schnellladestationen bzw. Ladevorgänge deren Standzeit der Mindestladedauer entspricht.
-Im Mittel liegt der Anteil flexibilisierer Ladevorgänge über alle Szenarien je Gemeinde bei \SI{75.2}{\percent}.
+Im Mittel liegt der Anteil flexibilisierer Ladevorgänge über alle Szenarien je Gemeinde bei \SI{71.1}{\percent}.
 Hiervon ausgenommen ist die \SzeFirmenparkplatzdot, bei der es aufgrund des geringeren Bestands an Ladeinfrastruktur am Arbeitsplatz zu mehr Ladevorgängen im öffentlichen Raum kommt.
-Der Anteil flexibilisierer Ladevorgänge liegt bei dieser Szenarette bei \SI{70.0}{\percent}.
-In \autoref{tab:ChargingShare} findet sich die entsprechende Aufteilung.
+Der Anteil flexibilisierer Ladevorgänge liegt bei dieser Szenarette bei \SI{66.1}{\percent}.
+In \autoref{tab:ChargingShare} sind die Anteile in flexibilisierbare und nicht-flexibilisierbare Ladevorgänge zusammengefasst.
 
-\input{Ch05/tab/Ch05_tab_04_ChargingShare}
+\input{Ch05/tab/Ch05_tab_05_ChargingShare}
 
 In \autoref{fig:example_load_profile} findet sich ein beispielhaftes \gls{EPKW}-Lastprofil für ungesteuertes Laden einer mittelstädtischen Gemeinde (\gls{ID} \num{73}) mit \num{6443} \glspl{EPKW} über eine Woche im Antriebswende-Szenario (links).
-Zusätzlich findet sich das \gls{EPKW}-Lastprofil der gleichen Gemeinde in der \SzeFirmenparkplatz (rechts).
+Zusätzlich ist das \gls{EPKW}-Lastprofil der gleichen Gemeinde in der \SzeFirmenparkplatz (rechts) dargestellt.
 
 \input{Ch05/fig/Ch05_fig_04_example_load_profile}
 
-Die Lastgänge \zH und \Firmeparkplatz entsprechen den flexibilisierbaren Ladevorgängen im privaten Bereich.
+Die Lastgänge \zH und \Firmeparkplatz entsprechen den Ladevorgängen im privaten Bereich.
 Unter dem Lastgang \oeffen sind hingegen alle öffentlichen Ladevorgänge mit Außnahme der Schnellladevorgänge (\gls{HPC}) zusammengefasst.
 Deutlich zu erkennen ist die hohe Gleichzeitigkeit am Vormittag sowohl am \Firmeparkplatz als auch im öffentlichen Raum, welche durch das Fahren zur Arbeit ausgelöst wird.
-Auch die Rückkehr zum Wohnort ist ab dem frühen Nachmittag in den Lastgängen \zH und im öffentlichen Raum deutlich zu erkennen. Die entsprechenden Dauerlastkurven für die Gemeinde über die gleiche Woche (s. \autoref{fig:example_load_curve}) zeigen dies nochmals deutlich.
-Schnellladevorgänge werden hingegen vermehrt am Wochenende ausgelöst, da verstärkt längere Fahrten angetreten werden.
-Am Wochenende kommt es zusätzlich zu deutlich geringeren Anteilen von Ladevorgängen \zH und am \Firmeparkplatzdot, wodurch das Flexibilisierungspotential am Wochenende geringer ausfällt.
-Gegenüber dem Antriebswende-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot, jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
+Auch die Rückkehr zum Wohnort ist ab dem frühen Nachmittag in den Lastgängen \zH und im öffentlichen Raum deutlich zu erkennen. Die entsprechenden Dauerlastkurven für die Gemeinde über eine Woche (s. \autoref{fig:example_load_curve}) zeigen dies nochmals deutlich.
+Schnellladevorgänge treten unregelmäßig im Verlauf der Woche auf.
+Am Wochenende kommt es zu deutlich geringeren Anteilen von Ladevorgängen \zH und am \Firmeparkplatzdot, wodurch das Flexibilisierungspotential am Wochenende geringer ausfällt.
+Gegenüber dem Antriebswende-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot.
+Jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
 
 \input{Ch05/fig/Ch05_fig_05_example_load_curve}
 
 
 \subsubsection{Kritik}
 
-Die erstellten Fahrtprofile spiegeln ein aus heutiger Sicht plausibel erscheinendes Bild wider.
+Die erstellten Fahrtprofile spiegeln ein plausibel erscheinendes Bild wider.
 Dennoch existieren einzelne Kritikpunkte, die innerhalb des \gls{SIMBEV} Projektes gelöst werden sollten.
-So war es zum Zeitpunkt der Erstellung der Fahrtprofile noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
-Da sich jedoch die Netzuntersuchungen im Rahmen dieser Masterarbeit auf einen Zeitraum von einem Jahr beziehen, wird die simulierte Woche stellvertretend für das gesamte Jahr verwendet.
-Hierfür wurde jedes Fahrtprofil solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge erreicht wurde.
-Dieses bringt jedoch einige Nachteile mit sich.
+So ist es zum Zeitpunkt der Erstellung der Fahrtprofile noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
+Da sich jedoch die Netzuntersuchungen im Rahmen dieser Masterarbeit auf einen Zeitraum von zwei Wochen beziehen, wird die simulierte Woche stellvertretend für beide Wochen verwendet.
+Hierfür wurde jedes Fahrtprofil eines \gls{EPKW} solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge erreicht wurde.
+Dieses Vorgehen bringt jedoch einige Nachteile mit sich.
 Durch den kurzen simulierten Zeitraum fällt der \gls{SOC} einiger Fahrzeuge im Laufe der Woche nur geringfügig.
 Es ist zu vermuten, dass dies dazu führt, dass Ladevorgänge an Schnellladeinfrastruktur un­ter­re­prä­sen­tiert dargestellt werden.
 Auch nimmt der Ladebedarf im öffentlichen Raum im Laufe der Woche zu.
 Dies lässt sich durch die Abhängigkeit der Ladewahrscheinlichkeit vom \gls{SOC} erklären, da der \gls{SOC} im Mittel im Verlaufe des Woche sinkt.
-
-
-\subsection{Ergebnisse der Implementierung der Ladestrategien}\label{chap:results_charging_strategies}
+Weiterhin erscheinen die Standzeiten der einzelnen Fahrzeuge im öffentlichen Raum als unrealistisch lang.
 
 
 \subsection{Verteilung der Last auf die Ladeinfrastruktur}\label{chap:distribute_demand_ev}
 
 % TODO: Schnittmenge Gemeinden <-> Netzgebiet erklären -> Karte!
 % TODO: Grafik elia Bericht
+
+
+\subsection{Ergebnisse der Implementierung der Ladestrategien}\label{chap:results_charging_strategies}
 
 
 \subsection{Abregelungsbedarf innerhalb der untersuchten Netzgebiete}
