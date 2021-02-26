@@ -149,7 +149,64 @@ Um abschließend die Fahrtprofile erzeugen zu können, muss jeder Gemeinde eine 
 Die entsprechende Zuordnung für das Jahr \num{2018} kann dem Datensatz \glqq Referenzdateien zur regionalstatistischen Raumtypologie\grqq{} \cite[][Stand: \DTMdate{2018-01-01}]{BMVIa2020} entnommen werden.
 
 
-\subsection{Ladestrategien}
+\subsection{Räumliche Verteilung der Ladevorgänge}\label{chap:theo_distribution}
+
+Die räumliche Verteilung der Ladevorgänge innerhalb eines geographischen Gebietes kann starken Einfluss auf die Auswirkungen der Netzintegration von \glspl{EPKW} haben.
+So können beispielsweise regionale Konzentration von Ladepunkten einzelne Leitungen stark beanspruchen und den Netzausbaubedarf erhöhen.\medskip
+
+Innerhalb dieser Arbeit erfolgt die Verteilung der Ladevorgänge immer innerhalb des untersuchten geographischen Gebietes.
+Ein Laden in anderen geographischen Gebieten, oder das Laden von \glqq Fremdfahrzeugen\grqq{} im untersuchten Gebiet kann nicht abgebildet werden.
+Grundlage für die Ermittlung von möglichen Standorten bietet eine geoinformatische Auswertung der untersuchten geographischen Gebiete.
+Das hierfür verwendete Software Tool, wurde unabhängig von dieser Arbeit am Reiner Lemoine Institut entwickelt und wurde noch nicht veröffentlicht.
+An dieser Stelle soll die Methodik für die Ermittlung von möglichen Standorten und deren Gewichtung für private und öffentliche Ladeinfrastruktur erläutert werden.
+Eine genauere Beschreibung der Unterteilung in private und öffentliche Ladeinfrastruktur findet sich in \autoref{chap:EMob_Szenarien}.
+
+
+\paragraph{Private Ladeinfrastruktur:}
+
+Die private Ladeinfrastruktur beinhaltet alle Ladevorgänge, die an privater Ladeinfrastruktur am Eigenheim, in Wohnanlagen oder am Arbeitsplatz stattfinden.
+Um mögliche Standorte für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen identifizieren zu können, werden die Anzahl an Wohneinheiten auf einem \SI{100 x 100}{\m} Raster aus dem Zensus 2011 \cite{StatistischesBundesamt2011} verwendet.
+So wird jedem Raster mit mehr als einer Wohneinheit und einer Einwohnerzahl von größer Null ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet und anhand der Gesamtanzahl von Wohneinheiten im Raster gewichtet.\medskip
+
+Für private Ladeinfrastruktur am Arbeitsplatz werden die Klassifizierungen der Landflächen nach Nutzungsart nach der \gls{OSM} \cite{OpenStreetMapFoundation} verwendet.
+Hierbei wird jeder Landfläche mit der Nutzungsart \glqq commercial\grqq , \glqq retail\grqq{} oder \glqq industrial\grqq{} ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
+Die Gewichtung erfolgt anhand der Fläche des Gebietes multipliziert mit einem Flächnutzungsfaktor.
+Der Flächennutzungsfaktor liegt für \glqq commercial\grqq{} bei \num{3}, für \glqq retail\grqq{} bei \num{2} und für \glqq industrial\grqq{} bei \num{1}.
+Da hierdurch unter Umständen nur wenige Anschlusspunkte generiert werden, werden ergänzend \SI{30}{\percent} der möglichen öffentlichen Normalladeinfrastruktur zusätzlich für Ladeinfrastruktur am Arbeitsplatz genutzt.
+Den zusätzlichen Anschlusspunkten wird eine geringe Gewichtung zugeordnet, da durch diese vor allem kleine Betriebe abgebildet werden sollen.
+
+
+\paragraph{Öffentliche Ladeinfrastruktur:}
+
+Die öffentliche Ladeinfrastruktur beinhaltet Ladeinfrastruktur, die nicht der privaten Ladeinfrastruktur zugeordnet werden kann.
+Grundsätzlich lässt sich hierbei zwischen Normal- und Schnellladeinfrastruktur unterscheiden.
+Für die Normalladeinfrastruktur werden allen \glspl{POI} aus der \gls{OSM} \cite{OpenStreetMapFoundation} in dem untersuchten Gebiet jeweils ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
+Die Gewichtung der Anschlusspunkt erfolgt hierbei anhand der Gesamtanzahl an \glspl{POI} in der Nähe des Anschlusspunktes.\medskip
+
+Für Schnellladeinfrastruktur werden jeder Tankstelle aus der \gls{OSM} \cite{OpenStreetMapFoundation} im untersuchten Gebiet jeweils ein Anschlusspunkt zugeordnet.
+Liegt innerhalb des Gebietes keine Tankstelle, so wird ein zufälliger Anschlusspunkt der öffentlichen Ladeinfrastruktur verwendet.
+Eine Gewichtung findet in diesem Fall nicht statt.
+
+
+\paragraph{Zuteilung der Ladevorgänge auf die Ladeinfrastruktur:}
+
+Die Zuteilung der Ladevorgänge auf die Ladeinfrastruktur erfolgt mit Hilfe des Gewichtungsfaktors der verschiedenen Anschlusspunkte.
+Mit Hilfe des Zufallsmoduls des Open Source Tools \textit{NumPy} \cite{harris2020array}, erfolgt eine zufällige und gewichtete Auswahl eines Anschlusspunktes je Ladevorgang.
+Im Falle der privaten Ladeinfrastruktur wird für jedes Fahrzeug ein eigener Ladepunkt eingerichtet.
+Diesem Ladepunkt werden alle Ladevorgänge des jeweiligen Fahrzeuges und \UCs zugeordnet.
+Nachdem einem Anschlusspunkt ein Ladepunkt zugeordnet wurde, wird die Gewichtung des Anschlusspunktes leicht abgesenkt.\medskip
+
+Für die öffentliche Ladeinfrastruktur erfolgt die Zuweisung dezidiert pro Ladevorgang.
+So wird je Ladevorgang untersucht, ob bereits ein passender Ladepunkt zur Verfügung steht.
+Hierbei wird beachtet, ob in dem entsprechenden Zeitraum der Ladepunkt durch ein anderes Fahrzeug besetzt ist und ob der Ladepunkt die entsprechende Ladeleistung zur Verfügung stellen kann.
+Sollte kein passender Ladepunkt zur Verfügung stehen, wird analog zum Vorgehen bei der privaten Ladeinfrastruktur ein Ladepunkt zufällig und gewichtet ausgewählt und eingerichtet.\medskip
+
+Da die \gls{MS}-Netzgebiete nicht immer die Gesamtfläche einer Gemeinde abdecken, muss abschließend geprüft werden, ob die generierten Anschlusspunkte innerhalb des Netzgebietes liegen.
+Liegt ein Anschlusspunkt innerhalb eines \gls{MS}-Netzgebietes, so wird er diesem zugeordnet.
+Tut dieser es nicht, dann entfällt die Ladevorgänge auf ein angrenzendes Netzgebiet und ist somit nicht Teil der abschließenden Auswertungen.
+
+
+\subsection{Ladestrategien}\label{chap:theo_strategies}
 
 Innerhalb dieser Arbeit werden zwei präventive Ladestrategien und eine kurative Ladestrategie untersucht.
 Das Ziel der Ladestrategien ist es, ein möglichst netzfreundliches Verhalten der Ladevorgänge zu erzeugen, ohne den Nutzen des Fahrzeuges für den Endverbraucher einzuschränken.
@@ -212,63 +269,6 @@ Um die Rechenzeit in einem akzeptablen Maß zu halten, wird eine Näherung an ei
 So wird für jeden Ladevorgang ermittelt, wie viel überschüssige Standzeit zur Flexibilisierung der Ladevorgänge zur Verfügung steht.
 Die Ladevorgänge werden anschließend in Abhängigkeit dieses Kriteriums in aufsteigender Reihenfolge sortiert und einzeln optimiert.
 Auf diese Weise werden Ladevorgänge mit einem geringen Flexibilitätsband vorrangig behandelt und eine möglichst optimale Lösung bei einem geringen Rechenaufwand erreicht.
-
-
-\subsection{Räumliche Verteilung der Ladelast}
-
-Die räumliche Verteilung der Ladelast innerhalb eines geographischen Gebietes kann starken Einfluss auf die Auswirkungen der Netzintegration von \glspl{EPKW} haben.
-So können beispielsweise regionale Konzentration von Ladepunkten einzelne Leitungen stark beanspruchen und den Netzausbaubedarf erhöhen.\medskip
-
-Innerhalb dieser Arbeit erfolgt die Verteilung der Ladelast immer innerhalb des untersuchten geographischen Gebietes.
-Ein Laden in anderen geographischen Gebieten, oder das Laden von \glqq Fremdfahrzeugen\grqq{} im untersuchten Gebiet kann nicht abgebildet werden.
-Grundlage für die Ermittlung von möglichen Standorten bietet eine geoinformatische Auswertung der untersuchten geographischen Gebiete.
-Das hierfür verwendete Software Tool, wurde unabhängig von dieser Arbeit am Reiner Lemoine Institut entwickelt und wurde noch nicht veröffentlicht.
-An dieser Stelle soll die Methodik für die Ermittlung von möglichen Standorten und deren Gewichtung für private und öffentliche Ladeinfrastruktur erläutert werden.
-Eine genauere Beschreibung der Unterteilung in private und öffentliche Ladeinfrastruktur findet sich in \autoref{chap:EMob_Szenarien}.
-
-
-\paragraph{Private Ladeinfrastruktur:}
-
-Die private Ladeinfrastruktur beinhaltet alle Ladevorgänge, die an privater Ladeinfrastruktur am Eigenheim, in Wohnanlagen oder am Arbeitsplatz stattfinden.
-Um mögliche Standorte für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen identifizieren zu können, werden die Anzahl an Wohneinheiten auf einem \SI{100 x 100}{\m} Raster aus dem Zensus 2011 \cite{StatistischesBundesamt2011} verwendet.
-So wird jedem Raster mit mehr als einer Wohneinheit und einer Einwohnerzahl von größer Null ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet und anhand der Gesamtanzahl von Wohneinheiten im Raster gewichtet.\medskip
-
-Für private Ladeinfrastruktur am Arbeitsplatz werden die Klassifizierungen der Landflächen nach Nutzungsart nach der \gls{OSM} \cite{OpenStreetMapFoundation} verwendet.
-Hierbei wird jeder Landfläche mit der Nutzungsart \glqq commercial\grqq , \glqq retail\grqq{} oder \glqq industrial\grqq{} ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
-Die Gewichtung erfolgt anhand der Fläche des Gebietes multipliziert mit einem Flächnutzungsfaktor.
-Der Flächennutzungsfaktor liegt für \glqq commercial\grqq{} bei \num{3}, für \glqq retail\grqq{} bei \num{2} und für \glqq industrial\grqq{} bei \num{1}.
-Da hierdurch unter Umständen nur wenige Anschlusspunkte generiert werden, werden ergänzend \SI{30}{\percent} der möglichen öffentlichen Normalladeinfrastruktur zusätzlich für Ladeinfrastruktur am Arbeitsplatz genutzt.
-Den zusätzlichen Anschlusspunkten wird eine geringe Gewichtung zugeordnet, da durch diese vor allem kleine Betriebe abgebildet werden sollen.
-
-
-\paragraph{Öffentliche Ladeinfrastruktur:}
-
-Die öffentliche Ladeinfrastruktur beinhaltet Ladeinfrastruktur, die nicht der privaten Ladeinfrastruktur zugeordnet werden kann.
-Grundsätzlich lässt sich hierbei zwischen Normal- und Schnellladeinfrastruktur unterscheiden.
-Für die Normalladeinfrastruktur werden allen \glspl{POI} aus der \gls{OSM} \cite{OpenStreetMapFoundation} in dem untersuchten Gebiet jeweils ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
-Die Gewichtung der Anschlusspunkt erfolgt hierbei anhand der Gesamtanzahl an \glspl{POI} in der Nähe des Anschlusspunktes.\medskip
-
-Für Schnellladeinfrastruktur werden jeder Tankstelle aus der \gls{OSM} \cite{OpenStreetMapFoundation} im untersuchten Gebiet jeweils ein Anschlusspunkt zugeordnet.
-Liegt innerhalb des Gebietes keine Tankstelle, so wird ein zufälliger Anschlusspunkt der öffentlichen Ladeinfrastruktur verwendet.
-Eine Gewichtung findet in diesem Fall nicht statt.
-
-
-\paragraph{Zuteilung der Ladevorgänge auf die Ladeinfrastruktur:}
-
-Die Zuteilung der Ladevorgänge auf die Ladeinfrastruktur erfolgt mit Hilfe des Gewichtungsfaktors der verschiedenen Anschlusspunkte.
-Mit Hilfe des Zufallsmoduls des Open Source Tools \textit{NumPy} \cite{harris2020array}, erfolgt eine zufällige und gewichtete Auswahl eines Anschlusspunktes je Ladevorgang.
-Im Falle der privaten Ladeinfrastruktur wird für jedes Fahrzeug ein eigener Ladepunkt eingerichtet.
-Diesem Ladepunkt werden alle Ladevorgänge des jeweiligen Fahrzeuges und \UCs zugeordnet.
-Nachdem einem Anschlusspunkt ein Ladepunkt zugeordnet wurde, wird die Gewichtung des Anschlusspunktes leicht abgesenkt.\medskip
-
-Für die öffentliche Ladeinfrastruktur erfolgt die Zuweisung dezidiert pro Ladevorgang.
-So wird je Ladevorgang untersucht, ob bereits ein passender Ladepunkt zur Verfügung steht.
-Hierbei wird beachtet, ob in dem entsprechenden Zeitraum der Ladepunkt durch ein anderes Fahrzeug besetzt ist und ob der Ladepunkt die entsprechende Ladeleistung zur Verfügung stellen kann.
-Sollte kein passender Ladepunkt zur Verfügung stehen, wird analog zum Vorgehen bei der privaten Ladeinfrastruktur ein Ladepunkt zufällig und gewichtet ausgewählt und eingerichtet.\medskip
-
-Da die \gls{MS}-Netzgebiete nicht immer die Gesamtfläche einer Gemeinde abdecken, muss abschließend geprüft werden, ob die generierten Anschlusspunkte innerhalb des Netzgebietes liegen.
-Liegt ein Anschlusspunkt innerhalb eines \gls{MS}-Netzgebietes, so wird er diesem zugeordnet.
-Tut dieser es nicht, dann entfällt die Ladelast auf ein angrenzendes Netzgebiet und ist somit nicht Teil der nachfolgenden Auswertungen.
 
 
 \subsection{Netzuntersuchung}\label{chap:edisgo_theo}

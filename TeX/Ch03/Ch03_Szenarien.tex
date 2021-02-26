@@ -147,11 +147,17 @@ Da die Daten hierbei in unterschiedlichen Qualitäten und Detailgraden vorliegen
 Ziel ist es dabei allen Anlagen geografischen Bezugspunkt, sowie eine Netzebene zuzuordnen.
 Je nach Datensatz werden hierbei die angegebene Spannungsebene, die eingetragene Technologie und die installierte Leistung der Kraftwerke als Identifikator genutzt.\medskip
 
-Für das Szenario \ego werden die Hochlaufzahlen für regenerative Erzeugerkapazitäten aus der Studie \textit{e-Highway 2050 - Modular Development Plan of the Pan-European Transmission System 2050} \cite{EEHPG2015} übernommen und finden sich in \autoref{tab:EE-RampUp}.
+Für das Szenario \ego werden die Hochlaufzahlen für regenerative Erzeugerkapazitäten aus der Studie \textit{e-Highway 2050 - Modular Development Plan of the Pan-European Transmission System 2050} \cite{EEHPG2015} übernommen, welche sich in \autoref{tab:EE-RampUp} finden.
 Auf Grundlage des zuvor erstellten Status Quo werden die Erzeugerkapazitäten entsprechend der aktuellen Verteilung gewichtet verteilt.
 Hierbei werden maximale Ausbaupotentiale berücksichtigt, indem beispielsweise Weißflächen für den Ausbau von onshore Windkraftanlagen berücksichtigt werden.
 
 \input{Ch03/tab/Ch03_tab_02_EE-RampUp}
+
+Die Zeitreihen für die Erzeugung aus Wind- und \gls{PV}-Anlagen werden der \gls{OEP} \cite{OEP} entnommen und sind frei verfügbar.
+Im Falle der Energieerzeugung aus Biomasse wird eine konstante Erzeugung angenommen.
+So waren in Deutschland im Jahr \num{2019} \SI{9983}{\mw} an Biomasse-Kraftwerken installiert die insgesamt \SI{50009}{\gwh} Energie erzeugten. \cite{BMWi2020}
+Der hier draus resultierende Leistungsfaktor von \num{0.57} wird auf alle Biomasse-Erzeugerkapazitäten unverändert umgelegt.
+In den untersuchten Netzgebieten finden sich keine Wasserkraft-Erzeugerkapazitäten.
 
 
 \subsubsection{Konventioneller Stromverbrauch}

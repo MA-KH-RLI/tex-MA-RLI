@@ -105,13 +105,23 @@ Dies lässt sich durch die Abhängigkeit der Ladewahrscheinlichkeit vom \gls{SOC
 Weiterhin erscheinen die Standzeiten der einzelnen Fahrzeuge im öffentlichen Raum als unrealistisch lang.
 
 
-\subsection{Verteilung der Last auf die Ladeinfrastruktur}\label{chap:distribute_demand_ev}
+\subsection{Verteilung der Ladevorgänge auf die Ladeinfrastruktur}\label{chap:distribute_demand_ev}
 
-% TODO: Schnittmenge Gemeinden <-> Netzgebiet erklären -> Karte!
-% TODO: Grafik elia Bericht
+Die Verteilung der Ladevorgänge auf eine konkrete georeferenzierte Ladeinfrastruktur nach \autoref{chap:theo_distribution} liefert je Netzgebiet eine Vielzahl von unterschiedlichen Netzanschlusspunkten.
+In \autoref{fig:cps_in_grid} finden sich beispielhaft die ermittelten Netzanschlusspunkte für Ladeinfrastruktur innerhalb des Netzgebietes \num{176} für das Antriebswende-Szenario für Ladeinfrastruktur zu Hause, am Arbeitsplatz und im öffentlichen Raum sowie für Schnellladeinfrastruktur (\gls{HPC}).
+Es wird deutlich, dass die Ladeinfrastruktur zu Hause die meisten Netzanschlusspunkte aufweist, während für die Schnellladeinfrastruktur nur wenige Netzanschlusspunkte benötigt werden.
+Weiterhin zeigt sich eine starke Konzentration der Ladeinfrastruktur in den bewohnten Regionen.
+
+\input{Ch05/fig/Ch05_fig_06_cps_dist}
 
 
 \subsection{Ergebnisse der Implementierung der Ladestrategien}\label{chap:results_charging_strategies}
+
+Im Rahmen der Netzuntersuchungen innerhalb dieser Arbeit kommt den Zeitreihen der Last der \glspl{EPKW} die größte Bedeutung zu, da die Last und Erzeugung aller anderen Verbraucher und Erzeuger nicht veränderlich ist.
+Das Ziel der Ladestrategien (s. \autoref{chap:theo_strategies} ist es, die Netzbelastung möglichst gering zu halten.
+Bei dem gruppierten und reduzierten Laden soll dies durch ein präventives Lademanagement und bei dem Residuallast-Laden durch ein kuratives Lademanagement erreicht werden.
+
+
 
 
 \subsection{Abregelungsbedarf innerhalb der untersuchten Netzgebiete}
