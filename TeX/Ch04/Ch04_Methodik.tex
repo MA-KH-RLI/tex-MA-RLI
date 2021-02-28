@@ -15,7 +15,15 @@ Weiterhin findet sich auf Read the Docs \cite{dingo-docs2019} eine ausführliche
 
 Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \openego Projektes. \cite{Mueller2019}
 Die Netztopologien werden auf der Datengrundlage des Jahres \num{2015} gebildet und entsprechend ausgebaut.
-Urbane Netzgebiete können derzeit nicht durch \gls{DINGO} abgebildet werden und werden deshalb innerhalb dieser Masterarbeit nicht betrachtet.
+Urbane Netzgebiete können derzeit nicht durch \gls{DINGO} abgebildet werden und werden deshalb innerhalb dieser Masterarbeit nicht betrachtet. \medskip
+
+In der koneventionellen Netzplanung werden Betriebsmittel in der Regel überdimensioniert ausgelegt, um eine möglichst lange Betriebszeit zu garantieren.
+Da die Netzgebiete des \openego Projektes so ausgebaut werden, dass die Versorgungsaufgabe möglichst genau übernommen werden kann, werden die Netzgebiete zusätzlich ausgebaut.
+Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant werden und entsprechend ausgebaut.
+Hierbei wird die Elektromobilität noch nicht berücksichtigt.
+Dies gilt sowohl für die Transformatorstationen als auch die Kabel innerhalb des Netzgebietes.
+Die verwendeten Betriebsmittel können der Dokumentation \glspl{EDISGO} \cite{edisgoDocs2017a} entnommen werden.
+Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Station größer sein als der größte verfügbare Transformator, so werden so viele Transformatoren wie nötig parallel Betrieben, um den Anforderungen gerecht zu werden.
 
 
 \paragraph{Mittelspannung:}
@@ -206,6 +214,12 @@ Liegt ein Anschlusspunkt innerhalb eines \gls{MS}-Netzgebietes, so wird er diese
 Tut dieser es nicht, dann entfällt die Ladevorgänge auf ein angrenzendes Netzgebiet und ist somit nicht Teil der abschließenden Auswertungen.
 
 
+\paragraph{Netzintegration der Ladeinfrastruktur:}
+
+Die Netzintegration der Ladeinfrastruktur erfolgt automatisiert mit Hilfe der \textit{integrate\_component} Funktionalität \glspl{EDISGO}.
+Der Anschluss erfolgt hierbei bis zu einer Anschlussleistung von \SI{0.3}{\mva} in der Niederspannung und darüber direkt in der Mittelspannung.
+
+
 \subsection{Ladestrategien}\label{chap:theo_strategies}
 
 Innerhalb dieser Arbeit werden zwei präventive Ladestrategien und eine kurative Ladestrategie untersucht.
@@ -214,9 +228,16 @@ Deshalb gilt als Randbedingung aller Ladestrategien, dass der Ladebedarf jedes L
 Dies bedeutet, dass Ladevorgänge nur dann flexibilisiert werden können, wenn innerhalb der Standzeit eine Vollladung des Fahrzeuges möglich ist.
 Weiterhin können nur private Ladevorgänge flexibilisiert werden, da bei öffentlichen Ladevorgängen die Erfüllung der Dienstleistung im Vordergrund steht.\medskip
 
-Um die drei Ladestrategien miteinander vergleichen zu können, wird zusätzlich ein vollkommen ungesteuertes Laden der Fahrzeuge untersucht, welches als Vergleichspunkt verwendet wird.
+Um die drei Ladestrategien miteinander vergleichen zu können, wird zusätzlich ein Referenz-Ladestrategie der Fahrzeuge untersucht, welches als Vergleichspunkt verwendet wird.
 Auf diese Weise soll untersucht werden, inwieweit eine kurative Ladestrategie gegenüber präventiven Ladestrategien Vorteile aufweist.
 Dies ist deshalb von Bedeutung, da für kurative Eingriffe zusätzliche Technik eingesetzt und die  Betriebsführung dieser abgebildet werden muss, wodurch die Kosten einer kurative Ladestrategie deutlich über den Kosten einer präventiven Ladestrategie liegen.
+
+
+\paragraph{Referenz-Laden:}
+
+Bei der Referenz-Ladestrategie wird für Ladevorgänge in der \gls{NS}-Ebene ein vollkommen ungesteuertes Laden der Fahrzeuge angenommen.
+Da bei großen privaten Ladeparks ein ungesteuertes Laden als unrealistisch einzuschätzen ist, wird davon ausgegangen, dass ab einem Anschluss in der \gls{MS}-Ebene der Betreiber eine Reduktion der Spitzenlast anstrebt.
+In diesen Fällen kommt auch bei der Referenz-Ladestrategie das reduzierte Laden zum Einsatz, welches anschließend erläutert wird.
 
 
 \paragraph{Gruppiertes Laden:}
@@ -245,7 +266,7 @@ Die Flexibilität dieser Ladestrategie wird durch eine Mindestladeleistung von \
 Bei dem Residuallast-Laden handelt es sich um eine kurative Ladestrategie.
 Der Ladevorgang eines Fahrzeuges findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
 Die Zuweisung findet auf Viertelstundenbasis statt und die Ladevorgänge finden immer bei voller Ladeleistung statt.
-Das Ziel der Optimierung kann nach \autoref{eq:residual} so formuliert werden, dass eine Minimierung der \gls{MQA} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
+Das Ziel der Optimierung kann nach \autoref{eq:residual} so formuliert werden, dass eine Minimierung der \glspl{MQA} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
 
 \begin{equation}
 	\text{MQA} = \frac{1}{n} \sum_i^n \left( P_{\text{R}_i} - \overline{P}_{\text{R}} \right)^2 \stackrel{!}{=} \text{min}
@@ -333,12 +354,16 @@ Vorerst werden etwaige Netzprobleme und die entsprechenden Zeitschritten in dene
 Anschließend wird die Last bzw. die Einspeisung in Schritten von \SI{10}{\percent} innerhalb der ermittelten Zeitschritte gekürzt.
 Die beiden Schritte werden so lange wiederholt bis keine Netzprobleme mehr auftreten.\medskip
 
-Die Ermittlung des Abregelungsbedarfs erfolgt für zwei Wochen des Jahres.
-Dies ist nötig, um die Rechenzeit innerhalb eines akzeptablen Maßes zu halten.
-Hierbei werden die Wochen untersucht, die im Netzgebiet die minimale und maximale durchschnittliche Residuallast aufweisen.
-Auf diese Weise sollen möglichst extreme Belastungssituationen abgedeckt werden. \medskip
+Um die Rechenzeit innerhalb eines akzeptablen Maßes zu halten, erfolgt die Ermittlung des Abregelungsbedarfs für zwei Wochen des Jahres.
+Hierbei werden die Wochen untersucht, die im Netzgebiet die minimale bzw. maximale durchschnittliche Residuallast aufweisen.
+Auf diese Weise sollen möglichst extreme Belastungssituationen abgedeckt werden.\medskip
 
-Bei der Lösung der Netzprobleme werden vorerst Überlastungen gelöst und erst anschließend Spannungsprobleme.
+Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
+In diesen Fällen wird eine Abregelung in den entsprechenden Zeitschritten unternommen.
+Dabei werden zu erst die einzelnen \gls{NS}-Netzgebiete eines \gls{MS}-Netzgebietes einzeln betrachtet, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.
+Durch die vorgeschaltete Einzelbetrachtung der \gls{NS}-Netzgebiete kann der Abregelungsbedarf eindeutig der \gls{NS}- bzw. \gls{MS}-Ebene zugeordnet werden.\medskip
+
+Bei der Lösung der Netzprobleme werden vorerst Konvergenzprobleme, anschließend Überlastungen und abschließend Spannungsprobleme gelöst.
 Weiterhin werden Probleme in der \gls{NS}-Ebene gelöst, bevor Probleme in der \gls{MS}-\gls{NS}-Umspannebene und abschließend in der \gls{MS}-Ebene gelöst werden.
 Durch die Lösung von Netzproblemen auf tieferen Spannungsebenen können unter Umständen bereits Netzprobleme in darüber liegenden Spannungsebenen gelöst oder entspannst werden.
 Weiterhin werden Netzprobleme innerhalb der \gls{NS}- bzw. \gls{MS}-Ebene anhand ihrer Entfernung zur übergeordneten Umspannebene priorisiert.
@@ -346,9 +371,6 @@ So kann auch hier die Lösung von weiter entfernten Netzproblemen bereits vorges
 Für jeden Zeitschritt, in dem Überlastungs- oder Spannungsprobleme an einem Netzknoten auftreten, wird geprüft, ob die Netzprobleme durch hohe Nachfrage oder hohe Einspeisung entstehen.
 Anhand dieser Information wird entscheiden, ob Last oder Einspeisung abgeregelt werden soll.\medskip
 
-Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
-In diesen Fällen wird ebenfalls eine Abregelung in den entsprechenden Zeitschritten unternommen.
-In diesen Fällen lässt sich dieser Abregelungsbedarf keiner der Netzebenen zuordnen.
 Die gesamte notwendige Abregelung für das \gls{MS}-Netz ergibt sich aus der Summierung aller nötigen Abregelungen von Last und Erzeugung am \gls{MS}-Netzanschlusspunkt.
 In \autoref{fig:scope_curtailment} findet sich eine Veranschaulichung des Vorgehens.
 
