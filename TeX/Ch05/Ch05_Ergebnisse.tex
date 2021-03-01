@@ -117,11 +117,28 @@ Weiterhin zeigt sich eine starke Konzentration der Ladeinfrastruktur in den bewo
 
 \subsection{Ergebnisse der Implementierung der Ladestrategien}\label{chap:results_charging_strategies}
 
-Im Rahmen der Netzuntersuchungen innerhalb dieser Arbeit kommt den Zeitreihen der Last der \glspl{EPKW} die größte Bedeutung zu, da die Last und Erzeugung aller anderen Verbraucher und Erzeuger nicht veränderlich ist.
-Das Ziel der Ladestrategien (s. \autoref{chap:theo_strategies} ist es, die Netzbelastung möglichst gering zu halten.
-Bei dem gruppierten und reduzierten Laden soll dies durch ein präventives Lademanagement und bei dem Residuallast-Laden durch ein kuratives Lademanagement erreicht werden.
+Im Rahmen der Netzuntersuchungen kommt den Zeitreihen der Last der \glspl{EPKW} die größte Bedeutung zu, da die Last und Erzeugung aller anderen Verbraucher und Erzeuger nicht veränderlich ist.
+Das Ziel der Ladestrategien (s. \autoref{chap:theo_strategies}) ist es, die Netzbelastung möglichst gering zu halten.
+Bei dem gruppierten und reduzierten Laden soll dies durch ein präventives Lademanagement und bei dem Residuallast-Laden durch ein aktives Lademanagement erreicht werden.
 
+\input{Ch05/fig/Ch05_fig_07_residual_load}
 
+\autoref{fig:residual_load} zeigt beispielhaft für das Netzgebiet \num{176} die Abhängigkeit der Residuallast von der Ladestrategie im Antriebswende-Szenario.
+Dabei zeigt sich, dass vor allem die Residuallast-Ladestrategie zu einer klaren Glättung der Residuallastkurve führt, während sich bei den sonstigen Ladestrategien ein ähnliches Bild zeigt.
+Dabei führt das gruppierte Laden gegenüber dem Referenz-Laden sogar zu einem gegensätzlichen Effekt und zu einer Erhöhung der Spitzenlast im Last- und Rückspeisefall.
+In \autoref{fig:residual_load_diff} ist die Veränderung der Residuallast über ein Jahr durch die verschiedenen Ladestrategien dargestellt.
+Dabei zeigt die Darstellung der Referenz-Ladestrategie (oben links) die Residuallast über ein Jahr, während in den anderen drei Darstellungen die Differenz der jeweiligen Ladestrategie zum Referenz-Laden abgebildet wird.
+Bei dem gruppierten Laden zeigt sich gegenüber dem Referenz-Laden eine deutlich stärkere Belastung am Vormittag und ein Abfallen der Belastung bis zum Mittag.
+Am Nachmittag lässt sich in der Regel keine Differenz feststellen.
+Bei der reduzierten Ladestrategie kommt es zu einer leicht reduzierten Residuallast im Verlauf des Tages, während die Residuallast Nachts leicht zunimmt.
+Die stärksten Veränderungen werden bei der Residuallast-Ladestrategie festgestellt.
+Da es sich bei dem Netzgebiet \num{176} um ein \gls{PV}-dominiertes Netz handelt, kommt es zu einer starken Verschiebung der Ladevorgänge in die Mittagszeit.
+Auch kommt es zu einer deutlichen Verschiebung der Last in die Schwachlastzeit nach Mitternacht, während die Residuallast am Vor- und Nachmittag abnimmt.
+Da auf diese weise jedoch nur Aussagen über das komplette \gls{MS}-Netzgebiet getroffen werden können, kann hier draus noch keine Aussage über die Belastung der einzelnen Betriebsmittel getroffen werden.
+
+\input{Ch05/fig/Ch05_fig_08_residual_load_diff}
+
+% TODO: Eventuell Auswertung, wie sich die Residuallast durch das Residuallast-Laden verändert bei den unterschiedlichen Netzgebieten und Szenarien
 
 
 \subsection{Abregelungsbedarf innerhalb der untersuchten Netzgebiete}

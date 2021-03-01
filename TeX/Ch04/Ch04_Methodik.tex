@@ -222,15 +222,15 @@ Der Anschluss erfolgt hierbei bis zu einer Anschlussleistung von \SI{0.3}{\mva} 
 
 \subsection{Ladestrategien}\label{chap:theo_strategies}
 
-Innerhalb dieser Arbeit werden zwei präventive Ladestrategien und eine kurative Ladestrategie untersucht.
+Innerhalb dieser Arbeit werden zwei präventive Ladestrategien und eine aktive Ladestrategie untersucht.
 Das Ziel der Ladestrategien ist es, ein möglichst netzfreundliches Verhalten der Ladevorgänge zu erzeugen, ohne den Nutzen des Fahrzeuges für den Endverbraucher einzuschränken.
 Deshalb gilt als Randbedingung aller Ladestrategien, dass der Ladebedarf jedes Ladevorgangs zu \SI{100}{\percent} gedeckt werden muss.
 Dies bedeutet, dass Ladevorgänge nur dann flexibilisiert werden können, wenn innerhalb der Standzeit eine Vollladung des Fahrzeuges möglich ist.
 Weiterhin können nur private Ladevorgänge flexibilisiert werden, da bei öffentlichen Ladevorgängen die Erfüllung der Dienstleistung im Vordergrund steht.\medskip
 
 Um die drei Ladestrategien miteinander vergleichen zu können, wird zusätzlich ein Referenz-Ladestrategie der Fahrzeuge untersucht, welches als Vergleichspunkt verwendet wird.
-Auf diese Weise soll untersucht werden, inwieweit eine kurative Ladestrategie gegenüber präventiven Ladestrategien Vorteile aufweist.
-Dies ist deshalb von Bedeutung, da für kurative Eingriffe zusätzliche Technik eingesetzt und die  Betriebsführung dieser abgebildet werden muss, wodurch die Kosten einer kurative Ladestrategie deutlich über den Kosten einer präventiven Ladestrategie liegen.
+Auf diese Weise soll untersucht werden, inwieweit eine aktive Ladestrategie gegenüber präventiven Ladestrategien Vorteile aufweist.
+Dies ist deshalb von Bedeutung, da für aktive Eingriffe zusätzliche Technik eingesetzt und die  Betriebsführung dieser abgebildet werden muss, wodurch die Kosten einer aktiven Ladestrategie deutlich über den Kosten einer präventiven Ladestrategie liegen.
 
 
 \paragraph{Referenz-Laden:}
@@ -257,13 +257,14 @@ In \autoref{fig:group_vis} findet sich eine beispielhafte Einteilung von Ladepun
 Im Gegensatz zum gruppierten Laden soll beim reduzierten Laden die Senkung der Netzbelastung durch die Reduzierung der Ladeleistung der einzelnen Ladevorgänge erreicht werden.
 Hierbei wird durch eine Absenkung der Ladeleistung möglichst die gesamte Standzeit des Fahrzeuges für den Ladevorgang ausgenutzt.
 Die Flexibilität dieser Ladestrategie wird durch eine Mindestladeleistung von \SI{10}{\percent} der Nennleistung des angefahrenen Ladepunktes technisch begrenzt.
+Im Gegensatz zur Referenz-Ladestrategie werden unabhängig von der Netzebene beim reduzierten Laden alle privaten Ladevorgänge flexibilisiert.
 
 % TODO: Quelle Konferenzpaper Birgit?
 
 
 \paragraph{Residuallast-Laden:}
 
-Bei dem Residuallast-Laden handelt es sich um eine kurative Ladestrategie.
+Bei dem Residuallast-Laden handelt es sich um eine aktive Ladestrategie.
 Der Ladevorgang eines Fahrzeuges findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
 Die Zuweisung findet auf Viertelstundenbasis statt und die Ladevorgänge finden immer bei voller Ladeleistung statt.
 Das Ziel der Optimierung kann nach \autoref{eq:residual} so formuliert werden, dass eine Minimierung der \glspl{MQA} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
