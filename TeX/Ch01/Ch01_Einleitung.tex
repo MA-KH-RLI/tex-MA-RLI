@@ -1,9 +1,45 @@
 \section{Einleitung}
 
+
 \subsection{Motivation und Zielsetzung}
+
+Durch die Verpflichtung der Bundesregierung die Treibhausgasemissionen im Verkehrssektor bis \num{2030} um \SIrange[range-phrase=~bis~]{40}{42}{\percent} \cite{BundesministeriumUmwelt2019} zu senken, scheint eine rapide Steigerung der Marktdurchdringung des Verkehrssektor mit Elektrofahrzeugung unumgänglich zu sein.
+Aber nicht nur aus Gründen des Klimaschutzes scheint ein Szenario mit einer hohen Durchdringung an direktelektrifizierten Fahrzeugen immer wahrscheinlicher.
+Auch sinkende Investitionskosten, ausgelöst durch einen starken Preisverfall bei der Batterietechnologie und staatliche Subventionen, eine Erweiterung des Angebots, wegfallende lokale Schadstoffemissionen und Effizienzvorteile gegenüber alternative Technologien spielen eine entscheidende Rolle.
+Zusätzlich sollen durch den Aufbau einer Million öffentlich-zugänglicher Ladepunkte bis \num{2030} \cite{DieBundesregierung2019} reale und psychologische Hemmnisse beim Erwerb von Elektrofahrzeugen abgebaut werden.\medskip
+
+Die Beladung der Fahrzeuge kann dabei bei moderaten Ladeleistungen im Eigenheim, auf Firmenparkplätzen, am Straßenrand, auf Parkplätzen oder auch bei hohen Ladeleistungen an Schnellladeinfrastruktur erfolgen.
+Da Elektrofahrzeuge über die Verteilnetze geladen werden, ist bei einer Zunahme des Fahrzeugbestandes auch mit einer Erhöhung der Rückwirkungen auf die Verteilnetze zu rechnen.
+Die Höhe und Form der Auswirkungen hängt neben der Anzahl an Elektrofahrzeugen von vielen weiteren Faktoren ab.
+Hierzu zählen die Ladeleistung, der Zeitpunkt und Ort der Ladung, die Kapazität und der \gls{SOC} der Batterie sowie der aktuelle Zustand der Verteilnetze.
+Erweiternd kommt hinzu, dass die Gleichzeitigkeit von Ladevorgängen und die Ladestrategie einen entscheidenden Einfluss haben.
+Gleichzeitig kommt es bereits heute zu einer starken Belastung der Verteilnetze aufgrund des zunehmenden Ausbaus erneuerbaren Energien, welche zu einem großen Teil in den Verteilnetzen angeschlossen werden. \cite{AgoraEnergiewende2017}
+Durch die Wahl einer geeigneten Ladestrategie können auch Synergien zwischen Elektrofahrzeuge und erneuerbaren Energien entstehen.
+Beispielsweise kann gezielt ein Ausgleich zwischen der Erzeugung von fluktuierenden erneuerbaren Energien und dem Energiebedarf der Elektrofahrzeuge geschaffen werden und so die Netzintegration von erneuerbaren Energien unterstützt werden und die volkswirtschaftliche Wohlfahrt erhöht werden.
+Innerhalb dieser Arbeit werden deshalb die Auswirkungen verschiedener präventiver und aktiver Ladestrategien betrachtet, mit dem Ziel die Netzbelastungen zu minimieren und die Netzintegration von erneuerbaren Energien zu unterstützen.\medskip
+
+Mit \SI{47.7}{\MioStk} \cite{KBA2020a} machen \glspl{PKW} den Großteil der Kraftfahrzeuge in Deutschland aus.
+Damit kommen \glspl{PKW} eine besondere Bedeutung bei der Betrachtung der Auswirkungen der Netzintegration von Elektrofahrzeugen zu.
+Unter \glspl{EPKW} werden alle \gls{PKW} \SI{< 3.5}{\tonne} mit batterieelektrischem Antrieb verstanden, die im privaten oder gewerblichen Individualverkehr genutzt werden. \cite{BNetzA2020}
+Innerhalb dieser Arbeit werden ausschließlich die Auswirkungen einer Elektrifizierung des Bestandes an \glspl{PKW} mit \glspl{EPKW} in verschiedenen Durchdringungsstufen betrachtet.\medskip
+
+Mehrere Studien haben sich bereits mit den Auswirkungen der Netzintegration von Elektrofahrzeugen auf die Verteilnetze beschäftigt. \cite{Agora2019} \cite{DEAGH2018} \cite{BCG2018}
+In der Regel erfolgt hierbei eine wirtschaftliche Gesamtrechnung der nötigen Investitionskosten in die Verteilnetze, welches im \autoref{chap:Metaanalyse} näher betrachtet wird.
+Hierbei zeigte sich, dass der Investitionsbedarf durch eine geeignete Ladestrategie stark gesenkt werden kann.
+Ergänzend sollen innerhalb dieser Arbeit Aussagen über die Auswirkungen auf konkrete Referenznetzgebiete getroffen werden, welche stellvertretend für eine große Anzahl an Netzgebieten in Deutschland stehen.\medskip
+
+Zusammenfassend ist das Ziel dieser Arbeit somit, die Auswirkungen verschiedener Lade\-strategien bei unterschiedlichen Durchdringungstiefen von \glspl{EPKW} auf unterschiedliche Netzgebietsklassen zu quantifizieren.
+Die Quantifizierung erfolgt anhand des Abregelungsbedarfes an Last und Erzeugerkapazitäten im Netzgebiet.
+
 
 \subsection{Aufbau der Arbeit}
 
-% BW Verteilnetzstudie: Das Ziel einer weitgehend dekarbonisierten Gesellschaft lässt sich nicht allein durch eine Erhöhung des EE-Anteils an der Stromerzeugung erreichen. Vielmehr ist es notwendig, fossile Energieträger auch in anderen Sektoren, insbesondere im Wärme- und Mobilitätssektor durch CO2-arme Anwendungen zu substituieren. Diese Entwicklung macht sich aktuell vor allem im Voranschreiten der Elektromobilität und einem steigenden Anteil an WP bemerkbar. Dies kann besonders in Verteilnetzen zu einer veränderten Netzbelastung und ggf. zu weiterem Netzausbaubedarf führen.
+Vorerst werden in \autoref{chap:base_theo} die wichtigsten Grundbegriffe dieser Arbeit erläutert und definiert.
+Im \autoref{chap:Szenariorahmen} erfolgt zunächst eine Beschreibung des aktuellen Standes der Literatur in Form einer Metaanalyse sowie eine Abgrenzung zu der ausgewerteten Literatur.
+Weiterhin erfolgt eine Definition der untersuchten Szenarien.
+Hierbei werden sowohl Annahmen zur Elektromobilität und erneuerbaren Energien als auch Annahmen zum konventionellen Stromverbrauch und Wärmepumpen beschrieben.
+\autoref{chap:Methodik} beschreibt die Methodik zur Entwicklung und Untersuchung der einzelnen Netzmodelle.
+Dazu zählen die Erstellung der Verteilnetztopologien, das Clustering dieser, die Erzeugung der Fahrtprofile von \glspl{EPKW} und die Regionalisierung des Ladebedarfs.
+Weiterhin werden die untersuchten Ladestrategien vorgestellt und die abschließenden Netzuntersuchungen auf Netzprobleme und deren Lösung durch die Abregelung von Lasten und Erzeugerkapazitäten ausführlich beschrieben.
+In \autoref{chap:results} werden die Ergebnisse der beschriebenen Methodik vorgestellt und ausgewertet, um abschließend im \autoref{chap:schlussbetrachtung} in einer Schlussbetrachtung zusammengefasst zu werden.
 
-%\subsection{Zielsetzung und Motivation}
