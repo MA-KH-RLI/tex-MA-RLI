@@ -19,8 +19,7 @@ Ergänzend erfolgt in den Verteilnetzen die regionale Feinverteilung bei geringe
 Innerhalb der Verteilnetze wird zwischen drei Spannungsebenen unterschieden.
 Hierzu zählen die \glspl{HS}-, \glspl{MS}- und \glspl{NS}-Ebene.
 In \autoref{tab:Spannungsebenen} finden sich die üblichen Spannungen je Spannungsebene und die verbaute Stromkreislänge in Deutschland je Spannungsebene.
-Innerhalb dieser Masterarbeit werden ausschließlich die Effekte auf die Verteilnetze auf der \glspl{MS}- und \glspl{NS}-Ebene untersucht.
-Zusätzlich erfolgt eine Betrachtung der Effekte auf die Umspannebene der \gls{MS}-\gls{NS}-\glspl{USW}.
+Innerhalb dieser Masterarbeit werden ausschließlich die Effekte auf die Verteilnetze auf der \glspl{MS}- und \glspl{NS}-Ebene, inklusive der Umspannebene von \gls{MS} zu \gls{NS}, untersucht.
 
 \input{Ch02/tab/Ch02_tab_01_Spannungsebenen}
 
@@ -34,7 +33,7 @@ Jedoch führt bereits ein einziger Fehlerfall an einer Einspeisestelle eines Ver
 Auch nimmt der Spannungsabfall über die Länge der Leitung immer weiter zu, was zu einer geringeren Belastbarkeit am Ende der Leitung führt. \cite{WNG2020}\medskip
 
 Im Gegensatz zu \gls{NS}-Netzen werden \gls{MS}-Netze als Ringnetze ausgelegt.
-Ringnetze bieten den Vorteil, dass diese von zwei Seiten gespeist werden, wodurch ein Ringform entsteht.
+Ringnetze bieten den Vorteil, dass diese von zwei Seiten gespeist werden, wodurch eine Ringform entsteht.
 Hierdurch können im Falle einer Störung weiterhin alle anderen Verbraucher versorgt werden.
 Jedoch werden Ringnetze in der Praxis meist offen betrieben.
 Dies bedeutet, dass sich etwa in der Mitte des Rings eine offene Trennstelle befindet.
@@ -107,14 +106,14 @@ Demgegenüber wird im Rückspeisefall ein größeres Spannungsband für die \gls
 
 Innerhalb dieses Kapitels werden die für diese Masterarbeit wichtigsten Begriffe im Bezug auf die Elektromobilität erläutert und definiert.
 Dabei untersucht diese Arbeit ausschließlich die Auswirkungen der Netzintegration von \gls{EPKW}.
-Der Einfluss der sonstigen Bereiche der Elektromobilität ist nicht Teil dieser Arbeit.
+Der Einfluss der Elektrifizierung von beispielsweise des öffentlichen Personennahverkehrs, großen betriebliche Fahrzeugflotten und Lastkraftwagen ist nicht Teil dieser Arbeit.
 
 
 \paragraph{Ladetechnik:}
 
 Die Ladetechnik von \glspl{EPKW} und den korrespondierenden Ladepunkten lässt sich anhand verschiedener Kriterien klassifizieren.
 Innerhalb dieser Arbeit wird die Ladetechnik ausschließlich anhand der Höhe ihrer Wirkleistung klassifiziert.
-In \autoref{fig:four-quadrant}, finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EPKW} in Abhängigkeit von ihrer \gls{P} und ihrer \gls{Q}.
+In \autoref{fig:four-quadrant} finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EPKW} in Abhängigkeit von ihrer \gls{P} und ihrer \gls{Q}.
 
 \input{Ch02/fig/Ch02_fig_01_four-quadrant}
 
@@ -123,15 +122,15 @@ In \autoref{fig:four-quadrant} entspricht dieser Modus einer positiven Wirkleist
 Weiterhin können mit bidirektionaler Ladetechnik \glspl{EPKW} ebenfalls entladen werden, um beispielsweise Systemdienstleistungen zu erbringen.
 Ein solcher Modus wird allgemein unter der Bezeichnung \gls{V2G} zusammengefasst und kann ebenfalls blindleistungsfrei, induktiv oder kapazitiv erfolgen.
 In \autoref{fig:four-quadrant} entspricht dieser Modus einer negativen Wirkleistung. \cite{He2020} 
-Innerhalb dieser Arbeit erfolgen Ladevorgänge immer blindleistungsfrei, welches dem Betriebspunkt in \autoref{fig:four-quadrant} entspricht.
+Innerhalb dieser Arbeit erfolgen Ladevorgänge immer blindleistungsfrei, welches dem eingezeichneten Betriebspunkt in \autoref{fig:four-quadrant} entspricht.
 Ebenfalls wird der Einsatz von bidirektionaler Ladetechnik nicht untersucht.\medskip
 
 Die einzelnen Ladevorgänge werden anhand ihrer Wirkleistung grob in Normal- und Schnellladevorgänge unterteilt.
 Normalladevorgänge finden bei einer Wirkleistung von maximal \SI{50}{\kw} statt, während Schnellladevorgänge bei einer Leistung von \SIrange[range-phrase=~{oder}~]{150}{350}{\kw} stattfinden.
-Dabei besitzen die Ladevorgänge pauschal einen Wirkungsgrad von \SI{90}{\percent}.
+Dabei besitzen die Ladevorgänge hier pauschal einen Wirkungsgrad von \SI{90}{\percent}.
 Eine Übersicht der in dieser Arbeit verwendeten netz- und fahrzeugseitigen Wirkleistungen von Ladepunkten findet sich in \autoref{tab:charging_cap}.
 Weiterhin sind die in \autoref{tab:TechPowerCap} zusammengefassten Limitierungen der \glspl{EPKW} zu berücksichtigen.
-Unabhängig von der Ladetechnik wird angenommen, dass am Netzverknüpfungspunkt immer einer symmetrische Last anliegt.
+Unabhängig von der Ladetechnik wird angenommen, dass am Netzverknüpfungspunkt immer eine symmetrische Last anliegt.
 
 \input{Ch02/tab/Ch02_tab_04_Ladeleistungen}
 
