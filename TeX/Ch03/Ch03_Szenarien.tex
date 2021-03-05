@@ -214,10 +214,10 @@ Eine genaue Zuordnung der \gls{PKW}-Segmente in die Klassen findet sich im Anhan
 
 \paragraph{Technische Daten:}
 
-Die technischen Daten der Fahrzeuge sind klassenspezifisch und innerhalb ihrer Klasse homogen.
+Die technischen Daten der Fahrzeuge sind klassenspezifisch und werden innerhalb ihrer Klasse als homogen angenommen.
 In \autoref{tab:TechPowerCap} finden sich die fahrzeugseitige maximale Ladeleistung und die nutzbare Batteriekapazität der jeweiligen Fahrzeugklassen.
 Die Annahmen wurden dem Szenario \glqq Verstärkte Elektrifizierung\grqq{} für das Jahr \num{2049} aus der Studie Automobile Wertschöpfung \num{2030}/\num{2050} \cite{Kaul2019} entnommen.
-Eine Limitierung der Ladeleistung durch die Unterscheidung in Normal- und Schnellladung, erfolgt im Simulationsmodell von Seiten der Ladeinfrastruktur.
+Eine Limitierung der Ladeleistung durch die Unterscheidung in Normal- und Schnellladung erfolgt im Simulationsmodell von Seiten der Ladeinfrastruktur.
 
 \input{Ch03/tab/Ch03_tab_06_techDetailsPowerCap}
 
@@ -227,7 +227,7 @@ Oberklasse Fahrzeuge weisen hingegen einen um \SI{20}{\percent} erhöhten Energi
 
 Weiterhin bietet die Studie \glqq eMobil \num{2050}\grqq{} nur Verbrauchsangaben nach dem \glspl{NEFZ}, welche nicht realen Verbrauchsdaten entsprechen.
 Nach \cite{Heinfellner2015} lag der Realverbrauch \num{2013} gegenüber einer Messung nach \gls{NEFZ} im Mittel um \SI{27}{\percent} höher.
-Die Werte für das Jahr \num{2050} der Studie \glqq eMobil \num{2050}\grqq{} wurden um diesen Faktor erhöht und die Ergebnisse in \autoref{tab:TechVerbrauch} zusammengefasst.
+Die Werte für das Jahr \num{2050} der Studie \glqq eMobil \num{2050}\grqq{} werden um diesen Faktor erhöht und die Ergebnisse in \autoref{tab:TechVerbrauch} zusammengefasst.
 
 \input{Ch03/tab/Ch03_tab_07_techVerbrauch}
 
@@ -238,25 +238,26 @@ Die Ladeinfrastruktur wird im Gegensatz zu den Annahmen zum Fahrzeughochlauf nic
 Stattdessen werden den einzelnen Wegezwecken der Fahrzeuge Wahrscheinlichkeiten zugeordnet, dass ein Fahrzeug am Zielort geladen werden kann.
 Weiterhin wird diese Wahrscheinlichkeit auf verschiedene Ladeleistungen aufgeteilt.
 Dabei wird grundsätzlich zwischen Normal- und Schnellladung unterschieden.
-Normalladung beschreibt in dieser Masterarbeit alle Ladevorgänge mit einer Leistung von bis zu einschließlich \SI{50}{\kw} und Schnellladung alle Ladevorgänge von größer \SIrange[range-phrase=~bis~einschließlich~]{50}{350}{\kw}.
 
 
 \subparagraph{Normalladung} beinhaltet in dieser Arbeit die Leistungsklassen \SI{3.7}{\kw}, \SI{11}{\kw}, \SI{22}{\kw} und \SI{50}{\kw}.
+Um zu bestimmen, mit welcher Ladeleistung an einem Zielort geladen werden kann, werden den unterschiedlichen Wegezwecken nach \glspl{MID} dezidiert Wahrscheinlichkeiten zugeordnet, ob und mit welcher Ladeleistung geladen werden kann.
 Eine Zuordnung der Leistungsklassen auf die einzelnen Wegezwecke erfordert vorerst eine Zuordnung der \UCs auf die Wegezwecke.
+Unter den \UCs werden die fünf Standortarten Eigenheim, Wohnanlage, Firmenparkplatz, Gewerbeparkplatz und Straßenrand verstanden.
 In \autoref{tab:WegLadeUseCase} findet sich die entsprechende prozentuale Aufteilung der \UCs auf die Wegezwecke.
 
 \input{Ch03/tab/Ch03_tab_08_WegezweckeLadeUseCase}
 
 Derzeit leben in Deutschland ungefähr \SI{44.2}{\MioMen} in Gebäuden mit maximal zwei Wohnungen und \SI{37.2}{\MioMen} in Mehrfamilienhäusern.
-Etwa \SI{80}{\percent} der Fahrzeugbesitzer in Gebäuden mit maximal zwei Wohnungen verfügen über einen Stellplatz in der Garage oder unter einem Carport.
-In Mehrfamilienhäusern verfügen hingegen nur \SI{55}{\percent} der Fahrzeugbesitzer über einen Stellplatz für ihr Fahrzeug. \cite{dena2020}
-Unter der vereinfachenden Annahme einer gleichmäßigen Verteilung von Fahrzeugen zwischen Bewohnern von Ein- und Mehrfamilienhäusern ergibt sich hieraus die ermittelte Aufteilung der \UCs auf den Wegezweck \nHdot.\medskip
+Etwa \SI{80}{\percent} der Fahrzeugbesitzer$^*$innen in Gebäuden mit maximal zwei Wohnungen verfügen über einen Stellplatz in der Garage oder unter einem Carport.
+In Mehrfamilienhäusern verfügen hingegen nur \SI{55}{\percent} der Fahrzeugbesitzer$^*$innen über einen Stellplatz für ihr Fahrzeug. \cite{dena2020}
+Unter der vereinfachenden Annahme einer gleichmäßigen Verteilung von Fahrzeugen zwischen Fahrzeugbesitzern$^*$innen in Ein- und Mehrfamilienhäusern ergibt sich hieraus die ermittelte Aufteilung der \UCs auf den Wegezweck \nHdot.\medskip
 
 Die Aufteilung der \UCs auf die Wegezwecke \Einkaufdot, \Erledigung und \Freizeitdot, ergeben sich aus den Wegeanteilen nach Fahrtzweck im \gls{MIV}-Privatverkehr. \cite{Rikus2015}
-Im Falle des Wegezwecks \Einkaufdot, wird angenommen, dass Lebensmittelgschäfte einen Gewerbeparkplatz für jeden Kunden vorhalten.
+Im Falle des Wegezwecks \Einkauf, wird angenommen, dass Lebensmittelgschäfte einen Gewerbeparkplatz für jeden Kunden vorhalten.
 Weiterhin wird angenommen, dass im Falle von sonstigen Waren und sonstigen Dienstleistungen in \SI{50}{\percent} der Fälle ein Gewerbeparkplatz zur Verfügung steht.
-Bei dem Wegezweck \Erledigungdot, wird davon ausgegangen, dass beim Besuch von Behörden, Banken, Post und Geldautomaten ein Gewerbeparkplatz vorhanden ist und bei sonstigen Erledigungen in \SI{50}{\percent} der Fälle.
-Für den Wegezweck \Freizeitdot, wird angenommen, dass bei kulturelle Einrichtungen und Veranstaltungen ein Gewerbeparkplatz vorhanden ist.
+Bei dem Wegezweck \Erledigung wird davon ausgegangen, dass beim Besuch von Behörden, Banken, Post und Geldautomaten ein Gewerbeparkplatz vorhanden ist und bei sonstigen Erledigungen in \SI{50}{\percent} der Fälle.
+Für den Wegezweck \Freizeitdot, wird angenommen, dass bei kulturellen Einrichtungen und Veranstaltungen ein Gewerbeparkplatz vorhanden ist.
 Bei sonstigen Freizeitaktivitäten wird angenommen, dass in \SI{50}{\percent} der Fälle ein Gewerbeparkplatz vorhanden ist.
 In allen verbleibenden Fällen erfolgt ein Parken am Straßenrand.\medskip
 
@@ -278,21 +279,22 @@ In \autoref{tab:UCProbability2050} finden sich die entsprechenden Annahmen.
 \input{Ch03/tab/Ch03_tab_09_UCProbability}
 
 In allen \UCs wird davon ausgegangen, dass die Ladevorgänge in Zukunft mit immer höheren Ladeleistungen stattfinden.
-Für den \UC \Eigenheim wird angenommen, dass jeder Besitzer eines \gls{EPKW} eine Ladevorrichtung vorhält, wenn die technischen Voraussetzungen gegeben sind.
+Für den \UC \Eigenheim wird angenommen, dass jede Besitzerin und Besitzer eines \gls{EPKW} eine Ladevorrichtung vorhält, wenn die technischen Voraussetzungen gegeben sind.
 Bei rund \SI{15}{\percent} der Stellplätze von Gebäuden mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz. \cite{dena2020}
 Es wird angenommen, dass von diesem Bestand die Hälfte einen Zugang zum Stromnetz erhält.
 Die Aufteilung der Ladeleistungen erfolgt hierbei in Anlehnung an \cite{NPZMAVE2020}.
-Es wird davon ausgegangen. dass der Anteil von Ladevorgängen mit einer Leistung von \SI{3.7}{\kw} keine Rolle mehr spielt.
+Es wird davon ausgegangen, dass der Anteil von Ladevorgängen mit einer Leistung von \SI{3.7}{\kw} keine Rolle mehr spielt.
 Der Anteil an Ladevorgängen mit \SI{11}{\kw} wird weiter wachsen, allerdings langsamer als der Anteil an Ladevorgängen mit \SI{22}{\kw}.
 Eine Ladung mit \SI{50}{\kw} wird im privaten Bereich ebenfalls keine Rolle spielen.
 Das prozentuale Verhältnis zwischen den Ladeleistungen beträgt \(0:75:25:0\)\medskip
 
-Stellplätze von Mehrfamilienhäusern besitzen mit ungefähr \SI{50}{\percent} der Fälle deutlich seltener Zugang zum Stromnetz. \cite{dena2020}
-Es wird angenommen, dass alle Stellplätze mit den entsprechenden technischen Vorraussetzungen mit einer Ladevorrichtung ausgestattet werden und bei der Hälfte der Stellplätze ohne Zugang zum Stromnetz dieser nachgerüstet wird.
+Stellplätze von Mehrfamilienhäusern besitzen in ungefähr \SI{50}{\percent} der Fälle Zugang zum Stromnetz. \cite{dena2020}
+Es wird angenommen, dass bei der Hälfte der Stellplätze ohne Zugang zum Stromnetz dieser nachgerüstet wird.
+Abschließend wird angenommen, dass alle Stellplätze von Besitzerinnen und Besitzern eines \gls{EPKW} mit den entsprechenden technischen Vorraussetzungen mit einer Ladevorrichtung ausgestattet werden.
 In Wohnanlagen werden hohe Ladeleistungen eine Ausnahme bleiben.
 Insgesamt wird von einem Verhältnis zwischen den Ladeleistungen von \(10:80:10:0\) ausgegangen.\medskip
 
-Bei Firmen- bzw. Gewerbeparkplätzen wird davon ausgegangen, dass zukünftig Mitarbeiter bzw. Kunden in \SI{75}{\percent} der Fälle Zugriff auf einen Ladepunkt haben.
+Bei Firmen- bzw. Gewerbeparkplätzen wird davon ausgegangen, dass zukünftig Mitarbeiter$^*$innen bzw. Kundinnen und Kunden in \SI{75}{\percent} der Fälle Zugriff auf einen Ladepunkt haben.
 Die Verteilung der Ladeleistungen geschieht in Anlehnung an das Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} und der Stromtankstellen Statistik des \textit{GoingElectric} Forums \cite[][Stand: \DTMdate{2020-10-21}]{Weemaes2020}.
 Demnach besitzt ein Großteil (\SIrange[range-phrase=~bzw.~]{80}{51}{\percent}) der heutigen öffentlich zugänglichen Ladepunkte eine Ladeleistung von \SIrange{22}{42}{\kw}.
 Insgesamt wird davon ausgegangen, dass sich der Trend zu hohen Ladeleistungen weiter fortsetzt.
@@ -312,7 +314,7 @@ Die entsprechenden Ergebnisse finden sich in \autoref{tab:WegezweckProbability20
 \subparagraph{Schnellladung} entspricht in dieser Arbeit einer Art Notfallladung.
 Fällt der \gls{SOC} eines Fahrzeugs während einer Fahrt unter \SI{20}{\percent}, wird eine Schnellladestation angefahren und das Fahrzeug für \SI{15}{\Minuten} geladen.
 Bei Schnellladevorgängen wird in dieser Arbeit grundsätzlich zwischen einer Ladung mit \SI{150}{\kw} und mit \SI{350}{\kw} unterschieden.
-Nach dem Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} weisen bereits heute \SI{59}{\percent} der Ladeinfrastruktur mit einer Leistung von mehr als \SI{50}{\kw} eine Ladeleistung von über \SI{150}{\kw} auf.
+Nach dem Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} weist bereits heute \SI{59}{\percent} der Ladeinfrastruktur mit einer Leistung von mehr als \SI{50}{\kw} eine Ladeleistung von über \SI{150}{\kw} auf.
 Es ist davon auszugehen, dass sich auch bei der Schnellladeinfrastruktur der Trend zu hohen Ladeleistungen fortsetzt.
 Weiterhin ist davon auszugehen, dass dies vor allem für Tankstellen außerhalb von Ortschaften gilt, da diese häufig an Autobahnen liegen.
 Auf Autobahnen werden häufig lange Strecken zurückgelegt und der Ladebedarf durch Schnellladeinfrastruktur ist somit besonders hoch.
@@ -336,7 +338,7 @@ Die \Kleinwagen basiert auf den Annahmen des Mobilitätswende-Szenarios.
 Hierbei werden die netzseitigen Auswirkungen einer Verschiebung der Fahrzeugklassen hin zu mehr Kleinwagen untersucht.
 Kleinwagen machen in dieser Szenarette \SI{50}{\percent}, Mittelklasse Fahrzeuge \SI{35}{\percent} und Oberklasse Fahrzeuge \SI{15}{\percent} des Gesamtbestandes aus.
 Zusätzlich wird ein Anwachsen des Anteils von \glspl{BEV} auf \SI{75}{\percent} der Fahrzeuge angenommen.
-Die hierdraus entstehende Aufteilung findet sich in \autoref{tab:CarSplitSzenarette}.
+Die hieraus entstehende Aufteilung findet sich in \autoref{tab:CarSplitSzenarette}.
 
 \input{Ch03/tab/Ch03_tab_12_CarSplit_Szenarette}
 
@@ -350,7 +352,7 @@ Die Annahme wird somit gegenüber des Antriebswende-Szenarios halbiert.
 
 \input{Ch03/tab/Ch03_tab_13_UCProbability_Szenarette}
 
-In \autoref{tab:UCProbabilitySzenarette} findet sich die hier draus entstehende Wahrscheinlichkeitsverteilung für den \UC \Firmeparkplatzdot.
+In \autoref{tab:UCProbabilitySzenarette} findet sich die hieraus entstehende Wahrscheinlichkeitsverteilung für den \UC \Firmeparkplatzdot.
 Dadurch kommt es für die Wegezwecke \Arbeitdot, \dienst und \Ausbildung zu einer veränderten Wahrscheinlichkeitsverteilung, welche in \autoref{tab:WegezweckProbabilitySzenarette} zu finden ist.
 
 \input{Ch03/tab/Ch03_tab_14_WegezweckProbability_Szenarette}
