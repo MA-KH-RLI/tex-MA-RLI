@@ -1,16 +1,16 @@
 \section{Methodik}\label{chap:Methodik}
 
-Für die Untersuchung der Auswirkungen der Netzintegration von \glspl{EPKW} auf die Verteilnetze, wird vorerst die Schaffung entsprechende Netztopologien mit Hilfe des Open Source Tools \gls{DINGO} und deren Clusterung beschrieben.
+Es werden zunächst die verwendeten Netztopologien sowie deren Clusterung zur Bestimmung repräsentativer Netze, anhand welcher die Untersuchungen vorgenommen werden, beschrieben.
 Anschließend werden mit Hilfe des Software Tools \gls{SIMBEV} Fahrtprofile von \glspl{EPKW} erstellt und die untersuchten Ladestrategien beschrieben.
 Damit der Ladebedarf in die Netzmodelle integriert werden kann, muss dieser anschließend räumlich auf eine entsprechende georeferenzierte Ladeinfrastruktur verteilt werden.
 Abschließend erfolgt eine Beschreibung der Methodik zur Bestimmung von Netzproblemen und der Ermittlung des Abregelungsbedarfs im Netzgebiet mit Hilfe des Open Source Tools \gls{EDISGO}.
 
 
-\subsection{Erstellung der Verteilnetztopologien}\label{chap:dingo_theo}
+\subsection{Verwendete Verteilnetztopologien}\label{chap:dingo_theo}
 
-Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glspl{EDISGO}, sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
-Aufgrund der mangelnden Datenlagen von reale Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt werden.
-Das Tool ist in der Lage ländliche und suburbane Netzstrukturen zu synthetisieren und kann auf GitHub \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
+Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glspl{EDISGO} sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
+Aufgrund der mangelnden Datenlagen von realen Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt werden.
+Das Tool ist in der Lage ländliche und suburbane Netzstrukturen für Gesamtdeutschland zu synthetisieren und kann auf GitHub \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
 Weiterhin findet sich auf Read the Docs \cite{dingo-docs2019} eine ausführliche Dokumentation.\medskip
 
 Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \openego Projektes. \cite{Mueller2019}
@@ -31,31 +31,33 @@ Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Stat
 Die einzelnen \gls{MS}-Netze werden alle als offene Ringnetze betrieben.
 Im städtischen Bereich werden hauptsächlich Erdkabel mit einer Nennspannung von \SI{10}{\kv} eingesetzt, während im ländlichen Raum größtenteils Freileitungen mit einer Nennspannung von \SI{20}{\kv} eingesetzt werden. \cite{Mueller2019}\medskip
 
-Die Modellierung der Mittelspannungstopologie erfolgt als Tourenplanungsproblem (\gls{CVRP}) in Kombination mit der Beachtung der historischen lastorientierten Entwicklung und den Planungsprinzipien von Verteilnetzen.
-Ein besondere Fokus liegt dabei auf der Beachtung von Leitungsüberlastungen und Verletzungen des Spannungsbandes.
+Die Modellierung der Mittelspannungstopologie erfolgt als Tourenplanungsproblem (\gls{CVRP}) in Kombination mit der Beachtung der historisch lastorientierten Entwicklung und den Planungsprinzipien von Verteilnetzen.
+Ein besonderer Fokus liegt dabei auf der Beachtung von Leitungsüberlastungen und Verletzungen des Spannungsbandes.
 Eine genau Beschreibung der Methodik findet sich in \cite{Amme2018}.
 
 
 \paragraph{Niederspannung:}
 
-Die \gls{NS}-Ebene wird mit Hilfe von \num{46} Referenznetzsträngen synthetisiert und als Strahlennetze betrieben.
+Die \gls{NS}-Ebene wird mit Hilfe von \num{46} Referenznetzsträngen synthetisiert und die einzelnen \gls{NS}-Netze werden als Strahlennetz abgebildet.
 Die Referenznetzsträngen stehen jeweils repräsentativ für eine bestimmte Anzahl an Hausanschlüssen innerhalb einer Netzklasse.
-Bei den Netzklassen wird zwischen Land-, Dorf- und Vorstadtnetzen unterschieden
-Auf Grundlage der Anzahl an Hausanschlüssen je Ortsnetzstation wird ein Niederspannungsnetz ebenfalls einer Netzklasse zugeordnet.
+Bei den Netzklassen wird zwischen Land-, Dorf- und Vorstadtnetzen unterschieden.
+Auf Grundlage der Anzahl an Hausanschlüssen je Ortsnetzstation wird ein Niederspannungsnetz einer Netzklasse zugeordnet.
 Die verschiedenen Referenznetzstränge der entsprechenden Netzklasse werden anschließend so miteinander kombiniert, dass für die entsprechende Anzahl an Hausanschlüssen ein typisches Netz generiert wird. \cite{Mueller2019}
 
 
 \subsection{K-Means-Clustering}
 
-Die große Anzahl an Netzgebieten und die hohe räumliche und zeitliche Auflösung des Netzdatenmodells führen zu inakzeptabel hohen Rechenzeiten.
+Innerhalb des \openego Projektes wurden in Deutschland insgesamt {\color{red} \num{3354}} Netzgebiete identifiziert und mit Hilfe des Open Source Tools \gls{DINGO} synthetisiert.
+Bei der Synthese der Netztopologien wurde auf eine hohe räumliche und zeitliche Auflösung des Netzdatenmodells geachtet.
+Die große Anzahl an Netzgebieten und die hohe Auflösung führen zu inakzeptabel hohen Rechenzeiten innerhalb dieser Arbeit.
 Um die Komplexität des Modells zu reduzieren, werden mit Hilfe des \kmeans Referenznetzgebiete ausgewählt, die stellvertretend für eine möglichst große Zahl an Netzgebieten stehen.
-Das \kmean wurde im Rahmen des \openego Projektes \cite{Mueller2019} entwickelt und wurde innerhalb \cite{Schachler} uverändert angewendet, um \num{15} repräsentative Netzgebiete zu bestimmen.
+Das \kmean wurde im Rahmen des \openego Projektes \cite{Mueller2019} entwickelt und wurde innerhalb \cite{Schachler} unverändert angewendet, um \num{15} repräsentative Netzgebiete zu bestimmen.
 Innerhalb dieser Arbeit soll eine Teilmenge dieser \num{15} Netzgebiete mit stark unterschiedlichen Charakteristiken untersucht werden.
 An dieser Stelle soll das grundlegende Vorgehen erläutert werden. \medskip
 
 Grundlage des \kmeans bildet der \gls{EMA} des Python Paketes \textit{scikit learn}. \cite{scikit-learn2011}
 Hierbei kann jedes \gls{MS}-Netz durch die Definition mehrerer numerischer Attribute als Punkt im mehrdimensionalen Raum beschrieben werden.
-Der Algorithmus bildet anschließend eine vorgegebene Anzahl \textit{k} an Clustern durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
+Der Algorithmus bildet anschließend eine vorgegebene Anzahl an Clustern $k$ durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
 Für die Bildung der Cluster werden die folgenden vier Attribute verwendet, um die einzelnen \gls{MS}-Netze zu repräsentieren:
 
 \begin{itemize}
