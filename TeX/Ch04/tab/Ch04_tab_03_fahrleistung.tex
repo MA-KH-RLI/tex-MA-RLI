@@ -1,0 +1,23 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~oder~}
+\begin{table}[H]
+	\begin{center}
+		\caption{Mittlere jährliche Fahrleistung und mittlere Fahrweite für Pkw}
+		\begin{tabu} to 0.7\textwidth {X[0.5] X[1, r] X[1, r]}
+			\hline
+			ID       & Mittlere Fahrleistung & Mittlere Fahrtweite \\ \hline
+			\num{71} & \SI{13200}{\km}       & \SI{17}{\km}        \\
+			\num{72} & \SI{14100}{\km}       & \SI{15}{\km}        \\
+			\num{73} & \SI{14600}{\km}       & \SI{15}{\km}        \\
+			\num{74} & \SI{15800}{\km}       & \SI{16}{\km}        \\
+			\num{75} & \SI{14300}{\km}       & \SI{15}{\km}        \\
+			\num{76} & \SI{14500}{\km}       & \SI{14}{\km}        \\
+			\num{77} & \SI{15900}{\km}       & \SI{16}{\km}        \\ \hline
+            \multicolumn{2}{l}{Quelle: \cite{Nobis2019}}
+		\end{tabu}
+		\label{tab:mid_fahrleistung}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
