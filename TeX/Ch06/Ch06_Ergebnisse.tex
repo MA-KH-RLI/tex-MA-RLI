@@ -11,9 +11,9 @@ Abschließend erfolgt eine detaillierte Betrachtung der Ergebnisse der Ermittlun
 Auf der \gls{MS}-Ebene gibt es \num{3591} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
 Die vollständige Untersuchung der mit Hilfe des Open Source Tools \gls{DINGO} synthetisierten \gls{MS}-Netzgebiete, würde aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten führen.
 Im Rahmen dieser Masterarbeit wurden sechs Referenznetzgebiete ausgewählt, welche \num{1842} der \num{3591} {\color{red} TODO 3354?} \gls{MS}-Netzgebiete repräsentieren.
-Das Clustering erfolgte innerhalb \cite{Schachler} durch den während des \openego Projektes entwickelten k-means-Clusteralgorithmus nach \autoref{chap:dingo_theo}.
+Das Clustering erfolgte innerhalb \cite{Schachler} durch den während des \gls{OPENEGO} Projektes entwickelten k-means-Clusteralgorithmus nach \autoref{chap:dingo_theo}.
 
-\input{Ch05/fig/Ch05_fig_01_grid_176_map}
+\input{Ch06/fig/Ch06_fig_01_grid_176_map}
 
 \autoref{fig:grid_176_map} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \gls{DINGO} erzeugt wurde und innerhalb dieser Arbeit untersucht wurde.
 Um mit dieser Arbeit eine Ergänzung zu \cite{Schachler} zu liefern, wird das Clustering \cite{Schachler} übernommen und von den \num{15} identifizierten repräsentativen Netzgebieten eine Teilmenge untersucht.
@@ -22,15 +22,15 @@ Auf diese Weise wird sichergestellt, dass die Effekte der Netzintegration der El
 Insgesamt werden somit sechs Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3591} Mittelspannungsnetze stehen.
 In \autoref{tab:grid_IDs} finden sich die \glspl{ID} der untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
 
-\input{Ch05/tab/Ch05_tab_01_grid_IDs}
+\input{Ch06/tab/Ch06_tab_01_grid_IDs}
 
 In \autoref{fig:bar_representatives} findet sich eine Darstellung der wichtigsten Charakteristika der untersuchten Netzgebiete.
 Hierzu zählen die installierten \gls{PV}- und Wind-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} bei Referenz-Laden im Antriebswende-Szenario und die Spitzenlast des konventionellen Stromverbrauchs inklusive \glspl{WP}.
 Weiterhin findet sich in \autoref{fig:map_representatives} eine Karte der repräsentierten Netzgebiete eingeteilt in die Kategorien Wind-, \gls{PV}- und Last-dominiert.
 
-\input{Ch05/fig/Ch05_fig_02_bar_representatives}
+\input{Ch06/fig/Ch06_fig_02_bar_representatives}
 
-\input{Ch05/fig/Ch05_fig_03_map_representatives}
+\input{Ch06/fig/Ch06_fig_03_map_representatives}
 
 
 \subsection{Erzeugung und Charakteristik der Fahrtprofile}
@@ -44,7 +44,7 @@ In der Regel liegen innerhalb eines Netzgebietes mehrere Gemeinden und insgesamt
 Die Auswertung ergibt die Anzahl der simulierten Fahrzeuge nach \autoref{tab:car_count} je Fahrzeugtyp und Szenario.
 Zusätzlich findet sich im Anhang in \autoref{tab:car_count_long} eine detailliertere Aufteilung je Fahrzeugtyp, -klasse und Szenario.
 
-\input{Ch05/tab/Ch05_tab_02_car_count}
+\input{Ch06/tab/Ch06_tab_02_car_count}
 
 Die \num{35} Gemeinden weisen drei der sieben \gls{REGIOSTAR} (s. \autoref{tab:RegioStaR}) auf.
 Hierzu zählen der kleinstädtische, dörfliche Raum einer ländlichen Region (\gls{ID} \num{77}), Mittelstädte, städitscher Raum (\gls{ID} \num{76}) und Mittelstädte, städitscher Raum einer Stadtregion (\gls{ID} \num{73}).
@@ -53,14 +53,14 @@ Jedoch liegen die Jahresfahrleistungen insgesamt unter den Angaben des \gls{MID}
 Insgesamt spiegeln die Jahresfahrleistungen \glspl{SIMBEV} somit ein progressives Szenario mit einer sinkenden Jahresfahrleistung wider.
 Die Jahresfahrleistung von \glspl{BEV} je \gls{REGIOSTAR} \gls{ID} wurde zusammenfassend über alle Szenarien hinweg berechnet und findet sich in \autoref{tab:bev_distance}.
 
-\input{Ch05/tab/Ch05_tab_03_bev_distance}
+\input{Ch06/tab/Ch06_tab_03_bev_distance}
 
 Eine Betrachtung der durchschnittlichen Stand- und Ladezeiten bei maximal möglicher Ladeleistung der \gls{EPKW} je Wegezweck (s. \autoref{tab:StandingTime}) zeigt, dass die \gls{EPKW} vor allem im privaten Bereich einen Großteil der Standzeit nicht geladen werden.
 So macht die durchschnittliche Ladezeit zu Hause oder am Arbeitsplatz nur etwa \SI{8}{\percent} der Standzeit aus.
 Dies zeigt deutlich das große Flexibilisierungspotential im privaten Bereich.
 Allerdings fällt auf, dass die mit \gls{SIMBEV} ermittelten Standzeiten im öffentlichen Bereich unrealistisch lang erscheinen.
 
-\input{Ch05/tab/Ch05_tab_04_standing_times}
+\input{Ch06/tab/Ch06_tab_04_standing_times}
 
 Der Anteil flexibilisierbarer Ladevorgänge entspricht dem Anteil an Energie am Gesamtenergiebedarf der \glspl{EPKW}, der an privaten Ladepunkten zu Hause oder am Arbeitsplatz nachgeladen wird.
 Hierzu zählen alle Ladevorgänge die am Eigenheim, einer Wohnaalage oder auf einem Firmenparkplatz stattfinden.
@@ -71,12 +71,12 @@ Hiervon ausgenommen ist die \SzeFirmenparkplatzdot, bei der es aufgrund des geri
 Der Anteil flexibilisierer Ladevorgänge liegt bei dieser Szenarette bei \SI{66.1}{\percent}.
 In \autoref{tab:ChargingShare} sind die Anteile in flexibilisierbare und nicht-flexibilisierbare Ladevorgänge zusammengefasst.
 
-\input{Ch05/tab/Ch05_tab_05_ChargingShare}
+\input{Ch06/tab/Ch06_tab_05_ChargingShare}
 
 In \autoref{fig:example_load_profile} findet sich ein beispielhaftes \gls{EPKW}-Lastprofil für Referenz-Laden einer mittelstädtischen Gemeinde (\gls{ID} \num{73}) mit \num{6443} \glspl{EPKW} über eine Woche im Antriebswende-Szenario (links).
 Zusätzlich ist das \gls{EPKW}-Lastprofil der gleichen Gemeinde in der \SzeFirmenparkplatz (rechts) dargestellt.
 
-\input{Ch05/fig/Ch05_fig_04_example_load_profile} % TODO: Leistung statt Last
+\input{Ch06/fig/Ch06_fig_04_example_load_profile} % TODO: Leistung statt Last
 
 Die Lastgänge \zH und \Firmeparkplatz entsprechen den Ladevorgängen im privaten Bereich.
 Unter dem Lastgang \oeffen sind hingegen alle öffentlichen Ladevorgänge mit Außnahme der Schnellladevorgänge (\gls{HPC}) zusammengefasst.
@@ -87,7 +87,7 @@ Am Wochenende kommt es zu deutlich geringeren Anteilen von Ladevorgängen \zH un
 Gegenüber dem Antriebswende-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot.
 Jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
 
-\input{Ch05/fig/Ch05_fig_05_example_load_curve} % TODO: Leistung statt Last
+\input{Ch06/fig/Ch06_fig_05_example_load_curve} % TODO: Leistung statt Last
 
 
 \subsubsection{Kritik}
@@ -112,7 +112,7 @@ In \autoref{fig:cps_in_grid} finden sich beispielhaft die ermittelten Netzanschl
 Es wird deutlich, dass die Ladeinfrastruktur zu Hause die meisten Netzanschlusspunkte aufweist, während für die Schnellladeinfrastruktur nur wenige Netzanschlusspunkte benötigt werden.
 Weiterhin zeigt sich eine starke Konzentration der Ladeinfrastruktur in den bewohnten Regionen.
 
-\input{Ch05/fig/Ch05_fig_06_cps_dist}
+\input{Ch06/fig/Ch06_fig_06_cps_dist}
 
 
 \subsection{Ergebnisse der Implementierung der Ladestrategien}\label{chap:results_charging_strategies}
@@ -121,7 +121,7 @@ Im Rahmen der Netzuntersuchungen kommt den Zeitreihen der Last der \glspl{EPKW} 
 Das Ziel der Ladestrategien (s. \autoref{chap:theo_strategies}) ist es, die Netzbelastung möglichst gering zu halten.
 Bei dem gruppierten und reduzierten Laden soll dies durch ein präventives Lademanagement und bei dem Residuallast-Laden durch ein aktives Lademanagement erreicht werden.
 
-\input{Ch05/fig/Ch05_fig_07_residual_load}
+\input{Ch06/fig/Ch06_fig_07_residual_load}
 
 \autoref{fig:residual_load} zeigt beispielhaft für das Netzgebiet \num{176} die Abhängigkeit der Residuallast von der Ladestrategie im Antriebswende-Szenario.
 Dabei zeigt sich, dass vor allem die Residuallast-Ladestrategie zu einer klaren Glättung der Residuallastkurve führt, während sich bei den sonstigen Ladestrategien ein ähnliches Bild zeigt.
@@ -136,7 +136,7 @@ Da es sich bei dem Netzgebiet \num{176} um ein \gls{PV}-dominiertes Netz handelt
 Auch kommt es zu einer deutlichen Verschiebung der Last in die Schwachlastzeit nach Mitternacht, während die Residuallast am Vor- und Nachmittag abnimmt.
 Da auf diese weise jedoch nur Aussagen über das komplette \gls{MS}-Netzgebiet getroffen werden können, kann hier draus noch keine Aussage über die Belastung der einzelnen Betriebsmittel getroffen werden.
 
-\input{Ch05/fig/Ch05_fig_08_residual_load_diff}
+\input{Ch06/fig/Ch06_fig_08_residual_load_diff}
 
 % TODO: Eventuell Auswertung, wie sich die Residuallast durch das Residuallast-Laden verändert bei den unterschiedlichen Netzgebieten und Szenarien
 % TODO: Bubble maps

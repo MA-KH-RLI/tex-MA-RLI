@@ -1,29 +1,29 @@
 \section{Methodik}\label{chap:Methodik}
 
-Für die Untersuchung der Auswirkungen der Netzintegration von \glspl{EPKW} auf die Verteilnetze, wird vorerst die Schaffung entsprechende Netztopologien mit Hilfe des Open Source Tools \gls{DINGO} und deren Clusterung beschrieben.
+Es werden zunächst die verwendeten Netztopologien sowie deren Clusterung zur Bestimmung repräsentativer Netze, anhand welcher die Untersuchungen vorgenommen werden, beschrieben.
 Anschließend werden mit Hilfe des Software Tools \gls{SIMBEV} Fahrtprofile von \glspl{EPKW} erstellt und die untersuchten Ladestrategien beschrieben.
 Damit der Ladebedarf in die Netzmodelle integriert werden kann, muss dieser anschließend räumlich auf eine entsprechende georeferenzierte Ladeinfrastruktur verteilt werden.
 Abschließend erfolgt eine Beschreibung der Methodik zur Bestimmung von Netzproblemen und der Ermittlung des Abregelungsbedarfs im Netzgebiet mit Hilfe des Open Source Tools \gls{EDISGO}.
 
 
-\subsection{Erstellung der Verteilnetztopologien}\label{chap:dingo_theo}
+\subsection{Verwendete Verteilnetztopologien}\label{chap:dingo_theo}
 
-Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glspl{EDISGO}, sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
-Aufgrund der mangelnden Datenlagen von reale Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt werden.
-Das Tool ist in der Lage ländliche und suburbane Netzstrukturen zu synthetisieren und kann auf GitHub \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
+Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glspl{EDISGO} sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
+Aufgrund der mangelnden Datenlagen von realen Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt werden.
+Das Tool ist in der Lage ländliche und suburbane Netzstrukturen für Gesamtdeutschland zu synthetisieren und kann auf GitHub \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
 Weiterhin findet sich auf Read the Docs \cite{dingo-docs2019} eine ausführliche Dokumentation.\medskip
 
-Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \openego Projektes. \cite{Mueller2019}
+Die Synthetisierung der Netztopologien ist nicht Teil dieser Masterarbeit und erfolgte innerhalb des \gls{OPENEGO} Projektes \cite{Mueller2019}.
 Die Netztopologien werden auf der Datengrundlage des Jahres \num{2015} gebildet und entsprechend ausgebaut.
 Urbane Netzgebiete können derzeit nicht durch \gls{DINGO} abgebildet werden und werden deshalb innerhalb dieser Masterarbeit nicht betrachtet. \medskip
 
-In der koneventionellen Netzplanung werden Betriebsmittel in der Regel überdimensioniert ausgelegt, um eine möglichst lange Betriebszeit zu garantieren.
-Da die Netzgebiete des \openego Projektes so ausgebaut werden, dass die Versorgungsaufgabe möglichst genau übernommen werden kann, werden die Netzgebiete zusätzlich ausgebaut.
-Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant werden und entsprechend ausgebaut.
+In der konventionellen Netzplanung werden Betriebsmittel in der Regel überdimensioniert ausgelegt, um eine möglichst lange Betriebszeit zu garantieren.
+Da die Netzgebiete des \gls{OPENEGO} Projektes so ausgebaut werden, dass die Versorgungsaufgabe möglichst genau übernommen werden kann, werden die Netzgebiete zusätzlich ausgebaut.
+Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant werden und werden entsprechend ausgebaut.
 Hierbei wird die Elektromobilität noch nicht berücksichtigt.
 Dies gilt sowohl für die Transformatorstationen als auch die Kabel innerhalb des Netzgebietes.
 Die verwendeten Betriebsmittel können der Dokumentation \glspl{EDISGO} \cite{edisgoDocs2017a} entnommen werden.
-Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Station größer sein als der größte verfügbare Transformator, so werden so viele Transformatoren wie nötig parallel Betrieben, um den Anforderungen gerecht zu werden.
+Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Station größer sein als der größte verfügbare Transformator, so werden so viele Transformatoren wie nötig parallel betrieben, um den Anforderungen gerecht zu werden.
 
 
 \paragraph{Mittelspannung:}
@@ -31,31 +31,33 @@ Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Stat
 Die einzelnen \gls{MS}-Netze werden alle als offene Ringnetze betrieben.
 Im städtischen Bereich werden hauptsächlich Erdkabel mit einer Nennspannung von \SI{10}{\kv} eingesetzt, während im ländlichen Raum größtenteils Freileitungen mit einer Nennspannung von \SI{20}{\kv} eingesetzt werden. \cite{Mueller2019}\medskip
 
-Die Modellierung der Mittelspannungstopologie erfolgt als Tourenplanungsproblem (\gls{CVRP}) in Kombination mit der Beachtung der historischen lastorientierten Entwicklung und den Planungsprinzipien von Verteilnetzen.
-Ein besondere Fokus liegt dabei auf der Beachtung von Leitungsüberlastungen und Verletzungen des Spannungsbandes.
-Eine genau Beschreibung der Methodik findet sich in \cite{Amme2018}.
+Die Modellierung der Mittelspannungstopologie erfolgt als Tourenplanungsproblem (\gls{CVRP}) in Kombination mit der Beachtung der historisch lastorientierten Entwicklung und den Planungsprinzipien von Verteilnetzen.
+Ein besonderer Fokus liegt dabei auf der Beachtung von Leitungsüberlastungen und Verletzungen des Spannungsbandes.
+Eine genau Beschreibung der Methodik findet sich in \textit{The eGo grid model} \cite{Amme2018}.
 
 
 \paragraph{Niederspannung:}
 
-Die \gls{NS}-Ebene wird mit Hilfe von \num{46} Referenznetzsträngen synthetisiert und als Strahlennetze betrieben.
+Die \gls{NS}-Ebene wird mit Hilfe von \num{46} Referenznetzsträngen synthetisiert und die einzelnen \gls{NS}-Netze werden als Strahlennetz abgebildet.
 Die Referenznetzsträngen stehen jeweils repräsentativ für eine bestimmte Anzahl an Hausanschlüssen innerhalb einer Netzklasse.
-Bei den Netzklassen wird zwischen Land-, Dorf- und Vorstadtnetzen unterschieden
-Auf Grundlage der Anzahl an Hausanschlüssen je Ortsnetzstation wird ein Niederspannungsnetz ebenfalls einer Netzklasse zugeordnet.
+Bei den Netzklassen wird zwischen Land-, Dorf- und Vorstadtnetzen unterschieden.
+Auf Grundlage der Anzahl an Hausanschlüssen je Ortsnetzstation wird ein Niederspannungsnetz einer Netzklasse zugeordnet.
 Die verschiedenen Referenznetzstränge der entsprechenden Netzklasse werden anschließend so miteinander kombiniert, dass für die entsprechende Anzahl an Hausanschlüssen ein typisches Netz generiert wird. \cite{Mueller2019}
 
 
 \subsection{K-Means-Clustering}
 
-Die große Anzahl an Netzgebieten und die hohe räumliche und zeitliche Auflösung des Netzdatenmodells führen zu inakzeptabel hohen Rechenzeiten.
+Innerhalb des \gls{OPENEGO} Projektes \cite{Mueller2019} wurden in Deutschland insgesamt {\color{red} \num{3354}} Netzgebiete identifiziert und mit Hilfe des Open Source Tools \gls{DINGO} synthetisiert.
+Bei der Synthese der Netztopologien wurde auf eine hohe räumliche und zeitliche Auflösung des Netzdatenmodells geachtet.
+Die große Anzahl an Netzgebieten und die hohe Auflösung führen zu inakzeptabel hohen Rechenzeiten innerhalb dieser Arbeit.
 Um die Komplexität des Modells zu reduzieren, werden mit Hilfe des \kmeans Referenznetzgebiete ausgewählt, die stellvertretend für eine möglichst große Zahl an Netzgebieten stehen.
-Das \kmean wurde im Rahmen des \openego Projektes \cite{Mueller2019} entwickelt und wurde innerhalb \cite{Schachler} uverändert angewendet, um \num{15} repräsentative Netzgebiete zu bestimmen.
-Innerhalb dieser Arbeit soll eine Teilmenge dieser \num{15} Netzgebiete mit stark unterschiedlichen Charakteristiken untersucht werden.
+Das \kmean wurde im Rahmen des \gls{OPENEGO} Projektes \cite{Mueller2019} entwickelt und wurde innerhalb \textit{E-Mobility Study} \cite{Schachler} unverändert angewendet.
+Innerhalb dieser Arbeit soll eine Teilmenge der ermittelten \num{15} Netzgebiete mit stark unterschiedlichen Charakteristiken untersucht werden.
 An dieser Stelle soll das grundlegende Vorgehen erläutert werden. \medskip
 
 Grundlage des \kmeans bildet der \gls{EMA} des Python Paketes \textit{scikit learn}. \cite{scikit-learn2011}
 Hierbei kann jedes \gls{MS}-Netz durch die Definition mehrerer numerischer Attribute als Punkt im mehrdimensionalen Raum beschrieben werden.
-Der Algorithmus bildet anschließend eine vorgegebene Anzahl \textit{k} an Clustern durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
+Der Algorithmus bildet anschließend eine vorgegebene Anzahl an Clustern $k$ durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
 Für die Bildung der Cluster werden die folgenden vier Attribute verwendet, um die einzelnen \gls{MS}-Netze zu repräsentieren:
 
 \begin{itemize}
@@ -100,22 +102,48 @@ In \autoref{eq:norm_attributes} findet sich das entsprechende Vorgehen.
 
 
 In \autoref{fig:k-means} findet sich eine exemplarische Darstellung des EM-Algorithmus.
-In dieser Arbeit wird stellvertretend für das Cluster, dass Netzgebiet mit dem minimalen quadrierten gewichteten euklidischen Abstand zum Clusterzentrum verwendet. \cite{Mueller2019}
+In dieser Arbeit wird stellvertretend für das Cluster das Netzgebiet mit dem minimalen quadrierten gewichteten euklidischen Abstand zum Clusterzentrum verwendet. \cite{Mueller2019}
 
 \input{Ch04/fig/Ch04_fig_01_k-means}
 
 
 \subsection{Erstellung der Fahrtprofile von E-Pkw}\label{chap:simbev_theo}
 
-% TODO: probabilistischen Ansatz mathematisch erklären. @Tim wie wird die Wahrscheinlichkeit je ts konkret festgelegt?
-
 Mit Hilfe des im Rahmen dieser Masterarbeit mitentwickelten Software Tools \gls{SIMBEV} können die Fahrtprofile für eine beliebige Anzahl an Fahrzeugen verschiedener Fahrzeugklassen erstellt werden.
-Weiterhin kann hierbei zwischen den in \autoref{tab:RegioStaR} aufgelisteten \glspl{REGIOSTAR} unterschieden werden, um das raumtypenspezifische Fahrverhalten abzubilden.
-Zum Zeitpunkt der Erstellung der Fahrtprofile war es noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
+Grundlage \glspl{SIMBEV} bildet die Befragung \gls{MID} \cite{ISGH2017}.
+Nachfolgend wird zunächst die Datengrundlage beschrieben und anschließend die Methodik zur Erstellung der Fahrtprofile mit Hilfe \glspl{SIMBEV}.
 
-\input{Ch04/tab/Ch04_tab_01_RegioStaR}
 
-Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \gls{MID} \cite{ISGH2017} erstellt.
+\subsubsection{Mobilität in Deutschland}\label{chap:MID}
+
+Das Ziel der Befragung \gls{MID} \cite{ISGH2017} ist es, eine Datengrundlage für das alltägliche Mobilitätsverhalten von Personen und Haushalten über ein Jahr zu bilden.
+Für diese Arbeit sind vor allem die Erhebungen zu den sieben Hauptwegezwecken entscheidend.
+Die sieben Hauptwegezwecke sind: Arbeit, dienstlich, Ausbildung, Einkauf, Erledigung, Freizeit und Begleitung.
+In \autoref{tab:wegezweck} findet sich die prozentuale Aufteilung der Hauptwegezwecke am \gls{PKW}-Verkehrsaufkommen in Wegen.
+
+\input{Ch04/tab/Ch04_tab_01_wegezweck}
+
+Der Wegezweck \glqq Begleitung\grqq{} wird innerhalb \glspl{SIMBEV} nicht abgebildet, da hierfür keine zusätzliche Fahrt angetreten wird.
+Der Rückweg der Wegezwecke wird getrennt als Wegezweck \nH berücksichtigt, da dem Laden zu Hause eine besonders wichtige Rolle zukommt.
+Weiterhin dient \gls{SIMBEV} nur der Erstellung von Fahrtprofilen für \gls{PKW}, weshalb ausschließlich die Ergebnisse der Befragung zu Fahrten mit dem Hauptverkehrsmittel \gls{PKW} betrachtet werden.
+Die für diese Arbeit entscheidenden Befragungsergebnisse sind somit die Fahrtzeiten, Fahrtstrecken und anschließenden Standzeiten je Hauptwegezweck für Fahrten mit \glspl{PKW}.
+Bei den Befragungsergebnissen kann zusätzlich zwischen den in \autoref{tab:RegioStaR} aufgelisteten \glspl{REGIOSTAR} unterschieden werden.
+
+\input{Ch04/tab/Ch04_tab_02_RegioStaR}
+
+Mit Hilfe dieser detaillierteren Unterscheidung kann ein raumtypenspezifisches Fahrverhalten abgebildet werden, welches eine erhöhte Genauigkeit bei der Erstellung der Fahrtprofile nach sich zieht.
+In \autoref{tab:RegioStaR} findet sich die mittlere Fahrleistung pro Person und pro Fahrzeug und die mittlere Fahrtweite von \gls{PKW}-Fahrten nach Raumtyp, welches die Differenzen zwischen den einzelnen Raumtypen aufzeigt.
+
+\input{Ch04/tab/Ch04_tab_03_fahrleistung}
+
+
+\subsubsection{simBEV}
+
+% TODO: probabilistischen Ansatz mathematisch erklären. 
+% @Tim wie wird die Wahrscheinlichkeit je ts konkret festgelegt?
+% @TIM Warum wird Wegezweck "Begleitung" nicht mit abgebildet?
+
+Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \gls{MID} erstellt.
 Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit für einen bestimmten Wegezweck eine Fahrt zu beginnen.
 Löst ein Fahrzeug eine Fahrt aus, wird abhängig vom Wegezweck und Regionstyp der Fahrt, ebenfalls probabilistisch, eine Streckenlänge und eine anschließende Standzeit zugeteilt.
 Der hierbei entstehende Verbrauch des Fahrzeuges muss anschließend gedeckt werden.
@@ -173,7 +201,7 @@ Eine genauere Beschreibung der Unterteilung in private und öffentliche Ladeinfr
 \paragraph{Private Ladeinfrastruktur:}
 
 Die private Ladeinfrastruktur beinhaltet alle Ladevorgänge, die an privater Ladeinfrastruktur am Eigenheim, in Wohnanlagen oder am Arbeitsplatz stattfinden.
-Um mögliche Standorte für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen identifizieren zu können, werden die Anzahl an Wohneinheiten auf einem \SI{100 x 100}{\m} Raster aus dem Zensus 2011 \cite{StatistischesBundesamt2011} verwendet.
+Um mögliche Standorte für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen identifizieren zu können, wird die Anzahl an Wohneinheiten auf einem \SI{100 x 100}{\m} Raster aus dem Zensus 2011 \cite{StatistischesBundesamt2011} verwendet.
 So wird jedem Raster mit mehr als einer Wohneinheit und einer Einwohnerzahl von größer Null ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet und anhand der Gesamtanzahl von Wohneinheiten im Raster gewichtet.\medskip
 
 Für private Ladeinfrastruktur am Arbeitsplatz werden die Klassifizierungen der Landflächen nach Nutzungsart nach der \gls{OSM} \cite{OpenStreetMapFoundation} verwendet.
@@ -211,7 +239,7 @@ Sollte kein passender Ladepunkt zur Verfügung stehen, wird analog zum Vorgehen 
 
 Da die \gls{MS}-Netzgebiete nicht immer die Gesamtfläche einer Gemeinde abdecken, muss abschließend geprüft werden, ob die generierten Anschlusspunkte innerhalb des Netzgebietes liegen.
 Liegt ein Anschlusspunkt innerhalb eines \gls{MS}-Netzgebietes, so wird er diesem zugeordnet.
-Tut dieser es nicht, dann entfällt die Ladevorgänge auf ein angrenzendes Netzgebiet und ist somit nicht Teil der abschließenden Auswertungen.
+Tut dieser es nicht, dann entfallen die zugeordneten Ladevorgänge auf ein angrenzendes Netzgebiet und sind somit nicht Teil der abschließenden Auswertungen.
 
 
 \paragraph{Netzintegration der Ladeinfrastruktur:}
@@ -230,7 +258,7 @@ Weiterhin können nur private Ladevorgänge flexibilisiert werden, da bei öffen
 
 Um die drei Ladestrategien miteinander vergleichen zu können, wird zusätzlich eine Referenz-Ladestrategie untersucht, welches als Vergleichspunkt verwendet wird.
 Auf diese Weise soll untersucht werden, inwieweit eine aktive Ladestrategie gegenüber präventiven Ladestrategien Vorteile aufweist.
-Da für aktive Ladestrategien der Aufwand im Betrieb höher liegt und zusätzliche Technik benötigt wird, liegen die Kosten hierbei deutlich höher.
+Da für aktive Ladestrategien der Aufwand im Betrieb höher ist und zusätzliche Technik benötigt wird, liegen die Kosten für solche Ladestrategien deutlich höher.
 
 
 \paragraph{Referenz-Laden:}
@@ -285,7 +313,7 @@ Das Ziel der Optimierung kann nach \autoref{eq:residual} so formuliert werden, d
 	\end{tabular}
 }
 
-Durch die Abhängigkeit der Residuallast von den einzelnen Ladevorgängen sind auch die Ergebnisse der Optimierung der einzelnen Ladevorgänge voneinander Abhängig.
+Durch die Abhängigkeit der Residuallast von den einzelnen Ladevorgängen sind auch die Ergebnisse der Optimierung der einzelnen Ladevorgänge voneinander abhängig.
 Hierdurch entsteht ein komplexes Optimierungsproblem.
 Um die Rechenzeit in einem akzeptablen Maß zu halten, wird eine Näherung an eine optimale Lösung angestrebt.
 So wird für jeden Ladevorgang ermittelt, wie viel überschüssige Standzeit zur Flexibilisierung der Ladevorgänge zur Verfügung steht.
@@ -351,7 +379,7 @@ Eine Übersicht über den Umfang der Lastflussanalyse findet sich in \autoref{fi
 \paragraph{Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen:}
 
 Die Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen erfolgt in einem iterativen Prozess.
-Vorerst werden etwaige Netzprobleme und die entsprechenden Zeitschritten in denen die Netzprobleme auftreten mit Hilfe der zuvor beschriebenen Lastflussanalyse ermittelt.
+Vorerst werden etwaige Netzprobleme und die entsprechenden Zeitschritte in denen die Netzprobleme auftreten mit Hilfe der zuvor beschriebenen Lastflussanalyse ermittelt.
 Anschließend wird die Last bzw. die Einspeisung in Schritten von \SI{10}{\percent} innerhalb der ermittelten Zeitschritte gekürzt.
 Die beiden Schritte werden so lange wiederholt bis keine Netzprobleme mehr auftreten.\medskip
 
@@ -361,7 +389,7 @@ Auf diese Weise sollen möglichst extreme Belastungssituationen abgedeckt werden
 
 Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
 In diesen Fällen wird eine Abregelung in den entsprechenden Zeitschritten unternommen.
-Dabei werden zu erst die einzelnen \gls{NS}-Netzgebiete eines \gls{MS}-Netzgebietes einzeln betrachtet, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.
+Dabei werden zuerst die einzelnen \gls{NS}-Netzgebiete eines \gls{MS}-Netzgebietes einzeln betrachtet, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.
 Durch die vorgeschaltete Einzelbetrachtung der \gls{NS}-Netzgebiete kann der Abregelungsbedarf eindeutig der \gls{NS}- bzw. \gls{MS}-Ebene zugeordnet werden.\medskip
 
 Bei der Lösung der Netzprobleme werden vorerst Konvergenzprobleme, anschließend Überlastungen und abschließend Spannungsprobleme gelöst.

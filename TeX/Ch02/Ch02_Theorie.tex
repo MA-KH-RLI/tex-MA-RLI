@@ -1,6 +1,6 @@
 \section{Grundlegende Begriffe und Definitionen}\label{chap:base_theo}
 
-In diesem Kapitel sollen kurz die wichtigsten Begriffe für die softwaregestützten Analyse des Einflusses der zunehmenden Netzintegration von Elektrofahrzeugen auf die Verteilnetze definiert und erläutert werden.
+In diesem Kapitel sollen kurz die wichtigsten Begriffe für die innerhalb dieser Arbeit vollzogenen Analysen definiert und erläutert werden.
 
 
 \subsection{Stromnetz}
@@ -12,12 +12,11 @@ Innerhalb dieses Kapitels sollen diese kurz beschrieben und weitere wichtige Beg
 
 \paragraph{Netzebenen:}
 
-Das Stromnetz lässt sich grundsätzlich in Übertragungs- und Verteilnetze unterteilen.
+Das Stromnetz Deutschlands lässt sich grundsätzlich in Übertragungs- und Verteilnetze unterteilen.
 Das Übertragungsnetz dient dem Transport von Strom über lange Strecken bei hohen Spannungen.
 Ergänzend erfolgt in den Verteilnetzen die regionale Feinverteilung bei geringeren Spannungen. \cite{Agora2019}\medskip
 
-Innerhalb der Verteilnetze wird zwischen drei Spannungsebenen unterschieden.
-Hierzu zählen die \glspl{HS}-, \glspl{MS}- und \glspl{NS}-Ebene.
+Innerhalb der Verteilnetze wird zwischen der \glspl{HS}-, \glspl{MS}- und \glspl{NS}-Ebene unterschieden.
 In \autoref{tab:Spannungsebenen} finden sich die üblichen Spannungen je Spannungsebene und die verbaute Stromkreislänge in Deutschland je Spannungsebene.
 Innerhalb dieser Masterarbeit werden ausschließlich die Effekte auf die Verteilnetze auf der \glspl{MS}- und \glspl{NS}-Ebene, inklusive der Umspannebene von \gls{MS} zu \gls{NS}, untersucht.
 
@@ -30,7 +29,7 @@ Innerhalb dieser Masterarbeit werden ausschließlich die Effekte auf die Verteil
 Strahlennetze werden so genannt, weil die einzelnen Stränge der Netze strahlenförmig vom Ortsnetztransformator zu den Endverbrauchern verlaufen. \cite{Agora2019}
 Vorteil dieser Form von Netzen ist die leichte Berechenbarkeit und die einfache Überwachung des Netzzustandes.
 Jedoch führt bereits ein einziger Fehlerfall an einer Einspeisestelle eines Verbrauchers dazu, dass auch alle nachfolgenden Verbraucher vom Netz getrennt werden.
-Auch nimmt der Spannungsabfall über die Länge der Leitung immer weiter zu, was zu einer geringeren Belastbarkeit am Ende der Leitung führt. \cite{WNG2020}\medskip
+Auch nimmt der Spannungsabfall über die Länge der Leitung immer weiter zu, was dazu führt, dass die mögliche Belastbarkeit der Leitung ebenfalls über die Länge abnimmt. \cite{WNG2020}\medskip
 
 Im Gegensatz zu \gls{NS}-Netzen werden \gls{MS}-Netze als Ringnetze ausgelegt.
 Ringnetze bieten den Vorteil, dass diese von zwei Seiten gespeist werden, wodurch eine Ringform entsteht.
@@ -44,14 +43,14 @@ Durch das Schließen der Trennstelle können dann wieder alle Verbraucher, mit A
 
 \paragraph{Gleichzeitigkeit:}
 
-Die Gleichzeitigkeit beschreibt den Anteil der momentan anfallenden elektrischen Leistung von der maximalen elektrischen Leistung im Netzgebiet. \cite{Agora2019} 
+Die Gleichzeitigkeit beschreibt den Anteil der momentan benötigten elektrischen Leistung von der maximalen elektrischen Leistung im Netzgebiet. \cite{Agora2019} 
 Im Rahmen dieser Masterarbeit beschreibt die Gleichzeitigeit in der Regel den Anteil der momentanen elektrischen Last von \glspl{EPKW} im Bezug auf die installierte Leistung von Ladepunkten in einem Netzgebiet.
 Ausnahmen sind entsprechend gekennzeichnet.
 
 
 \paragraph{Elektrische Flexibilität:}
 
-Elektrische Flexibilität beschreibt die Fähigkeit des Stromsystems, trotz einer vorhergesehenen oder unvorhergesehenen Änderungen im Verbrauch oder der Erzeugung einen Ausgleich zwischen Angebot und Nachfrage aufrecht zu erhalten.
+Elektrische Flexibilität beschreibt die Fähigkeit des Stromsystems, trotz einer vorhergesehenen oder unvorhergesehenen Änderung im Verbrauch oder der Erzeugung einen Ausgleich zwischen Angebot und Nachfrage aufrecht zu erhalten.
 Dabei wird die Reaktion des Stromsystems durch ein externes Signal ausgelöst.
 Bei dem externen Signal kann es sich beispielsweise um ein Preissignal, aber auch ein physikalisch messbares Signal, wie die Netzfrequenz, handeln. \medskip
 
@@ -85,7 +84,8 @@ Für die Betriebsmittel gelten die in \autoref{tab:Belastungsfaktoren} und \auto
 
 \subparagraph{Verletzungen der thermische Betriebsmittelbelastungen} treten auf, wenn die physikalischen Grenzen von Betriebsmitteln bezüglich ihrer Scheinleistungsbelastbarkeit übertreten werden.
 Der Belastungsfaktor eines Betriebsmittels gibt an, inwieweit ein Betriebsmittel mit Nennscheinleistung belastet werden kann.
-Dabei spiegeln die Belastungsfaktoren wieder, dass für Verbraucher, welche im \gls{MS}-Netz angeschlossen sind, das (n-1)-Kriterium  gilt.
+Dabei spiegeln die Belastungsfaktoren wider, dass für Verbraucher, welche im \gls{MS}-Netz angeschlossen sind, das (n-1)-Kriterium  gilt.
+Das (n-1)-Kriterium bezeichnet den planerischen Grundsatz, dass der Ausfall einer einzigen Komponenten durch Redundanzen abgefangen werden kann und somit ein Systemausfall verhindert wird \cite{NKG}.
 Dies gilt in der Regel jedoch nicht für Verbraucher im \gls{NS}-Netz und Erzeugerkapazitäten, welche im \gls{MS}- oder \gls{NS}-Netz angeschlossen sind.
 Die Belastungsfaktoren der einzelnen Betriebsmittel sind in \autoref{tab:Belastungsfaktoren} zusammengefasst. \cite{Schachler} \cite{Rehtanz2017}
 
@@ -96,7 +96,7 @@ Die Belastungsfaktoren der einzelnen Betriebsmittel sind in \autoref{tab:Belastu
 \subparagraph{Verletzungen des Spannungsbandes} treten bei einer starken Abweichung der Spannung am Betriebsmittel von der Nennspannung auf.
 Die zulässigen Spannungsabweichungen liegen für Endkunden in der \gls{NS}-Ebene bei \SI{\pm 10}{\percent}.
 Dieses Spannungsband wird nach \autoref{tab:Spannungsband} auf die \gls{MS}, \gls{MS}-\gls{NS}- und \gls{NS}-Ebene aufgeteilt.
-Dabei spiegelt das in der \gls{NS}-Ebene größere zulässige Spannungsband im Lastfall wieder, dass in dieser die Mehrheit der Verbraucher angeschlossen ist.
+Dabei spiegelt das in der \gls{NS}-Ebene größere zulässige Spannungsband im Lastfall wider, dass hier die Mehrheit der Verbraucher angeschlossen ist.
 Demgegenüber wird im Rückspeisefall ein größeres Spannungsband für die \gls{MS}-Ebene reserviert. \cite{Schachler} \cite{Rehtanz2017}
 
 \input{Ch02/tab/Ch02_tab_03_Spannungsband}
@@ -104,15 +104,14 @@ Demgegenüber wird im Rückspeisefall ein größeres Spannungsband für die \gls
 
 \subsection{Elektromobilität}
 
-Innerhalb dieses Kapitels werden die für diese Masterarbeit wichtigsten Begriffe im Bezug auf die Elektromobilität erläutert und definiert.
-Dabei untersucht diese Arbeit ausschließlich die Auswirkungen der Netzintegration von \gls{EPKW}.
+Innerhalb dieser Arbeit werden ausschließlich die Auswirkungen der Netzintegration von \glspl{EPKW} untersucht.
 Der Einfluss der Elektrifizierung von beispielsweise des öffentlichen Personennahverkehrs, großen betriebliche Fahrzeugflotten und Lastkraftwagen ist nicht Teil dieser Arbeit.
 
 
 \paragraph{Ladetechnik:}
 
 Die Ladetechnik von \glspl{EPKW} und den korrespondierenden Ladepunkten lässt sich anhand verschiedener Kriterien klassifizieren.
-Innerhalb dieser Arbeit wird die Ladetechnik ausschließlich anhand der Höhe ihrer Wirkleistung klassifiziert.
+Innerhalb dieser Arbeit wird die Ladetechnik anhand der Höhe ihrer Wirkleistung klassifiziert.
 In \autoref{fig:four-quadrant} finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EPKW} in Abhängigkeit von ihrer \gls{P} und ihrer \gls{Q}.
 
 \input{Ch02/fig/Ch02_fig_01_four-quadrant}
@@ -127,10 +126,10 @@ Ebenfalls wird der Einsatz von bidirektionaler Ladetechnik nicht untersucht.\med
 
 Die einzelnen Ladevorgänge werden anhand ihrer Wirkleistung grob in Normal- und Schnellladevorgänge unterteilt.
 Normalladevorgänge finden bei einer Wirkleistung von maximal \SI{50}{\kw} statt, während Schnellladevorgänge bei einer Leistung von \SIrange[range-phrase=~{oder}~]{150}{350}{\kw} stattfinden.
-Dabei besitzen die Ladevorgänge hier pauschal einen Wirkungsgrad von \SI{90}{\percent}.
+Innerhalb dieser Arbeit wird angenommen, dass die Ladevorgänge einen Wirkungsgrad von \SI{90}{\percent} besitzen.
 Eine Übersicht der in dieser Arbeit verwendeten netz- und fahrzeugseitigen Wirkleistungen von Ladepunkten findet sich in \autoref{tab:charging_cap}.
 Weiterhin sind die in \autoref{tab:TechPowerCap} zusammengefassten Limitierungen der \glspl{EPKW} zu berücksichtigen.
-Unabhängig von der Ladetechnik wird angenommen, dass am Netzverknüpfungspunkt immer eine symmetrische Last anliegt.
+Unabhängig von der Ladetechnik wird vereinfachend angenommen, dass am Netzverknüpfungspunkt immer eine symmetrische Last anliegt.
 
 \input{Ch02/tab/Ch02_tab_04_Ladeleistungen}
 
@@ -143,13 +142,13 @@ Grundsätzlich lassen sich hierbei marktorientierte und netzdienliche Ladestrate
 
 \subparagraph{Marktorientierte Ladestrategien} haben als Fokus die Minimierung der Kosten für den Strombezug. Dies bedeutet konkret, dass die Ladevorgänge durch ein Preissignal am überregionalen Großhandelsmarkt ausgelöst beziehungsweise unterbrochen werden.
 Eine solche Ladestrategie kann sowohl positive als auch negative Effekte auf das Stromnetz aufweisen und erfordert einen geeigneten rechtlichen Rahmen.
-So führt beispielsweise ein hohes Stromangebot zu niedrigen Großhandelsmarktpreisen, wodurch das beladen der \glspl{EPKW} ausgelöst wird und ein Ausgleich zwischen Angebot und Nachfrage angestrebt wird.
-Auf der anderen Seite werden lokale Netzengpässe nicht berücksichtigt und die Gleichzeitigkeit der Ladevorgänge erhöht sich, wodurch sich der lokale Netzausbaubedarf erhöhen kann. \cite{Agora2019} \cite{Dorendorf2019} \cite{Rehtanz2017}
+Auf der einen Seite führt eine solche Ladestrategie zu einem Ausgleich zwischen Angebot und Nachfrage, da ein hohes Stromangebot zu niedrigen Großhandelsmarktpreisen führt, wodurch das Laden der \glspl{EPKW} ausgelöst wird.
+Auf der anderen Seite wird hierdurch die Gleichzeitigkeit erhöht, was zu Netzengpässen und zu einem erhöhten lokalen Netzausbaubedarf führen kann. \cite{Agora2019} \cite{Dorendorf2019} \cite{Rehtanz2017}
 
 
 \subparagraph{Netzdienliche Ladestrategien} setzen hingegen auf die Vermeidung von lokalen Engpässen, welche durch eine hohe Nachfrage entstehen können.
 Hierbei kann zwischen präventiven und aktiven Maßnahmen unterschieden werden.
 Präventive Maßnahmen sollen Verbraucher veranlassen, ihre Ladevorgänge in Zeiten geringer Netzauslastung zu verlegen.
 Dies kann zum Beispiel über monetäre Anreize aber auch über Quoten erfolgen.
-Bei aktiven Maßnahmen handelt es sich hingegen um ein aktives Eingreifen durch den Netzbetreiber, welcher bei drohenden Netzengpässen in den Ladevorgang eingreift und diesen unterbricht. \cite{Agora2019}
+Bei aktiven Maßnahmen handelt es sich hingegen um ein aktives Eingreifen bei drohenden Netzengpässen in die Ladevorgänge durch den Netzbetreiber. \cite{Agora2019}
 
