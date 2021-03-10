@@ -13,7 +13,7 @@ Zu den Teilnehmern$^*$innen des Workshops zählten mehrheitlich Mitarbeiter$^*$i
 Die folgende Auflistung entspricht den relevantesten Ergebnissen mehrerer Diskussionen und Umfragen innerhalb des Workshops.
 
 \begin{itemize}
-	\item Die Untersuchung eines Mobilitätswende-Szenarios ist von besonders hohem Interesse
+%	\item Die Untersuchung eines Mobilitätswende-Szenarios ist von besonders hohem Interesse
 	\item Private Ladeinfrastruktur zu Hause oder am Arbeitsplatz besitzt die größte Attraktivität für Verbraucher
 %	\item Es wird davon ausgegangen, dass \num{2050} etwa \num{15} \glspl{EPKW} auf einen öffentlichen Ladepunkt kommen
 	\item Eine regionale Konzentration von \glspl{EPKW} wird nur während der Markthochlaufphase eine relevante Rolle spielen
@@ -28,7 +28,7 @@ Die folgende Auflistung entspricht den relevantesten Ergebnissen mehrerer Diskus
 In diesem Kapitel erfolgt eine Beschreibung der Annahmen zu den untersuchten Szenarien und somit den Eingangsparametern für die Simulation des Einflusses der Netzintegration von \gls{EPKW}.
 Hierzu zählen der Ausbau regenerativer Energien, der konventionelle Stromverbrauch, der Hochlauf von \glspl{WP} und \glspl{EPKW} sowie deren technische Parameter.
 Der Fokus liegt hierbei auf der Aufstellung von Annahmen zum Hochlauf von \glspl{EPKW} und zur Verfügbarkeit der Ladeinfrastruktur.
-Insgesamt werden vier Szenarien und zwei daraus abgeleitete Sensitivitäten in Form von Szenaretten untersucht.
+Insgesamt werden drei Szenarien und eine daraus abgeleitete Sensitivität in Form einer Szenarette untersucht.
 
 
 \subsubsection{Ausbau regenerativer Energien}
@@ -93,7 +93,7 @@ Insgesamt spiegeln alle Szenarien unterschiedlich starke Durchdringungen des \gl
 
 Das erste Szenario entspricht mit einem Fahrzeughochlauf von \SI{14}{\MioStk} den Annahmen des Szenarios C~\num{2035} des Netzentwicklungsplans \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020}.
 Die Hochlaufzahlen für das Referenzszenario entsprechen mit \SI{25.1}{\MioStk} den summierten Medianen der Literaturrecherche für den Fahrzeughochlauf an \glspl{BEV} und \glspl{PHEV} im Jahr \num{2050}.
-Beim Mobilitätswende-Szenario wurde der Fahrzeugbestand des Effizienz-Plus Szenarios des Renewbility~III Projekts \cite{Institut2016} übernommen und von einer vollständigen Elektrifizierung ausgegangen.
+% Beim Mobilitätswende-Szenario wurde der Fahrzeugbestand des Effizienz-Plus Szenarios des Renewbility~III Projekts \cite{Institut2016} übernommen und von einer vollständigen Elektrifizierung ausgegangen.
 Das Antriebswende-Szenario geht hingegen von einer vollständigen Elektrifizierung des Fahrzeugbestandes von \SI{47.7}{\MioStk} vom \DTMdate{2020-01-01} \cite{KBA2020} aus.
 
 \input{Ch05/tab/Ch05_tab_03_SzenarienRampUp}
@@ -223,25 +223,10 @@ In \autoref{tab:SchnellProbability2050} finden sich die getroffenen Annahmen fü
 \input{Ch05/tab/Ch05_tab_10_SchnellladungProbability}
 
 
-\subsection{Sensitivitäten}
+\subsection{Sensitivität \glqq Firmenparkplatz\grqq}
 
-Zusätzlich zu den zuvor beschriebenen Szenarien sollen in dieser Arbeit zwei Sensitivitäten in Form von Szenaretten untersucht werden.
-Hierbei untersucht die \Kleinwagen den Einfluss einer weiter voranschreitenden Mobilitätswende und bei der \SzeFirmenparkplatz wird der Einfluss eines geringeren Anteils an Ladevorgängen am Arbeitsplatz untersucht.
-
-
-\subsubsection{\Kleinwagendot}
-
-Die \Kleinwagen basiert auf den Annahmen des Mobilitätswende-Szenarios.
-Hierbei werden die netzseitigen Auswirkungen einer Verschiebung der Fahrzeugklassen hin zu mehr Kleinwagen untersucht.
-Kleinwagen machen in dieser Szenarette \SI{50}{\percent}, Mittelklasse Fahrzeuge \SI{35}{\percent} und Oberklasse Fahrzeuge \SI{15}{\percent} des Gesamtbestandes aus.
-Zusätzlich wird ein Anwachsen des Anteils von \glspl{BEV} auf \SI{75}{\percent} der Fahrzeuge angenommen.
-Die hieraus entstehende Aufteilung findet sich in \autoref{tab:CarSplitSzenarette}.
-
-\input{Ch05/tab/Ch05_tab_11_CarSplit_Szenarette}
-
-
-\subsubsection{\SzeFirmenparkplatzdot}
-
+Zusätzlich zu den zuvor beschriebenen Szenarien soll in dieser Arbeit eine Sensitivität in Form einer Szenaretten untersucht werden.
+Hierbei untersucht die \SzeFirmenparkplatz den Einfluss eines geringeren Anteils an Ladevorgängen am Arbeitsplatz.
 Aufgrund der hohen Gleichzeitigkeit und der zeitlichen Überschneidung mit einer hohen Erzeugung aus \glspl{PVA} kommt dem Laden am Arbeitsplatz eine besondere Bedeutung zu.
 Die \SzeFirmenparkplatz soll die Sensitivität des Antriebswende-Szenarios auf die Verfügbarkeit von Ladepunkten auf Firmenparkplätzen untersuchen.
 Hierfür wird angenommen, dass nur noch in \SI{50}{\percent} der Fälle eine Ladung am Firmenparkplatz stattfinden kann.
@@ -253,3 +238,4 @@ In \autoref{tab:UCProbabilitySzenarette} findet sich die hieraus entstehende Wah
 Dadurch kommt es für die Wegezwecke \Arbeitdot, \dienst und \Ausbildung zu einer veränderten Wahrscheinlichkeitsverteilung, welche in \autoref{tab:WegezweckProbabilitySzenarette} zu finden ist.
 
 \input{Ch05/tab/Ch05_tab_13_WegezweckProbability_Szenarette}
+
