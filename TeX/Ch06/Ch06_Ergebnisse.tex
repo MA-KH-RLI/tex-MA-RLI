@@ -1,5 +1,5 @@
 
-\section{Ergebnisse}\label{chap:results}
+\section{Ergebnisse und Diskussion}\label{chap:results}
 
 In diesem Kapitel werden die Ergebnisse der einzelnen Zwischenschritte der Methodik nach \autoref{chap:Methodik} dargestellt und kritisch betrachtet.
 Hierzu gehören vorerst die Ergebnisse der Clusterung der \gls{MS}-Netzgebiete, die mit \gls{SIMBEV} erzeugten Fahrtprofile und Standzeiten von \gls{EPKW} und deren räumlicher Verteilung, sowie die Ergebnisse der Implementierung der verschiedenen Ladestrategien.
@@ -9,7 +9,7 @@ Abschließend erfolgt eine detaillierte Betrachtung der Ergebnisse der Ermittlun
 \subsection{Clusterung der MS-Netzgebiete}
 
 Auf der \gls{MS}-Ebene gibt es \num{3591} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
-Die vollständige Untersuchung der mit Hilfe des Open Source Tools \gls{DINGO} synthetisierten \gls{MS}-Netzgebiete, würde aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten führen.
+Die vollständige Untersuchung der mit Hilfe des Open Source Tools \gls{DINGO} synthetisierten \gls{MS}-Netzgebiete würde aufgrund ihrer großen Anzahl zu inakzeptabel hohen Rechenzeiten führen.
 Im Rahmen dieser Masterarbeit wurden sechs Referenznetzgebiete ausgewählt, welche \num{1842} der \num{3591} {\color{red} TODO 3354?} \gls{MS}-Netzgebiete repräsentieren.
 Das Clustering erfolgte innerhalb \cite{Schachler} durch den während des \gls{OPENEGO} Projektes entwickelten k-means-Clusteralgorithmus nach \autoref{chap:dingo_theo}.
 
@@ -48,10 +48,11 @@ Zusätzlich findet sich im Anhang in \autoref{tab:car_count_long} eine detaillie
 
 Die \num{35} Gemeinden weisen drei der sieben \gls{REGIOSTAR} (s. \autoref{tab:RegioStaR}) auf.
 Hierzu zählen der kleinstädtische, dörfliche Raum einer ländlichen Region (\gls{ID} \num{77}), Mittelstädte, städitscher Raum (\gls{ID} \num{76}) und Mittelstädte, städitscher Raum einer Stadtregion (\gls{ID} \num{73}).
-Eine Analyse der erzeugten Fahrtprofile zeigt, dass in \gls{ID} \num{77} im Schnitt die weitesten Strecken zurückgelegt werden, welches den Erwartungen nach \gls{MID} \cite{Nobis2019} entspricht.
+Die Jahresfahrleistung von \glspl{BEV} je \gls{REGIOSTAR} wurde zusammenfassend über alle Szenarien hinweg berechnet und findet sich in \autoref{tab:bev_distance}.
+Dabei zeigt sich, dass in \gls{ID} \num{77} im Schnitt die weitesten Strecken zurückgelegt werden, welches den Erwartungen nach \gls{MID} \cite{Nobis2019} entspricht.
 Jedoch liegen die Jahresfahrleistungen insgesamt unter den Angaben des \gls{MID} von durchschnittlich \SI{14700}{\km}, aber auf einem ähnlichen Niveau zu einer Auswertung von Kfz-Versicherungen des Vergleichsportals \textit{Check24} \cite{CHECK24GmbH2018}, wonach die durchschnittliche Jahresfahrleistung in Deutschland im Jahr \num{2017} bei \SI{11888}{\km} lag.
 Insgesamt spiegeln die Jahresfahrleistungen \glspl{SIMBEV} somit ein progressives Szenario mit einer sinkenden Jahresfahrleistung wider.
-Die Jahresfahrleistung von \glspl{BEV} je \gls{REGIOSTAR} \gls{ID} wurde zusammenfassend über alle Szenarien hinweg berechnet und findet sich in \autoref{tab:bev_distance}.
+
 
 \input{Ch06/tab/Ch06_tab_03_bev_distance}
 
@@ -63,13 +64,13 @@ Allerdings fällt auf, dass die mit \gls{SIMBEV} ermittelten Standzeiten im öff
 \input{Ch06/tab/Ch06_tab_04_standing_times}
 
 Der Anteil flexibilisierbarer Ladevorgänge entspricht dem Anteil an Energie am Gesamtenergiebedarf der \glspl{EPKW}, der an privaten Ladepunkten zu Hause oder am Arbeitsplatz nachgeladen wird.
-Hierzu zählen alle Ladevorgänge die am Eigenheim, einer Wohnaalage oder auf einem Firmenparkplatz stattfinden.
+Hierzu zählen alle Ladevorgänge die am Eigenheim, einer Wohnanlage oder auf einem Firmenparkplatz stattfinden.
 Zusätzlich sind nur Ladevorgänge flexibilisierbar, deren Standzeit größer ist als die Mindestladedauer.
-Demgegenüber stehen nicht-flexibilisierer Ladevorgänge im öffentlichen Raum und an Schnellladestationen bzw. Ladevorgänge deren Standzeit der Mindestladedauer entspricht.
-Im Mittel liegt der Anteil flexibilisierer Ladevorgänge über alle Szenarien je Gemeinde bei \SI{71.1}{\percent}.
+Demgegenüber stehen nicht-flexibilisierbare Ladevorgänge im öffentlichen Raum und an Schnellladestationen bzw. Ladevorgänge deren Standzeit der Mindestladedauer entspricht.
+Im Mittel liegt der Anteil flexibilisierbarer Ladevorgänge über alle Szenarien je Gemeinde bei \SI{71.1}{\percent}.
 Hiervon ausgenommen ist die \SzeFirmenparkplatzdot, bei der es aufgrund des geringeren Bestands an Ladeinfrastruktur am Arbeitsplatz zu mehr Ladevorgängen im öffentlichen Raum kommt.
-Der Anteil flexibilisierer Ladevorgänge liegt bei dieser Szenarette bei \SI{66.1}{\percent}.
-In \autoref{tab:ChargingShare} sind die Anteile in flexibilisierbare und nicht-flexibilisierbare Ladevorgänge zusammengefasst.
+Der Anteil flexibilisierbarer Ladevorgänge liegt bei dieser Szenarette bei \SI{66.1}{\percent}.
+In \autoref{tab:ChargingShare} sind die Anteile flexibilisierbarer und nicht-flexibilisierbarer Ladevorgänge zusammengefasst.
 
 \input{Ch06/tab/Ch06_tab_05_ChargingShare}
 
