@@ -8,9 +8,11 @@ Abschließend erfolgt eine detaillierte Betrachtung der Ergebnisse der Ermittlun
 
 \subsection{Erzeugung und Charakteristik der Fahrtprofile}
 
-Mit Hilfe des Software Tools \gls{SIMBEV} können für die zuvor geclusterten Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt werden.
+Mit Hilfe des Software Tools \gls{SIMBEV} können für die n Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt werden.
 Die Charakteristik der Fahrtprofile spielt eine entscheidende Rolle für die Wirksamkeit der unterschiedlichen Ladestrategien und die Auswirkungen auf die Netze.
-Hierbei steht vor allem die Jahresfahrleistung der \glspl{EPKW} und der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge im Vordergrund.\medskip
+Hierbei steht vor allem die Jahresfahrleistung der \glspl{EPKW} und der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge im Vordergrund.
+Innerhalb dieses Kapitels werden die Ergebnisse der Regionalisierung dargestellt, sowie die Charakteristik der erzeugten Fahrtprofile kritisch betrachtet.
+Dabei liegt der Fokus auf der Überprüfung der Plausibilität der Fahrtprofile und der HErausstelung des Flexibilisierungspotentials von Ladevorgängen von \gls{EPKW}.\medskip
 
 Die Ermittlung der Anzahl der Fahrzeuge erfolgt nach \autoref{chap:simbev_theo} auf Gemeindeebene.
 In der Regel liegen innerhalb eines Netzgebietes mehrere Gemeinden und insgesamt liegen \num{35} Gemeinden innerhalb der sechs Referenznetzgebiete.
@@ -20,7 +22,7 @@ Zusätzlich findet sich im Anhang in \autoref{tab:car_count_long} eine detaillie
 \input{Ch06/tab/Ch06_tab_01_car_count}
 
 Die \num{35} Gemeinden weisen drei der sieben \gls{REGIOSTAR} (s. \autoref{tab:RegioStaR}) auf.
-Hierzu zählen der kleinstädtische, dörfliche Raum einer ländlichen Region (\gls{ID} \num{77}), Mittelstädte, städitscher Raum (\gls{ID} \num{76}) und Mittelstädte, städitscher Raum einer Stadtregion (\gls{ID} \num{73}).
+Hierzu zählen der kleinstädtische, dörfliche Raum einer ländlichen Region (\gls{ID} \num{77}), Mittelstädte im städtischen Raum (\gls{ID} \num{76}) und Mittelstädte im städtischen Raum einer Stadtregion (\gls{ID} \num{73}).
 Die Jahresfahrleistung von \glspl{BEV} je \gls{REGIOSTAR} wurde zusammenfassend über alle Szenarien hinweg berechnet und findet sich in \autoref{tab:bev_distance}.
 Dabei zeigt sich, dass in \gls{ID} \num{77} im Schnitt die weitesten Strecken zurückgelegt werden, welches den Erwartungen nach \gls{MID} \cite{Nobis2019} entspricht.
 Jedoch liegen die Jahresfahrleistungen insgesamt unter den Angaben des \gls{MID} von durchschnittlich \SI{14700}{\km}, aber auf einem ähnlichen Niveau zu einer Auswertung von Kfz-Versicherungen des Vergleichsportals \textit{Check24} \cite{CHECK24GmbH2018}, wonach die durchschnittliche Jahresfahrleistung in Deutschland im Jahr \num{2017} bei \SI{11888}{\km} lag.
@@ -29,10 +31,11 @@ Insgesamt spiegeln die Jahresfahrleistungen \glspl{SIMBEV} somit ein progressive
 
 \input{Ch06/tab/Ch06_tab_02_bev_distance}
 
-Eine Betrachtung der durchschnittlichen Stand- und Ladezeiten bei maximal möglicher Ladeleistung der \gls{EPKW} je Wegezweck (s. \autoref{tab:StandingTime}) zeigt, dass die \gls{EPKW} vor allem im privaten Bereich einen Großteil der Standzeit nicht geladen werden.
-So macht die durchschnittliche Ladezeit zu Hause oder am Arbeitsplatz nur etwa \SI{8}{\percent} der Standzeit aus.
-Dies zeigt deutlich das große Flexibilisierungspotential im privaten Bereich.
-Allerdings fällt auf, dass die mit \gls{SIMBEV} ermittelten Standzeiten im öffentlichen Bereich unrealistisch lang erscheinen.
+Eine Betrachtung der durchschnittlichen Stand- und Ladezeiten bei Standzeiten während der einer Ladung stattfindet bei maximal möglicher Ladeleistung der \gls{EPKW} je Wegezweck in \autoref{tab:StandingTime} zeigt, dass die \gls{EPKW} vor allem im privaten Bereich einen Großteil der Standzeit nicht geladen werden.
+So macht die durchschnittliche Ladezeit der Wegezwecke \nH und \Arbeit nur etwa \SI{8}{\percent} der Standzeit aus.
+Hierbei sind zwar auch Fahrten enthalten, die im öffentlichen Raum am Straßenrand enden, dies zeigt jedoch deutlich das große Flexibilisierungspotential im privaten Bereich.
+Da Ladevorgänge im öffentlichen Raum erst ab einem \gls{SOC} von \SI{80}{\percent} ausgelöst werden, liegt die Ladezeit der sonstigen Wegezwecke über den Wegezwecken \nH und \Arbeitdot.
+Allerdings fällt auf, dass die mit \gls{SIMBEV} ermittelten Standzeiten der anderen Wegezwecke unrealistisch lang erscheinen.
 
 \input{Ch06/tab/Ch06_tab_03_standing_times}
 
@@ -47,36 +50,28 @@ In \autoref{tab:ChargingShare} sind die Anteile flexibilisierbarer und nicht-fle
 
 \input{Ch06/tab/Ch06_tab_04_ChargingShare}
 
-In \autoref{fig:example_load_profile} findet sich ein beispielhaftes \gls{EPKW}-Lastprofil für Referenz-Laden einer mittelstädtischen Gemeinde (\gls{ID} \num{73}) mit \num{6443} \glspl{EPKW} über eine Woche im Antriebswende-Szenario (links).
+In \autoref{fig:example_load_profile} findet sich beispielhaft das \gls{EPKW}-Lastprofil für Referenz-Laden des Netzgebietes \num{176} über eine Woche im Antriebswende-Szenario (links).
 Zusätzlich ist das \gls{EPKW}-Lastprofil der gleichen Gemeinde in der \SzeFirmenparkplatz (rechts) dargestellt.
 
 \input{Ch06/fig/Ch06_fig_01_example_load_profile} % TODO: Leistung statt Last
 
+Die erstellten Fahrtprofile spiegeln ein plausibel erscheinendes Bild wider.
 Die Lastgänge \zH und \Firmeparkplatz entsprechen den Ladevorgängen im privaten Bereich.
 Unter dem Lastgang \oeffen sind hingegen alle öffentlichen Ladevorgänge mit Ausnahme der Schnellladevorgänge (\gls{HPC}) zusammengefasst.
 Deutlich zu erkennen ist die hohe Gleichzeitigkeit am Vormittag sowohl am \Firmeparkplatz als auch im öffentlichen Raum, welche durch das Fahren zur Arbeit ausgelöst wird.
-Auch die Rückkehr zum Wohnort ist ab dem frühen Nachmittag in den Lastgängen \zH und im öffentlichen Raum deutlich zu erkennen. Die entsprechenden Dauerlastkurven für die Gemeinde über eine Woche (s. \autoref{fig:example_load_curve}) zeigen dies nochmals deutlich.
+Auch die Rückkehr zum Wohnort ist ab dem frühen Nachmittag in den Lastgängen \zH und im öffentlichen Raum deutlich zu erkennen.
+Die entsprechenden Dauerlastkurven für die Gemeinde über eine Woche (s. \autoref{fig:example_load_curve}) zeigen nochmals deutlich die dominante Rolle der Hochlastphase die Aufgrund der hohen Gleichzeitigkeit des Wegezwecks \Arbeit vor allem am \Firmeparkplatz aber auch im öffentlichen Raum auftritt.
 Schnellladevorgänge treten unregelmäßig im Verlauf der Woche auf.
-Am Wochenende kommt es zu deutlich geringeren Anteilen von Ladevorgängen \zH und am \Firmeparkplatzdot, wodurch das Flexibilisierungspotential am Wochenende geringer ausfällt.
+Vor allem am Sonntag kommt es zu deutlich geringeren Anteilen von Ladevorgängen \zH und am \Firmeparkplatzdot, wodurch das Flexibilisierungspotential am Wochenende geringer ausfällt.
 Gegenüber dem Antriebswende-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot.
 Jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.
 
 \input{Ch06/fig/Ch06_fig_02_example_load_curve} % TODO: Leistung statt Last
 
-
-\subsubsection{Kritik}
-
-Die erstellten Fahrtprofile spiegeln ein plausibel erscheinendes Bild wider.
-Dennoch existieren einzelne Kritikpunkte, die innerhalb des \gls{SIMBEV} Projektes gelöst werden sollten.
-So ist es zum Zeitpunkt der Erstellung der Fahrtprofile noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
-Da sich jedoch die Netzuntersuchungen im Rahmen dieser Masterarbeit auf einen Zeitraum von zwei Wochen beziehen, wird die simulierte Woche stellvertretend für beide Wochen verwendet.
-Hierfür wurde jedes Fahrtprofil eines \gls{EPKW} solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge erreicht wurde.
-Dieses Vorgehen bringt jedoch einige Nachteile mit sich.
-Durch den kurzen simulierten Zeitraum fällt der \gls{SOC} einiger Fahrzeuge im Laufe der Woche nur geringfügig.
-Es ist zu vermuten, dass dies dazu führt, dass Ladevorgänge an Schnellladeinfrastruktur un­ter­re­prä­sen­tiert dargestellt werden.
-Auch nimmt der Ladebedarf im öffentlichen Raum im Laufe der Woche zu.
-Dies lässt sich durch die Abhängigkeit der Ladewahrscheinlichkeit vom \gls{SOC} erklären, da der \gls{SOC} im Mittel im Verlaufe des Woche sinkt.
-Weiterhin erscheinen die Standzeiten der einzelnen Fahrzeuge im öffentlichen Raum als unrealistisch lang.
+Zum Zeitpunkt der Erstellung der Fahrtprofile war es noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
+Durch die Zuordnung eines zufälligen Eingangs-\gls{SOC} für einige Fahrzeuge fällt der Ladebedarf am Montag nicht deutlich aus der Reihe.
+Da der durchschnittliche \gls{SOC} der Fahrzeuge im Laufe der Woche abnimmt, kommt es jedoch durch die Abhängigkeit der Ladewahrscheinlichkeit vom \gls{SOC} insgesamt zu einer Zunahme des Ladebedarfs im öffentlichen Raum über die Woche.
+Es ist zu vermuten, dass dies weiterhin dazu führt, dass Ladevorgänge an Schnellladeinfrastruktur un­ter­re­prä­sen­tiert dargestellt werden.
 
 
 \subsection{Verteilung der Ladevorgänge auf die Ladeinfrastruktur}\label{chap:distribute_demand_ev}

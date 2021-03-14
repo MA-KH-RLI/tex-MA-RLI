@@ -156,7 +156,11 @@ Schnellladeinfrastruktur besitzt aufgrund des zusätzlichen Fahrt- und Zeitaufwa
 Deshalb wird eine Schnellladung in dieser Simulation nur dann ausgelöst, wenn es wirklich nötig ist.
 Sinkt der \gls{SOC} eines Fahrzeugs unter \SI{20}{\percent}, wird eine Schnellladestation angefahren und das Fahrzeug für \SI{15}{\Minuten} geladen.
 Im Unterschied zu \glspl{BEV} können \glspl{PHEV} auch mit einem \gls{SOC} von \SI{0}{\percent} ihre Fahrt mit Hilfe des Verbrennungsmotors fortsetzen.
-Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.
+Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.\medskip
+
+Derzeit können mit \gls{SIMBEV} nur Fahrtprofile mit einer Länge von einer Woche simuliert werden.
+Da hierdurch ein Initialproblem eines vollständig beladenen Fahrzeugbestandes am ersten Tag der Simulation dominant hervortritt, wird zu Beginn der Simulation \SI{15}{\percent} der Fahrzeuge ein zufälliger \gls{SOC} zwischen \SIrange[range-phrase=~bis~]{30}{100}{\percent} zugeordnet.
+Anschließend werden die Fahrtprofil eines \gls{EPKW} solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge eines Jahres erreicht wird.
 
 
 \subsubsection{Regionalisierung des Fahrzeugbestandes}
