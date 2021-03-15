@@ -8,11 +8,11 @@ Abschließend erfolgt eine detaillierte Betrachtung der Ergebnisse der Ermittlun
 
 \subsection{Erzeugung und Charakteristik der Fahrtprofile}
 
-Mit Hilfe des Software Tools \gls{SIMBEV} können für die n Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erzeugt werden.
+Mit Hilfe des Software Tools \gls{SIMBEV} werden für die Referenznetzgebiet die Fahrtprofile der im Netzgebiet befindlichen Fahrzeuge erstellt.
 Die Charakteristik der Fahrtprofile spielt eine entscheidende Rolle für die Wirksamkeit der unterschiedlichen Ladestrategien und die Auswirkungen auf die Netze.
-Hierbei steht vor allem die Jahresfahrleistung der \glspl{EPKW} und der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge im Vordergrund.
+Hierbei steht vor allem die Jahresfahrleistung der \glspl{EPKW}, der Anteil flexibilisierbarer und nicht-flexibilisierer Ladevorgänge, die Gleichzeitigkeit der Ladevorgänge und wann diese auftreten im Vordergrund.
 Innerhalb dieses Kapitels werden die Ergebnisse der Regionalisierung dargestellt, sowie die Charakteristik der erzeugten Fahrtprofile kritisch betrachtet.
-Dabei liegt der Fokus auf der Überprüfung der Plausibilität der Fahrtprofile und der HErausstelung des Flexibilisierungspotentials von Ladevorgängen von \gls{EPKW}.\medskip
+Dabei liegt der Fokus auf der Überprüfung der Plausibilität der Fahrtprofile und dem herausstellen des Flexibilisierungspotentials von Ladevorgängen von \gls{EPKW}.\medskip
 
 Die Ermittlung der Anzahl der Fahrzeuge erfolgt nach \autoref{chap:simbev_theo} auf Gemeindeebene.
 In der Regel liegen innerhalb eines Netzgebietes mehrere Gemeinden und insgesamt liegen \num{35} Gemeinden innerhalb der sechs Referenznetzgebiete.
@@ -31,11 +31,12 @@ Insgesamt spiegeln die Jahresfahrleistungen \glspl{SIMBEV} somit ein progressive
 
 \input{Ch06/tab/Ch06_tab_02_bev_distance}
 
-Eine Betrachtung der durchschnittlichen Stand- und Ladezeiten bei Standzeiten während der einer Ladung stattfindet bei maximal möglicher Ladeleistung der \gls{EPKW} je Wegezweck in \autoref{tab:StandingTime} zeigt, dass die \gls{EPKW} vor allem im privaten Bereich einen Großteil der Standzeit nicht geladen werden.
+Eine Betrachtung der durchschnittlichen Stand- und Ladezeiten von Ladevorgängen bei maximal möglicher Ladeleistung der \gls{EPKW} je Wegezweck in \autoref{tab:StandingTime} zeigt, dass die \gls{EPKW} vor allem im privaten Bereich einen Großteil der Standzeit nicht geladen werden.
 So macht die durchschnittliche Ladezeit der Wegezwecke \nH und \Arbeit nur etwa \SI{8}{\percent} der Standzeit aus.
-Hierbei sind zwar auch Fahrten enthalten, die im öffentlichen Raum am Straßenrand enden, dies zeigt jedoch deutlich das große Flexibilisierungspotential im privaten Bereich.
-Da Ladevorgänge im öffentlichen Raum erst ab einem \gls{SOC} von \SI{80}{\percent} ausgelöst werden, liegt die Ladezeit der sonstigen Wegezwecke über den Wegezwecken \nH und \Arbeitdot.
-Allerdings fällt auf, dass die mit \gls{SIMBEV} ermittelten Standzeiten der anderen Wegezwecke unrealistisch lang erscheinen.
+Hierbei sind zwar auch Fahrten enthalten, die im öffentlichen Raum am Straßenrand enden, dennoch zeigt sich deutlich das große Flexibilisierungspotential im privaten Bereich.
+% Da Ladevorgänge im öffentlichen Raum erst ab einem \gls{SOC} von \SI{80}{\percent} ausgelöst werden, liegt die Ladezeit der sonstigen Wegezwecke über den Wegezwecken \nH und \Arbeitdot.
+% Allerdings zeigt sich auch hier, dass in den meisten Fällen ein großes Flexibilisierungspotential vorliegt.
+% Es empfiehlt sich somit auch die Wirksamkeit von netzdienlichen Ladestrategien im öffentlichen Raum zu untersuchen, welches nicht in dieser Arbeit behandelt wird.
 
 \input{Ch06/tab/Ch06_tab_03_standing_times}
 
@@ -69,8 +70,10 @@ Jedoch sinkt auch das Flexibilisierungspotential bei gleichbleibendem Energiebed
 \input{Ch06/fig/Ch06_fig_02_example_load_curve} % TODO: Leistung statt Last
 
 Zum Zeitpunkt der Erstellung der Fahrtprofile war es noch nicht möglich, einen längeren Zeitraum als eine Woche am Stück zu simulieren.
-Durch die Zuordnung eines zufälligen Eingangs-\gls{SOC} für einige Fahrzeuge fällt der Ladebedarf am Montag nicht deutlich aus der Reihe.
-Da der durchschnittliche \gls{SOC} der Fahrzeuge im Laufe der Woche abnimmt, kommt es jedoch durch die Abhängigkeit der Ladewahrscheinlichkeit vom \gls{SOC} insgesamt zu einer Zunahme des Ladebedarfs im öffentlichen Raum über die Woche.
+Durch die Zuordnung eines zufälligen Eingangs-\gls{SOC} für einige Fahrzeuge (s. \autoref{chap:simbev_theo}) fällt der Ladebedarf am Montag nicht deutlich aus der Reihe.
+Jedoch kann hierdurch ein weiterer Effekt nitch verhindert werden.
+Bei Fahrzeugen, welche weder einen festen Ladepunkt \zH oder am \Firmeparkplatz zugewiesen bekommen haben, fällt der \gls{SOC} im Laufe der Woche langsam ab.
+Hierdurch kommt es durch die Abhängigkeit der Ladewahrscheinlichkeit vom \gls{SOC} zu einer Zunahme des Ladebedarfs im öffentlichen Raum über die Woche.
 Es ist zu vermuten, dass dies weiterhin dazu führt, dass Ladevorgänge an Schnellladeinfrastruktur un­ter­re­prä­sen­tiert dargestellt werden.
 
 

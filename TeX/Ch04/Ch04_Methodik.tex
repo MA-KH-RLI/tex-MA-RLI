@@ -1,6 +1,6 @@
 \section{Methodik}\label{chap:Methodik}
 
-Es werden zunächst die verwendeten Netztopologien sowie deren Clusterung zur Bestimmung repräsentativer Netze, anhand welcher die Untersuchungen vorgenommen werden, beschrieben und vorgestellt.
+Aufgrund ihrer Wichtigkeit für diese Arbeit werden zunächst die verwendeten Netztopologien sowie deren Clusterung zur Bestimmung repräsentativer Netze, anhand welcher die Untersuchungen vorgenommen werden, beschrieben und vorgestellt.
 Anschließend werden mit Hilfe des Software Tools \gls{SIMBEV} Fahrtprofile von \glspl{EPKW} erstellt und die untersuchten Ladestrategien beschrieben.
 Damit der Ladebedarf in die Netzmodelle integriert werden kann, muss dieser anschließend räumlich auf eine entsprechende georeferenzierte Ladeinfrastruktur verteilt werden.
 Abschließend erfolgt eine Beschreibung der Methodik zur Bestimmung von Netzproblemen und der Ermittlung des Abregelungsbedarfs im Netzgebiet mit Hilfe des Open Source Tools \gls{EDISGO}.
@@ -46,7 +46,7 @@ Die verschiedenen Referenznetzstränge der entsprechenden Netzklasse werden ansc
 
 \paragraph{K-Means-Clustering}
 
-Innerhalb des \gls{OPENEGO} Projektes \cite{Mueller2019} wurden in Deutschland insgesamt {\color{red} \num{3354}} Netzgebiete identifiziert und mit Hilfe des Open Source Tools \gls{DINGO} synthetisiert.
+Innerhalb Deutschlands wurden insgesamt \num{3354} Netzgebiete \cite{Schachler} identifiziert und mit Hilfe des Open Source Tools \gls{DINGO} synthetisiert.
 Bei der Synthese der Netztopologien wurde auf eine hohe räumliche und zeitliche Auflösung des Netzdatenmodells geachtet.
 Die große Anzahl an Netzgebieten und die hohe Auflösung führen zu inakzeptabel hohen Rechenzeiten.
 Um die Komplexität des Modells zu reduzieren, wurden in  mit Hilfe des \kmeans Referenznetzgebiete ausgewählt, die stellvertretend für eine möglichst große Zahl an Netzgebieten stehen.
@@ -75,7 +75,7 @@ Anschließend wird der Ladebedarf mit einem beispielhaften Lastprofil auf die Ne
 
 \paragraph{Auswahl repräsentativer Verteilnetztopologien:}
 
-Auf der \gls{MS}-Ebene gibt es {\color{red} \num{3591}} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
+Auf der \gls{MS}-Ebene gibt es \num{3354} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
 \autoref{fig:grid_176_map} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \gls{DINGO} erzeugt wurde und innerhalb dieser Arbeit untersucht wird.
 
 \input{Ch04/fig/Ch04_fig_01_grid_176_map}
@@ -83,7 +83,7 @@ Auf der \gls{MS}-Ebene gibt es {\color{red} \num{3591}} Netzgebiete mit einer mi
 Um mit dieser Arbeit eine Ergänzung zu \textit{E-Mobility Study} \cite{Schachler} zu liefern, werden die Ergebnisse des Clusterings aus \textit{E-Mobility Study} \cite{Schachler} übernommen und von den \num{15} identifizierten repräsentativen Netzgebieten eine Teilmenge untersucht.
 So werden jeweils zwei Netzgebiete der Kategorien Wind-, \gls{PV}- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren.
 Auf diese Weise wird sichergestellt, dass die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze aufgezeigt werden können.
-Insgesamt werden somit sechs Netzgebiete untersucht, die stellvertretend für \num{1842} der {\color{red} \num{3591}} Mittelspannungsnetze stehen.
+Insgesamt werden somit sechs Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3354} Mittelspannungsnetze stehen.
 In \autoref{tab:grid_IDs} finden sich die \glspl{ID} der untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
 
 \input{Ch04/tab/Ch04_tab_01_grid_IDs}
@@ -160,7 +160,7 @@ Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.\medsk
 
 Derzeit können mit \gls{SIMBEV} nur Fahrtprofile mit einer Länge von einer Woche simuliert werden.
 Da hierdurch ein Initialproblem eines vollständig beladenen Fahrzeugbestandes am ersten Tag der Simulation dominant hervortritt, wird zu Beginn der Simulation \SI{15}{\percent} der Fahrzeuge ein zufälliger \gls{SOC} zwischen \SIrange[range-phrase=~bis~]{30}{100}{\percent} zugeordnet.
-Anschließend werden die Fahrtprofil eines \gls{EPKW} solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge eines Jahres erreicht wird.
+Um abschließend ein Fahrtprofil für ein ganzes Jahr zu erhalten, werden die Fahrtprofile solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge erreicht wird.
 
 
 \subsubsection{Regionalisierung des Fahrzeugbestandes}
@@ -258,8 +258,22 @@ Tut dieser es nicht, dann entfallen die zugeordneten Ladevorgänge auf ein angre
 
 Die Netzintegration der Ladeinfrastruktur erfolgt automatisiert mit Hilfe der \textit{integrate\_component} Funktionalität \glspl{EDISGO}.
 Der Anschluss erfolgt hierbei bis zu einer Anschlussleistung von \SI{0.3}{\mva} in der Niederspannung und darüber direkt in der Mittelspannung.
+Bei einem Anschluss in der \gls{NS}-Ebene erfolgt der Anschluss immer innerhalb des \gls{NS}-Netzes, dessen \gls{MS}-\gls{NS}-\gls{USW} am nächsten an dem anzuschließenden Anschlusspunkt liegt.
+Ab einer Leistung von \SI{0.1}{\mva} erfolgt der Anschluss über eine Kabelverbindung direkt an der \gls{MS}-\gls{NS}-Station.
+Darunter hängt die Art des Anschlusses von dem \textit{Use Case} der Ladestation ab.
+Für den \UC \zH wird die Ladestation an der nächstgelegenen Haushaltslast im identifizierten Niederspannungsnetz angeschlossen.
+Im Falle des \UCs \Firmeparkplatz erfolgt der Anschluss an dem nächstgelegenen gewerblichen, industriellen oder landwirtschaftlichen Verbraucher und im Falle von öffentlicher Ladeinfrastruktur wird die Ladestation an den nächstgelegen Verbraucher angeschlossen, der keine Haushaltslast darstellt.\medskip
 
-{\color{red} TODO: @Birgit: Sollte ich hier noch mehr schreiben? Wenn ja was?}
+Erfolgt der Anschluss auf der \gls{MS}-Ebene, dann wird die Ladestation über ein Kabel an dem nächstgelegenen Netzknoten oder Kabel angeschlossen.
+Wird ein Kabel ausgewählt, dann wird die Leitung an der nächstgelegenen Stelle zur Ladestation aufgetrennt und eine neue Kabelmuffe hinzugefügt, wo die Ladestation angeschlossen wird.
+Liegt die Anschlussleistung der Ladestation über \SI{4.5}{\mva}, dann erfolgt der Anschluss der Ladestation über eine Kabelverbindung direkt an dem \gls{HS}-\gls{MS}-\gls{USW}.\medskip
+
+Es wird angenommen, dass die Anschlussleistung einer Ladestation bis zu einer Leistung von \SI{0.3}{\mva} immer der kumulierten Leistung aller Ladepunkte der Ladestation entspricht.
+Da angenommen wird, dass ab einem Anschluss in der Mittelspannung für die \UCs \zH und \Firmeparkplatz immer eine Optimierung der Spitzenlast stattfindet (s. \autoref{chap:theo_strategies}), wird ab einer kumulierten Leistung der Ladepunkte einer Ladestation von \SI{0.3}{\mva} eine Abhängigkeit der Anschlussleistung von der kumulierten Leistung angenommen.
+Hierbei wird ein linearer Zusammenhang des Anschlussleistungsfaktors von der kumulierten Leistung der Ladepunkte einer Ladestation nach \autoref{fig:connection_rating} angenommen.
+Die Anschlussleistung einer Ladestation ergibt sich anschließend aus dem Produkt des Anschlussleistungsfaktors mit der kumulierten Leistung der Ladepunkte der Ladestation.
+
+\input{Ch04/fig/Ch04_fig_05_connection_rating}
 
 
 \subsection{Ladestrategien}\label{chap:theo_strategies}
@@ -293,7 +307,7 @@ Es wird darauf geachtet, dass die Zuweisung der Gruppen nicht nur innerhalb eine
 Innerhalb eines \gls{NS}-Stranges wird weiterhin darauf geachtet, dass auch die einzelnen Leistungsklassen der Ladeinfrastruktur gleichmäßig auf die Gruppen verteilt werden.
 In \autoref{fig:group_vis} findet sich eine beispielhafte Einteilung von Ladepunkten auf die zwei Gruppen innerhalb eines \gls{NS}-Stranges.
 
-\input{Ch04/fig/Ch04_fig_05_grouped_charging}
+\input{Ch04/fig/Ch04_fig_06_grouped_charging}
 
 
 \paragraph{Reduziertes Laden:}
@@ -395,7 +409,7 @@ Mit Hilfe der durch die Lastflussanalyse ermittelten Belastungen und Spannungsab
 Die zulässigen Belastungsfaktoren und Spannungsabweichungen finden sich in \autoref{chap:theo_grid}.
 In \autoref{fig:scope} findet sich eine Übersicht über den Umfang der Lastflussanalyse.
 
-\input{Ch04/fig/Ch04_fig_06_scope_grid_issues}
+\input{Ch04/fig/Ch04_fig_07_scope_grid_issues}
 
 
 \paragraph{Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen:}
@@ -424,5 +438,5 @@ Anhand dieser Information wird entscheiden, ob Last oder Einspeisung abgeregelt 
 Die gesamte notwendige Abregelung für das \gls{MS}-Netz ergibt sich aus der Summierung aller nötigen Abregelungen von Last und Erzeugung.
 In \autoref{fig:scope_curtailment} findet sich eine Veranschaulichung des Vorgehens.
 
-\input{Ch04/fig/Ch04_fig_07_scope_curtailment}
+\input{Ch04/fig/Ch04_fig_08_scope_curtailment}
 
