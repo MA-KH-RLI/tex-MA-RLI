@@ -305,7 +305,7 @@ Reichen die zugewiesenen Ladezeitfenster nicht aus, um den Ladebedarf des Ladevo
 Die Ladezeitfenster der eigenen Gruppe werden dabei priorisiert behandelt.
 Es wird darauf geachtet, dass die Zuweisung der Gruppen nicht nur innerhalb eines Netzgebietes ausgeglichen erfolgt, sondern detailliert bis in die einzelnen Stränge der \gls{NS}-Ebene.
 Innerhalb eines \gls{NS}-Stranges wird weiterhin darauf geachtet, dass auch die einzelnen Leistungsklassen der Ladeinfrastruktur gleichmäßig auf die Gruppen verteilt werden.
-In \autoref{fig:group_vis} findet sich eine beispielhafte Einteilung von Ladepunkten auf die zwei Gruppen innerhalb eines \gls{NS}-Stranges.
+In \autoref{fig:group_vis} findet sich eine beispielhafte Einteilung von Ladepunkten auf die zwei Gruppen innerhalb eines \gls{NS}-Stranges. \cite{Schachler2021}
 
 \input{Ch04/fig/Ch04_fig_06_grouped_charging}
 
@@ -316,15 +316,13 @@ Im Gegensatz zu den Ladegruppen soll beim reduzierten Laden die Senkung der Netz
 Hierbei wird durch eine Absenkung der Ladeleistung möglichst die gesamte Standzeit des Fahrzeuges für den Ladevorgang ausgenutzt.
 Die Flexibilität dieser Ladestrategie wird durch eine Mindestladeleistung von \SI{10}{\percent} der Nennleistung des angefahrenen Ladepunktes technisch begrenzt.
 Hierdurch soll ein Kompromiss zwischen einer möglichst großen Reduktion der Ladeleistung und den technischen Anforderungen der Ladeinfrastruktur gefunden werden.
-Im Gegensatz zur Referenz-Ladestrategie werden unabhängig von der Netzebene beim reduzierten Laden alle privaten Ladevorgänge flexibilisiert.
-
-% TODO: Quelle Konferenzpaper Birgit?
+Im Gegensatz zur Referenz-Ladestrategie werden unabhängig von der Netzebene beim reduzierten Laden alle privaten Ladevorgänge flexibilisiert. \cite{Schachler2021}
 
 
 \paragraph{Residuallast-Laden:}
 
 Bei dem Residuallast-Laden handelt es sich um eine aktive Ladestrategie.
-Der Ladevorgang eines Fahrzeuges findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
+Der Ladevorgang eines Fahrzeuges findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des \gls{MS}-Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
 Die Zuweisung findet auf Viertelstundenbasis statt und die Ladevorgänge finden immer bei voller Ladeleistung statt.
 Das Ziel der Optimierung kann so formuliert werden, dass eine Minimierung der \glspl{MQA} nach \autoref{eq:residual} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
 
@@ -440,3 +438,5 @@ In \autoref{fig:scope_curtailment} findet sich eine Veranschaulichung des Vorgeh
 
 \input{Ch04/fig/Ch04_fig_08_scope_curtailment}
 
+
+\clearpage
