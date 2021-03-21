@@ -14,7 +14,7 @@ Die folgende Auflistung entspricht den relevantesten Ergebnissen mehrerer Diskus
 
 \begin{itemize}
 %	\item Die Untersuchung eines Mobilitätswende-Szenarios ist von besonders hohem Interesse
-	\item Private Ladeinfrastruktur zu Hause oder am Arbeitsplatz besitzt die größte Attraktivität für Verbraucher
+	\item Private Ladeinfrastruktur zu Hause oder an Firmenparkplätzen besitzt die größte Attraktivität für Verbraucher
 %	\item Es wird davon ausgegangen, dass \num{2050} etwa \num{15} \glspl{EPKW} auf einen öffentlichen Ladepunkt kommen
 	\item Eine regionale Konzentration von \glspl{EPKW} wird nur während der Markthochlaufphase eine relevante Rolle spielen
 	\item Marktorientierte Ladestrategien können Gleichzeitigkeiten und damit den Netzausbaubedarf erhöhen
@@ -36,7 +36,7 @@ Insgesamt werden drei Szenarien und eine daraus abgeleitete Sensitivität in For
 Die Annahmen zu dem Hochlauf der regenerativen Erzeugerkapazitäten werden über die Szenarien hinweg als konstant angenommen.
 Hierdurch werden Vermischungseffekte durch die Änderung mehrerer Eingangsparameter verhindert und der Einfluss der Elektromobilität kann getrennt betrachtet werden.
 Die Annahmen zum Hochlauf der Erzeugerkapazitäten werden aus dem Szenario \ego des \gls{OPENEGO} Projekts \cite{Mueller2019} entnommen.
-Die Regionalisierung der Erzeugerkapazitäten erfolgte im Rahmen des \gls{OPENEGO} Projektes und ist nicht Teil dieser Masterarbeit.
+Die Regionalisierung der Erzeugerkapazitäten erfolgte im Rahmen des \gls{OPENEGO} Projektes und ist nicht Teil dieser Arbeit.
 An dieser Stelle erfolgt eine zusammenfassende Beschreibung der Methodik.
 Eine genaue Beschreibung der Regionalisierung findet sich im \gls{OPENEGO} Projektabschlussbericht.\medskip
 
@@ -146,7 +146,7 @@ In \autoref{tab:WegLadeUseCase} findet sich die entsprechende prozentuale Auftei
 \input{Ch05/tab/Ch05_tab_07_WegezweckeLadeUseCase}
 
 Derzeit leben in Deutschland ungefähr \SI{44.2}{\MioMen} in Gebäuden mit maximal zwei Wohnungen und \SI{37.2}{\MioMen} in Mehrfamilienhäusern.
-Etwa \SI{80}{\percent} der Fahrzeugbesitzer$^*$innen in Gebäuden mit maximal zwei Wohnungen verfügen über einen Stellplatz in der Garage oder unter einem Carport.
+Etwa \SI{80}{\percent} der \linebreak Fahrzeugbesitzer$^*$innen in Gebäuden mit maximal zwei Wohnungen verfügen über einen Stellplatz in der Garage oder unter einem Carport.
 In Mehrfamilienhäusern verfügen hingegen nur \SI{55}{\percent} der Fahrzeugbesitzer$^*$innen über einen Stellplatz für ihr Fahrzeug. \cite{dena2020}
 Unter der vereinfachenden Annahme einer gleichmäßigen Verteilung von Fahrzeugen zwischen Fahrzeugbesitzern$^*$innen in Ein- und Mehrfamilienhäusern ergibt sich hieraus die ermittelte Aufteilung der \UCs auf den Wegezweck \nHdot.\medskip
 
@@ -177,15 +177,15 @@ In \autoref{tab:UCProbability2050} finden sich die entsprechenden Annahmen.
 
 In allen \UCs wird davon ausgegangen, dass die Ladevorgänge in Zukunft mit immer höheren Ladeleistungen stattfinden.
 Für den \UC \Eigenheim wird angenommen, dass jede Besitzerin und Besitzer eines \gls{EPKW} eine Ladevorrichtung vorhält, wenn die technischen Voraussetzungen gegeben sind.
-Bei rund \SI{15}{\percent} der Stellplätze von Gebäuden mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz. \cite{dena2020}
+Bei rund \SI{15}{\percent} der Stellplätze von Gebäuden mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz \cite{dena2020}.
 Es wird angenommen, dass von diesem Bestand die Hälfte einen Zugang zum Stromnetz erhält.
-Die Aufteilung der Ladeleistungen erfolgt hierbei in Anlehnung an \cite{NPZMAVE2020}.
+Die Aufteilung der Ladeleistungen erfolgt hierbei in Anlehnung an \textit{Bedarfsgerechte und wirtschaftliche öffentliche Ladeinfrastruktur} \cite{NPZMAVE2020}.
 Es wird davon ausgegangen, dass der Anteil von Ladevorgängen mit einer Leistung von \SI{3.7}{\kw} keine Rolle mehr spielt.
 Der Anteil an Ladevorgängen mit \SI{11}{\kw} wird weiter wachsen, allerdings langsamer als der Anteil an Ladevorgängen mit \SI{22}{\kw}.
 Eine Ladung mit \SI{50}{\kw} wird im privaten Bereich ebenfalls keine Rolle spielen.
 Das prozentuale Verhältnis zwischen den Ladeleistungen beträgt \(0:75:25:0\)\medskip
 
-Stellplätze von Mehrfamilienhäusern besitzen in ungefähr \SI{50}{\percent} der Fälle Zugang zum Stromnetz. \cite{dena2020}
+Stellplätze von Mehrfamilienhäusern besitzen in ungefähr \SI{50}{\percent} der Fälle Zugang zum Stromnetz \cite{dena2020}.
 Es wird angenommen, dass bei der Hälfte der Stellplätze ohne Zugang zum Stromnetz dieser nachgerüstet wird.
 Abschließend wird angenommen, dass alle Stellplätze von Besitzerinnen und Besitzern eines \gls{EPKW} mit den entsprechenden technischen Vorraussetzungen mit einer Ladevorrichtung ausgestattet werden.
 In Wohnanlagen werden hohe Ladeleistungen eine Ausnahme bleiben.
@@ -217,7 +217,7 @@ Weiterhin ist davon auszugehen, dass dies vor allem für Tankstellen außerhalb 
 Auf Autobahnen werden häufig lange Strecken zurückgelegt und der Ladebedarf durch Schnellladeinfrastruktur ist somit besonders hoch.
 Innerhalb von Ortschaften ist eine kleinere Ladeleistung von \SI{150}{\kw} oftmals ausreichend.
 In der Simulation erfolgt eine Festlegung, ob es sich um eine Tankstelle innerorts oder außerorts handelt, anhand der Distanz der vorangegangenen Fahrt.
-Bei einer Strecke von \SI{> 50}{\km} wird davon ausgegangen, dass die angefahrene Tankstelle außerorts liegt.
+Bei einer Strecke von $> \SI{50}{\km}$ wird davon ausgegangen, dass die angefahrene Tankstelle außerorts liegt.
 In \autoref{tab:SchnellProbability2050} finden sich die getroffenen Annahmen für die Szenarien.
 
 \input{Ch05/tab/Ch05_tab_10_SchnellladungProbability}
@@ -226,8 +226,8 @@ In \autoref{tab:SchnellProbability2050} finden sich die getroffenen Annahmen fü
 \subsection{Sensitivität \glqq Firmenparkplatz\grqq}
 
 Zusätzlich zu den zuvor beschriebenen Szenarien soll in dieser Arbeit eine Sensitivität in Form einer Szenaretten untersucht werden.
-Hierbei untersucht die \SzeFirmenparkplatz den Einfluss eines geringeren Anteils an Ladevorgängen am Arbeitsplatz.
-Aufgrund der hohen Gleichzeitigkeit und der zeitlichen Überschneidung mit einer hohen Erzeugung aus \glspl{PVA} kommt dem Laden am Arbeitsplatz eine besondere Bedeutung zu.
+Hierbei untersucht die \SzeFirmenparkplatz den Einfluss eines geringeren Anteils an Ladevorgängen an Firmenparkplätzen.
+Aufgrund der hohen Gleichzeitigkeit und der zeitlichen Überschneidung mit einer hohen Erzeugung aus \glspl{PVA} kommt dem Laden an Firmenparkplätzen eine besondere Bedeutung zu.
 Die \SzeFirmenparkplatz soll die Sensitivität des Antriebswende-Szenarios auf die Verfügbarkeit von Ladepunkten auf Firmenparkplätzen untersuchen.
 Hierfür wird angenommen, dass nur noch in \SI{50}{\percent} der Fälle eine Ladung am Firmenparkplatz stattfinden kann.
 Die Annahme wird somit gegenüber des Antriebswende-Szenarios halbiert.
