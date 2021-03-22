@@ -52,10 +52,10 @@ Hierbei werden maximale Ausbaupotentiale berücksichtigt, indem beispielsweise W
 \input{Ch05/tab/Ch05_tab_01_EE-RampUp}
 
 Die Zeitreihen für die Erzeugung aus Wind- und \gls{PV}-Anlagen werden der \gls{OEP} \cite{OEP} entnommen und sind frei verfügbar.
-Im Falle der Energieerzeugung aus Biomasse wird eine konstante Erzeugung angenommen.
-So waren in Deutschland im Jahr \num{2019} \SI{9983}{\mw} an Biomasse-Kraftwerken installiert die insgesamt \SI{50009}{\gwh} Energie erzeugten. \cite{BMWi2020}
-Der hieraus resultierende Leistungsfaktor von \num{0.57} wird auf alle Biomasse-Erzeugerkapazitäten unverändert umgelegt.
-In den untersuchten Netzgebieten finden sich keine Wasserkraft-Erzeugerkapazitäten oder konventionelle Kraftwerke.
+Im Falle der Energieerzeugung aus Biomasse und Wasserkraft wird eine konstante Erzeugung angenommen.
+So waren in Deutschland im Jahr \num{2019} \SI{9983}{\mw} an Biomasse- und \SI{5595}{\mw} an Wasserkraftwerken installiert die insgesamt \SI{50009}{\gwh} und \SI{20058}{\gwh} Energie erzeugten \cite{BMWi2020}.
+Der hieraus resultierende Leistungsfaktor von \num{0.57} und \num{0.41} wird auf alle Biomasse- und Wasserkraft-Erzeugerkapazitäten unverändert umgelegt.
+In den untersuchten Netzgebieten finden sich keine konventionellen Kraftwerke.
 
 
 \subsubsection{Konventioneller Stromverbrauch}
@@ -113,18 +113,18 @@ Eine genaue Zuordnung der \gls{PKW}-Segmente in die Klassen findet sich im Anhan
 
 Die technischen Daten der Fahrzeuge sind klassenspezifisch und werden innerhalb ihrer Klasse als homogen angenommen.
 In \autoref{tab:TechPowerCap} finden sich die fahrzeugseitige maximale Ladeleistung und die nutzbare Batteriekapazität der jeweiligen Fahrzeugklassen.
-Die Annahmen wurden dem Szenario \glqq Verstärkte Elektrifizierung\grqq{} für das Jahr \num{2049} aus der Studie Automobile Wertschöpfung \num{2030}/\num{2050} \cite{Kaul2019} entnommen.
+Die Annahmen wurden dem Szenario \textit{Verstärkte Elektrifizierung} für das Jahr \num{2049} aus der Studie \textit{Automobile Wertschöpfung 2030/2050} \cite{Kaul2019} entnommen.
 Eine Limitierung der Ladeleistung durch die Unterscheidung in Normal- und Schnellladung erfolgt im Simulationsmodell von Seiten der Ladeinfrastruktur.
 
 \input{Ch05/tab/Ch05_tab_05_techDetailsPowerCap}
 
-Der elektrische Energieverbrauch der Fahrzeuge wird aus den Annahmen der Studie \glqq eMobil \num{2050}\grqq{} \cite{Hacker2014} abgeleitet.
+Der elektrische Energieverbrauch der Fahrzeuge wird aus den Annahmen der Studie \textit{eMobil 2050} \cite{Hacker2014} abgeleitet.
 Es wird angenommen, dass Kleinwagen gegenüber Mittelklasse Fahrzeugen einen um \SI{20}{\percent} reduzierten Energieverbrauch aufweisen.
 Oberklasse Fahrzeuge weisen hingegen einen um \SI{20}{\percent} erhöhten Energieverbrauch auf.\medskip
 
-Weiterhin bietet die Studie \glqq eMobil \num{2050}\grqq{} nur Verbrauchsangaben nach dem \glspl{NEFZ}, welche nicht realen Verbrauchsdaten entsprechen.
-Nach \cite{Heinfellner2015} lag der Realverbrauch \num{2013} gegenüber einer Messung nach \gls{NEFZ} im Mittel um \SI{27}{\percent} höher.
-Die Werte für das Jahr \num{2050} der Studie \glqq eMobil \num{2050}\grqq{} werden um diesen Faktor erhöht und die Ergebnisse in \autoref{tab:TechVerbrauch} zusammengefasst.
+Weiterhin bietet die Studie \textit{eMobil 2050} nur Verbrauchsangaben nach dem \glspl{NEFZ}, welche nicht realen Verbrauchsdaten entsprechen.
+Nach \textit{Informationen zur Umweltpolitik - 189} \cite{Heinfellner2015} lag der Realverbrauch \num{2013} gegenüber einer Messung nach \gls{NEFZ} im Mittel um \SI{27}{\percent} höher.
+Die Werte für das Jahr \num{2050} der Studie \textit{eMobil 2050} werden um diesen Faktor erhöht und die Ergebnisse in \autoref{tab:TechVerbrauch} zusammengefasst.
 
 \input{Ch05/tab/Ch05_tab_06_techVerbrauch}
 
@@ -147,10 +147,10 @@ In \autoref{tab:WegLadeUseCase} findet sich die entsprechende prozentuale Auftei
 
 Derzeit leben in Deutschland ungefähr \SI{44.2}{\MioMen} in Gebäuden mit maximal zwei Wohnungen und \SI{37.2}{\MioMen} in Mehrfamilienhäusern.
 Etwa \SI{80}{\percent} der \linebreak Fahrzeugbesitzer$^*$innen in Gebäuden mit maximal zwei Wohnungen verfügen über einen Stellplatz in der Garage oder unter einem Carport.
-In Mehrfamilienhäusern verfügen hingegen nur \SI{55}{\percent} der Fahrzeugbesitzer$^*$innen über einen Stellplatz für ihr Fahrzeug. \cite{dena2020}
+In Mehrfamilienhäusern verfügen hingegen nur \SI{55}{\percent} der Fahrzeugbesitzer$^*$innen über einen Stellplatz für ihr Fahrzeug \cite{dena2020}.
 Unter der vereinfachenden Annahme einer gleichmäßigen Verteilung von Fahrzeugen zwischen Fahrzeugbesitzern$^*$innen in Ein- und Mehrfamilienhäusern ergibt sich hieraus die ermittelte Aufteilung der \UCs auf den Wegezweck \nHdot.\medskip
 
-Die Aufteilung der \UCs auf die Wegezwecke \Einkaufdot, \Erledigung und \Freizeitdot, ergeben sich aus den Wegeanteilen nach Fahrtzweck im \gls{MIV}-Privatverkehr. \cite{Rikus2015}
+Die Aufteilung der \UCs auf die Wegezwecke \Einkaufdot, \Erledigung und \Freizeitdot, ergeben sich aus den Wegeanteilen nach Fahrtzweck im \gls{MIV}-Privatverkehr \cite{Rikus2015}.
 Im Falle des Wegezwecks \Einkauf, wird angenommen, dass Lebensmittelgschäfte einen Gewerbeparkplatz für jeden Kunden vorhalten.
 Weiterhin wird angenommen, dass im Falle von sonstigen Waren und sonstigen Dienstleistungen in \SI{50}{\percent} der Fälle ein Gewerbeparkplatz zur Verfügung steht.
 Bei dem Wegezweck \Erledigung wird davon ausgegangen, dass beim Besuch von Behörden, Banken, Post und Geldautomaten ein Gewerbeparkplatz vorhanden ist und bei sonstigen Erledigungen in \SI{50}{\percent} der Fälle.
@@ -161,11 +161,11 @@ In allen verbleibenden Fällen erfolgt ein Parken am Straßenrand.\medskip
 Für die Abschätzung der Wahrscheinlichkeit auf einem Firmenparkplatz für den Wegezweck \Arbeit parken zu können, wurde die Parkplatzsituation am Arbeitsplatz zugrunde gelegt.
 Demnach werden \SI{67}{\percent} aller Arbeitswege mit dem \gls{PKW} zurückgelegt, wenn die Parkplatzsituation am Arbeitsplatz als nicht schwierig eingestuft wird.
 Demgegenüber werden bei einer schwierigen Parkplatzsituation nur \SI{36}{\percent} der Arbeitswege mit dem \gls{PKW} zurückgelegt.
-Insgesamt werden mit dem \gls{PKW} \SI{56}{\percent} aller Arbeitswege zurückgelegt. \cite{Ecke2020}
+Insgesamt werden mit dem \gls{PKW} \SI{56}{\percent} aller Arbeitswege zurückgelegt \cite{Ecke2020}.
 Unter der Annahme, dass eine nicht schwierige Parkplatzsituation am Arbeitsplatz gleichbedeutend mit einem Firmenparkplatz und eine schwierige Parkplatzsituation mit dem Parken am Straßenrand ist, ergeben sich hieraus die ermittelten Anteile für den Wegezweck \Arbeitdot.
 Weiterhin wird angenommen, dass dieses Verhältnis auf den Wegezweck \Ausbildung~übertragen werden kann.\medskip
 
-Für den Wegezweck \dienstdot, wird die Aufteilung nach dem üblichen Stellplatz am Fahrtziel im Wirtschaftsverkehr verwendet. \cite{Rikus2015}
+Für den Wegezweck \dienstdot, wird die Aufteilung nach dem üblichen Stellplatz am Fahrtziel im Wirtschaftsverkehr verwendet \cite{Rikus2015}.
 Demnach parken gewerbliche Halter im Wirtschaftsverkehr in \SI{30}{\percent} der Fälle am Straßenrand und in \SI{26}{\percent} der Fälle auf einem Privatgrundstück.
 Im Wirtschaftsverkehr handelt es sich in der Regel nicht um das eigene Privatgrundstück, weswegen diese Art des Parkens ebenfalls als Parken am Straßenrand gewertet wird.
 In \SI{6}{\percent} der Fälle erfolgt das Parken auf einem Gewerbeparkplatz und in \SI{38}{\percent} der Fälle auf einem Firmenparkplatz.\medskip
