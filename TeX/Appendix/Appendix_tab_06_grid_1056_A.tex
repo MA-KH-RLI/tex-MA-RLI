@@ -1,0 +1,39 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Steckbrief für das Netzgebiet \num{1056} für Woche A}
+		\begin{tabu} to \textwidth {X[2.1] X[0.9, r] X[0.75, r] X[1, r] X[1.2, r]}
+			\hline
+											 & NEP C~\num{2035} & Referenz   & Antriebswende & \glqq Firmenparkplatz\grqq \\
+			\multicolumn{5}{l}{Bedarf und   Einspeisung}                                                                  \\ \hline
+			Einspeisung in \si{\mwh}         & \num{4309}       & \num{4309} & \num{4309}    & \num{4309}                 \\
+			Sonstiger Verbrauch in \si{\mwh} & \num{1318}       & \num{1318} & \num{1318}    & \num{1318}                 \\
+			Ladebedarf E-Pkw in \si{\mwh}    & \num{109}        & \num{194}  & \num{368}     & \num{363}                  \\ \hline
+			\multicolumn{5}{l}{Abregelung {--}   Referenz-Laden}                                                          \\ \hline
+			NS Last in \si{\mwh}             & \num{15}         & \num{25}   & \num{50}      & \num{41}                   \\
+			MS Last in \si{\mwh}             & \num{4}          & \num{6}    & \num{11}      & \num{6}                    \\
+			NS Einspeisung in \si{\mwh}      & \num{88}         & \num{84}   & \num{77}      & \num{75}                   \\
+			MS Einspeisung in \si{\mwh}      & \num{12}         & \num{12}   & \num{11}      & \num{10}                   \\ \hline
+			\multicolumn{5}{l}{Abregelung {--}   Gruppenladen}                                                            \\ \hline
+			NS Last in \si{\mwh}             & \num{15}         & \num{25}   & \num{49}      & \num{40}                   \\
+			MS Last in \si{\mwh}             & \num{4}          & \num{6}    & \num{11}      & \num{6}                    \\
+			NS Einspeisung in \si{\mwh}      & \num{88}         & \num{84}   & \num{77}      & \num{76}                   \\
+			MS Einspeisung in \si{\mwh}      & \num{12}         & \num{12}   & \num{11}      & \num{10}                   \\ \hline
+			\multicolumn{5}{l}{Abregelung {--}   reduziertes Laden}                                                       \\ \hline
+			NS Last in \si{\mwh}             & \num{13}         & \num{20}   & \num{39}      & \num{33}                   \\
+			MS Last in \si{\mwh}             & \num{4}          & \num{6}    & \num{10}      & \num{6}                    \\
+			NS Einspeisung in \si{\mwh}      & \num{88}         & \num{85}   & \num{79}      & \num{79}                   \\
+			MS Einspeisung in \si{\mwh}      & \num{13}         & \num{12}   & \num{11}      & \num{10}                   \\ \hline
+			\multicolumn{5}{l}{Abregelung {--}   Residuallast-Laden}                                                      \\ \hline
+			NS Last in \si{\mwh}             & \num{12}         & \num{18}   & \num{36}      & \num{31}                   \\
+			MS Last in \si{\mwh}             & \num{3}          & \num{4}    & \num{7}       & \num{3}                    \\
+			NS Einspeisung in \si{\mwh}      & \num{84}         & \num{79}   & \num{71}      & \num{70}                   \\
+			MS Einspeisung in \si{\mwh}      & \num{11}         & \num{10}   & \num{8}       & \num{9}                    \\ \hline
+		\end{tabu}
+		\label{tab:steckbrief_1056_A}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
