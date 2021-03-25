@@ -5,8 +5,8 @@
 	\begin{center}
 		\caption{Bestand an Personenkraftwagen nach Segmenten am \DTMdate{2020-01-01} und Einteilung in Fahrzeugklassen}
 		\begin{tabu} to \textwidth {X[1] X[1] X[1, r] X[1, r]}
-            \hline
-            Segment            & Klasse       & Anzahl         & Anteil              \\ \hline
+            \toprule
+            Segment            & Klasse       & Anzahl         & Anteil              \\ \midrule
             Kleinwagen         & Kleinwagen   & \num{8934345}  & \SI{18.7}{\percent} \\
             Minis              & Kleinwagen   & \num{3344523}  & \SI{7.0}{\percent}  \\
             Kompaktklasse      & Mittelklasse & \num{11983057} & \SI{25.1}{\percent} \\
@@ -20,7 +20,7 @@
             Utilities          & Oberklasse   & \num{1931837}  & \SI{4.0}{\percent}  \\
             Sportwagen         & Oberklasse   & \num{918102}   & \SI{1.9}{\percent}  \\
             Wohnmobile         & Oberklasse   & \num{589354}   & \SI{1.2}{\percent}  \\
-            Oberklasse         & Oberklasse   & \num{269441}   & \SI{.6}{\percent}   \\ \hline
+            Oberklasse         & Oberklasse   & \num{269441}   & \SI{.6}{\percent}   \\ \bottomrule
             \multicolumn{4}{l}{Quelle: \cite{KBASegments2020}}
 		\end{tabu}
 		\label{tab:KBASegments}
