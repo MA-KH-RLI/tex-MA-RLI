@@ -147,49 +147,57 @@ Da auf diese weise jedoch nur Aussagen über das komplette \gls{MS}-Netzgebiet g
 \subsection{Abregelungsbedarf innerhalb der untersuchten Netzgebiete}
 
 In diesem Abschnitt werden die Ergebnisse der Ermittlung des Abregelungsbedarfs innerhalb der sechs untersuchten Netzgebiete dargestellt.
-Dabei wird getrennt auf die drei Netz-Kategorien Last-, \gls{PV}- und Wind-dominiert eingegangen, um eine Aussage über die Wirksamkeit der Ladestrategien innerhalb der verschiedenen Netz-Kategorien treffen zu können.
-Dabei werden die zwei Wochen mit der minimalen (kurz: Woche A) bzw. maximalen (kurz: Woche B) durchschnittliche Residuallast je Netz untersucht.
+Dabei wird getrennt auf die drei Netz-Kategorien \gls{PV}-, Wind- und Last-dominiert eingegangen, um eine Aussage über die Wirksamkeit der Ladestrategien innerhalb der verschiedenen Netz-Kategorien treffen zu können.
+Hierzu werden die zwei Wochen mit der minimalen (kurz: Woche A) bzw. maximalen (kurz: Woche B) durchschnittliche Residuallast je Netz untersucht, um eine möglichst hohe Bandbreite an Einspeise- und Lastfällen abzudecken.
+Die entsprechenden Zeiträume finden sich in \autoref{tab:extreme_weeks}, wobei die untersuchten Wochen und das fiktive betrachtete Jahr mit einem Montag beginnen.
+
+\input{Ch06/tab/Ch06_tab_07_weeks}
+
+Innerhalb der betrachteten Szenarien, Ladestrategien und Wochen schwankt der Abregelungsbedarf von nicht-\glspl{FEE} Anlagen nur in einem sehr geringen Maße, weshalb der Fokus erzeugungsseitig auf den \gls{FEE} Anlagen liegt.
+Dies lässt sich dadurch begründen, dass die Abregelung der nicht-\gls{FEE} Anlagen in den betrachteten Netzgebieten in der Regel aufgrund von Restriktionen in der \gls{NS}-Ebene erfolgt.
+Da es sich bei den nicht-\gls{FEE} Anlagen ausschließlich um Biomasse- und Wasserkraftwerke handelt, findet sich innerhalb der betroffenen \gls{NS}-Netze in der Regel keine oder nur wenig Ladeinfrastruktur für \gls{EPKW}.
+Hierdurch kommt es nur sehr selten zu einem Einfluss auf den Abregelungsbedarf von nicht-\gls{FEE} Anlagen.
 Die vollständigen Ergebnisse für die Ermittlung des Abregelungsbedarfs finden sich im Anhang in den Netz-Steckbriefen ab {\color{red} TODO}.
-
-{\color{red} TODO: Tabelle Woche A und B}
-
-
-\subsubsection{Last-dominierte Netze}
-
-
 
 
 \subsubsection{PV-dominierte Netze}
 
-Die \gls{PV}-dominierten Netze \num{176} und \num{1056} besitzen deutlich unterschiedliche Charakteristika.
+Die \gls{PV}-dominierten Netze \num{176} und \num{1056} besitzen stark unterschiedliche Charakteristika.
 So weist das Netz \num{176} im Antriebswende-Szenario in der Woche A (minimale Residuallast) ein Verhältnis zwischen der Einspeisung von \glspl{FEE} und dem Ladebedarf der \glspl{EPKW} von etwa \(2:1\) auf, während dieses Verhältnis im Netz \num{1056} bei etwa \(11:1\) liegt.
 Auch weist das Netz \num{176} eine deutlich größere Einspeisung von nicht-\gls{FEE} Anlagen auf und der Verbrauch der sonstigen Lasten ist mehr als dreimal so hoch als im Netz \num{1056}.
-Eine Auflistung der wichtigsten Eckdaten für die Woche A beider Netze findet sich in \autoref{tab:pv_dominated_week_a_char}.
+Eine Auflistung der wichtigsten Eckdaten für die Woche A beider Netze findet sich in \autoref{tab:pv_dominated_week_a_char} und der Ladebedarf im Netzgebiet je Szenario findet sich in \autoref{tab:pv_dominated_epkw_demand}.
 Da innerhalb der Woche B (maximale Residuallast) keine Abregelung von \gls{FEE} Anlagen nötig ist, liegt der Fokus auf der Betrachtung der Woche A.
 
-\input{Ch06/tab/Ch06_tab_07_pv_dominated_week_A_char}
+\input{Ch06/tab/Ch06_tab_08_pv_dominated_week_A_char}
+
+\input{Ch06/tab/Ch06_tab_09_pv_dominated_epkw_demand}
 
 
 \paragraph{Last:}
 
-Der Abregelungsbedarf von Lasten nimmt mit dem Hochlauf an \gls{EPKW} zu, welches zu erwarten ist, da kein Netzausbau stattfindet.
-In \autoref{tab:pv_dominated_week_a_load_cur} findet sich der ermittelte Abregelungsbedarf des Ladebedarfs und der sonstigen Lasten für die Netze \num{176} und \num{1056} für die Referenz-Ladestrategie.
-Es fällt auf, dass der Abregelungsbedarf in der \SzeFirmenparkplatz deutlich geringer ausfällt als in dem Antriebswende-Szenario, da aufgrund der geringeren Anzahl an Lademöglichkeiten auf Arbeit die Ladevorgänge gleichmäßiger über den Tag verteilt werden und die nötige Abregelung somit geringer ausfällt.
+In \autoref{tab:pv_dominated_week_a_epkw_cur} findet sich der ermittelte Abregelungsbedarf des Ladebedarfs und in \autoref{tab:pv_dominated_week_a_load_cur} der sonstigen Lasten für die Netze \num{176} und \num{1056} für die Referenz-Ladestrategie.
+Der Abregelungsbedarf von Lasten nimmt erwartungsgemäß mit dem Hochlauf an \gls{EPKW} zu.
+Es fällt auf, dass der Abregelungsbedarf in der \SzeFirmenparkplatz deutlich geringer ausfällt als in dem Antriebswende-Szenario.
+Dies ergibt sich daraus, dass aufgrund der geringeren Anzahl an Lademöglichkeiten auf Arbeit, die Ladevorgänge gleichmäßiger über den Tag verteilt werden (s. \autoref{fig:example_load_profile} und \autoref{fig:example_load_curve}) und die nötige Abregelung somit geringer ausfällt.
 
-\input{Ch06/tab/Ch06_tab_08_pv_dominated_week_A_load_cur}
+\input{Ch06/tab/Ch06_tab_10_pv_dominated_week_A_epkw_cur}
+
+\input{Ch06/tab/Ch06_tab_11_pv_dominated_week_A_load_cur}
 
 In \autoref{fig:176_1056_cur_load_grid_week_A} findet sich der Einfluss der Ladestrategien auf den Abregelungsbedarf der Lasten (inkl. E-Pkw) für die Netze \num{176} und \num{1056}.
 Hierbei zeigt sich, dass das Gruppenladen gegenüber der Referenz-Ladestrategie keine nennenswerten Vorteile aufweist, während durch das reduzierte Laden der Abregelunsgebdarf deutlich gesenkt werden kann.
 Allerdings kann der Abregelungsbedarf durch das Residuallast-Laden noch deutlich stärker gesenkt werden als durch das reduzierte Laden.
-In dem stark \gls{PV}-dominierten Netz \num{1056} können im Antriebswende-Szenario sogar knapp \SI{30}{\percent} der Abregelung durch die Residuallast-Ladestrategie verhindert werden.
-Welches daran liegt, dass im Antriebswende-Szenario bei der Referenz-Ladestrategie der Abregelungsbedarf der Lasten besonders hoch ausfällt, welches ein höheres Einsparungspotential mit sich bringt.
+In dem stark \gls{PV}-dominierten Netz \num{1056} können im Antriebswende-Szenario sogar \SI{29.4}{\percent} der Abregelung durch die Residuallast-Ladestrategie verhindert werden.
 
 \input{Ch06/fig/Ch06_fig_06_pv_dominated_load_diff_week_A}
 
-In Woche B fällt der Abregelungsbedarf der Lasten mit \SIrange{79}{149}{\mwh} beim Referenz-Laden deutlich höher aus und der Einfluss der Ladestrategien ist ähnlich zu den Last-dominierten Netzen.
-So kann der Abregelungsbedarf nach \autoref{fig:176_1056_cur_load_grid_week_B} durch das Residuallast-Laden um bis zu \SI{10.5}{\percent} gesenkt werden.
-
-{\color{red} TODO: Warum ist Residuallast-Laden schlechter in den kleineren Szenarien? Warum kann bei Firmenparkplatz mehr Abregelung eingespart werden?}
+In Woche B fällt der Abregelungsbedarf der Lasten mit \SIrange{79}{149}{\mwh} beim Referenz-Laden deutlich höher aus als in Woche A.
+Der Abregelungsbedarf kann nach \autoref{fig:176_1056_cur_load_grid_week_B} durch das Residuallast-Laden um bis zu \SI{10.5}{\percent} gesenkt werden.
+Aus der graduellen Zunahme der Absenkung des Abregelungsbedarfs mit dem stärkeren Hochlauf an \gls{EPKW}, lässt sich ableiten, dass das Einsparpotential in den \gls{PV}-dominierten Netzen mit der Höhe des Abregelungsbedarf zunimmt.
+In den kleineren Szenarien NEP C~\num{2035} und Referenz zeigt sich in Woche B, dass das Residuallast-Laden weniger Abregelung verhindern kann als das reduzierte Laden.
+Hierbei kommt es zu dem Effekt, dass aufgrund der geringen Einspeisung von \gls{FEE} Anlagen kein Gegengewicht zu dem Laden der Fahrzeuge innerhalb der \gls{NS}-Netze mit einem hohen Anteil an Last durch \gls{EPKW} besteht.
+So wird innerhalb dieser \gls{NS}-Netze eine hohe temporäre Gleichzeitigkeit von Ladevorgängen innerhalb weniger Zeitschritte für die Glättung der Residuallast auf \gls{MS}-Ebene hervorgerufen, welche die Betriebsmittel auf der \gls{NS}-Ebene überlastet.
+Bei höheren Hochlaufzahlen an \gls{EPKW} tritt diese temporäre Gleichzeitigkeit zunächst ebenfalls auf, aber durch die zunehmende Glättung der Residuallast werden zusätzlich weitere Zeitschritte zum Laden verwendet, in welchen der Abregelungsbedarf gering ausfällt.
 
 \input{Ch06/fig/Ch06_fig_07_pv_dominated_load_diff_week_B}
 
@@ -200,62 +208,42 @@ Bei den \gls{FEE} Anlagen zeigt sich nach \autoref{tab:pv_dominated_week_a_fee_c
 Dabei fällt auf, dass der Abregelungsbedarf von \gls{FEE} Anlagen in der \SzeFirmenparkplatz stärker abfällt als im Antriebswende-Szenario.
 Dies lässt sich dadurch begründen, dass der Abregelungsbedarf des Ladebedarfs und von sonstigen Lasten in der \SzeFirmenparkplatz ebenfalls geringer ausfällt und somit ein besserer Ausgleich zwischen Angebot und Nachfrage erreicht werden kann.
 
-\input{Ch06/tab/Ch06_tab_09_pv_dominated_week_A_fee_cur}
+\input{Ch06/tab/Ch06_tab_12_pv_dominated_week_A_fee_cur}
 
-\autoref{fig:176_1056_cur_fee_grid_week_A}
+\autoref{fig:176_1056_cur_fee_grid_week_A} zeigt die prozentuale Veränderung des Abregelungsbedarfs von \gls{FEE} Anlagen in Abhängigkeit von der Ladestrategie.
+So kann der Abregelungsbedarf im Netz \num{1056} durch die Residuallast-Ladestrategie um bis zu \SI{10.7}{\percent} gesenkt werden, während das Gruppenladen und das reduzierte Laden den Abregelungsbedarf erhöhen.
+Dabei kann im Antriebswende-Szenario die stärkste Reduktion erreicht werden, welches daran liegt, dass innerhalb dieses Szenarios deutlich mehr Ladebedarf durch \gls{EPKW} zur Verfügung steht als in den kleineren Szenarien, um in Zeiten hoher Einspeisung einen Ausgleich zwischen Angebot und Nachfrage zu erreichen.
+Da zur in Zeiten hoher Einspeisung im Antriebswende-Szenario mehr Fahrzeuge die Möglichkeit haben auf einem Firmenparkplatz geladen zu werden und auch mehr lastseitige Abregelung vermieden werden kann als in der \SzeFirmenparkplatz, fällt die Reduktion innerhalb des Antriebswende-Szenarios stärker aus.
 
 \input{Ch06/fig/Ch06_fig_08_pv_dominated_fee_diff_week_A}
 
+In \autoref{fig:1056_fEE_load_diff} findet sich die durchschnittliche Abregelung von \gls{FEE} Anlagen und Lasten in Abhängigkeit von der Uhrzeit in Woche A für das Referenz-Laden im Netz \num{1056}.
+Zusätzlich ist die Differenz zwischen den Ladestrategien und dem Referenz-Laden dargestellt, wobei negative Werte einen geringeren Abregelungsbedarf signalisieren.
+Dabei zeigt sich, dass in dem stark \gls{PV}-dominierten Netz \num{1056} Abregelung von \gls{FEE} Anlagen ausschließlich tagsüber und vor allem am frühen Nachmittag nötig ist.
+Demgegenüber treten die Lastspitzen hierzu versetzt morgens und abends auf.
+Durch die Residuallast-Ladestrategie kann der Abregelungsbedarf von \gls{FEE} Anlagen vor allem in Zeiten von Spitzeneinspeisung gesenkt werden.
+Beim Gruppenladen und vor allem beim reduzierten Laden kommt es zu einem erhöhten Abregelunsgebedarf von \gls{FEE} Anlagen zur Mittagszeit.
+Nach \autoref{fig:example_load_profile} werden ab der Mittagszeit viele Fahrzeuge \zH geladen.
+Hierbei kommt es dazu, dass durch die Ladestrategien der Ladebedarf für den \UC \zH zu dieser Zeit im Durchschnitt geringer ausfällt als während des Referenz-Ladens.
+Die Residuallast sinkt somit in Zeiten von Spitzeneinspeisung weiter ab, welches den Abregelungsbedarf erhöht und auch in \autoref{fig:residual_load} zu erkennen ist.
 
-\paragraph{Zusammenführung:}
 
+\input{Ch06/fig/Ch06_fig_09_pv_dominated_1056_fEE_load_diff}
 
+Lastseitig können sowohl durch die Residuallast-Ladestrategie als auch durch das reduzierte Laden in erster Linie morgens große Mengen an Abregelung verhindert werden.
+Zusätzlich kann durch die Residuallast-Ladestrategie auch am Abend ein signifikanter Anteil an Abregelung vermieden werden.
+Zur Mittagszeit zeigt sich lastseitig ein erhöhter Abregelungsbedarf durch die Residuallast-Ladestrategie.
+Es wird somit ein zu großer Anteil von Fahrzeugen innerhalb eines kurzen Zeitfensters geladen und vor allem die Betriebsmittel auf der \gls{NS}-Ebene überlastet.
+Das Potential den Abregelungsbedarf von \gls{FEE} Anlagen zu senken, wird auf diese Weise nicht voll ausgeschöpft.
+Es empfiehlt sich neben dem Optimierungsansatz der Residuallast-Glättung auch die Belastungsgrenzen der \gls{NS}-Betriebsmittel zu beachten.
+Auf diese Weise würde mehr Ladebedarf in Zeiten einer schwächeren Einspeisung verschoben werden, in denen dennoch Abregelung nötig ist.
+So könnte der Abregelungsbedarf einspeise- und lastseitig voraussichtlich weiter gesenkt werden.
 
-
-%
-%\input{Ch06/tab/Ch06_tab_08_pv_dominated_week_A_fee}
-%
-%Der Abregelungsbedarf von nicht-\gls{FEE} Anlagen schwankt zwischen den Szenarien, Ladestrategien und betrachteten Wochen nur in einem sehr geringen Maße und wird deshalb nicht näher betrachtet.
-%So liegt der Abregelungsbedarf für das Netz \num{176} bei {\color{red} TODO} und im Netz \num{1056} in allen Fällen bei \SI{11}{\mwh}.
-%Dies liegt daran, dass die Abregelung der nicht-\gls{FEE} Anlagen in den betrachteten Netzgebieten aufgrund von Restriktionen in der \gls{NS}-Ebene erfolgt.
-%Da es sich bei den nicht-\gls{FEE} Anlagen ausschließlich um Biomasse- und Wasserkraftwerke handelt, findet sich innerhalb dieser Netze in der Regel keine oder nur wenig Ladeinfrastruktur für \gls{EPKW}.
-%Hierdurch kommt es nur sehr selten zu einem Einfluss auf den Abregelungsbedarf von nicht-\gls{FEE} Anlagen.
-%
-%{\color{red} TODO: 176}
-%
-%\input{Ch06/fig/Ch06_fig_06_1056_diff_cur}
-%
-%In \autoref{fig:1056_diff_cur} findet sich die Veränderung des Abregelungsbedarfs der \gls{FEE} Anlagen (oben) und aller Lasten (unten, inkl. \gls{EPKW}) in Abhängigkeit von der Ladestrategie je Szenario für das Netz \num{1056}.
-%Beim Abregelungsbedarf von \gls{FEE}-Anlagen kann nur durch die Residuallast-Ladestrategie eine Reduktion erreicht werden.
-%In der Regel kommt es bei den anderen Ladestrategien zu einer Erhöhung des Abregelungsbedarfs von \gls{FEE} Anlagen.
-%
-%{\color{red} TODO: herausfinden und darstellen, warum das passiert. Außerdem \SzeFirmenparkplatz fällt besonder auf, weil hier nur wenig Ladeinfrastruktur in der MS Ebene und somit das reduzierte Laden mehr Effekt hat}
-%
-%Dabei kann im Antriebswende-Szenario die stärkste Reduktion erreicht werden, welches daran liegt, dass innerhalb dieses Szenarios deutlich mehr Ladebedarf durch \gls{EPKW} zur Verfügung steht, um in Zeiten hoher Einspeisung einen Ausgleich zwischen Angebot und Nachfrage zu erreichen.
-%Weiterhin fällt die Reduktion innerhalb des Antriebswende-Szenarios stärker aus als bei der \SzeFirmenparkplatzdot.
-%Dies liegt daran, dass im Antriebswende-Szenario bei der Referenz-Ladestrategie der Abregelungsbedarf der Lasten besonders hoch ausfällt, aber auch durch die Ladestrategien deutlich gesenkt werden kann.
-%Diese zusätzlich bereitstehende Last kann anschließend dazu beitragen den Abregelungsbedarf von \gls{FEE} Anlagen stärker abzusenken.\medskip
-%
-%Demgegenüber kann der Abregelungsbedarf der Lasten in der Regel durch alle Ladestrategien gesenkt werden.
-%Bereits durch das reduzierte Laden können stark positive Effekte erreicht werden, allerdings zeigt sich auch hierbei ein deutlicher Vorteil der Residuallast-Ladestrategie, wodurch der Abregelungsbedarf im Antriebswende-Szenario um bis zu knapp \SI{30}{\percent} gesenkt werden kann.\medskip
-%
-%In Woche B kommt es zu keiner Abregelung von \gls{FEE}-Anlagen, weshalb auch kein Einfluss der Ladestrategien festgestellt werden kann.
-%Im Abregelungsbedarf der Lasten verhalten sich beide Netze wie Last-dominierte Netze {\color{red} TODO: überprüfen}.
-%So kann im Antriebswende-Szenario und der \SzeFirmenparkplatz sowohl durch das reduzierte Laden als auch das Residuallast-Laden eine Reduktion des Abregelungsbedarfs erreicht werden, wobei das Residuallast-Laden in der Regel leichte Vorteile aufweist.
-%Im Netz \num{1056} liegt dieser Wert im besten Fall (\SzeFirmenparkplatzdot) bei einer Reduktion um \SI{10.5}{\percent} und im Netz \num{176} bei {\color{red} TODO} ({\color{red} TODO}).
-%In den beiden anderen Szenarien mit geringeren Hochlaufzahlen lassen sich keine nennenswerten Vorteile durch die Ladestrategien erkennen.
-%Die genauen Werte finden sich im Anhang im Steckbrief in {\color{red} TODO} und \autoref{tab:steckbrief_1056_B}.\medskip
-%
-%{\color{red} TODO: Differenzen zwischen 1056 und 176 erklären, wenn vorhanden}
-%
-%Sowohl durch das reduzierte als auch das Residuallast-Laden zeigen sich im Netz \num{1056} starke Reduktionen im Abregelungsbedarf von Lasten in beiden untersuchten Wochen.
-%Demgegenüber kann nur durch die Residuallast-Ladestrategie der Abregelungsbedarf von \gls{FEE} Anlagen gesenkt werden.
-%Das Gruppenladen weißt in allen Fällen nur geringe Diferenzen gegenüber der Referenz-Ladestrategie auf und erweist sich somit als ungeeignet, da der Aufwand der Implementierung einer solchen Ladestrategie gegenüber den Effekten als nicht gerechtfertigt erscheint.
-%
-%% für low RL Woche -> verhalten sich wie Last-dominierte Netze
 
 \subsubsection{Wind-dominierte Netze}
 
+
+\subsubsection{Last-dominierte Netze}
 
 
 
