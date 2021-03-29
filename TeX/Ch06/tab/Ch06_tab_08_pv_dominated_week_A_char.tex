@@ -1,0 +1,18 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Einspeisung von fEE und nicht-fEE Anlagen sowie der Bedarf von sonstigen Lasten in den PV-dominierten Netzgebieten}
+		\begin{tabu} to 0.7\textwidth {X[2] X[1, r] X[1, r]}
+			\toprule
+											  & Netz \num{176} & Netz \num{1056} \\ \midrule
+			Einspeisung fEE in \si{\mwh}      & \num{2262.2}   & \num{4054.8}    \\
+			Einspeisung Sonstige in \si{\mwh} & \num{1459.8}   & \num{254.5}     \\
+			Bedarf Sonstige  in \si{\mwh}     & \num{4196.8}   & \num{1318.0}    \\ \bottomrule
+		\end{tabu}
+		\label{tab:pv_dominated_week_a_char}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
