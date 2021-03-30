@@ -166,7 +166,6 @@ Die \gls{PV}-dominierten Netze \num{176} und \num{1056} besitzen stark unterschi
 So weist das Netz \num{176} im Antriebswende-Szenario in der Woche A (minimale Residuallast) ein Verhältnis zwischen der Einspeisung von \glspl{FEE} und dem Ladebedarf der \glspl{EPKW} von etwa \(2:1\) auf, während dieses Verhältnis im Netz \num{1056} bei etwa \(11:1\) liegt.
 Auch weist das Netz \num{176} eine deutlich größere Einspeisung von nicht-\gls{FEE} Anlagen auf und der Verbrauch der sonstigen Lasten ist mehr als dreimal so hoch als im Netz \num{1056}.
 Eine Auflistung der wichtigsten Eckdaten für die Woche A beider Netze findet sich in \autoref{tab:pv_dominated_week_a_char} und der Ladebedarf im Netzgebiet je Szenario findet sich in \autoref{tab:pv_dominated_epkw_demand}.
-Da innerhalb der Woche B (maximale Residuallast) keine Abregelung von \gls{FEE} Anlagen nötig ist, liegt der Fokus auf der Betrachtung der Woche A.
 
 \input{Ch06/tab/Ch06_tab_08_pv_dominated_week_A_char}
 
@@ -179,6 +178,7 @@ In \autoref{tab:pv_dominated_week_a_epkw_cur} findet sich der ermittelte Abregel
 Der Abregelungsbedarf von Lasten nimmt erwartungsgemäß mit dem Hochlauf an \gls{EPKW} zu.
 Es fällt auf, dass der Abregelungsbedarf in der \SzeFirmenparkplatz deutlich geringer ausfällt als in dem Antriebswende-Szenario.
 Dies ergibt sich daraus, dass aufgrund der geringeren Anzahl an Lademöglichkeiten auf Arbeit, die Ladevorgänge gleichmäßiger über den Tag verteilt werden (s. \autoref{fig:example_load_profile} und \autoref{fig:example_load_curve}) und die nötige Abregelung somit geringer ausfällt.
+Zusätzlich fällt der Ladebedarf aufgrund der probabilistischen Natur der Simulation und der leicht veränderten Eingangsparameter in der \SzeFirmenparkplatz geringer aus als im Antriebswende-Szenario, welches ebenfalls den Abregelungsbedarf senkt.
 
 \input{Ch06/tab/Ch06_tab_10_pv_dominated_week_A_epkw_cur}
 
@@ -204,7 +204,8 @@ Bei höheren Hochlaufzahlen an \gls{EPKW} tritt diese temporäre Gleichzeitigkei
 
 \paragraph{Fluktuierende erneuerbare Energien:}
 
-Bei den \gls{FEE} Anlagen zeigt sich nach \autoref{tab:pv_dominated_week_a_fee_cur}, dass der Abregelungsbedarf mit einem steigenden Anteil an \gls{EPKW} abnimmt.
+Da innerhalb der Woche B keine Abregelung von \gls{FEE} Anlagen nötig ist, liegt der Fokus auf der Betrachtung der Woche A.
+Bei den \gls{FEE} Anlagen zeigt sich nach \autoref{tab:pv_dominated_week_a_fee_cur}, dass der Abregelungsbedarf mit einem steigenden Anteil an \gls{EPKW} in Woche A abnimmt.
 Dabei fällt auf, dass der Abregelungsbedarf von \gls{FEE} Anlagen in der \SzeFirmenparkplatz stärker abfällt als im Antriebswende-Szenario.
 Dies lässt sich dadurch begründen, dass der Abregelungsbedarf des Ladebedarfs und von sonstigen Lasten in der \SzeFirmenparkplatz ebenfalls geringer ausfällt und somit ein besserer Ausgleich zwischen Angebot und Nachfrage erreicht werden kann.
 
@@ -242,6 +243,50 @@ So könnte der Abregelungsbedarf einspeise- und lastseitig voraussichtlich weite
 
 \subsubsection{Wind-dominierte Netze}
 
+Die Wind-dominierten Netze \num{1690} und \num{1811} weisen gegenüber den \gls{PV}-dominierten Netzen eine deutlich größere Differenz zwischen Erzeugung und Bedarf auf.
+So liegt das Verhältnis zwischen der Einspeisung von \gls{FEE} Anlagen und dem Ladebedarf von \gls{EPKW} nach \autoref{tab:wind_dominated_week_a_char} und \autoref{tab:wind_dominated_epkw_demand} im Antriebswende-Szenario in Woche A im Netz \num{1811} bei etwa \(19:1\) und im Netz \num{1690} sogar bei etwa \(33:1\).
+Hieraus ergibt sich ein deutlich geringeres Potential den Abregelungsbedarf von \gls{FEE} Anlagen zu beeinflussen.
+
+
+\input{Ch06/tab/Ch06_tab_13_wind_dominated_week_A_char}
+
+\input{Ch06/tab/Ch06_tab_14_wind_dominated_epkw_demand}
+
+\paragraph{Last:}
+
+In \autoref{tab:wind_dominated_week_a_epkw_cur} findet sich der Abregelungsbedarf des Ladebedarfs von \gls{EPKW} in den Wind-dominierten Netzen für die Referenz-Ladestrategie in Woche A und in \autoref{tab:wind_dominated_week_a_load_cur} ergänzend der Abregelungsbedarf für die sonstigen Lasten.
+Auch bei den Wind-dominierten Netzen kommt es zu einer Zunahme des Abregelungsbedarf mit dem Hochlauf der \gls{EPKW}.
+Der Abregelungsbedarf beschränkt sich hierbei vollständig auf die \gls{NS}-Ebene, da die \gls{MS}-Ebene aufgrund des höheren Anteils von \gls{FEE} Anlagen mit einem direkten Anschluss in der \gls{MS}-Ebene auf hohe Lasten ausgelegt ist.
+Das Netz \num{1690} zeigt im Gegensatz zu den anderen Netzen einen höheren Abregelungsbedarf in der \SzeFirmenparkplatz gegenüber dem Antriebswende-Szenario.
+Hierbei kommt es zu dem Effekt, dass die zusätzliche Abregelung am Nachmittag und Abend aufgrund des höheren Anteils an öffentlicher Ladeinfrastruktur und von Ladeinfrastruktur zu Hause größer ausfällt als die Abregelungseinsparung am Morgen durch den geringeren Anteil an Ladeinfrastruktur auf Firmenparkplätzen.
+Auch fällt in dem Netz \num{1690} der Ladebedarf in der \SzeFirmenparkplatz leicht höher aus als im Antriebswende-Szenario.
+
+\input{Ch06/tab/Ch06_tab_15_wind_dominated_week_A_epkw_cur}
+
+\input{Ch06/tab/Ch06_tab_16_wind_dominated_week_A_load_cur}
+
+Nach \autoref{fig:1690_1811_cur_load_grid_week_A} zeigen sich in Woche A im Gegensatz zu den \gls{PV}-dominierten Netzen zwei neue Trends welche sich in Woche B nach \autoref{fig:1690_1811_cur_load_grid_week_B} bestätigen.
+So sinkt zum einen in der Regel das prozentuale Einsparpotential mit einem steigenden Hochlauf an \gls{EPKW} im Netz \num{1690} und teilweise im Netz \num{1811} und zum anderen erweist sich das reduzierte Laden gegenüber dem Residuallast-Laden lastseitig als deutlich Effektiver.
+Im Einklang mit den \gls{PV}-dominierten Netzen zeigt sich hingegen, dass das Gruppenladen keine deutlichen Vorteile gegenüber dem Referenz-Laden bietet.
+
+\input{Ch06/fig/Ch06_fig_10_wind_dominated_load_diff_week_A}
+
+Der Trend hin zu einem sinkenden prozentualem Einsparpotential tritt im Netz \num{1690} in beiden Wochen auf und im Netz \num{1811} nur in Woche B, wobei dies im Netz \num{1811} nur für das reduzierte Laden gilt.
+So kommt es in den Szenarien mit einem geringeren Hochlauf an \gls{EPKW} beim Referenz-Laden in erster Linie zur Abregelung von Last am Morgen und am Abend.
+In den Szenarien mit einem höheren Hochlauf an \gls{EPKW} kommt es hingegen auch zu Abregelungen von Last zur Mittagszeit und am frühen Nachmittag.
+Nach \autoref{fig:example_load_profile} finden in dieser Zeit viele Ladevorgänge an öffentlicher Ladeinfrastruktur statt, welche nicht flexibilisiert werden können.
+Der Einfluss der Ladestrategien in dieser Zeitspanne erweist sich als sehr gering, weshalb der prozentuale Einfluss in den Szenarien mit einem geringeren Hochlauf an \gls{EPKW} höher ausfällt.
+Das Netz \num{1811} besitzt gegenüber dem Netz \num{1690} eine deutlich höhere Anzahl an \gls{NS}-Netzen weshalb es in der Regel zu einer geringeren Belastung der einzelnen \gls{NS}-Netze kommt.
+Hierdurch entsteht dieser Trend im Netz \num{1811} erst in dem erhöhten Lastfällen der Woche B.
+Der zweite Trend eines Vorteils des reduzierten Ladens gegenüber dem Residuallast-Laden entsteht, weil es auch in den Wind-dominierten Netzen einen gewissen Anteil an \gls{PV}-Erzeugerkapazitäten gibt.
+Dies führt dazu, dass beim Residuallast-Laden ein großer Anteil an Ladevorgängen zum Mittag und frühen Nachmittag verschoben wird.
+Da die Netze in diesem Zeitraum bereits stark belastet sind, führt diese zusätzliche Last zu einem erhöhten Abregelungsbedarf.
+
+\input{Ch06/fig/Ch06_fig_11_wind_dominated_load_diff_week_B}
+
+
+\paragraph{Fluktuierende erneuerbare Energien:}
+% keine Abregelung woche b und 1811
 
 \subsubsection{Last-dominierte Netze}
 
