@@ -1,0 +1,19 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Abregelungsbedarf des Ladebedarfs von E-Pkw in dem Last-dominierten Netz je Szenario für die Referenz-Ladestrategie}
+		\begin{tabu} to 0.6\textwidth {X[1.5] X[1, r] X[1, r]}
+			\toprule
+			Abregelung in   \si{\mwh}    & Woche A     & Woche B     \\ \midrule
+			NEP C~\num{2035}             & \num{60.5}  & \num{68.9}  \\
+			Referenz                     & \num{147.4} & \num{160.8} \\
+			Antriebswende                & \num{337.8} & \num{360.9} \\
+			\glqq Firmenparkplatz\grqq{} & \num{381.5} & \num{405.5} \\ \bottomrule
+		\end{tabu}
+		\label{tab:load_dominated_epkw_cur}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

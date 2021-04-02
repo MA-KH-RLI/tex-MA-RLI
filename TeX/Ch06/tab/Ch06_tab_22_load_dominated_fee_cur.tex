@@ -1,0 +1,19 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Abregelungsbedarf von fEE Anlagen im Last-domnierten Netz je Szenario für die Referenz-Ladestrategie}
+		\begin{tabu} to 0.6\textwidth {X[1.5] X[1, r] X[1, r]}
+			\toprule
+			Abregelung in   \si{\mwh}    & Woche A   & Woche B   \\ \midrule
+			NEP C~\num{2035}             & \num{0.7} & \num{0.0} \\
+			Referenz                     & \num{0.5} & \num{0.0} \\
+			Antriebswende                & \num{0.3} & \num{0.0} \\
+			\glqq Firmenparkplatz\grqq{} & \num{0.2} & \num{0.0} \\ \bottomrule
+		\end{tabu}
+		\label{tab:load_dominated_fee_cur}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
