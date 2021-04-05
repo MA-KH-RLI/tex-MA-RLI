@@ -1,0 +1,42 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Steckbrief für das Netz \num{1690} für Woche A}
+		\begin{tabu} to \textwidth {X[1.4] X[1, r] X[1, r] X[1, r] X[1.2, r]}
+			\toprule
+			Angaben in   \si{\mwh} & NEP C~\num{2035} & Referenz      & Antriebswende & \glqq Firmenparkplatz\grqq \\ \midrule
+			Einspeisung            & \num{16779.7}    & \num{16779.7} & \num{16779.7} & \num{16779.7}              \\
+			Sonstiger Verbrauch    & \num{1442.8}     & \num{1442.8}  & \num{1442.8}  & \num{1442.8}               \\
+			Ladebedarf E-Pkw       & \num{111.9}      & \num{199.2}   & \num{361.5}   & \num{363.0}                \\ \toprule
+			\multicolumn{5}{l}{Abregelung {--}   Referenz-Laden}                                                   \\ \midrule
+			NS Last                & \num{5.9}        & \num{12.1}    & \num{25.4}    & \num{27.1}                 \\
+			MS Last                & \num{0.0}        & \num{0.0}     & \num{0.0}     & \num{0.0}                  \\
+			NS Einspeisung         & \num{562.0}      & \num{562.0}   & \num{563.2}   & \num{563.1}                \\
+			MS Einspeisung         & \num{430.8}      & \num{425.3}   & \num{421.6}   & \num{420.8}                \\
+			Summe                  & \num{998.7}      & \num{999.4}   & \num{1010.2}  & \num{1011.0}               \\ \toprule
+			\multicolumn{5}{l}{Abregelung {--}   Gruppenladen}                                                     \\ \midrule
+			NS Last                & \num{5.8}        & \num{11.9}    & \num{25.1}    & \num{26.7}                 \\
+			MS Last                & \num{0.0}        & \num{0.0}     & \num{0.0}     & \num{0.0}                  \\
+			NS Einspeisung         & \num{562.0}      & \num{562.0}   & \num{563.1}   & \num{563.1}                \\
+			MS Einspeisung         & \num{429.9}      & \num{425.0}   & \num{422.2}   & \num{420.4}                \\
+			Summe                  & \num{997.7}      & \num{998.9}   & \num{1010.4}  & \num{1010.2}               \\ \toprule
+			\multicolumn{5}{l}{Abregelung {--}   Reduziertes Laden}                                                \\ \midrule
+			NS Last                & \num{4.8}        & \num{10.4}    & \num{22.4}    & \num{24.9}                 \\
+			MS Last                & \num{0.0}        & \num{0.0}     & \num{0.0}     & \num{0.0}                  \\
+			NS Einspeisung         & \num{562.0}      & \num{562.1}   & \num{563.2}   & \num{563.2}                \\
+			MS Einspeisung         & \num{431.9}      & \num{426.6}   & \num{424.8}   & \num{420.1}                \\
+			Summe                  & \num{998.7}      & \num{999.1}   & \num{1010.4}  & \num{1008.2}               \\ \toprule
+			\multicolumn{5}{l}{Abregelung {--}   Residuallast-Laden}                                               \\ \midrule
+			NS Last                & \num{5.5}        & \num{11.1}    & \num{24.1}    & \num{26.6}                 \\
+			MS Last                & \num{0.0}        & \num{0.0}     & \num{0.0}     & \num{0.0}                  \\
+			NS Einspeisung         & \num{562.0}      & \num{562.0}   & \num{563.0}   & \num{562.8}                \\
+			MS Einspeisung         & \num{432.7}      & \num{429.2}   & \num{424.7}   & \num{424.1}                \\
+			Summe                  & \num{1000.2}     & \num{1002.3}  & \num{1011.8}  & \num{1013.5}               \\ \bottomrule
+		\end{tabu}
+		\label{tab:steckbrief_1690_A}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
