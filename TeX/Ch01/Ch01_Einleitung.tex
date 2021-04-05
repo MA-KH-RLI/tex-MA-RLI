@@ -3,44 +3,45 @@
 
 \subsection{Motivation und Zielsetzung}
 
-Durch die Verpflichtung der Bundesregierung die Treibhausgasemissionen im Verkehrssektor bis \num{2030} um \SIrange[range-phrase=~bis~]{40}{42}{\percent} \cite{BundesministeriumUmwelt2019} zu senken, scheint eine rapide Steigerung der Marktdurchdringung des Verkehrssektor mit Elektrofahrzeugung unumgänglich zu sein.
-Aber nicht nur aus Gründen des Klimaschutzes scheint ein zukünftiges Szenario mit einer hohen Durchdringung an direktelektrifizierten Fahrzeugen immer wahrscheinlicher.
-Auch sinkende Investitionskosten, ausgelöst durch einen starken Preisverfall bei der Batterietechnologie und staatliche Subventionen, eine Erweiterung des Angebots, wegfallende lokale Schadstoffemissionen und Effizienzvorteile gegenüber alternative Technologien spielen eine entscheidende Rolle beim Markthochlauf von Elektrofahrzeugen.
-Zusätzlich sollen durch den Aufbau einer Million öffentlich-zugänglicher Ladepunkte bis \num{2030} \cite{DieBundesregierung2019} reale und psychologische Hemmnisse beim Erwerb von Elektrofahrzeugen abgebaut werden.\medskip
+Durch die Verpflichtung der Bundesregierung, die Treibhausgasemissionen im Verkehrssektor bis \num{2030} um \SIrange[range-phrase=~bis~]{40}{42}{\percent} \cite{BundesministeriumUmwelt2019} zu senken, scheint eine rapide Steigerung der Marktdurchdringung des Verkehrssektor mit Elektrofahrzeugen unumgänglich zu sein.
+Nicht nur aus Gründen des Klimaschutzes scheint ein zukünftiges Szenario mit einer hohen Durchdringung an direktelektrifizierten Fahrzeugen immer wahrscheinlicher.
+Auch sinkende Investitionskosten, ausgelöst durch einen starken Preisverfall bei der Batterietechnologie und staatliche Subventionen spielen eine entscheidende Rolle.
+Auch wirken sich die Erweiterung des Angebots, wegfallende lokale Schadstoffemissionen und Effizienzvorteile gegenüber alternativen Technologien begünstigend auf den Markthochlauf aus.
+Zusätzlich sollen durch den Aufbau von einer Million öffentlich-zugänglichen Ladepunkten bis \num{2030} \cite{DieBundesregierung2019} reale und psychologische Hemmnisse beim Erwerb von Elektrofahrzeugen abgebaut werden.\medskip
 
-Die Beladung der Fahrzeuge kann dabei bei moderaten Ladeleistungen im Eigenheim, auf Firmenparkplätzen, am Straßenrand, auf Parkplätzen oder auch bei hohen Ladeleistungen an Schnellladeinfrastruktur erfolgen.
-Da Elektrofahrzeuge über die Verteilnetze geladen werden, ist bei einer Zunahme des Fahrzeugbestandes auch mit einer Erhöhung der Rückwirkungen auf die Verteilnetze zu rechnen.
-Die Höhe und Form der Auswirkungen hängt neben der Anzahl an Elektrofahrzeugen von vielen weiteren Faktoren ab.
+Die Beladung der Fahrzeuge kann mit moderaten Ladeleistungen im Eigenheim, auf Firmenparkplätzen, am Straßenrand, auf Parkplätzen oder auch bei hohen Ladeleistungen an Schnellladeinfrastruktur erfolgen.
+Da Elektrofahrzeuge über die Verteilnetze geladen werden, ist bei einer Zunahme des Fahrzeugbestandes mit einer Erhöhung der Rückwirkungen auf die Verteilnetze zu rechnen.
+Die Höhe und Art der Auswirkungen hängt neben der Anzahl an Elektrofahrzeugen von vielen weiteren Faktoren ab.
 Hierzu zählen die Ladeleistung, der Zeitpunkt und Ort der Ladung, die Kapazität und der \gls{SOC} der Batterie sowie der aktuelle Zustand der Verteilnetze.
-Erweiternd kommt hinzu, dass die Gleichzeitigkeit von Ladevorgängen und die Ladestrategie einen entscheidenden Einfluss haben.
-Zusätzlich kommt es bereits heute zu einer starken Belastung der Verteilnetze aufgrund des zunehmenden Ausbaus erneuerbaren Energien, welche zu einem großen Teil in den Verteilnetzen angeschlossen werden \cite{AgoraEnergiewende2017}.
-Durch die Wahl einer geeigneten Ladestrategie können aber auch Synergien zwischen Elektrofahrzeuge und erneuerbaren Energien entstehen.
-Beispielsweise kann gezielt ein Ausgleich zwischen der Erzeugung von fluktuierenden erneuerbaren Energien und dem Energiebedarf der Elektrofahrzeuge geschaffen werden und so die Netzintegration von erneuerbaren Energien unterstützt werden und die volkswirtschaftliche Wohlfahrt erhöht werden.
-Innerhalb dieser Arbeit werden deshalb die Auswirkungen verschiedener präventiver und aktiver Ladestrategien betrachtet, mit dem Ziel die Netzbelastungen zu minimieren und die Netzintegration von erneuerbaren Energien zu unterstützen.\medskip
+Die Gleichzeitigkeit von Ladevorgängen und die Ladestrategie nehmen ebenfalls entscheidend Einfluss.
+Parallel hierzu ist bereits heute aufgrund des zunehmenden Ausbaus erneuerbaren Energien, welche zu einem großen Teil in den Verteilnetzen angeschlossen werden \cite{AgoraEnergiewende2017}, eine starken Belastung der Verteilnetze zu vermerken.
+Durch die Wahl einer geeigneten Ladestrategie können auch Synergien zwischen Elektrofahrzeugen und erneuerbaren Energien entstehen.
+Beispielsweise kann gezielt ein Ausgleich zwischen der Erzeugung von fluktuierenden erneuerbaren Energien und dem Energiebedarf der Elektrofahrzeuge geschaffen und so die Netzintegration von erneuerbaren Energien unterstützt werden.
+Innerhalb dieser Arbeit werden deshalb die Auswirkungen verschiedener präventiver und aktiver Ladestrategien betrachtet, mit dem Ziel die Netzbelastung zu minimieren und die Netzintegration von erneuerbaren Energien zu unterstützen.\medskip
 
 Mehrere Studien haben sich bereits mit den Auswirkungen der Netzintegration von Elektrofahrzeugen auf die Verteilnetze beschäftigt \cite{Agora2019} \cite{DEAGH2018} \cite{BCG2018}.
 In der Regel erfolgt hierbei eine wirtschaftliche Gesamtrechnung der nötigen Investitionskosten in die Verteilnetze, welches im \autoref{chap:Metaanalyse} näher betrachtet wird.
 Es zeigt sich, dass der Investitionsbedarf durch eine geeignete Ladestrategie stark gesenkt werden kann.
 Ergänzend zu diesen Erkenntnissen sollen innerhalb dieser Arbeit Aussagen über die Auswirkungen auf konkrete Referenznetzgebiete getroffen werden, welche stellvertretend für eine große Anzahl an Netzgebieten in Deutschland stehen.\medskip
 
-Mit \SI{47.7}{\MioStk} \cite{KBA2020a} machen \glspl{PKW} den Großteil der Kraftfahrzeuge in Deutschland aus.
-Damit kommen \glspl{PKW} eine besondere Bedeutung bei der Betrachtung der Auswirkungen der Netzintegration von Elektrofahrzeugen zu.
-Unter \glspl{EPKW} werden alle \gls{PKW} \SI{< 3.5}{\tonne} mit batterieelektrischem Antrieb verstanden, die im privaten oder gewerblichen Individualverkehr genutzt werden \cite{BNetzA2020}.
+Mit \SI{47.7}{\MioFZs} \cite{KBA2020a} machen \glspl{PKW} den Großteil der Kraftfahrzeuge in Deutschland aus.
+Damit wird \glspl{PKW} eine besondere Bedeutung bei der Betrachtung der Auswirkungen der Netzintegration von Elektrofahrzeugen beigemessen.
+Unter \glspl{EPKW} werden alle \glspl{PKW} \SI{< 3.5}{\tonne} mit batterieelektrischem Antrieb verstanden, die im privaten oder gewerblichen Individualverkehr genutzt werden \cite{BNetzA2020}.
 Innerhalb dieser Arbeit werden ausschließlich die Auswirkungen einer Elektrifizierung des Bestandes an \glspl{PKW} durch \glspl{EPKW} in verschiedenen Durchdringungsstufen betrachtet.\medskip
 
-Zusammenfassend ist das Ziel dieser Arbeit somit, die Auswirkungen verschiedener Lade\-strategien bei unterschiedlichen Durchdringungstiefen von \glspl{EPKW} auf unterschiedliche Netzgebietsklassen von Verteilnetzen zu quantifizieren.
-Die Quantifizierung erfolgt anhand des Abregelungsbedarfes an Last und Erzeugerkapazitäten im Netzgebiet.
+Zusammenfassend ist das Ziel dieser Arbeit die Auswirkungen verschiedener Lade\-strategien bei unterschiedlichen Durchdringungstiefen von \glspl{EPKW} auf unterschiedliche Netzgebietsklassen von Verteilnetzen zu quantifizieren.
+Die Quantifizierung erfolgt anhand des Abregelungsbedarfs an Last und Erzeugerkapazitäten im Netzgebiet.
 
 
 \subsection{Aufbau der Arbeit}
 
-Vorerst werden im \autoref{chap:base_theo} die wichtigsten Grundbegriffe dieser Arbeit erläutert und definiert.
-Im \autoref{chap:Literatur} erfolgt eine Beschreibung des aktuellen Standes der Literatur in Form einer Metaanalyse sowie eine Abgrenzung zu der ausgewerteten Literatur.
+Vorerst werden in \autoref{chap:base_theo} die wichtigsten Grundbegriffe dieser Arbeit erläutert und definiert.
+In \autoref{chap:Literatur} erfolgt eine Beschreibung des aktuellen Standes der Literatur in Form einer Metaanalyse sowie eine Abgrenzung zu der ausgewerteten Literatur.
 \autoref{chap:Methodik} beschreibt die Methodik zur Aufstellung und Untersuchung des Netzmodells.
 Dazu zählen die Erstellung der Verteilnetztopologien, das Clustering dieser, die Erzeugung der Fahrtprofile von \glspl{EPKW} und die Regionalisierung des Ladebedarfs.
 Weiterhin werden die untersuchten Ladestrategien definiert und die abschließenden Netzuntersuchungen auf Netzprobleme und deren Lösung durch die Abregelung von Lasten und Erzeugerkapazitäten ausführlich beschrieben.
 In \autoref{chap:Szenariorahmen} erfolgt die Definition der untersuchten Szenarien.
 Hierbei werden sowohl Annahmen zur Elektromobilität und erneuerbaren Energien als auch zum konventionellen Stromverbrauch und \glspl{WP} beschrieben.
-In \autoref{chap:results} werden die Ergebnisse der beschriebenen Methodik vorgestellt und ausgewertet, um abschließend im \autoref{chap:schlussbetrachtung} in einer Schlussbetrachtung zusammengefasst zu werden.
+In \autoref{chap:results} werden die Ergebnisse der beschriebenen Methodik vorgestellt und ausgewertet, um diese abschließend in \autoref{chap:schlussbetrachtung} in einer Schlussbetrachtung zusammenzufassen.
 
 \clearpage

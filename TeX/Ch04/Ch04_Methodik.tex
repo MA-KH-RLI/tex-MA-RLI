@@ -19,7 +19,7 @@ Urbane Netzgebiete können derzeit nicht durch \gls{DINGO} abgebildet werden und
 
 In der konventionellen Netzplanung werden Betriebsmittel in der Regel überdimensioniert ausgelegt, um eine möglichst lange Betriebszeit zu garantieren.
 Da die Netzgebiete des \gls{OPENEGO} Projektes so ausgebaut werden, dass die Versorgungsaufgabe des Jahres \num{2015} möglichst genau übernommen werden kann, werden die Netzgebiete zusätzlich ausgebaut.
-Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw. Stromstärkenbelastbarkeit von mindestens \num{1.4} geplant werden und werden entsprechend ausgebaut.
+Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw. Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant werden und werden entsprechend ausgebaut.
 Dies gilt sowohl für die Transformatorstationen als auch die Kabel innerhalb des Netzgebietes.
 Die verwendeten Betriebsmittel können der Dokumentation \glspl{EDISGO} \cite{edisgoDocs2017a} entnommen werden.
 Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Station größer sein als der größte verfügbare Transformator, so werden so viele Transformatoren wie nötig parallel betrieben, um den Anforderungen gerecht zu werden.
@@ -44,7 +44,7 @@ Auf Grundlage der Anzahl an Hausanschlüssen je Ortsnetzstation wird ein Nieders
 Die verschiedenen Referenznetzstränge der entsprechenden Netzklasse werden anschließend so miteinander kombiniert, dass für die entsprechende Anzahl an Hausanschlüssen ein typisches Netz generiert wird. \cite{Mueller2019}
 
 
-\paragraph{K-Means-Clustering}
+\paragraph{K-Means-Clustering:}
 
 Innerhalb Deutschlands wurden insgesamt \num{3354} Netzgebiete \cite{Schachler} identifiziert und mit Hilfe des Open Source Tools \gls{DINGO} synthetisiert.
 Bei der Synthese der Netztopologien wurde auf eine hohe räumliche und zeitliche Auflösung des Netzdatenmodells geachtet.
@@ -81,9 +81,9 @@ Auf der \gls{MS}-Ebene gibt es \num{3354} Netzgebiete mit einer mittleren Fläch
 \input{Ch04/fig/Ch04_fig_01_grid_176_map}
 
 Um mit dieser Arbeit eine Ergänzung zu \textit{E-Mobility Study} \cite{Schachler} zu liefern, werden die Ergebnisse des Clusterings aus \textit{E-Mobility Study} übernommen und von den \num{15} identifizierten repräsentativen Netzgebieten eine Teilmenge untersucht.
-So werden jeweils zwei Netzgebiete der Kategorien \gls{PV}-, Wind- und Last-dominiert ausgewählt, die möglichst viele Netzgebiete repräsentieren.
+So werden jeweils zwei Netzgebiete der Kategorien \gls{PV}- und Wind-dominiert und ein Netzgebiet der Kategorie Last-dominiert ausgewählt, welche möglichst viele Netzgebiete repräsentieren.
 Auf diese Weise wird sichergestellt, dass die Effekte der Netzintegration der Elektromobilität auf möglichst unterschiedliche Netze aufgezeigt werden können.
-Insgesamt werden somit sechs Netzgebiete untersucht, die stellvertretend für \num{1842} der \num{3354} Mittelspannungsnetze stehen.
+Insgesamt werden somit fünf Netzgebiete untersucht, die stellvertretend für \num{1495} der \num{3354} Mittelspannungsnetze stehen.
 In \autoref{tab:grid_IDs} finden sich die \glspl{ID} der untersuchten Mittelspannungsnetze und die Anzahl an repräsentierten Netzgebieten.
 
 \input{Ch04/tab/Ch04_tab_01_grid_IDs}
@@ -114,7 +114,7 @@ In \autoref{tab:wegezweck} findet sich die prozentuale Aufteilung der Hauptwegez
 \input{Ch04/tab/Ch04_tab_02_wegezweck}
 
 Der Wegezweck \glqq Begleitung\grqq{} wird innerhalb \glspl{SIMBEV} nicht abgebildet, da hierfür keine zusätzliche Fahrt angetreten wird.
-Der Rückweg der Wegezwecke wird getrennt als Wegezweck \nH berücksichtigt, da dem Laden zu Hause eine besonders wichtige Rolle zukommt.
+Der Rückweg der Wegezwecke wird getrennt als Wegezweck \nH berücksichtigt, da dem Laden \zH eine besonders wichtige Rolle zukommt.
 Weiterhin dient \gls{SIMBEV} nur der Erstellung von Fahrtprofilen für \gls{PKW}, weshalb ausschließlich die Ergebnisse der Befragung zu Fahrten mit dem Hauptverkehrsmittel \gls{PKW} betrachtet werden.
 Die für diese Arbeit entscheidenden Befragungsergebnisse sind somit die Fahrtzeiten, Fahrtstrecken und anschließenden Standzeiten je Hauptwegezweck für Fahrten mit \glspl{PKW}.
 Bei den Befragungsergebnissen kann zusätzlich zwischen den in \autoref{tab:RegioStaR} aufgelisteten \glspl{REGIOSTAR} unterschieden werden.
@@ -129,10 +129,6 @@ In \autoref{tab:RegioStaR} findet sich die mittlere Fahrleistung pro Person und 
 
 \subsubsection{simBEV}
 
-% TODO: probabilistischen Ansatz mathematisch erklären. 
-% @Tim wie wird die Wahrscheinlichkeit je ts konkret festgelegt?
-% @TIM Warum wird Wegezweck "Begleitung" nicht mit abgebildet?
-
 Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \gls{MID} erstellt.
 Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit für einen bestimmten Wegezweck eine Fahrt zu beginnen.
 Löst ein Fahrzeug eine Fahrt aus, wird abhängig vom Wegezweck und Regionstyp der Fahrt, ebenfalls probabilistisch, eine Streckenlänge und eine anschließende Standzeit zugeteilt.
@@ -140,7 +136,7 @@ Der hierbei entstehende Verbrauch des Fahrzeuges muss anschließend gedeckt werd
 Ob am Zielort ein Ladevorgang stattfindet, hängt vom \gls{SOC} des Fahrzeuges und dem Vorhandensein eines Ladepunktes ab.
 Ob ein Ladepunkt am Zielort zur Verfügung steht und welche Ladeleistung dieser aufweist, wird mit Hilfe der Wahrscheinlichkeiten aus \autoref{tab:WegezweckProbability2050} ermittelt.
 Ladepunkte besitzen pauschal einen Wirkungsgrad von \SI{90}{\percent} \cite{EliaGroup2020}.
-Die Bestimmung des Vorhandenseins eines Ladepunktes zu Hause und am Arbeitsplatz erfolgt je \gls{EPKW} einmalig und wird anschließend gleich gehalten.
+Die Bestimmung des Vorhandenseins eines Ladepunktes für die Wegezwecke \nH und \Arbeit erfolgt je \gls{EPKW} einmalig und wird anschließend gleich gehalten.
 Für alle anderen Wegezwecke erfolgt die Bestimmung jedes Mal von neuem.
 Wird dem Zielort ein Ladepunkt zugeordnet wird davon ausgegangen, dass die Fahrzeugnutzerin oder der Fahrzeugnutzer einen Ladevorgang erst ab einem bestimmten \gls{SOC} einleitet, da dies einen zusätzlichen Aufwand für die Nutzerin oder den Nutzer bedeutet.
 Dabei wird angenommen, dass das Laden des Fahrzeuges am Wohnort und am Arbeitsplatz bereits ab einem \gls{SOC} von \SI{95}{\percent} stattfindet.
@@ -206,7 +202,7 @@ Die private Ladeinfrastruktur beinhaltet alle Ladevorgänge, die an privater Lad
 Um mögliche Standorte für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen identifizieren zu können, wird die Anzahl an Wohneinheiten auf einem \SI{100 x 100}{\m} Raster aus dem \textit{Zensus 2011} \cite{StatistischesBundesamt2011} verwendet.
 So wird jedem Raster mit mehr als einer Wohneinheit und einer Einwohnerzahl größer Null ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet und anhand der Gesamtanzahl von Wohneinheiten im Raster gewichtet. \medskip
 
-Für private Ladeinfrastruktur auf Firmenparkplätzen werden die Klassifizierungen der Landflächen nach Nutzungsart nach der \gls{OSM} \cite{OpenStreetMapFoundation} verwendet.
+Für private Ladeinfrastruktur auf Firmenparkplätzen werden die Klassifizierungen der Landflächen nach Nutzungsart der \gls{OSM} \cite{OpenStreetMapFoundation} verwendet.
 Hierbei wird jeder Landfläche mit der Nutzungsart \textit{commercial}, \textit{retail} oder \textit{industrial} ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
 Die Gewichtung erfolgt anhand der Fläche des Gebietes multipliziert mit einem Flächennutzungsfaktor.
 Der Flächennutzungsfaktor liegt für \textit{commercial} bei \num{3}, für \textit{retail} bei \num{2} und für \textit{industrial} bei \num{1}.
@@ -226,8 +222,8 @@ Eine Gewichtung findet in diesem Fall nicht statt.
 
 \paragraph{Zuteilung der Ladevorgänge auf die Ladeinfrastruktur:}
 
-Bei der Ladeinfrastruktur auf Firmenparkplätzen werden sehr große Flächen identifiziert, die in der Regel nicht nur einem Unternehmen zugewiesen werden können.
-Da hierdurch unter Umständen nur wenige Anschlusspunkte generiert werden, werden ergänzend \SI{50}{\percent} der möglichen öffentlichen Normalladeinfrastruktur zusätzlich für Ladeinfrastruktur auf Firmenparkplätzen genutzt.
+Die klassifizierten Landflächen nach Nutzungsart der \gls{OSM} entsprechen häufig sehr großen Landflächen, die in der Regel nicht nur einem Unternehmen zugewiesen werden können.
+Da hierdurch unter Umständen nur wenige Anschlusspunkte generiert werden, werden ergänzend \SI{50}{\percent} der möglichen öffentlichen Normalladeinfrastruktur für Ladeinfrastruktur auf Firmenparkplätzen genutzt.
 Den zusätzlichen Anschlusspunkten wird eine geringe Gewichtung zugeordnet, da durch diese vor allem kleine Betriebe abgebildet werden sollen.
 Die Gewichtung orientiert sich dabei an der ermittelten Gewichtung der öffentlichen Ladeinfrastruktur.
 Bei der privaten Ladeinfrastruktur am Eigenheim oder in Wohnanlagen liegen innerhalb eines Rasters in der Regel mehrere Wohneinheiten, weshalb davon auszugehen ist, dass je identifiziertem Anschlusspunkt mehrere unabhängige Ladepunkte bzw. -parks betrieben werden.
@@ -265,6 +261,7 @@ Für den \UC \zH wird die Ladestation an der nächstgelegenen Haushaltslast im i
 Im Falle des \UCs \Firmeparkplatz erfolgt der Anschluss an dem nächstgelegenen gewerblichen, industriellen oder landwirtschaftlichen Verbraucher und im Falle von öffentlicher Ladeinfrastruktur wird die Ladestation an den nächstgelegen Verbraucher angeschlossen, der keine Haushaltslast darstellt.\medskip
 
 Erfolgt der Anschluss auf der \gls{MS}-Ebene, dann wird die Ladestation über ein Kabel an dem nächstgelegenen Netzknoten oder Kabel angeschlossen.
+Hierbei wird ausgeschlossen, dass ein Ladestation an eine andere Ladestation angeschlossen wird.
 Wird ein Kabel ausgewählt, dann wird die Leitung an der nächstgelegenen Stelle zur Ladestation aufgetrennt und eine neue Kabelmuffe hinzugefügt, wo die Ladestation angeschlossen wird.
 Liegt die Anschlussleistung der Ladestation über \SI{4.5}{\mva}, dann erfolgt der Anschluss der Ladestation über eine Kabelverbindung direkt an dem \gls{HS}-\gls{MS}-\gls{USW}.\medskip
 
@@ -388,8 +385,6 @@ Das Ziel der Lastflussberechnung ist es, das zwischen allen Verbindungen der Net
 		Y_{i,k}		& Admittanz der Leitung zwischen den Netzknoten $i$ und $k$ \\
 	\end{tabular}
 }
-
-% TODO: von Birgit mal erklären lassen^^
 
 Der Winkel der komplexen Spannung ist relativ zum Bilanzknoten.
 Unter dem Bilanzknoten wird ein Netzknoten verstanden, an welchem der Wirk- und Blindleistungsfluss frei eingestellt werden kann.
