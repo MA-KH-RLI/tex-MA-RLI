@@ -1,12 +1,14 @@
 %%%%%%%%% Dokumentenklasse
 \documentclass[
-	egregdoesnotlikesansseriftitles,
+%	egregdoesnotlikesansseriftitles,
 	%fontsize=12pt,% Times New Roman
 	fontsize=11pt,% Andere
 	paper=a4,
 	]{scrartcl}
 
 % \setkomafont{disposition}{\normalfont\bfseries}
+\setkomafont{paragraph}{\normalfont\bfseries} % set paragraph and
+\setkomafont{subparagraph}{\normalfont\bfseries} % subparagraph font to default, while keeping titel fonts sans-serif
 
 % \flushbottom % extends white space between paragraphs to fill pages
 
@@ -33,14 +35,14 @@
 
 
 %%%%%%%%% Code
-\usepackage[
-	newfloat,
+%\usepackage[
+%	newfloat,
 %	outputdir=out,
 %	cache=false,
-	]{minted}% Code highlighting
-\usepackage{caption}% Neue Environment um Code-Blöcken eine Caption zu geben
-\newenvironment{code}{\captionsetup{type=listing}}{}
-\SetupFloatingEnvironment{listing}{name=Quellcode}
+%	]{minted}% Code highlighting
+%\usepackage{caption}% Neue Environment um Code-Blöcken eine Caption zu geben
+%\newenvironment{code}{\captionsetup{type=listing}}{}
+%\SetupFloatingEnvironment{listing}{name=Quellcode}
 
 
 %%%%%%%%% Sprachpackages
@@ -112,7 +114,7 @@
 \usepackage{mwe}% Für Abbildungsverzeichnis
 \usepackage{graphics}% accommodate all needs for inclusion of graphics
 \usepackage{subfigure}% support for the manipulation and reference of small or ‘sub’ figures and tables within a single figure or table environment
-\usepackage{svg}% einbinden von svg Grafiken
+%\usepackage{svg}% einbinden von svg Grafiken
 
 
 %%%%%%%%% Diagramme
