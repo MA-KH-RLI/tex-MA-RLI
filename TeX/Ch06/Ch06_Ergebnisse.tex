@@ -204,37 +204,44 @@ Im Netz \(176_{\text{PV}}\) nimmt der Nutzen des reduzierten Ladens mit dem Hoch
 In \autoref{fig:176_load_curtailment_per_strategy} findet sich die durchschnittliche Abregelung von Lasten im Netz \(176_{\text{PV}}\) für die Szenarien NEP C~\num{2035} und Antriebswende.
 Es zeigt sich, dass im NEP C~\num{2035} Szenario noch erfolgreich Last vom Nachmittag und Abend in die Nacht verschoben werden kann, ohne den Abregelungsbedarf nachts zu erhöhen.
 Im Antriebswende-Szenario ist dies nicht mehr möglich und es kommt beim reduzierten Laden nachts zu einem stark erhöhten Abregelungsbedarf.
-So wird bei einer starken Überlastung des Netzes die Abregelung nur zeitlich vom Nachmittag und Abend auf die Nacht verschoben, ohne das ein wesentlicher Anteil an Abregelung vermieden werden kann.
-Demgegenüber kann im NEP C~\num{2035} noch eine größere Menge an Abregelung vor allem am Morgen verhindert werden.
-Anschließend kommt am Vormittag zwar zu einem erhöhten Abregelungsbedarf, dieser fällt jedoch deutlich niedriger aus.
-Diese extremen Überlastungssituationen treten im Netz \(1056_{\text{PV}}\) nicht auf, weshalb das reduzierte Laden unabhängig von den Szenarien immer ähnliche Erfolge mit sich bringt.\medskip
-
-Das Residuallast-Laden kann den Abregelungsbedarf im Netz \(1056_{\text{PV}}\) noch deutlich stärker senken, als das reduzierte Laden.
-In dem stark \gls{PV}-dominierten Netz \(1056_{\text{PV}}\) können im Antriebswende-Szenario sogar \SI{29.4}{\percent} der Abregelung durch die Residuallast-Ladestrategie verhindert werden, da die entsprechenden \gls{NS}-Netzkapazitäten für eine starke Verschiebung der Last gegeben sind.
-Im Netz \(176_{\text{PV}}\) wird die Last hingegen meist in Zeiten verschoben, in denen es schon zu Abregelungen kommt, weshalb der Einfluss auf den gesamten Abregelungsbedarf sehr gering ausfällt, oder diesen sogar erhöht.
+So wird bei einer starken Überlastung des Netzes die Abregelung nur zeitlich vom Nachmittag und Abend auf die Nacht verschoben, ohne dass ein wesentlicher Anteil an Abregelung vermieden werden kann.
+Diese extremen Überlastungssituationen treten im Netz \(1056_{\text{PV}}\) nicht auf, weshalb das reduzierte Laden unabhängig von den Szenarien immer ähnliche Erfolge mit sich bringt.
 
 \input{Ch06/fig/Ch06_fig_07_pv_dominated_176_load_curtailment_per_strategy}
+
+Das Residuallast-Laden kann den lastseitigne Abregelungsbedarf im Netz \(1056_{\text{PV}}\) noch deutlich stärker senken, als das reduzierte Laden.
+In dem stark \gls{PV}-dominierten Netz \(1056_{\text{PV}}\) können im Antriebswende-Szenario sogar \SI{29.4}{\percent} der Abregelung durch die Residuallast-Ladestrategie verhindert werden, da die entsprechenden \gls{NS}-Netzkapazitäten für eine starke Verschiebung der Last gegeben sind.
+Im Netz \(176_{\text{PV}}\)kommt es innerhalb der Hochzeit der \gls{PV}-Einspeisung bereits zu lastseitigen Abregelungen.
+Da beim Residuallast-Laden viel Last in dieses Zeitfenster verschoben wird, erhöht sich der Abregelungsbedarf am frühen Nachmittag.
+Aus diesem Grund fällt der Einfluss des Residuallast-Ladens auf den lastseitigen Abregelungsbedarf sehr gering aus, oder erhöht diesen sogar.\medskip
 
 In Woche~MAX fällt der Abregelungsbedarf der Lasten beim Referenz-Laden im Netz \(176_{\text{PV}}\) mit \SIrange{115}{503}{\mwh} und im Netz \(1056_{\text{PV}}\) mit \SIrange{79}{149}{\mwh} erwartungsgemäß höher aus als in Woche~MIN.
 Das Netz \(176_{\text{PV}}\) weist nach \autoref{fig:176_1056_cur_load_grid_week_B} ein sehr ähnliches Verhalten wie in Woche~MIN auf.
 So kann vor allem in Szenarien mit einem niedrigeren Hochlauf an \gls{EPKW} Abregelung durch das reduzierte Laden verhindert werden.
-Die beiden anderen Ladestrategien zeigen in der Regel nur einen minimalen Einfluss auf den Abregelungsbedarf.
-Nur im NEP C~\num{2035} Szenario erhöht sich der Abregelungsbedarf durch das Residuallast-Laden deutlich, da in diesem Szenario eine besonders hohe Gleichzeitigkeit entsteht.
-Dies betrifft vor allem das NEP C~\num{2035} Szenario, da der Ladebedarf hierbei am geringsten ausfällt und somit auch der Einfluss auf die Residuallast.
-Hierdurch werden nur einige wenige Zeitschritte mit der geringsten Residuallast für das Laden bei der Residuallast-Ladestrategie verwendet.
-Da im NEP C~\num{2035} Szenario noch einige Zeitschritte ohne lastseitigen Abregelungsbedarf bestehen, wird auf diese Weise auch Last aus Zeitschritten ohne Abregelungsbedarf in Zeitschritte mit Abregelungsbedarf verschoben, weshalb sich dieser insgesamt erhöht.\medskip
+Die beiden anderen Ladestrategien zeigen in der Regel nur einen minimalen Einfluss auf den Abregelungsbedarf.\medskip
+
+Im NEP C~\num{2035} Szenario fällt der Einfluss der Lastverschiebung des Ladebedarfs auf die Residuallast aufgrund des insgesamt geringen Ladebedarfs begrenzt aus.
+Aus diesem Grund wird viel Last in wenige Zeitschritte der Hochzeit der \gls{PV}-Einspeisung verschoben, weshalb die Gleichzeitigkeit besonders hoch ausfällt und es zu lastseitigem Abregelungsbedarf kommt.
+Da hierbei teilweise auch Last aus Zeitschitten ohne Abregelungsbedarf nun in Zeitschritte mit Abregelungsbedarf verschoben wird, kommt es im NEP C~\num{2035} Szenario sogar zu einem erhöhten lastseitigen Abregelungsbedarf.
+Durch die Zunahme des Einflusses auf die Residuallast mit einem steigenden Ladebedarf, fällt dieser Effekt in den anderen Szenarien schwächer aus.\medskip
 
 Im Netz \(1056_{\text{PV}}\) kann hingegen der Abregelungsbedarf durch das Residuallast-Laden um bis zu \SI{10.5}{\percent} gesenkt werden.
 Aufgrund der Zunahme der zur Verfügung stehenden flexiblen Leistung und Energie der \gls{EPKW} mit den Szenarien, kann auch immer stärker eine Glättung der Residuallast erreicht werden.
-Hierdurch werden sowohl im Netz \(1056_{\text{PV}}\) als auch im Netz \(176_{\text{PV}}\) zunehmend immer mehr Zeitschritte zum Laden verwendet und die zeitliche Konzentration von Ladevorgängen innerhalb einiger weniger Zeitschritte nimmt im Vergleich ab, wodurch sich die Effektivität des Residuallast-Ladens mit den Szenarien graduell erhöht.
+Hierdurch werden sowohl im Netz \(1056_{\text{PV}}\) als auch im Netz \(176_{\text{PV}}\) zunehmend immer mehr Zeitschritte zum Laden verwendet und die zeitliche Konzentration von Ladevorgängen innerhalb einiger weniger Zeitschritte nimmt im Vergleich ab, wodurch sich die Effektivität des Residuallast-Ladens mit den Szenarien graduell erhöht.\medskip
+
+Lastseitig können im Netz \(1056_{\text{PV}}\) sowohl durch die Residuallast-Ladestrategie als auch durch das reduzierte Laden in erster Linie morgens große Mengen an Abregelung verhindert werden (vgl \autoref{fig:1056_fEE_load_diff}).
+Zusätzlich kann durch die Residuallast-Ladestrategie auch am Abend ein signifikanter Anteil an Abregelung vermieden werden.
+Zur Mittagszeit zeigt sich lastseitig ein erhöhter Abregelungsbedarf durch die Residuallast-Ladestrategie.
+Es wird somit ein zu großer Anteil von Fahrzeugen innerhalb eines kurzen Zeitfensters geladen und vor allem die Betriebsmittel auf der \gls{NS}-Ebene überlastet.
 
 \input{Ch06/fig/Ch06_fig_08_pv_dominated_load_diff_week_B}
 
-
 Bei den \gls{FEE} Anlagen zeigt sich, dass innerhalb von Woche~MAX in beiden \gls{PV}-dominierten Netzen keine Abregelung von \gls{FEE} Anlagen nötig ist, weshalb eine Betrachtung der Woche~MAX entfällt.
-In Woche~MIN sinkt nach \autoref{tab:pv_dominated_week_a_fee_cur} der Abregelungsbedarf mit einem steigenden Hochlauf an \gls{EPKW}.
+In Woche~MIN sinkt nach \autoref{tab:pv_dominated_week_a_fee_cur} der Abregelungsbedarf beim Referenz-Laden mit einem steigenden Hochlauf an \gls{EPKW}.
 Dabei fällt auf, dass der Abregelungsbedarf von \gls{FEE} Anlagen in der \SzeFirmenparkplatz stärker abfällt als im Antriebswende-Szenario.
 Dies lässt sich dadurch begründen, dass durch den höheren Anteil an Ladevorgängen im öffentlichen Raum und \zH nach \autoref{fig:example_load_profile} mehr Ladevorgänge in den zeitlichen Bereich hoher Einspeisung am frühen Nachmittag fallen und somit ein besserer Ausgleich zwischen Angebot und Nachfrage entsteht.
+Im Antriebswende-Szenario finden beim Referenz-Laden hingegen deutlich mehr Ladevorgänge am Morgen statt.
+In dieser Zeit kommt es zu keiner hohen Einspeisung durch \glspl{PVA}.
 Innerhalb von \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen \zH befinden sich oft auch viele \glspl{PVA}.
 Da in der \SzeFirmenparkplatz mehr Ladevorgänge \zH stattfinden, wird der Abregelungsbedarf von \gls{FEE} Anlagen somit gesenkt.
 
@@ -242,12 +249,10 @@ Da in der \SzeFirmenparkplatz mehr Ladevorgänge \zH stattfinden, wird der Abreg
 
 \autoref{fig:176_1056_cur_fee_grid_week_A} zeigt die prozentuale Veränderung des Abregelungsbedarfs von \gls{FEE} Anlagen in Abhängigkeit von der Ladestrategie.
 So kann der Abregelungsbedarf durch die Residuallast-Ladestrategie im Netz \(1056_{\text{PV}}\) um bis zu \SI{10.7}{\percent} und im Netz \(176_{\text{PV}}\) aufgrund des geringeren Verhältnisses zwischen Einspeisung und Ladebedarf sogar um bis zu \SI{20.3}{\percent} gesenkt werden.
-Demgegenüber wird durch die Ladegruppen und das reduzierte Laden der Abregelungsbedarf in der Regel erhöht.
 Da im Antriebswende-Szenario deutlich mehr flexible Leistung und Energie durch \gls{EPKW} zur Verfügung steht als in den anderen Szenarien, kann innerhalb dieses Szenarios die stärkste Reduktion erreicht werden.
 Weiterhin finden gegenüber der \SzeFirmenparkplatz mehr flexible Ladevorgänge (vgl. \autoref{tab:ChargingShare}) statt.
 Da innerhalb der Standzeiten des \UC \Firmeparkplatz in der Regel auch die Hochzeiten der Einspeisung von \glspl{PVA} liegen, bietet dieses Szenario in beiden Netzen ein um mehr als \SI{30}{\percent} größeres Einsparpotential beim Abregelungsbedarf von \gls{FEE} Anlagen.
-% Weiterhin kommt es zu dem Effekt, dass Ladevorgänge \zH oft in die nächtliche Schwachlastzeit verschoben werden und somit nicht zur Verfügung stehen, um den einspeiseseitigen Abregelungsbedarf zu senken.
-% Auf diesen Effekt wird detailliert in \autoref{chap:wind_cur_results} eingegangen.
+
 
 \input{Ch06/fig/Ch06_fig_09_pv_dominated_fee_diff_week_A}
 
@@ -258,16 +263,12 @@ Demgegenüber treten die lastseitigen Abregelungsspitzen hierzu versetzt morgens
 Durch die Residuallast-Ladestrategie kann der Abregelungsbedarf von \gls{FEE} Anlagen vor allem in Zeiten von Spitzeneinspeisung gesenkt werden.
 Beim den Ladegruppen und beim reduzierten Laden kommt es zu einem erhöhten Abregelunsgebedarf von \gls{FEE} Anlagen zur Mittagszeit.
 Nach \autoref{fig:example_load_profile} werden ab der Mittagszeit viele Fahrzeuge \zH geladen.
-Durch die Ladestrategien kommt es dazu, dass der Ladebedarf für den \UC \zH zu dieser Zeit im Durchschnitt geringer ausfällt als beim Referenz-Ladens.
-Die Residuallast sinkt somit in Zeiten von Spitzeneinspeisung (vgl. \autoref{fig:residual_load}) aufgrund der präventiven Ladestrategien weiter ab, welches den Abregelungsbedarf erhöht.
+Durch die präventiven Ladestrategien kommt es dazu, dass der Ladebedarf für den \UC \zH in dieser Zeit im Durchschnitt geringer ausfällt als beim Referenz-Laden, da die Ladevorgänge zeitlich gestreckt werden.
+Da in \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen des \UCs \zH in der Regel auch viele \glspl{PVA} angeschlossen sind, kommt es insgesamt zu einer Erhöhung des erzeugerseitigen Abregelungsbedarfs.
+Vor allem beim reduzierten Laden spiegelt sich dies in dem Absinken der Residuallast in Zeiten von Spitzeneinspeisung (vgl. \autoref{fig:residual_load}) wider.
 
 
 \input{Ch06/fig/Ch06_fig_10_pv_dominated_1056_fEE_load_diff}
-
-Lastseitig können sowohl durch die Residuallast-Ladestrategie als auch durch das reduzierte Laden in erster Linie morgens große Mengen an Abregelung verhindert werden.
-Zusätzlich kann durch die Residuallast-Ladestrategie auch am Abend ein signifikanter Anteil an Abregelung vermieden werden.
-Zur Mittagszeit zeigt sich lastseitig ein erhöhter Abregelungsbedarf durch die Residuallast-Ladestrategie.
-Es wird somit ein zu großer Anteil von Fahrzeugen innerhalb eines kurzen Zeitfensters geladen und vor allem die Betriebsmittel auf der \gls{NS}-Ebene überlastet.
 
 
 \paragraph{Fazit:}
@@ -279,15 +280,15 @@ Demgegenüber fällt der Abregelungsbedarf des Ladebedarfs im Netz \(1056_{\text
 Die Ladegruppen zeigen insgesamt eine sehr geringe Wirksamkeit auf den Abregelungsbedarf.
 Für die anderen Ladestrategien ergeben sich aus der unterschiedlich starken Überlastung der beiden Netze starke Potentialunterschiede in der Wirksamkeit.
 So kann das reduzierte Laden weitgehend den lastseitigen Abregelungsbedarf um einen signifikanten Anteil senken.
-Dabei zeigt sich jedoch, dass das Einsparpotential mit einer zunehmenden Überlastung der \gls{NS}-Netze abnimmt, da es zunehmend auch Nachts und Mittags zu Abregelungen des Ladebedarfs kommt und dieser zeitlich nur noch verschoben aber nicht verhindert wird.
+Dabei zeigt sich jedoch, dass das Einsparpotential mit einer zunehmenden Überlastung der \gls{NS}-Netze abnimmt, da es zunehmend auch nachts und mittags zu Abregelungen des Ladebedarfs kommt und dieser zeitlich nur noch verschoben aber nicht verhindert wird.
 Das aktive Residuallast-Laden kann gegenüber den präventiven Ladestrategien weitere lastseitige Abregelung verhindern, wenn die entsprechenden \gls{NS}-Netzkapazitäten gegeben sind oder/und die Erzeugerkapazitäten in den gleichen \gls{NS}-Netzen liegen, in denen auch der Ladebedarf anfällt.\medskip
 
 Es zeigt sich, dass nur durch die aktive Verschiebung des Ladebedarfs in die Hochzeiten der Einspeisung von \gls{FEE} Anlagen bei der Residuallast-Ladestrategie der erzeugerseitige Abregelungsbedarf reduziert werden kann.
 Allerdings wird in der Regel so viel Ladebedarf in die Hochzeiten der Einspeisung verschoben, dass es aufgrund der hohen Gleichzeitigkeit zu einer erhöhten Abregelung des Ladebedarfs kommt.
-Das Potential den lastseitigen und erzeugerseitigen Abregelungsbedarf zu senken, wird auf diese Weise nicht voll ausgeschöpft.
+Das Potential, den lastseitigen und erzeugerseitigen Abregelungsbedarf zu senken, wird auf diese Weise nicht voll ausgeschöpft.
 Es empfiehlt sich neben dem Optimierungsansatz der Residuallast-Glättung vor allem auch die Belastungsgrenzen der \gls{NS}-Betriebsmittel zu beachten.
 Auf diese Weise würde mehr Ladebedarf in Zeiten einer schwächeren Einspeisung verschoben werden und voraussichtlich könnte der Abregelungsbedarf last- und einspeiseseitig weiter gesenkt werden.
-Die präventiven Ladestrategie führen demgegenüber zu einer Erhöhung des erzeugerseitigen Abregelungsbedarfs, da der Ladebedarf am frühen Nachmittag reduziert wird und somit nicht mehr in die Hochzeiten der Einspeisung der \gls{FEE} Anlagen fällt.
+Die präventiven Ladestrategien führen demgegenüber zu einer Erhöhung des erzeugerseitigen Abregelungsbedarfs, da der Ladebedarf am frühen Nachmittag reduziert wird und somit nicht mehr in die Hochzeiten der Einspeisung der \glspl{PVA} fällt.
 
 
 \subsubsection{Wind-dominierte Netze}\label{chap:wind_cur_results}
@@ -301,7 +302,7 @@ Hieraus folgt gegenüber den \gls{PV}-dominierten Netzen ein deutlich reduzierte
 \input{Ch06/tab/Ch06_tab_15_wind_dominated_epkw_demand}
 
 In \autoref{tab:wind_dominated_week_a_epkw_cur} findet sich der Abregelungsbedarf des Ladebedarfs von \gls{EPKW} in den Wind-dominierten Netzen für die Referenz-Ladestrategie in Woche~MIN und in \autoref{tab:wind_dominated_week_a_load_cur} ergänzend der Abregelungsbedarf für die sonstigen Lasten.
-Auch bei den Wind-dominierten Netzen kommt es zu einer Zunahme des Abregelungsbedarf mit dem Hochlauf der \gls{EPKW}.
+Auch bei den Wind-dominierten Netzen kommt es zu einer Zunahme des Abregelungsbedarfs mit dem Hochlauf der \gls{EPKW}.
 Da die Windkraft-Erzeugerkapazitäten in der Regel direkt in der \gls{MS}-Ebene angeschlossen werden und auch absolut eine größer Erzeugerleistung in den Wind-dominierten Netzen installiert ist (vgl. \autoref{fig:bar_representatives}), ist die \gls{MS}-Ebene in den Wind-dominierten Netzen auf höhere Lasten ausgelegt als in den \gls{PV}-dominierten Netzen.
 Der lastseitige Abregelungsbedarf beschränkt sich deshalb beinahe vollständig auf die \gls{NS}-Ebene.
 Das Netz \(1690_{\text{W}}\) zeigt vergleichbar zum Netz \(176_{\text{PV}}\) einen höheren Abregelungsbedarf in der \SzeFirmenparkplatz gegenüber dem Antriebswende-Szenario.
@@ -316,19 +317,17 @@ In den Wind-dominierten Netzen kann der lastseitige Abregelungsbedarf nach \auto
 Es zeigt sich erneut, dass die Ladegruppen nur einen geringen Einfluss auf den lastseitigen Abregelungsbedarf aufweist.
 Das reduzierte Laden erweist sich im Gegensatz zu den \gls{PV}-dominierten Netzen in allen Fällen effektiver als das Residuallast-Laden, um den lastseitigen Abregelungsbedarf zu senken.\medskip
 
-In Woche~MIN kann im Netz \(1811_{\text{W}}\) durch das reduzierte Laden noch eine annährend konstante Senkungswirkung der lastseitigen Abregelung in den unterschiedlichen Szenarien erreicht werden.
-Demgegenüber kann in Woche~MAX und und im Netz \(1690_{\text{W}}\) eine Abnahme des Einsparpotentials an lastseitiger Abregelung mit einem zunehmenden Hochlauf an \gls{EPKW} festgestellt werden.
-
 \input{Ch06/fig/Ch06_fig_11_wind_dominated_load_diff_week_A}
 
-Der Trend hin zu einem sinkenden prozentualem Einsparpotential durch das reduzierte Laden tritt im Netz \(1690_{\text{W}}\) in beiden Wochen auf und im Netz \(1811_{\text{W}}\) nur in Woche~MAX.
+In Woche~MIN kann im Netz \(1811_{\text{W}}\) durch das reduzierte Laden noch eine annähernd konstante Senkungswirkung der lastseitigen Abregelung in den unterschiedlichen Szenarien erreicht werden.
+Demgegenüber kann in Woche~MAX und und im Netz \(1690_{\text{W}}\) eine Abnahme des Einsparpotentials an lastseitiger Abregelung mit einem zunehmenden Hochlauf an \gls{EPKW} festgestellt werden.
 Die beiden Netze Verhalten sich hierbei ähnlich wie das \gls{PV}-dominierte Netz \(176_{\text{PV}}\).
 Im Unterschied zu dem Netz \(176_{\text{PV}}\) kommt es in den Wind-dominierten Netzen nachts in der Regel nicht zu einer lastseitigen Abregelung (vgl. \autoref{fig:1690_fEE_load_diff} (oben rechts)).
 Hierdurch kann durch das reduzierte Laden Ladebedarf erfolgreich in die Nacht verschoben werden, ohne den Abregelungsbedarf zu erhöhen.
 In den Szenarien mit einem geringeren Hochlauf an \gls{EPKW} kommt es beim Referenz-Laden in erster Linie zur Abregelung von Last am Morgen und am Abend.
 Bei einem höheren Hochlauf an \gls{EPKW} kommt es zusätzlich zur lastseitigen Abregelungen zur Mittagszeit und am frühen Nachmittag.
 Durch das reduzierte Laden kann in diesen Fällen Abregelungsbedarf nur mit nachlassendem Erfolg verhindert werden, da vermehrt Abregelungsbedarf nur noch vom Vormittag auf den frühen Nachmittag verschoben wird.
-Das Netz \(1811_{\text{W}}\) besitzt bei einem moderat erhöhtem Ladebedarf gegenüber dem Netz \(1690_{\text{W}}\) eine deutlich höhere Anzahl an \gls{NS}-Netzen weshalb die einzelnen \gls{NS}-Netze meist geringer belastet werden.
+Das Netz \(1811_{\text{W}}\) besitzt bei einem moderat erhöhten Ladebedarf gegenüber dem Netz \(1690_{\text{W}}\) eine deutlich höhere Anzahl an \gls{NS}-Netzen weshalb die einzelnen \gls{NS}-Netze meist geringer belastet werden.
 Hierdurch entsteht dieser Trend im Netz \(1811_{\text{W}}\) erst in den erhöhten Lastfällen der Woche~MAX.
 
 \input{Ch06/fig/Ch06_fig_12_wind_dominated_load_diff_week_B}
@@ -357,17 +356,17 @@ Insgesamt wird der Abregelungsbedarf hierdurch leicht erhöht.
 Im Gegensatz zu den \gls{PV}-dominierten Netzen zeigt sich, dass der erzeugerseitige Abregelungsbedarf durch die Residuallast-Ladestrategie nicht abgesenkt werden kann und sich sogar deutlicher erhöht als bei den präventiven Ladestrategien.
 Hierbei kommt es zu einer ungünstigen zeitlichen und lokalen Konzentration von Ladevorgängen.
 So kann der erzeugerseitige Abregelungsbedarf nach \autoref{fig:1690_fEE_load_diff} am frühen Nachmittag (grüner Bereich) gesenkt werden, während sich der Abregelungsbedarf anschließend (roter Bereich) erhöht.
-In dem grünen Bereich kommt es in erster Linie zu einer Anhebung des Ladebedafs des \UC \Firmeparkplatzdot, da aufgrund des \gls{PV}-Anteils im \gls{MS}-Netz in der Regel die geringste Residuallast während der üblichen Standzeiten des \UC \Firmeparkplatz vorherscht.
+In dem grünen Bereich kommt es in erster Linie zu einer Anhebung des Ladebedafs des \UC \Firmeparkplatzdot, da aufgrund des \gls{PV}-Anteils im \gls{MS}-Netz in der Regel die geringste Residuallast während der üblichen Standzeiten des \UC \Firmeparkplatz vorherrscht.
 Weiterhin sind die Standzeiten des \UC \Firmeparkplatz in der Regel kürzer als \zH (vgl. \autoref{tab:StandingTime}), weshalb die Priorität dieser Ladevorgänge bei der Vergabe der Ladezeitfenster nach \autoref{chap:theo_strategies} höher ausfällt.
-Innerhalb der \gls{NS}-Netze in denen viele Ladevorgänge des \UC \Firmeparkplatz stattfinden, befinden sich im Netz \(1690_{\text{W}}\) nur wenige \glspl{PVA}.
+Innerhalb der \gls{NS}-Netze, in denen viele Ladevorgänge des \UC \Firmeparkplatz stattfinden, befinden sich im Netz \(1690_{\text{W}}\) nur wenige \glspl{PVA}.
 Aus diesem Grund kommt es zwar insgesamt zu einer Reduktion des erzeugerseitigen Abregelungsbedarfs innerhalb dieses Zeitfensters, aber der vermiedene Abregelungsbedarf fällt im Verhältnis zum aufgewendeten Ladebedarf gering aus.
-Zusätzlich erhöht sich der lastseitige Abregelungsbedarf was die Effizienz der Ladestrategie weiter senkt.
+Zusätzlich erhöht sich der lastseitige Abregelungsbedar, was die Effizienz der Ladestrategie weiter senkt.
 
 \input{Ch06/fig/Ch06_fig_14_wind_dominated_1690_fEE_load_diff}
 
 Im roten Bereich kommt es ebenfalls zu einem erhöhten Ladebedarf des \UC \Firmeparkplatzdot.
-Diese Erhöhung fällt jedoch geringer aus als im grünen Bereich und der lastseitigen Abregelungsbedarf wird entsprechend weniger stark erhöht.
-Gleichzeitig wird der Ladebedarf \zH gegenüber der Referenz-Ladestrategie abgesenkt, da die Residuallast in der Regel nachts niedriger ausfällt als in diesem Zeitfenster und die Ladevorgänge \zH somit vermehrt nachts stattfinden.
+Diese Erhöhung fällt jedoch geringer aus als im grünen Bereich und der lastseitige Abregelungsbedarf wird entsprechend weniger stark erhöht.
+Gleichzeitig wird der Ladebedarf des \UCs \zH gegenüber der Referenz-Ladestrategie abgesenkt, da die Residuallast in der Regel nachts niedriger ausfällt als in diesem Zeitfenster und die Ladevorgänge \zH somit vermehrt nachts stattfinden.
 Innerhalb der \gls{NS}-Netze in denen primär Ladevorgänge \zH stattfinden, befinden sich im \gls{MS}-Netz \(1690_{\text{W}}\) viele \glspl{PVA}.
 Hierdurch erhöht sich sowohl der erzeugerseitige \gls{NS}- als auch \gls{MS}-Abregelungsbedarf.
 Windkraftanlagen befinden sich demgegenüber nicht in der örtlichen Nähe der \gls{NS}-Netze in denen primär Ladevorgänge \zH stattfinden.
@@ -391,7 +390,7 @@ So werden Ladevorgänge zwar zeitlich in günstige Zeitfenster verschoben, aber 
 Es empfiehlt sich somit, die lokale Netztopologie mit in die Priorisierung der Ladevorgänge einzubeziehen, um eine ungünstige lokale Verteilung der Ladevorgänge zu vermeiden.
 
 
-\subsubsection{Das Last-dominierte Netz}
+\subsubsection{Last-dominiertes Netz}
 
 In dem Last-dominierten Netz \(177_{\text{L}}\) kommt es in Woche~MIN im Antriebswende-Szenario zu einem annähernd ausgewogenen Verhältnis zwischen der Einspeisung aus \gls{FEE} Anlagen und dem Ladebedarf der \gls{EPKW}.
 In Woche~MAX kommt es hingegen nur zu einer minimalen Einspeisung aus \gls{FEE} Anlagen.
@@ -401,7 +400,7 @@ Die wichtigsten Eckdaten des Netzes \(177_{\text{L}}\) finden sich in \autoref{t
 
 \input{Ch06/tab/Ch06_tab_20_load_dominated_epkw_demand}
 
-Bei dem Abregelunsgbedarf des Ladebedarfs der \gls{EPKW} beim Referenz-Laden nach \autoref{tab:load_dominated_epkw_cur}, zeigt sich ein ähnliches Verhalten wie in dem \gls{PV}-dominierten Netz \(176_{\text{PV}}\), da es auch im Netz \(177_{\text{L}}\) nach \autoref{tab:largestLVGridShare} zu einer starken Konzentration des Ladebedarfs in wenigen \gls{NS}-Netzen kommt.
+Bei dem Abregelunsgbedarf des Ladebedarfs der \gls{EPKW} beim Referenz-Laden nach \autoref{tab:load_dominated_epkw_cur} zeigt sich ein ähnliches Verhalten wie in dem \gls{PV}-dominierten Netz \(176_{\text{PV}}\), da es auch im Netz \(177_{\text{L}}\) nach \autoref{tab:largestLVGridShare} zu einer starken Konzentration des Ladebedarfs in wenigen \gls{NS}-Netzen kommt.
 So muss in jedem Szenario ein großer Anteil des Ladebedarfs abgeregelt werden, weil einzelne \gls{NS}-Netze stark überlastet werden.
 Im Antriebswende-Szenario entfallen in Woche~MIN \SI{98}{\percent} des Abregelungsbedarf auf die \gls{NS}-Ebene, wobei bereits drei \gls{NS}-Netze mehr als \SI{60}{\percent} des Abregelungsbedarfs ausmachen.
 Im Gegensatz zum Netz \(176_{\text{PV}}\) kommt es nach \autoref{tab:load_dominated_load_cur} in dem Last-dominierten Netz zusätzlich zu einem größeren Anteil an Abregelung von sonstigen Lasten.
@@ -410,31 +409,37 @@ Im Gegensatz zum Netz \(176_{\text{PV}}\) kommt es nach \autoref{tab:load_domina
 
 \input{Ch06/tab/Ch06_tab_22_load_dominated_load_cur}
 
-In \autoref{fig:177_cur_load_both_weeks} findet sich die Veränderung des lastseitigen Abregelungsbedarfs aufgrund der Ladestrategien gegenüber dem Referenz-Ladenn für die beiden untersuchten Wochen.
-Auch bei dem Last-dominierten Netz erweist sich das reduzierte Laden am Effektivsten, um den lastseitigen Abregelungsbedarf zu senken.
+In \autoref{fig:177_cur_load_both_weeks} findet sich die Veränderung des lastseitigen Abregelungsbedarfs aufgrund der Ladestrategien gegenüber dem Referenz-Laden für die beiden untersuchten Wochen.
+Auch bei dem Last-dominierten Netz erweist sich das reduzierte Laden am effektivsten, um den lastseitigen Abregelungsbedarf zu senken.
 Dabei fällt das relative Senkungspotential des Abregelungsbedarfs aufgrund der hohen Auslastung der \gls{NS}-Netze in allen Szenarien verhältnismäßig niedrig aus.
 Durch das Residuallast-Laden kann die Abregelung in der Regel in einem ähnlichen Maße gesenkt werden, wie durch das reduzierte Laden.
-Demgegenüber kann durch die Ladegruppen der Abregelungsbedarf nur leicht gesenkt werden und erweist sich somit auch in dem Last-dominierten Netz als wenig Effektiv.
+Demgegenüber kann durch die Ladegruppen der Abregelungsbedarf nur leicht gesenkt werden und erweist sich somit auch in dem Last-dominierten Netz als wenig effektiv.
 
 \input{Ch06/fig/Ch06_fig_15_load_dominated_load_diff_both_weeks}
 
-In \autoref{fig:177_load_diff} findet sich die durchschnittliche Abregelung von Lasten im Antriebswende-Szenario innerhalb von Woche~MIN beim Referenz-Laden (oben) und die Differenz des Abregelungsbedarf zwischen den Ladestrategien und dem Referenz-Laden (unten).
+In \autoref{fig:177_load_diff} findet sich die durchschnittliche Abregelung von Lasten im Antriebswende-Szenario innerhalb von Woche~MIN beim Referenz-Laden (oben) und die Differenz des Abregelungsbedarfs zwischen den Ladestrategien und dem Referenz-Laden (unten).
 Demnach kommt es im Durchschnitt im Netz \(177_{\text{L}}\) in den meisten Zeitschritten zu einem starken Abregelungsbedarf.
 Hiervon ausgenommen ist in allen Szenarien die Nacht in der es nur selten zu lastseitiger Abregelung kommt.\medskip
 
-Beim reduzierten Laden kann am morgen und ab dem Mittag bis zum Abend lastseitige Abregelung verhindert werden.
+Beim reduzierten Laden kann am Morgen und ab dem Mittag bis zum Abend lastseitige Abregelung verhindert werden.
 Demgegenüber erhöht sich der Abregelungsbedarf in den verbleibenden Zeitschritten.
 Der Ladebedarf des \UC \Firmeparkplatz wird vom morgen in den Vormittag gestreckt, wodurch der Ladebedarf in Zeiten verschoben wird, in denen auch die Einspeisung der \glspl{PVA} höher ausfällt.
 Zusätzlich wird Ladebedarf \zH in die nächtliche Schwachlastzeit verschoben.
-Durch diese zwei günstigen zeitlichen Verschiebungen des Ladebedarf kommt es insgesamt zu einer Reduktion des lastseitigen Abregelungsbedarfs.
+Durch diese zwei günstigen zeitlichen Verschiebungen des Ladebedarfs kommt es insgesamt zu einer Reduktion des lastseitigen Abregelungsbedarfs.
 
 \input{Ch06/fig/Ch06_fig_16_load_dominated_load_diff}
 
-Beim Residuallast-Laden zeigt sich ein ähnlicher Trend, wie beim reduzierten Laden, wobei die Verschiebung der Last wesentlich stärker ausgeprägt ist.
+Beim Residuallast-Laden zeigt sich ein ähnlicher Trend wie beim reduzierten Laden, wobei die Verschiebung der Last wesentlich stärker ausgeprägt ist.
 Der Abregelungsbedarf erhöht sich nachts deutlich, während die Abregelung am Abend stark abgesenkt werden kann.
-Am morgen und am Vormittag kann durch die Verschiebung des Ladebedarfs in die Hochzeit der Einspeisung ein großer Anteil an Abregelung verhindert werden.
-Da die \gls{NS}-Netze zu dieser Zeit bereits stark überlastet sind, erhöht sich der lastseitige Abregelungsbedarf jedoch deutlich.
-Insgesamt kann auf diese Weise nur eine moderate Reduktion des lastseitigen Abregelungsbedarfs erreicht werden.
+Am Morgen und am Vormittag kann durch die Verschiebung des Ladebedarfs in die Hochzeit der Einspeisung ein großer Anteil an Abregelung verhindert werden.
+Da einige \gls{NS}-Netze in der Mittagszeit bereits beim Referenz-Laden überlastet sind, erhöht sich der lastseitige Abregelungsbedarf im Schnitt deutlich.
+Insgesamt kann auf diese Weise nur eine moderate Reduktion des lastseitigen Abregelungsbedarfs erreicht werden.\medskip
+
+Im Netz \(177_{\text{L}}\) kommt es im Gegensatz zu den zuvor untersuchten Netzen zu einer verstärkten lastseitigen Abregelung auf der \gls{MS}-Ebene.
+Diese ist aufgrund der geringen installierten Leistung von \gls{FEE} Anlagen weniger stark ausgebaut als in den zuvor betrachteten Netzen.
+Da nach \autoref{tab:largestLVGridShare} im Netz \(177_{\text{L}}\) zusätzlich ein besonders hoher Anteil von Ladestationen direkt in der \gls{MS}-Ebene angeschlossen ist, kommt es beim Referenz-Laden bereits zu einem hohen Anteil von reduzierten Ladevorgängen.
+Hiervon sind vor allem Ladestationen des \UCs \Firmeparkplatz betroffen.
+Da gegenüber den reduzierten Ladevorgängen bei den Ladegruppen der Ladebedarf zeitlich weniger gestreckt wird, kommt es am morgen kurzzeitig zu einem erhöhten Abregelungsbedarf, welcher in \autoref{fig:177_load_diff} nachvollzogen werden kann.
 
 \input{Ch06/tab/Ch06_tab_23_load_dominated_fee_cur}
 
@@ -464,6 +469,6 @@ Insgesamt fällt das Potential lastseitige Abregelung zu verhindern aufgrund der
 
 Der Abregelungsbedarf von \gls{FEE} Anlagen erhöht sich durch die präventiven Ladestrategien, da der Ladebedarf in den Hochzeiten der Einspeisung am frühen Nachmittag reduziert wird.
 Das Residuallast-Laden kann hingegen den erzeugerseitigen Abregelungsbedarf senken.
-Da jedoch ein signifikanter Anteil des Ladebedarfs \zH in die Nacht verschoben wird, fällt das Einsparpotential Verhältnismäßig gering aus.
+Da jedoch ein signifikanter Anteil des Ladebedarfs \zH in die Nacht verschoben wird, fällt das Einsparpotential verhältnismäßig gering aus.
 
 \clearpage
