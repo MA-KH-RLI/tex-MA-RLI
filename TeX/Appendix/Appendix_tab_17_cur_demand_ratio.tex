@@ -1,0 +1,20 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Verhältnis zwischen der Veränderung des erzeugerseitigen Abregelungsbedarfs durch das Residuallast-Laden gegenüber dem Referenz-Laden und dem flexibilisierbaren Ladebedarf je Netzgebiet und Szenario}
+		\begin{tabu} to 0.85\textwidth {X[0.6] X[1, r] X[1, r] X[1.2, r] X[1.5, r]}
+			\toprule
+			Netz ID              & NEP C~\num{2035}                           & Referenz                                   & Antriebswende                              & \glqq Firmenparkplatz\grqq                 \\ \midrule
+			\(176_{\text{PV}}\)  & \SI[retain-explicit-plus]{-0.73}{\percent} & \SI[retain-explicit-plus]{-0.57}{\percent} & \SI[retain-explicit-plus]{-0.45}{\percent} & \SI[retain-explicit-plus]{-0.35}{\percent} \\
+			\(1056_{\text{PV}}\) & \SI[retain-explicit-plus]{-6.14}{\percent} & \SI[retain-explicit-plus]{-4.59}{\percent} & \SI[retain-explicit-plus]{-3.10}{\percent} & \SI[retain-explicit-plus]{-2.44}{\percent} \\
+			\(1690_{\text{W}}\)  & \SI[retain-explicit-plus]{+1.88}{\percent} & \SI[retain-explicit-plus]{+2.14}{\percent} & \SI[retain-explicit-plus]{+1.01}{\percent} & \SI[retain-explicit-plus]{+1.13}{\percent} \\
+			\(1811_{\text{W}}\)  & \SI[retain-explicit-plus]{+0.00}{\percent} & \SI[retain-explicit-plus]{+0.00}{\percent} & \SI[retain-explicit-plus]{+0.00}{\percent} & \SI[retain-explicit-plus]{+0.00}{\percent} \\
+			\(177_{\text{L}}\)   & \SI[retain-explicit-plus]{-0.04}{\percent} & \SI[retain-explicit-plus]{-0.04}{\percent} & \SI[retain-explicit-plus]{-0.01}{\percent} & \SI[retain-explicit-plus]{0.00}{\percent}  \\ \bottomrule
+		\end{tabu}
+		\label{tab:ratio_cur_demand}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}

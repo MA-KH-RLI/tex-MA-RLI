@@ -1,0 +1,20 @@
+{
+\renewcommand{\arraystretch}{1.2}% grßerer Zeilenabstand
+\sisetup{range-phrase=~{--}~}% Gedankenstrich statt "bis" bei SIrange
+\begin{table}[H]
+	\begin{center}
+		\caption{Flexibilisierbarer Ladebedarf je MS-Netz und Szenario}
+		\begin{tabu} to 0.85\textwidth {X[0.6] X[1, r] X[1, r] X[1.2, r] X[1.5, r]}
+			\toprule
+			Netz ID              & NEP C~\num{2035} & Referenz         & Antriebswende    & \glqq Firmenparkplatz\grqq \\ \midrule
+			\(176_{\text{PV}}\)  & \SI{206.5}{\mwh} & \SI{367.1}{\mwh} & \SI{702.6}{\mwh} & \SI{643.8}{\mwh}           \\
+			\(1056_{\text{PV}}\) & \SI{77.8}{\mwh}  & \SI{138.0}{\mwh} & \SI{262.0}{\mwh} & \SI{240.9}{\mwh}           \\
+			\(1690_{\text{W}}\)  & \SI{79.5}{\mwh}  & \SI{142.4}{\mwh} & \SI{258.3}{\mwh} & \SI{241.6}{\mwh}           \\
+			\(1811_{\text{W}}\)  & \SI{95.7}{\mwh}  & \SI{174.9}{\mwh} & \SI{335.5}{\mwh} & \SI{310.4}{\mwh}           \\
+			\(177_{\text{L}}\)   & \SI{193.3}{\mwh} & \SI{346.6}{\mwh} & \SI{653.0}{\mwh} & \SI{605.6}{\mwh}           \\ \bottomrule
+		\end{tabu}
+		\label{tab:flex_demand_per_grid}
+	\end{center}
+	\vspace{-3mm}%Put here to reduce too much white space after your table
+\end{table}
+}
