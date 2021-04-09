@@ -351,6 +351,30 @@ Zusätzlich wird die Residuallast entsprechend angepasst und somit die Abhängig
 Auf diese Weise werden Ladevorgänge mit einem geringen Flexibilitätsband vorrangig behandelt und eine möglichst optimale Lösung bei einem geringen Rechenaufwand erreicht.
 
 
+\subsection{Überführung der Fahrtprofile in Lastzeitreihen}
+
+Die Fahrtprofile der \gls{EPKW} und die Lastzeitreihen der Ladestrategien werden auf \SI{15}{\Minuten} Basis generiert.
+In vielen Zeitschritten kann der {--} verbleibende {--} Ladebedarf in weniger als \SI{15}{\Minuten} nachgeladen werden.
+Aus diesem Grund wird durch zwei Maßnahmen ein Kompromiss angestrebt, um sowohl realistische Gleichzeitigkeiten abzubilden, die Auswikungen auf die Netzbelastung haben, als auch die Differenz zwischen dem Ladebedarf der Fahrtprofile nach \gls{SIMBEV} und den Lastzeitreihen der Ladestrategien minimal zu halten.
+
+\begin{enumerate}
+	\item Dem Gesamtladebedarf eines Ladevorgangs wird nur dann der Ladebedarf des letzten Zeitschritts zugeordnet, wenn bei maximaler Ladeleistung mindestens \SI{20}{\percent} des Zeitschritts benötigt werden, um den Ladebedarf zu decken.
+	\item Wenn einem Ladevorgang der Ladebedarf des letzten Zeitschritts zugeordnet wird, dann wird dies in den Lastzeitreihen in allen für die Ladung auch nur anteilig benötigten Zeitschritten durch die zugewiesene Ladeleistung widergespiegelt.
+\end{enumerate}
+
+Wenn ein Ladevorgang von diesen Maßnahmen betroffen ist, dann wird der Ladebedarf dieses Ladevorgangs entweder erhöht oder reduziert in den Lastzeitreihen wiedergegeben.
+Bei dem reduzierten Laden entsteht diese Problematik bei den flexibilisierbaren Ladevorgängen nicht, da sich die Ladeleistung flexibel nach dem gegebenen Ladebedarf und der zur Verfügung stehenden Standzeit ausrichten kann.
+Hierdurch entsteht jedoch eine Differenz in dem Gesamtenergiebedarf der Lastzeitreihen zwischen dem reduzierten Laden und den sonstigen Ladestrategien.
+Um dies zu vermeiden werden die zuvor beschriebenen Maßnahmen vor der Erstellung der Lastzeitreihen durchgeführt und der Ladebedarf bereits in den Fahrtprofilen nach \gls{SIMBEV} angepasst.
+Auf diese Weise wird sichergestellt, dass sich der Gesamtenergiebedarf der Lastzeitreihen zwischen den Ladestrategien nicht unterscheidet.
+Dies soll kurz an zwei Beispielen veranschaulicht werden:
+
+\begin{enumerate}
+	\item Beträgt der Ladebedarf eines Fahrzeuges nach \gls{SIMBEV} beispielsweise \SI{12}{\kwh} und die fahrzeugseitige Wirkleistung \SI{9.9}{\kw}, dann werden insgesamt rund \SI{73}{\Minuten} für die Ladung benötigt. In diesem Fall wird in den Lastzeitreihen insgesamt fünf Zeitschritten und somit \SI{75}{\Minuten} die Ladeleistung zugeordnet. Aus diesem Grund wird der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \gls{SIMBEV} auf \SI{12.375}{\kwh} erhöht.
+	\item Wenn hingegen der Ladebedarf bei einer gleichbleibenden Ladeleistung \SI{10}{\kwh} beträgt, dann werden nur rund \SI{61}{\Minuten} für die Ladung benötigt. In diesem Fall wird die Ladeleistung in den Lastzeitreihen nur in vier Zeitschritten und somit \SI{60}{\Minuten} abgebildet. Der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \gls{SIMBEV} wird entsprechend auf \SI{9.9}{\kwh} reduziert.
+\end{enumerate}
+
+
 \subsection{Netzuntersuchung}\label{chap:edisgo_theo}
 
 Das Open Source Tool \gls{EDISGO} stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
