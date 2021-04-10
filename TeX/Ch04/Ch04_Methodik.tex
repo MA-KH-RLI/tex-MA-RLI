@@ -54,9 +54,9 @@ Innerhalb dieser Arbeit soll eine Teilmenge der ermittelten \num{15} Netzgebiete
 An dieser Stelle soll das grundlegende Vorgehen erläutert werden. \medskip
 
 Grundlage des \kmeans bildet der \gls{EMA} des Python Paketes \textit{scikit learn} \cite{scikit-learn2011}.
-Hierbei kann jedes \gls{MS}-Netz durch die Definition mehrerer numerischer Attribute als Punkt im mehrdimensionalen Raum beschrieben werden.
+Hierbei kann jedes \gls{MS}-Netzgebiet durch die Definition mehrerer numerischer Attribute als Punkt im mehrdimensionalen Raum beschrieben werden.
 Der Algorithmus bildet anschließend eine vorgegebene Anzahl an Clustern $k$ durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
-Für die Bildung der Cluster werden die folgenden vier Attribute verwendet, um die einzelnen \gls{MS}-Netze zu repräsentieren:
+Für die Bildung der Cluster werden die folgenden vier Attribute verwendet, um die einzelnen \gls{MS}-Netzgebiet zu repräsentieren:
 
 \begin{itemize}
 	\item Entwicklung der installierten \gls{PV}-Kapazitäten
@@ -66,7 +66,7 @@ Für die Bildung der Cluster werden die folgenden vier Attribute verwendet, um d
 \end{itemize}
 
 Die Regionalisierung der \gls{PV}-, Wind- und \gls{WP}-Kapazitäten erfolgt nach \autoref{chap:Szenariorahmen}.
-Da die Simulation aller \gls{EPKW} aufgrund der großen Anzahl nicht für jedes \gls{MS}-Netz durchgeführt werden kann, muss die Spitzenlast durch \gls{EPKW} bereits im Voraus abgeschätzt werden.
+Da die Simulation aller \gls{EPKW} aufgrund der großen Anzahl nicht für jedes \gls{MS}-Netzgebiet durchgeführt werden kann, muss die Spitzenlast durch \gls{EPKW} bereits im Voraus abgeschätzt werden.
 So wird angenommen, dass nach den Hochlaufzahlen des Antriebswende-Szenarios jeder \gls{PKW} durch einen \gls{EPKW} ersetzt wird und jeder \gls{EPKW} im Jahr \SI{12000}{\km} zurücklegt.
 Anhand eines durchschnittlichen Verbrauches von \SI{20}{\kwhkm} wird anschließend der Ladebedarf je Gemeinde abgeschätzt.
 Anschließend wird der Ladebedarf mit einem beispielhaften Lastprofil auf die Netzgebiete anhand des Flächenanteils der Gemeinde im Netzgebiete verteilt.
@@ -83,13 +83,13 @@ Um durch dieser Arbeit eine Ergänzung zur \textit{E-Mobility Study} \cite{Schac
 So werden jeweils zwei Netzgebiete der Kategorien \gls{PV}- und Wind-dominiert und ein Netzgebiet der Kategorie Last-dominiert ausgewählt, die stellvertretend für viele Netzgebiete stehen.
 Auf diese Weise wird sichergestellt, dass die Effekte der Netzintegration der Elektromobilität für unterschiedliche Netzklassen aufgezeigt werden können.
 Insgesamt werden somit fünf Netzgebiete untersucht, die repräsentativ für \num{1495} der \num{3354} Netzgebiete stehen.
-In \autoref{tab:grid_IDs} werden die untersuchten \gls{MS}-Netze nach ihrem \gls{ID} kategorisiert und die Anzahl an repräsentierten Netzgebiete dargestellt, wobei der Index der Netz \glspl{ID} für die jeweilige Netzkategorie steht.
+In \autoref{tab:grid_IDs} werden die untersuchten \gls{MS}-Netzgebiet nach ihrem \gls{ID} kategorisiert und die Anzahl an repräsentierten Netzgebieten dargestellt, wobei der Index der Netz \glspl{ID} für die jeweilige Netzkategorie steht.
 
 \input{Ch04/tab/Ch04_tab_01_grid_IDs}
 
-In \autoref{fig:bar_representatives} werden die wichtigsten Charakteristika der untersuchten \gls{MS}-Netze dargestellt.
+In \autoref{fig:bar_representatives} werden die wichtigsten Charakteristika der untersuchten \gls{MS}-Netzgebiete dargestellt.
 Hierzu zählen die installierten \gls{PV}- und Wind-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} beim Referenz-Laden (s. \autoref{chap:theo_strategies}) im Antriebswende-Szenario und des konventionellen Stromverbrauches inklusive \glspl{WP}.
-Weiterhin wird in \autoref{fig:map_representatives} eine Karte der repräsentierten \gls{MS}-Netze, eingeteilt in die Kategorien \gls{PV}-, Wind- und Last-dominiert, dargestellt.
+Weiterhin wird in \autoref{fig:map_representatives} eine Karte der repräsentierten \gls{MS}-Netzgebiete, eingeteilt in die Kategorien \gls{PV}-, Wind- und Last-dominiert, dargestellt.
 
 \input{Ch04/fig/Ch04_fig_02_bar_representatives}
 
@@ -107,13 +107,13 @@ Nachfolgend wird zunächst die Datengrundlage und anschließend die Methodik zur
 
 Das Ziel der Befragung \gls{MID} \cite{ISGH2017} ist es, eine Datengrundlage für das alltägliche Mobilitätsverhalten von Personen und Haushalten über ein Jahr zu bilden.
 Für diese Arbeit sind vor allem die Erhebungen der sieben Hauptwegezwecke entscheidend.
-Diese sind: Arbeit, dienstlich, Ausbildung, Einkauf, Erledigung, Freizeit und Begleitung.
+Diese sind: \textit{Arbeit}, \textit{dienstlich}, \textit{Ausbildung}, \textit{Einkauf}, \textit{Erledigung}, \textit{Freizeit} und \textit{Begleitung}.
 In \autoref{tab:wegezweck} wird die prozentuale Aufteilung der Hauptwegezwecke am \gls{PKW}-Verkehrsaufkommen in Wegen beschrieben.
 
 \input{Ch04/tab/Ch04_tab_02_wegezweck}
 
 Der Wegezweck \glqq Begleitung\grqq{} wird innerhalb von \gls{SIMBEV} nicht abgebildet, da hierfür keine zusätzliche Fahrt angetreten wird.
-Der Rückweg der Wegezwecke wird getrennt als Wegezweck \nH berücksichtigt, da dem Laden \zH eine besonders wichtige Rolle zukommt.
+Der Rückweg der Wegezwecke wird getrennt als Wegezweck \nH berücksichtigt, da dem Laden zu Hause eine besonders wichtige Rolle zukommt.
 Weiterhin dient \gls{SIMBEV} nur der Erstellung von Fahrtprofilen für \glspl{PKW}, weshalb ausschließlich die Ergebnisse der Befragung zu Fahrten mit dem Hauptverkehrsmittel \gls{PKW} betrachtet werden.
 Die für diese Arbeit entscheidenden Befragungsergebnisse sind somit die Fahrtzeiten, Fahrtstrecken und anschließenden Standzeiten je Hauptwegezweck für Fahrten mit \glspl{PKW}.
 Bei den Befragungsergebnissen kann zusätzlich zwischen den in \autoref{tab:RegioStaR} aufgelisteten \glspl{REGIOSTAR} unterschieden werden.
@@ -160,7 +160,7 @@ Um abschließend ein Fahrtprofil für ein ganzes Jahr zu erhalten, werden die Fa
 
 \subsubsection{Regionalisierung des Fahrzeugbestandes}
 
-Um die Anzahl an \glspl{EPKW} je \gls{MS}-Netz zu bestimmen, muss der Gesamtbestand an \glspl{EPKW} je Szenario (s. \autoref{tab:SzenarienRampUp} und \autoref{tab:CarSplit}) regionalisiert werden.
+Um die Anzahl an \glspl{EPKW} je \gls{MS}-Netzgebiet zu bestimmen, muss der Gesamtbestand an \glspl{EPKW} je Szenario (s. \autoref{tab:SzenarienRampUp} und \autoref{tab:CarSplit}) regionalisiert werden.
 Die Regionalisierung der \glspl{EPKW} findet vorerst auf Ebene der Landkreise statt.
 Als Grundlage hierfür dient der aktuelle \gls{PKW}-Bestand nach Zulassungsbezirken \cite[][Stand: \DTMdate{2020-01-01}]{KBAPLZ2020}.
 Es wird davon ausgegangen, dass es zu keiner Verschiebung des Bestandanteils zwischen den Zulassungsbezirken kommt.
@@ -171,7 +171,7 @@ Die geographische Einteilung der Landfläche in \glspl{REGIOSTAR} erfolgt auf Ge
 Da auf Gemeindeebene keine Daten zum \gls{PKW}-Bestand vorliegen, erfolgt die Regionalisierung anhand der Bevölkerungszahl der Gemeinden.
 Die Grundlage hierfür bildet der Datensatz \textit{Gemeindegrenzen 2017 mit Einwohnerzahl} \cite[][Stand: \DTMdate{2017-12-31}]{EDG2020}.
 Die Verteilung der Anzahl der \glspl{EPKW} erfolgt proportional zur Bevölkerungszahl in der jeweiligen Gemeinde.
-Jedes \gls{MS}-Netz streckt sich dabei in der Regel über mehrere Gemeinden, wobei einzelne Gemeinden auch nur anteilig innerhalb eines Netzgebietes liegen können.\medskip
+Jedes \gls{MS}-Netzgebiet streckt sich dabei in der Regel über mehrere Gemeinden, wobei einzelne Gemeinden auch nur anteilig innerhalb eines Netzgebietes liegen können.\medskip
 
 Um abschließend die Fahrtprofile erzeugen zu können, muss jeder Gemeinde eine \gls{REGIOSTAR} Nummer zugeordnet werden.
 Die entsprechende Zuordnung für das Jahr \num{2018} kann dem Datensatz \textit{Referenzdateien zur regionalstatistischen Raumtypologie} \cite[][Stand: \DTMdate{2018-01-01}]{BMVIa2020} entnommen werden.
@@ -198,6 +198,7 @@ Erweiternd zu der Identifizierung der möglichen Ladeinfrastruktur wurde innerha
 \subsubsection{Private Ladeinfrastruktur}
 
 Die private Ladeinfrastruktur beinhaltet alle Ladevorgänge, die am Eigenheim, in Wohnanlagen oder auf dem Firmenparkplatz stattfinden.
+Eine genaue Beschreibung der \UCs findet sich in \autoref{chap:Szenariorahmen}.
 Um mögliche Standorte für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen identifizieren zu können, wird die Anzahl an Wohneinheiten auf einem \SI{100 x 100}{\m} Raster aus dem \textit{Zensus 2011} \cite{StatistischesBundesamt2011} verwendet.
 So wird jedem Raster mit mehr als einer Wohneinheit und einer Einwohnerzahl größer Null ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet und anhand der Gesamtanzahl von Wohneinheiten im Raster gewichtet. \medskip
 
@@ -231,22 +232,22 @@ Deshalb werden in diesen drei Fällen die möglichen Anschlusspunkte mehrfach ve
 Dabei wird für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen ein Belegungsfaktor von \num{7}, auf Firmenparkplätzen von \num{5} und für die öffentlichen Normalladeinfrastruktur von \num{2} verwendet.\medskip
 
 Jedem Anschlusspunkt wird vor der Zuteilung der Ladevorgänge eine maximale Anzahl an möglichen Ladepunkten zugeordnet.
-Diese entspricht dem Verhältnis von \glspl{EPKW} im \gls{MS}-Netz und der Anzahl möglicher Ladepunkte je \UC multipliziert mit einem Faktor von \num{5}.
+Diese entspricht dem Verhältnis von \glspl{EPKW} im \gls{MS}-Netzgebiet und der Anzahl möglicher Ladepunkte je \UC multipliziert mit einem Faktor von \num{5}.
 Nachdem einem Anschlusspunkt ein Ladepunkt zugeordnet wird, wird die Gewichtung des Anschlusspunktes linear abgesenkt, sodass die Gewichtung des Anschlusspunktes auf Null fällt, sobald die maximale Anzahl an möglichen Ladepunkten erreicht wurde.\medskip
 
 Die Zuteilung der Ladevorgänge auf die Ladeinfrastruktur erfolgt mit Hilfe des Gewichtungsfaktors der Anschlusspunkte.
 Dabei erfolgt eine zufällige und gewichtete Auswahl eines Anschlusspunktes je Ladevorgang.
 Im Falle der privaten Ladeinfrastruktur wird für jeden \gls{EPKW} ein eigener Ladepunkt eingerichtet.
-Diesem Ladepunkt werden alle Ladevorgänge des jeweiligen \glspl{EPKW} und \UCs zugeordnet.\medskip
+Diesem Ladepunkt werden alle Ladevorgänge des jeweiligen \glspl{EPKW} und \UC zugeordnet.\medskip
 
 Für die öffentliche Ladeinfrastruktur erfolgt die Zuweisung dezidiert pro Ladevorgang.
 So wird je Ladevorgang untersucht, ob bereits ein passender Ladepunkt zur Verfügung steht.
 Hierbei wird beachtet, ob in dem entsprechenden Zeitraum der Ladepunkt durch einen anderen \gls{EPKW} besetzt ist und ob dieser die entsprechende Ladeleistung zur Verfügung stellen kann.
 Sollte kein passender Ladepunkt zur Verfügung stehen, wird analog zum Vorgehen bei der privaten Ladeinfrastruktur ein Ladepunkt zufällig und gewichtet ausgewählt und eingerichtet.\medskip
 
-Da die \gls{MS}-Netze nicht immer die Gesamtfläche einer Gemeinde abdecken, muss abschließend geprüft werden, ob die generierten Anschlusspunkte innerhalb des Netzgebietes liegen.
-Liegt ein Anschlusspunkt innerhalb eines \gls{MS}-Netzes, so wird er diesem zugeordnet.
-Wenn nicht, dann fallen die zugeordneten Ladevorgänge innerhalb eines angrenzenden \gls{MS}-Netzes an und sind somit nicht Teil der abschließenden Auswertungen.
+Da die \gls{MS}-Netzgebiete nicht immer die Gesamtfläche einer Gemeinde abdecken, muss abschließend geprüft werden, ob die generierten Anschlusspunkte innerhalb des Netzgebietes liegen.
+Liegt ein Anschlusspunkt innerhalb eines \gls{MS}-Netzgebietes, so wird er diesem zugeordnet.
+Wenn nicht, dann fallen die zugeordneten Ladevorgänge innerhalb eines angrenzenden \gls{MS}-Netzgebietes an und sind somit nicht Teil der abschließenden Auswertungen.
 
 
 \subsubsection{Netzintegration der Ladeinfrastruktur}
@@ -255,9 +256,9 @@ Die Netzintegration der Ladeinfrastruktur erfolgt automatisiert mit Hilfe der \t
 Der Anschluss erfolgt hierbei bis zu einer Anschlussleistung von \SI{0.3}{\mva} in der \gls{NS}-Ebene und bei höheren Anschlussleistungen direkt in der \gls{MS}-Ebene.
 Bei einem Anschluss in der \gls{NS}-Ebene erfolgt der Anschluss immer innerhalb des \gls{NS}-Netzes, dessen \gls{MS}-\gls{NS}-\gls{USW} am nächsten an dem anzuschließenden Anschlusspunkt liegt.
 Ab einer Leistung von \SI{0.1}{\mva} erfolgt der Anschluss über eine Kabelverbindung direkt an der \gls{MS}-\gls{NS}-Station.
-Unter einer Leistung von \SI{0.1}{\mva} hängt die Art des Anschlusses von dem \textit{Use Case} der Ladestation ab.
+Unter einer Leistung von \SI{0.1}{\mva} hängt die Art des Anschlusses von dem \textit{use case} der Ladestation ab.
 Für den \UC \zH wird die Ladestation an der nächstgelegenen Haushaltslast im identifizierten \gls{NS}-Netz angeschlossen.
-Im Falle des \UCs \Firmeparkplatz erfolgt der Anschluss an dem nächstgelegenen gewerblichen, industriellen oder landwirtschaftlichen Verbraucher.
+Im Falle des \UC \Firmeparkplatz erfolgt der Anschluss an dem nächstgelegenen gewerblichen, industriellen oder landwirtschaftlichen Verbraucher.
 Demgegenüber erfolgt im Falle von öffentlicher Ladeinfrastruktur der Netzanschluss der Ladestation an dem nächstgelegen Verbraucher, der keine Haushaltslast darstellt.\medskip
 
 Erfolgt der Anschluss in der \gls{MS}-Ebene, wird die Ladestation über ein Kabel an dem nächstgelegenen Netzknoten oder Kabel angeschlossen.
@@ -301,7 +302,7 @@ Hierfür werden die einzelnen Ladepunkte in zwei Gruppen eingeteilt.
 Beiden Gruppen werden alternierend 15-minütige Ladezeitfenster zugewiesen, in denen bei voller Ladeleistung der Ladebedarf gedeckt wird.
 Reichen die zugewiesenen Ladezeitfenster nicht aus, um den Ladebedarf des Ladevorgangs zu decken, werden auch die Ladezeitfenster der anderen Gruppe verwendet, bis der Ladebedarf gedeckt werden kann.
 Die Ladezeitfenster der eigenen Gruppe werden dabei priorisiert behandelt.
-Es wird darauf geachtet, dass die Zuweisung der Gruppen nicht nur innerhalb eines \gls{MS}-Netzes möglichst leistungshomogen erfolgt, sondern detailliert bis in die einzelnen Stränge der \gls{NS}-Ebene.
+Es wird darauf geachtet, dass die Zuweisung der Gruppen nicht nur innerhalb eines \gls{MS}-Netzgebietes möglichst leistungshomogen erfolgt, sondern detailliert bis in die einzelnen Stränge der \gls{NS}-Ebene.
 Innerhalb eines \gls{NS}-Stranges wird weiterhin darauf geachtet, dass auch die einzelnen Leistungsklassen der Ladeinfrastruktur gleichmäßig auf die Gruppen verteilt werden.
 Erfolgt der Anschluss einer Ladestation auf der \gls{MS}-Ebene, wird diese Ladestation wie ein eigener \gls{NS}-Strang behandelt und die einzelnen Ladepunkte dementsprechend in die Gruppen eingeteilt.
 In \autoref{fig:group_vis} wird beispielhafte die Einteilung von Ladepunkten auf die zwei Gruppen innerhalb eines \gls{NS}-Stranges dargestellt. \cite{Schachler2021}
@@ -321,7 +322,7 @@ Im Gegensatz zur Referenz-Ladestrategie werden unabhängig von der Netzebene bei
 \subsubsection{Residuallast-Laden}
 
 Bei dem Residuallast-Laden handelt es sich um eine aktive Ladestrategie.
-Der Ladevorgang eines \gls{EPKW} findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des \gls{MS}-Netzes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
+Der Ladevorgang eines \gls{EPKW} findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des \gls{MS}-Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
 Die Zuweisung findet auf Viertelstundenbasis und die Ladevorgänge immer bei voller Ladeleistung statt.
 Das Ziel der Optimierung kann so formuliert werden, dass eine Minimierung der \glspl{MQA} nach \autoref{eq:residual} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
 
@@ -439,12 +440,12 @@ Anschließend wird die Last bzw. die Einspeisung in \SI{5}{\percent}-Schritten i
 Beides wird so lange wiederholt, bis keine Netzprobleme mehr auftreten.\medskip
 
 Um die Rechenzeit innerhalb eines akzeptablen Maßes zu halten, erfolgt die Ermittlung des Abregelungsbedarfs für zwei Wochen des Jahres.
-Hierbei werden die Wochen untersucht, die im \gls{MS}-Netz die minimale bzw. maximale durchschnittliche Residuallast aufweisen.
+Hierbei werden die Wochen untersucht, die im \gls{MS}-Netzgebiet die minimale bzw. maximale durchschnittliche Residuallast aufweisen.
 Auf diese Weise sollen möglichst extreme Belastungssituationen abgedeckt werden.\medskip
 
 Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
-Dabei werden zuerst die einzelnen \gls{NS}-Netze eines \gls{MS}-Netzes einzeln betrachtet, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.
-Durch die vorgeschaltete Einzelbetrachtung der \gls{NS}-Netze kann der Abregelungsbedarf eindeutig der \gls{NS}- bzw. \gls{MS}-Ebene zugeordnet werden.\medskip
+Aus diesem Grund werden zuerst die \gls{NS}-Netze eines \gls{MS}-Netzgebiets einzeln betrachtet, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.
+% Durch die vorgeschaltete Einzelbetrachtung der \gls{NS}-Netze kann der Abregelungsbedarf eindeutig der \gls{NS}- bzw. \gls{MS}-Ebene zugeordnet werden.\medskip
 
 Bei der Lösung der Netzprobleme werden vorerst Spannungsprobleme und abschließend Überlastungen behandelt.
 Weiterhin werden Probleme in der \gls{NS}-Ebene behandelt, bevor Probleme in der \gls{MS}-\gls{NS}-Umspannebene und abschließend in der \gls{MS}-Ebene gelöst werden.
@@ -453,7 +454,7 @@ Weiterhin werden Netzprobleme innerhalb der \gls{NS}- bzw. \gls{MS}-Ebene anhand
 So kann auch hier die Lösung von weiter entfernten Netzproblemen bereits vorgeschaltete Netzprobleme auflösen oder entspannen.
 Für jeden Zeitschritt, in dem Überlastungs- oder Spannungsprobleme an einem Netzknoten auftreten, wird geprüft, ob die Netzprobleme durch hohe Nachfrage oder hohe Einspeisung entstehen.
 Anhand dieser Information wird entschieden, ob Last oder Einspeisung abgeregelt werden soll.
-Die gesamte notwendige Abregelung für das \gls{MS}-Netz ergibt sich aus der Summierung aller nötigen Abregelungen von Last und Erzeugung.
+Die gesamte notwendige Abregelung für das \gls{MS}-Netzgebiet ergibt sich aus der Summierung aller nötigen Abregelungen von Last und Erzeugung.
 In \autoref{fig:scope_curtailment} ist das Vorgehen veranschaulicht.
 
 \input{Ch04/fig/Ch04_fig_08_scope_curtailment}
