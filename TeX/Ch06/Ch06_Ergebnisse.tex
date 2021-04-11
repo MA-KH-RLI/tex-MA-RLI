@@ -20,7 +20,7 @@ Zusätzlich findet sich im Anhang in \autoref{tab:car_count_long} eine detaillie
 
 \input{Ch06/tab/Ch06_tab_01_car_count}
 
-Die \num{34} Gemeinden weisen drei der sieben \gls{REGIOSTAR} (s. \autoref{tab:RegioStaR}) auf.
+Die \num{34} Gemeinden weisen drei der sieben \gls{REGIOSTAR} (vgl. \autoref{tab:RegioStaR}) auf.
 Hierzu zählen der kleinstädtische, dörfliche Raum einer ländlichen Region (\gls{ID} \num{77}), Mittelstädte im städtischen Raum (\gls{ID} \num{76}) und Mittelstädte im städtischen Raum einer Stadtregion (\gls{ID} \num{73}).
 Die Jahresfahrleistung der simulierten \glspl{BEV} je \gls{REGIOSTAR} wurde zusammenfassend über alle Szenarien hinweg berechnet und findet sich in \autoref{tab:bev_distance}.
 Dabei zeigt sich, dass in \gls{ID} \num{77} im Schnitt die weitesten Strecken zurückgelegt werden, welches den Erwartungen nach \gls{MID} \cite{Nobis2019} entspricht.
@@ -60,7 +60,7 @@ Vor allem am Sonntag kommt es zu geringeren Anteilen von Ladevorgängen der \UCs
 Gegenüber dem Antriebswende-Szenario sinkt die Höchstlast in der \SzeFirmenparkplatzdot.
 Jedoch sinkt auch das Flexibilisierungspotential bei einem annähernd gleichbleibendem Energiebedarf durch die Verschiebung der Ladevorgänge in den öffentlichen Raum.\medskip
 
-Die entsprechenden Dauerlastkurven für die Gemeinde über eine Woche (s. \autoref{fig:example_load_curve}) zeigen deutlich die dominante Rolle der Hochlastphase, die aufgrund der hohen Gleichzeitigkeit des Wegezwecks \Arbeit in den \UCs \Firmeparkplatz und \Straszenrand auftritt.
+Die entsprechenden Dauerlastkurven für die Gemeinde über eine Woche nach \autoref{fig:example_load_curve} zeigen deutlich die dominante Rolle der Hochlastphase, die aufgrund der hohen Gleichzeitigkeit des Wegezwecks \Arbeit in den \UCs \Firmeparkplatz und \Straszenrand auftritt.
 So wird im Antriebswende-Szenario eine Spitzenlast von \SI{14.8}{\mw} erreicht und in der \SzeFirmenparkplatz von nur \SI{11.3}{\mw}.
 Dem Netz \(176_{\text{PV}}\) werden im Antriebswende-Szenario \SI{26359}{\FZ} zugeordnet, welches einem Verhältnis von Spitzenlast zu Fahrzeugen von \SIrange[range-phrase=~bzw.~]{0.56}{0.43}{\kWperFZ} entspricht.
 Zum Vergleich wurde in der \textit{Kurzstudie Elektromobilität} für den \gls{NEP} \cite{Ebner2019} für \SI{12}{\MioStk} innerhalb eines Jahres eine Spitzenlast von \SI{12}{\gw} ermittelt, welches einem Verhältnis von \SI{1.00}{\kWperFZ} entspricht.
@@ -105,7 +105,7 @@ Da im Antriebswende-Szenario mehr Ladevorgänge des Wegezwecks \Arbeit auf eine 
 
 In \autoref{tab:largestLVGridShare} ist die Anzahl an \gls{NS}-Netzen je \gls{MS}-Netzgebiet und der maximale Anteil eines \gls{NS}-Netzes am Gesamtenergiebedarf der Ladeinfrastruktur in der \gls{NS}-Ebene in allen betrachteten Szenarien dargestellt.
 Hierbei wird deutlich, dass es in einigen \gls{MS}-Netzgebieten zu einer starken lokalen Konzentration an Ladeinfrastruktur kommt.
-So fallen beispielsweise im Netz \(176_{\text{PV}}\) im NEP C~\num{2035} Szenario \SI{36.3}{\percent} des Energiebedarfs der Ladeinfrastruktur in der \gls{NS}-Ebene innerhalb eines einzigen \gls{NS}-Netzes an.
+So fallen beispielsweise im Netz \(176_{\text{PV}}\) im \gls{NEP} C~\num{2035} Szenario \SI{36.3}{\percent} des Energiebedarfs der Ladeinfrastruktur in der \gls{NS}-Ebene innerhalb eines einzigen \gls{NS}-Netzes an.
 Diese starke Konzentration spiegelt sich in \autoref{fig:cps_in_grid} durch eine starke Konzentration der Ladeinfrastruktur in den bewohnten Regionen wider.
 In der Realität würde es bei solch starken lokalen Konzentrationen vermutlich zu einem Netzneubau kommen, welcher innerhalb dieser Arbeit nicht abgebildet werden kann.
 
@@ -205,8 +205,8 @@ Demgegenüber kann durch das reduzierte Laden der Abregelunsgebdarf deutlich ges
 \input{Ch06/fig/Ch06_fig_06_pv_dominated_load_diff_week_A}
 
 Im Netz \(176_{\text{PV}}\) nimmt der Nutzen des reduzierten Ladens mit dem Hochlauf an \gls{EPKW} immer weiter ab, während im Netz \(1056_{\text{PV}}\) der Nutzen auf einem sehr konstanten Niveau verläuft.
-In \autoref{fig:176_load_curtailment_per_strategy} findet sich die durchschnittliche Abregelung von Lasten im Netz \(176_{\text{PV}}\) für die Szenarien NEP C~\num{2035} und Antriebswende.
-Es zeigt sich, dass im NEP C~\num{2035} Szenario noch erfolgreich Last vom Nachmittag und Abend in die Nacht verschoben werden kann, ohne den Abregelungsbedarf nachts zu erhöhen.
+In \autoref{fig:176_load_curtailment_per_strategy} findet sich die durchschnittliche Abregelung von Lasten im Netz \(176_{\text{PV}}\) für die Szenarien \gls{NEP} C~\num{2035} und Antriebswende.
+Es zeigt sich, dass im \gls{NEP} C~\num{2035} Szenario noch erfolgreich Last vom Nachmittag und Abend in die Nacht verschoben werden kann, ohne den Abregelungsbedarf nachts zu erhöhen.
 Im Antriebswende-Szenario ist dies nicht mehr möglich und es kommt beim reduzierten Laden nachts zu einem stark erhöhten Abregelungsbedarf.
 So wird bei einer starken Überlastung des Netzes die Abregelung nur zeitlich vom Nachmittag und Abend in die Nacht verschoben, ohne dass ein wesentlicher Anteil an Abregelung vermieden werden kann.
 Diese extremen Überlastungssituationen treten im Netz \(1056_{\text{PV}}\) nicht auf, weshalb das reduzierte Laden unabhängig von den Szenarien immer ähnliche Erfolge mit sich bringt.
@@ -224,10 +224,10 @@ Das Netz \(176_{\text{PV}}\) weist nach \autoref{fig:176_1056_cur_load_grid_week
 So kann vor allem in Szenarien mit einem niedrigeren Hochlauf an \gls{EPKW} Abregelung durch das reduzierte Laden verhindert werden.
 Die beiden anderen Ladestrategien zeigen in der Regel nur einen minimalen Einfluss auf den Abregelungsbedarf.\medskip
 
-Aufgrund des niedrigen Ladebedarfs im NEP C~\num{2035} Szenario fällt der Einfluss der Lastverschiebung auf die Residuallast gering aus.
+Aufgrund des niedrigen Ladebedarfs im \gls{NEP} C~\num{2035} Szenario fällt der Einfluss der Lastverschiebung auf die Residuallast gering aus.
 Aus diesem Grund wird viel Last in wenige Zeitschritte der Hochzeit der \gls{PV}-Einspeisung verschoben.
 In diesen Zeitschritten fällt die Gleichzeitigkeit hoch aus und es kommt zu einem erhöhten lastseitigem Abregelungsbedarf.
-Da hierbei teilweise auch Last aus Zeitschitten ohne Abregelungsbedarf in Zeitschritte mit Abregelungsbedarf verschoben wird, kommt es im NEP C~\num{2035} Szenario sogar zu einem insgesamt erhöhten lastseitigen Abregelungsbedarf.
+Da hierbei teilweise auch Last aus Zeitschitten ohne Abregelungsbedarf in Zeitschritte mit Abregelungsbedarf verschoben wird, kommt es im \gls{NEP} C~\num{2035} Szenario sogar zu einem insgesamt erhöhten lastseitigen Abregelungsbedarf.
 Durch die Zunahme des Einflusses auf die Residuallast mit einem steigenden Ladebedarf, fällt dieser Effekt in den anderen Szenarien schwächer aus.\medskip
 
 Im Netz \(1056_{\text{PV}}\) kann hingegen der Abregelungsbedarf durch das Residuallast-Laden um bis zu \SI{10.5}{\percent} gesenkt werden.
@@ -273,7 +273,7 @@ Vor allem beim reduzierten Laden spiegelt sich dies in dem Absinken der Residual
 \input{Ch06/fig/Ch06_fig_10_pv_dominated_1056_fEE_load_diff}
 
 In den beiden \gls{PV}-dominierten Netzen kommt es insgesamt zu einer Abnahme der Effizienz erzeugerseitige Abregelung zu verhindern, mit jeder zusätzlich verschobenen Kilowattstunde.
-So beträgt im Netz \(1056_{\text{PV}}\) im NEP C~\num{2035} Szenario das Verhältnis zwischen der Einsparung erzeugerseitiger Abregelung aufgrund des Residuallast-Ladens gegenüber dem Referenzladen und dem flexibilsierbaren Ladebedarf noch \SI{-6.1}{\percent}.
+So beträgt im Netz \(1056_{\text{PV}}\) im \gls{NEP} C~\num{2035} Szenario das Verhältnis zwischen der Einsparung erzeugerseitiger Abregelung aufgrund des Residuallast-Ladens gegenüber dem Referenzladen und dem flexibilsierbaren Ladebedarf noch \SI{-6.1}{\percent}.
 Mit Hilfe dieser Kennzahl soll die Effizienz des Residuallast-Ladens zwischen den \gls{MS}-Netzgebieten vergleichbar gemacht werden, wobei negative Werte für eine Reduktion des Abregelungsbedarfs von \gls{FEE} Anlagen stehen.
 Im Antriebswende-Szenario sinkt dieser Wert auf \SI{-3.1}{\percent}.
 Für das Netz \(176_{\text{PV}}\) liegen beide Werte mit \SI{-0.7}{\percent} bzw. \SI{-0.5}{\percent} deutlich niedriger, da der Ladebedarf in diesem Netz höher und der erzeugerseitige Abregelungsbedarf geringer ausfällt.
