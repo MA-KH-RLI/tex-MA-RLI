@@ -8,47 +8,51 @@ In \autoref{chap:Szenariorahmen} werden unter anderem die Ergebnisse der Metaana
 Insgesamt werden drei Szenarien und fünf Referenznetzgebiete auf die Auswirkungen der Netzintegration von \glspl{EPKW} untersucht.
 Hierfür wird mit \gls{SIMBEV} ein Software Tool entwickelt, mit welchem Fahrtprofile von \gls{EPKW} erstellt werden können.
 Anschließend wird eine Methodik aufgestellt und umgesetzt, um die Ladevorgänge der \gls{EPKW} einer konkreten Ladeinfrastruktur zuzuweisen und diese in die Netzmodelle einzubinden.
-Anschließend werden drei Ladestrategien (namentlich Ladegruppen (präventiv), reduziertes Laden (präventiv) und Residuallast-Laden (aktiv)) entwickelt und die hierbei erzeugten Lastzeitreihen der Ladeinfrastruktur in die Netzmodelle integriert.
+Anschließend werden drei Ladestrategien {--} namentlich Ladegruppen (präventiv), reduziertes Laden (präventiv) und Residuallast-Laden (aktiv) {--} entwickelt und die erzeugten Lastzeitreihen der Ladeinfrastruktur in die Netzmodelle integriert.
 Mit Hilfe einer Lastflussanalyse werden die Referenznetzgebiete auf Netzprobleme untersucht.
 Abschließend wird der Abregelungsbedarf ermittelt, welcher nötig ist, um die auftretenden Netzprobleme aufzulösen.\medskip
 
 Es kann gezeigt werden, dass mit \gls{SIMBEV} plausibel erscheinende Fahrtprofile erzeugt werden können.
-Die anschließend Verteilung des Ladebedarfs führt vermehrt zu starken Belastungen einzelner \gls{NS}-Netze innerhalb der Referenznetzgebiete.
+Die anschließende Verteilung des Ladebedarfs führt vermehrt zu starken Belastungen einzelner \gls{NS}-Netze innerhalb der Referenznetzgebiete.
 In der Realität würde es hierbei vermutlich zu einem Netzneubau kommen, welcher innerhalb dieser Arbeit nicht abgebildet werden kann.\medskip
 
 Bei den Ladestrategien wird nur mit Hilfe des Residuallast-Ladens eine wesentliche Glättung der Residuallast erreicht, während die präventiven Ladestrategien zu einer Erhöhung der Spreizung zwischen der maximalen und minimalen Residuallast führen.
 Der negative Effekt der präventiven Ladestrategien lässt sich primär in Netzen mit einem hohen Anteil an \glspl{PVA} beobachten.
-Innerhalb dieser Netze kommt es am frühen Nachmittag zu einer niedrigen Residuallast.
-Bei den präventiven Ladestrategien fällt innerhalb dieses Zeitfensters hauptsächlich der Ladebedarf des \UCs \zH geringer aus als beim Referenz-Laden, weshalb die Residuallast weiter gesenkt wird.\medskip
+Am frühen Nachmittag kommt es in diesen Netzen aufgrund der präventiven Ladestrategien zu einem geringeren Ladebedarf.
+Da in diesem Zeitfenster die Einspeisung der \glspl{PVA} in der Regel hoch ausfällt, wird hierdurch die Residuallast in diesen Zeitschritten gesenkt.\medskip
 
 In den \gls{PV}-dominierten Netzen kommt es ausschließlich zu einer Abregelung von \gls{FEE} Anlagen in der Hochzeit der \gls{PV}-Einspeisung um die Mittagszeit herum.
-Bei den präventiven Ladestrategien fällt in diesem Zeitfenster primär der Ladebedarf des \UCs \zH in der \gls{NS}-Ebene geringer aus als beim Referenz-Laden.
-Da in \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen des \UCs \zH in der Regel auch viele \glspl{PVA} verortet sind, erhöht sich in diesen Fällen aufgrund der präventiven Ladestrategien der Abregelungsbedarf von \gls{FEE} Anlagen.
-In den Wind-dominierten Netzen ist dieser Effekt aufgrund des geringeren Anteils von \glspl{PVA} geringer ausgeprägt.\medskip
+Bei den präventiven Ladestrategien fällt in diesem Zeitfenster wie zuvor beschrieben der Ladebedarf geringer aus als beim Referenz-Laden, wovon vor allem der \UC \zH betroffen ist.
+Da in \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen des \UC \zH in der Regel auch viele \glspl{PVA} verortet sind, erhöht sich in diesen Fällen aufgrund der präventiven Ladestrategien der Abregelungsbedarf von \gls{FEE} Anlagen.
+In den Wind-dominierten Netzen ist dieser Effekt aufgrund des niedrigen Anteils von \glspl{PVA} an den Erzeugerkapazitäten geringer ausgeprägt.\medskip
 
-Demgegenüber kann in \gls{PV}-dominierten Netzen durch das Residuallast-Laden der Abregelungsbedarf von \gls{FEE} Anlagen gesenkt werden, da viele Ladevorgänge in der Mittagszeit stattfinden.
-In den Wind-dominierten Netzen kommt es jedoch auch bei dem Residuallast-Laden zu einem erhöhten Abregelungsbedarf an \gls{FEE} Anlagen.
-Hierbei lässt sich beobachten, dass vor allem viele Ladevorgänge des \UCs \zH in die Nacht verschoben werden, weil in diesen Netzen die Residuallast aufgrund einer geringen Last und der Erzeugung der Wind-Kapazitäten im Netzgebiet zu dieser Zeit sehr gering ausfällt.
+Durch das Residuallast-Laden kann der Abregelungsbedarf von \gls{FEE} Anlagen in \gls{PV}-dominierten Netzen gesenkt werden, da viele Ladevorgänge in die Mittagszeit verschoben werden und es zu einem besseren Ausgleich zwischen Last und Erzeugung kommt.
+In den Wind-dominierten Netzen kommt es hingegen aufgrund des Residuallast-Ladens zu einem erhöhten Abregelungsbedarf an \gls{FEE} Anlagen.
 In diesen Fällen lassen sich zwei Effekte beobachten.
-Zum einen befindet sich in den Wind-dominierten Netzen zusätzlich ein gewisser Anteil an \glspl{PVA}, welcher wie zuvor beschrieben vermehrt in \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen verortet ist.
+Zum einen befindet sich in den Wind-dominierten Netzen zusätzlich ein gewisser Anteil an \glspl{PVA}, welcher wie zuvor beschrieben vermehrt in \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen des \UC \zH verortet ist.
+Aufgrund einer niedrigen Residuallast in der Nacht, werden jedoch viele Ladevorgänge des \UC \zH in die Nacht verschoben.
 Zum anderen befinden sich Wind-Kapazitäten nicht in örtlicher Nähe der privaten Ladeinfrastruktur und werden auf der \gls{MS}-Ebene angeschlossen.
 Hierdurch wird der Abregelungsbedarf der Wind-Kapazitäten durch die Ladestrategien kaum beeinflusst, während sich der Abregelungsbedarf der \glspl{PVA}, und somit in Summe der Abregelungsbedarf von \gls{FEE} Anlagen, erhöht.\medskip
 
 Der lastseitige Abregelungsbedarf kann sowohl durch das reduzierte Laden als auch das Residuallast-Laden in den meisten Fällen gesenkt werden.
-Dabei ist insbesondere der Erfolg das Residuallast-Ladens davon abhängig, ob sich die Erzeugerkapazitäten in den gleichen \gls{NS}-Netzen befinden wie die Ladestationen, ob die Ladung der \glspl{EPKW} und die Einspeisung innerhalb eines \gls{NS}-Netzes gleichzeitig erfolgen und ob die \gls{NS}-Netze nur in einer begrenzten Anzahl von Zeitschritten überlastet sind.
+Dabei ist insbesondere der Erfolg des Residuallast-Ladens davon abhängig, ob sich die Erzeugerkapazitäten in den gleichen \gls{NS}-Netzen befinden wie die Ladestationen, ob die Ladung der \glspl{EPKW} und die Einspeisung innerhalb eines \gls{NS}-Netzes gleichzeitig erfolgen und ob die \gls{NS}-Netze nur in einer begrenzten Anzahl von Zeitschritten überlastet sind.
 Sind diese Bedingungen gegeben, dann kann durch das Residuallast-Laden ein Großteil des lastseitigen Abregelungsbedarfs vermieden werden.
-Bei den Wind-dominierten Netzen ist dies hingegen nicht der Fall, da sich das Residuallast-Laden an einer globalen Residuallast im gesamten Netzgebiet orientiert, welche nur bedingt die lokale Situation widerspiegelt.
-In diesen Fällen kann vor allem durch das reduzierte Laden der lastseitige Abregelungsbedarf gesenkt werden.\medskip
+Bei den Wind-dominierten Netzen ist dies nicht der Fall, da sich das Residuallast-Laden an einer globalen Residuallast im gesamten Netzgebiet orientiert, welche nur bedingt die lokale Situation widerspiegelt.
+In diesen Fällen kann durch das reduzierte Laden der lastseitige Abregelungsbedarf stärker gesenkt werden.\medskip
 
-Mit einem steigenden Ladebedarf der \glspl{EPKW} in den Szenarien kommt es in den meisten Referenznetzgebieten immer stärker dazu, dass in einem Großteil der Zeitschritte lastseitige Abregelung benötigt wird.
-Hierdurch nimmt das relative Senkungspotential des lastseitigen Abregelungsbedarfs ab, da der Abregelungsbedarf verstärkt verschoben, aber nicht verhindert wird.\medskip
+Mit einem steigenden Ladebedarf aufgrund eines erhöhten Hochlaufs der \glspl{EPKW} mit den Szenarien kommt es in den meisten Referenznetzgebieten immer stärker dazu, dass in einem Großteil der Zeitschritte lastseitige Abregelung nötig ist.
+Hierdurch nimmt das relative Senkungspotential des lastseitigen Abregelungsbedarfs ab, da der Abregelungsbedarf verstärkt verschoben, aber nicht verhindert wird.
+Die Untersuchung der \SzeFirmenparkplatz ergibt, dass beim Referenz-Laden in den meisten Fällen der Bedarf an last- und erzeugerseitiger Abregelung im Vergleich zum Antriebswende-Szenario geringer ausfällt.
+Hierfür verantwortlich ist in der Regel der hohe Anteil an \glspl{PVA} in den \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen des \UC \zHdot.
+Sind diese \gls{NS}-Netze jedoch bereits stark ausgelastet, dann erhöht sich der lastseitige Abregelungsbedarf in der \SzeFirmenparkplatz gegenüber dem Antriebswende-Szenario.\medskip
 
-Zusammenfassend bietet nur das Residuallast-Laden die Möglichkeit, die Integration von \gls{FEE} Anlagen in die Verteilnetze zu erleichtern.
+Zusammenfassend bietet nur das aktive Residuallast-Laden die Möglichkeit, die Integration von \gls{FEE} Anlagen in die Verteilnetze zu erleichtern.
 Der Erfolg des Residuallast-Ladens hängt hierbei jedoch von vielen Randbedingungen ab.
-Lastseitig weist häufig das reduzierte Laden (präventiv) die besten Ergebnisse auf.\medskip
+Lastseitig weist häufig das präventive reduzierte Laden die besten Ergebnisse auf und bietet eine gute alternative zu dem aktiv gesteuerten Residuallast-Laden.
+Die Ladegruppen sind hingegen nicht dafür geeignet die Netzintegration von \glspl{EPKW} zu erleichtern.\medskip
 
 Um zu überprüfen, ob das Residuallast-Laden den last- und erzeuerseitigen Abregelungsbedarf noch weiter senken kann, sollten zwei Optionen untersucht werden.
-Hierbei sollte gleichzeitig darauf geachtet werden, dass diese Konzepte auch in der Realität abgebildet werden können.
+Hierbei sollte jedoch darauf geachtet werden, dass diese Konzepte auch in der Realität abgebildet werden können.
 
 \begin{enumerate}
 	\item Zum einen können dem Residuallast-Laden Randbedingungen hinzugefügt werden.
