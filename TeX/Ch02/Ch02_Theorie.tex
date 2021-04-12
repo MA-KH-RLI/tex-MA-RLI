@@ -68,39 +68,21 @@ Eine negative Residuallast weist hingegen auf einen Erzeugungsüberschuss hin.
 Aufgrund des zunehmenden Anteils von nicht steuerbaren regenerativen Kraftwerken im Stromnetz und der fortschreitenden Sektorkopplung steigt zunehmend die Spreizung zwischen dem maximalen Wert und dem minimalen Wert der Residuallast an.\medskip
 
 Positive Residuallast wird derzeit zu großen Teilen durch regelbare Kraftwerke gedeckt, während negative Residuallast durch die Abregelung von nicht steuerbaren Kraftwerken ausgeglichen wird.
-Alternativ kann eine Glättung der Residuallast auch durch die Steuerung des Verbrauches erreicht werden, wodurch vor allem negative Residuallast ausgeglichen werden kann.
+Alternativ kann eine Glättung der Residuallast auch durch die Steuerung von Verbrauchern erreicht werden.
 Aufgrund der hohen Ladeleistungen bieten \glspl{EPKW} hierfür ein großes Potential. \cite{Paschotta2020a}
 
 
 \paragraph{Netzprobleme:}
 
-Probleme im Netz entstehen durch eine Überlastung von Betriebsmitteln im Stromnetz oder eine Verletzung des Spannungsbandes bei Endverbrauchern.
+Netzprobleme sind in dieser Arbeit auf Überlastungen von Betriebsmitteln und Verletzungen des Spannungsbandes bei Endverbrauchern beschränkt.
 Bei der Ermittlung von Netzproblemen müssen grundlegend zwei Fälle unterschieden werden.
 Im Lastfall überwiegt der Energiebedarf der Verbraucher gegenüber der Energiebereitstellung der Erzeugerkapazitäten im Netzgebiet.
 Das Netz muss in diesem Fall in der Lage sein, bereitgestellte Energie aus den überlagerten Netzebenen an die Verbraucher weiterzuleiten.
 Im Rückspeisefall überwiegt hingegen die Energiebereitstellung der Erzeugerkapazitäten gegenüber dem Energiebedarf der Verbraucher.
-Der erzeugte Strom muss in diesem Fall an die überlagerten Netzebenen weitergeleitet werden können. \cite{Agora2019}
-Für die Betriebsmittel gelten die in \autoref{tab:Belastungsfaktoren} und \autoref{tab:Spannungsband} zulässigen Belastungsfaktoren und Spannungsabweichungen, welche aus \textit{Integrated Techno-Economic Power System Planning of Transmission and Distribution Grids} \cite{Mueller2019a} entnommen wurden und auf der \textit{Verteilnetzstudie für das Land Baden-Württemberg} \cite{Rehtanz2017} basieren.
-
-
-\subparagraph{Verletzungen der thermischen Betriebsmittelbelastungen} treten auf, wenn die physikalischen Grenzen von Betriebsmitteln bezüglich ihrer Scheinleistungsbelastbarkeit übertreten werden.
-Der Belastungsfaktor eines Betriebsmittels gibt an, inwieweit ein Betriebsmittel mit Nennscheinleistung belastet werden kann.
-Dabei spiegeln die Belastungsfaktoren wider, dass für Verbraucher, welche im \gls{MS}-Netz angeschlossen sind, das (n-1)-Kriterium  gilt.
-Das (n-1)-Kriterium bezeichnet den planerischen Grundsatz, bei welchem der Ausfall einer einzigen Komponenten durch Redundanzen abgefangen werden kann und somit ein Systemausfall verhindert wird.
-Dies gilt in der Regel jedoch nicht für Verbraucher im \gls{NS}-Netz und Erzeugerkapazitäten, welche im \gls{MS}- oder \gls{NS}-Netz angeschlossen sind.
-Die Belastungsfaktoren der einzelnen Betriebsmittel sind in \autoref{tab:Belastungsfaktoren} zusammengefasst. \cite{NKG} \cite{Rehtanz2017} \cite{Schachler}
-
-
-\input{Ch02/tab/Ch02_tab_02_Belastungsfakoren}
-
-
-\subparagraph{Verletzungen des Spannungsbandes} sind durch eine unzulässige Abweichung von der Nennspannung an Betriebsmitteln gekennzeichnet.
-Die zulässigen Spannungsabweichungen liegen für Endkunden in der \gls{NS}-Ebene bei \SI{\pm 10}{\percent}.
-Dieses Spannungsband wird nach \autoref{tab:Spannungsband} auf die \gls{MS}, \gls{MS}-\gls{NS}- und \gls{NS}-Ebene aufgeteilt.
-Im Lastfall spiegelt das in der \gls{NS}-Ebene größere zulässige Spannungsband wider, dass in dieser Ebene die Mehrzahl der Verbraucher angeschlossen ist.
-Demgegenüber wird im Rückspeisefall ein größeres Spannungsband für die \gls{MS}-Ebene reserviert. \cite{Rehtanz2017} \cite{Schachler}
-
-\input{Ch02/tab/Ch02_tab_03_Spannungsband}
+Der erzeugte Strom muss im Rückspeisefall an die überlagerten Netzebenen weitergeleitet werden können.
+Verletzungen der thermischen Betriebsmittelbelastungen treten auf, wenn die physikalischen Grenzen von Betriebsmitteln bezüglich ihrer Scheinleistungsbelastbarkeit übertreten werden.
+Der Belastungsfaktor eines Betriebsmittels gibt hierbei an, inwieweit ein Betriebsmittel mit Nennscheinleistung belastet werden kann.
+Verletzungen des Spannungsbandes sind hingegen durch eine unzulässige Abweichung von der Nennspannung bei Endverbrauchern gekennzeichnet. \cite{Agora2019} \cite{Rehtanz2017}
 
 
 \subsection{Elektromobilität}
@@ -133,7 +115,7 @@ Eine Übersicht der in dieser Arbeit verwendeten netz- und fahrzeugseitigen Wirk
 Weiterhin sind die in \autoref{tab:TechPowerCap} zusammengefassten Limitierungen der \glspl{EPKW} zu berücksichtigen.
 Unabhängig von der Ladetechnik wird vereinfachend angenommen, dass am Netzverknüpfungspunkt immer eine symmetrische Last anliegt.
 
-\input{Ch02/tab/Ch02_tab_04_Ladeleistungen}
+\input{Ch02/tab/Ch02_tab_03_Ladeleistungen}
 
 
 \paragraph{Ladestrategien:}

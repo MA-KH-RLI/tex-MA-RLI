@@ -321,7 +321,7 @@ Im Gegensatz zur Referenz-Ladestrategie werden unabhängig von der Netzebene bei
 
 \subsubsection{Residuallast-Laden}
 
-Bei dem Residuallast-Laden handelt es sich um eine aktive Ladestrategie.
+Bei dem Residuallast-Laden handelt es sich um eine aktive Ladestrategie, welche an das gesteuerte Laden der Agora Studie \textit{Verteilnetzausbau für die Energiewende} \cite{Agora2019} angelehnt ist.
 Der Ladevorgang eines \gls{EPKW} findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des \gls{MS}-Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
 Die Zuweisung findet auf Viertelstundenbasis und die Ladevorgänge immer bei voller Ladeleistung statt.
 Das Ziel der Optimierung kann so formuliert werden, dass eine Minimierung der \glspl{MQA} nach \autoref{eq:residual} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
@@ -388,11 +388,11 @@ Innerhalb dieses Kapitels werden die wichtigsten Funktionalitäten \glspl{EDISGO
 \subsubsection{Ermittlung von Netzproblemen}\label{chap:grid_issues}
 
 Die Überprüfung der einzelnen Netze auf Netzprobleme erfolgt in zwei Schritten.
-Vorerst wird eine nichtlineare Lastflussberechnung durchgeführt, um anschließend die Einhaltung der Spannungsanforderungen und technischen Richtlinien bezüglich der Betriebsmittelbelastungen zu überprüfen.
-Die Durchführung der Lastflussberechnung erfolgt mit Hilfe des Open Source Tools \textit{PyPSA} \cite{Brown2020}.
-In diesem Kapitel soll auf die theoretischen Grundlagen der Lastflussberechnung, den Umfang der Analyse und die Spannungsanforderungen sowie die technischen Richtlinien bezüglich der Gerätebelastungen eingegangen werden.\medskip
+Vorerst wird eine nichtlineare Lastflussanalyse durchgeführt, um anschließend die Einhaltung der Spannungsanforderungen und technischen Richtlinien bezüglich der Betriebsmittelbelastungen zu überprüfen.
+Die Durchführung der Lastflussanalyse erfolgt mit Hilfe des Open Source Tools \textit{PyPSA} \cite{Brown2020}.
+In diesem Kapitel soll auf die theoretischen Grundlagen der Lastflussanalyse, den Umfang der Analyse und die Spannungsanforderungen sowie die technischen Richtlinien bezüglich der Gerätebelastungen eingegangen werden.\medskip
 
-Das Ziel der Lastflussberechnung ist es, dass zwischen allen Verbindungen der Netzknoten $i$ und $k$ die folgende Gleichung erfüllt wird:
+Das Ziel der Lastflussanalyse ist es, dass zwischen allen Verbindungen der Netzknoten $i$ und $k$ die folgende Gleichung erfüllt wird:
 
 \begin{equation}
 	S_i = P_i + j Q_i = V_i I_i^* = V_i \left(\sum_j Y_{i,k} V_k \right)^*
@@ -415,7 +415,7 @@ Das Ziel der Lastflussberechnung ist es, dass zwischen allen Verbindungen der Ne
 Der Winkel der komplexen Spannung ist relativ zum Bilanzknoten.
 Unter dem Bilanzknoten wird ein Netzknoten verstanden, an welchem der Wirk- und Blindleistungsfluss frei eingestellt werden kann.
 Mit Hilfe des Bilanzknotens kann über einen iterativen Prozess die Konvergenz nach \autoref{eq:pf} des Systems erreicht werden.
-Eine genau Beschreibung der Lastflussberechnung des Open Source Tools \textit{PyPSA} kann auf \textit{Read the Docs} \cite{Brown2020a} abgerufen werden.
+Eine genau Beschreibung der Lastflussanalyse des Open Source Tools \textit{PyPSA} kann auf \textit{Read the Docs} \cite{Brown2020a} abgerufen werden.
 Da die Spannung der Sekundärseite des \gls{HS}-\gls{MS}-\glspl{USW} eingestellt werden kann, eignet sich dieser Punkt besonders gut und wird entsprechend als Bilanzknoten verwendet.
 Alle weiteren Netzknoten werden mit gegebenen Wirk- und Blindleistungen modelliert. \cite{Schachler}\medskip
 
@@ -423,13 +423,20 @@ Die Lastflussanalyse der Netze berücksichtigt sowohl \gls{MS}- und \gls{NS}-Lei
 Gegenüber einer Aggregation der Erzeugung und des Bedarfs der einzelnen \gls{NS}-Netze an dem jeweiligen \gls{MS}-\gls{NS}-\gls{USW} bietet diese besonders tiefgehende Betrachtung die Möglichkeit, die Auswirkungen der teilweise hohen Ladeleistungen der Ladeinfrastruktur genauer zu betrachten und den Einfluss verschiedener Ladestrategien umfassender bestimmen zu können.
 Da die Sekundärseite des \gls{HS}-\gls{MS}-\glspl{USW} als Bilanzknoten modelliert wird, können an dieser keine Spannungsprobleme auftreten.
 Jedoch entspricht die Scheinleistung des Bilanzknotens der Lastflussanalyse der Leistung, die über das \gls{HS}-\gls{MS}-\gls{USW} geleitet wird.
-Anhand dieses Wertes können zusätzlich Aussagen über die Belastung des \gls{HS}-\gls{MS}-\glspl{USW} getroffen werden. \cite{Schachler}\medskip
-
-Mit Hilfe der durch die Lastflussanalyse ermittelten Belastungen und Spannungsabweichungen an den Betriebsmitteln können abschließend Überlastungen und Spannungsprobleme festgestellt werden.
-Die zulässigen Belastungsfaktoren und Spannungsabweichungen werden in \autoref{chap:theo_grid} vorgestellt.
-In \autoref{fig:scope} ist eine Übersicht über den Umfang der Lastflussanalyse dargestellt.
+Anhand dieses Wertes können zusätzlich Aussagen über die Belastung des \gls{HS}-\gls{MS}-\glspl{USW} getroffen werden.
+In \autoref{fig:scope} ist eine Übersicht über den Umfang der Lastflussanalyse dargestellt. \cite{Schachler}
 
 \input{Ch04/fig/Ch04_fig_07_scope_grid_issues}
+
+Mit Hilfe der durch die Lastflussanalyse ermittelten Belastungen und Spannungsabweichungen an den Betriebsmitteln können abschließend Überlastungen und Spannungsprobleme festgestellt werden.
+Im Rahmen dieser Arbeit gilt als Planungsgrundsatz, dass der zulässige Belastungsfaktor aller Betriebsmittel \SI{100}{\percent} beträgt.
+Die zulässigen Spannungsabweichungen liegen für Endkunden in der \gls{NS}-Ebene bei \SI{\pm 10}{\percent}.
+Dieses Spannungsband wird nach \autoref{tab:Spannungsband} auf die \gls{MS}, \gls{MS}-\gls{NS}- und \gls{NS}-Ebene aufgeteilt.
+Im Lastfall spiegelt das in der \gls{NS}-Ebene größere zulässige Spannungsband wider, dass in dieser Ebene die Mehrzahl der Verbraucher angeschlossen ist.
+Demgegenüber wird im Rückspeisefall ein größeres Spannungsband für die \gls{MS}-Ebene reserviert.
+Es gelten die in \autoref{tab:Spannungsband} Spannungsabweichungen, welche aus \textit{Integrated Techno-Economic Power System Planning of Transmission and Distribution Grids} \cite{Mueller2019a} entnommen wurden und auf der \textit{Verteilnetzstudie für das Land Baden-Württemberg} \cite{Rehtanz2017} basieren.
+
+\input{Ch04/tab/Ch04_tab_05_Spannungsband}
 
 
 \subsubsection{Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen}
@@ -444,7 +451,7 @@ Hierbei werden die Wochen untersucht, die im \gls{MS}-Netzgebiet die minimale bz
 Auf diese Weise sollen möglichst extreme Belastungssituationen abgedeckt werden.\medskip
 
 Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
-Aus diesem Grund werden zuerst die \gls{NS}-Netze eines \gls{MS}-Netzgebiets einzeln betrachtet, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.
+Aus diesem Grund werden zuerst die \gls{NS}-Netze eines \gls{MS}-Netzgebiets einzeln betrachtet, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.\medskip
 % Durch die vorgeschaltete Einzelbetrachtung der \gls{NS}-Netze kann der Abregelungsbedarf eindeutig der \gls{NS}- bzw. \gls{MS}-Ebene zugeordnet werden.\medskip
 
 Bei der Lösung der Netzprobleme werden vorerst Spannungsprobleme und abschließend Überlastungen behandelt.
