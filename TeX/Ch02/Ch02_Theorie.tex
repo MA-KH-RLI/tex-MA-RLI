@@ -17,8 +17,8 @@ Das Übertragungsnetz dient dem Transport von Strom über lange Strecken bei hoh
 Ergänzend erfolgt in den Verteilnetzen die regionale Feinverteilung bei geringeren Spannungen. \cite{Agora2019}\medskip
 
 Innerhalb der Verteilnetze wird zwischen der \glspl{HS}-, \glspl{MS}- und \glspl{NS}-Ebene unterschieden.
-Innerhalb dieser Arbeit werden ausschließlich die Effekte auf die Verteilnetze auf der \glspl{MS}- und \glspl{NS}-Ebene, inklusive der Umspannebene von \gls{MS} zu \gls{NS}, untersucht.
-In \autoref{tab:Spannungsebenen} finden sich die üblichen Spannungen je Spannungsebene und die verbaute Stromkreislänge in Deutschland je Spannungsebene.
+Diese Arbeit beschäftigt sich ausschließlich mit den Effekten auf die Verteilnetze auf der \glspl{MS}- und \glspl{NS}-Ebene, inklusive der Umspannebene von \gls{MS} zu \gls{NS}.
+In \autoref{tab:Spannungsebenen} finden sich die üblichen Spannungen je Spannungsebene in Deutschland.
 
 \input{Ch02/tab/Ch02_tab_01_Spannungsebenen}
 
@@ -45,14 +45,13 @@ Durch das Schließen der Trennstelle können dann wieder alle Verbraucher, mit A
 
 Die Gleichzeitigkeit beschreibt den Anteil der momentan benötigten elektrischen Leistung von der maximalen elektrischen Leistung im Netzgebiet \cite{Agora2019}.
 Im Rahmen dieser Arbeit beschreibt die Gleichzeitigkeit in der Regel den Anteil der momentanen elektrischen Last von \glspl{EPKW} im Bezug auf die installierte Leistung von Ladepunkten in einem Netzgebiet.
-Ausnahmen sind entsprechend gekennzeichnet.
 
 
 \paragraph{Elektrische Flexibilität:}
 
 Elektrische Flexibilität beschreibt die Fähigkeit des Stromsystems, trotz einer vorhergesehenen oder unvorhergesehenen Änderung im Verbrauch oder der Erzeugung, einen Ausgleich zwischen Angebot und Nachfrage aufrecht zu erhalten.
 Dabei wird die Reaktion des Stromsystems durch ein externes Signal ausgelöst.
-Bei dem externen Signal kann es sich beispielsweise um ein Preissignal oder ein physikalisch messbares Signal, wie die Netzfrequenz, handeln. \medskip
+Bei dem externen Signal kann es sich beispielsweise um ein Preissignal oder ein physikalisch messbares Signal, wie die Netzfrequenz, handeln. \cite{BNetzA2017} \cite{IEA2014}\medskip
 
 Elektrische Flexibilität besitzt sowohl eine zeitliche als auch eine geografische Dimension.
 Die zeitliche Dimension beschreibt die zeitliche Verschiebung von Last oder Erzeugung und reicht von einer sekündlichen bis zu einer saisonalen Verschiebung.
@@ -65,7 +64,7 @@ Dabei reicht die räumliche Skala von lokalen Quartierslösungen bis zu internat
 Die Residuallast beschreibt die Differenz zwischen der benötigten Leistung und der erbrachten Leistung von nicht steuerbaren Kraftwerken innerhalb eines Betrachtungsgebietes.
 Dabei bedeutet eine positive Residuallast, dass der derzeitige Bedarf der Lasten größer ausfällt als die Erzeugung aus nicht steuerbaren Kraftwerken.
 Eine negative Residuallast weist hingegen auf einen Erzeugungsüberschuss hin.
-Aufgrund des zunehmenden Anteils von nicht steuerbaren regenerativen Kraftwerken im Stromnetz und der fortschreitenden Sektorkopplung steigt zunehmend die Spreizung zwischen dem maximalen Wert und dem minimalen Wert der Residuallast an.\medskip
+Aufgrund des zunehmenden Anteils von nicht steuerbaren regenerativen Kraftwerken im Stromnetz und der fortschreitenden Sektorkopplung steigt zunehmend die Spreizung zwischen dem maximalen Wert und dem minimalen Wert der Residuallast. \cite{Paschotta2020a}\medskip
 
 Positive Residuallast wird derzeit zu großen Teilen durch regelbare Kraftwerke gedeckt, während negative Residuallast durch die Abregelung von nicht steuerbaren Kraftwerken ausgeglichen wird.
 Alternativ kann eine Glättung der Residuallast auch durch die Steuerung von Verbrauchern erreicht werden.
@@ -87,13 +86,14 @@ Verletzungen des Spannungsbandes sind hingegen durch eine unzulässige Abweichun
 
 \subsection{Elektromobilität}
 
+In diesem Kapitel soll auf die wichtigsten Begrifflichkeiten im Zusammenhang mit \glspl{EPKW} eingegangen werden.
 Innerhalb dieser Arbeit werden ausschließlich die Auswirkungen der Netzintegration von \glspl{EPKW} untersucht.
 Der Einfluss der Elektrifizierung von beispielsweise des öffentlichen Personennahverkehrs, großen betrieblichen Fahrzeugflotten und Lastkraftwagen ist nicht Teil der Erhebungen.
 
 
 \paragraph{Ladetechnik:}
 
-Die Ladetechnik von \glspl{EPKW} und den korrespondierenden Ladepunkten lässt sich anhand verschiedener Kriterien klassifizieren.
+Die Ladetechnik von \glspl{EPKW} und den korrespondierenden Ladepunkten lässt sich mit Hilfe verschiedener Kriterien klassifizieren.
 Die Klassifizierung der Ladetechnik erfolgt innerhalb dieser Arbeit anhand der Höhe ihrer Wirkleistung.
 In \autoref{fig:four-quadrant} finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EPKW} in Abhängigkeit von ihrer \gls{P} und ihrer \gls{Q}.
 
@@ -103,14 +103,14 @@ Zusammengefasst werden Ladevorgänge unter der Bezeichnung \gls{G2V}.
 Ladevorgänge können sowohl blindleistungsfrei, induktiv oder kapazitiv erfolgen.
 In \autoref{fig:four-quadrant} entspricht dieser Modus einer positiven Wirkleistung.
 Weiterhin können mit bidirektionaler Ladetechnik \glspl{EPKW} ebenfalls entladen werden, um beispielsweise Systemdienstleistungen zu erbringen.
-Ein solcher Modus wird allgemein unter der Bezeichnung \gls{V2G} zusammengefasst und kann ebenfalls blindleistungsfrei, induktiv oder kapazitiv erfolgen.
+Das gezielte entladen von \glspl{EPKW} wird allgemein unter der Bezeichnung \gls{V2G} zusammengefasst und kann ebenfalls blindleistungsfrei, induktiv oder kapazitiv erfolgen.
 In \autoref{fig:four-quadrant} entspricht dieser Modus einer negativen Wirkleistung. \cite{He2020} 
 Innerhalb dieser Arbeit erfolgen Ladevorgänge immer blindleistungsfrei, welches dem eingezeichneten Betriebspunkt in \autoref{fig:four-quadrant} entspricht.
 Ebenfalls wird der Einsatz von bidirektionaler Ladetechnik nicht untersucht.\medskip
 
 Die einzelnen Ladevorgänge werden anhand ihrer Wirkleistung grob in Normal- und Schnellladevorgänge unterteilt.
-Normalladevorgänge finden bei einer Wirkleistung von maximal \SI{50}{\kw} statt, während Schnellladevorgänge bei einer Leistung von \SIrange[range-phrase=~{oder}~]{150}{350}{\kw} erfolgen.
-Innerhalb dieser Arbeit wird angenommen, dass die Ladevorgänge einen Wirkungsgrad von \SI{90}{\percent} \cite{EliaGroup2020} besitzen.
+Normalladevorgänge finden innerhalb dieser Arbeit bei einer Wirkleistung von maximal \SI{50}{\kw} statt, während Schnellladevorgänge bei einer Leistung von \SIrange[range-phrase=~{oder}~]{150}{350}{\kw} erfolgen.
+Dabei wird ein Wirkungsgrad von \SI{90}{\percent} \cite{EliaGroup2020} angenommen.
 Eine Übersicht der in dieser Arbeit verwendeten netz- und fahrzeugseitigen Wirkleistungen von Ladepunkten findet sich in \autoref{tab:charging_cap}.
 Weiterhin sind die in \autoref{tab:TechPowerCap} zusammengefassten Limitierungen der \glspl{EPKW} zu berücksichtigen.
 Unabhängig von der Ladetechnik wird vereinfachend angenommen, dass am Netzverknüpfungspunkt immer eine symmetrische Last anliegt.
@@ -120,21 +120,21 @@ Unabhängig von der Ladetechnik wird vereinfachend angenommen, dass am Netzverkn
 
 \paragraph{Ladestrategien:}
 
-Der Ladevorgang von \glspl{EPKW} kann durch unterschiedliche äußere Anreize gesteuert werden.
+Ladevorgänge von \glspl{EPKW} können auf Grundlage von unterschiedlichen äußeren Anreizen gesteuert werden.
 Grundsätzlich lassen sich hierbei marktorientierte und netzdienliche Ladestrategien unterscheiden.
 
 
 \subparagraph{Marktorientierte Ladestrategien} haben als Fokus die Minimierung der Kosten für den Strombezug. Dies bedeutet konkret, dass die Ladevorgänge durch ein Preissignal am überregionalen Großhandelsmarkt ausgelöst beziehungsweise unterbrochen werden.
-Eine solche Ladestrategie kann sowohl positive als auch negative Effekte auf das Stromnetz aufweisen und erfordert einen geeigneten rechtlichen Rahmen.
 Einerseits führt eine solche Ladestrategie zu einem Ausgleich zwischen Angebot und Nachfrage, da ein hohes Stromangebot zu niedrigen Großhandelsmarktpreisen führt, wodurch das Laden der \glspl{EPKW} ausgelöst wird.
-Auf der anderen Seite wird hierdurch die Gleichzeitigkeit erhöht, was zu Netzengpässen und zu einem erhöhten lokalen Netzausbaubedarf führen kann. \cite{Agora2019} \cite{Dorendorf2019} \cite{Rehtanz2017}
+Auf der anderen Seite kann hierdurch die Gleichzeitigkeit erhöht werden, was zu Netzengpässen und zu einem erhöhten lokalen Netzausbaubedarf führen kann.
+Somit kann eine marktorientierte Ladestrategie sowohl positive als auch negative Effekte auf das Stromnetz hervorrufen und erfordert einen geeigneten rechtlichen Rahmen. \cite{Agora2019} \cite{Dorendorf2019} \cite{Rehtanz2017}
 
 
-\subparagraph{Netzdienliche Ladestrategien} setzen hingegen auf die Vermeidung von lokalen Engpässen, welche durch eine hohe Nachfrage entstehen können.
+\subparagraph{Netzdienliche Ladestrategien} setzen hingegen auf die Vermeidung von lokalen Engpässen, welche durch hohe Gleichzeitigkeiten entstehen können.
 Hierbei kann zwischen präventiven und aktiven Maßnahmen unterschieden werden.
 Präventive Maßnahmen sollen Verbraucher veranlassen, ihre Ladevorgänge in Zeiten geringer Netzauslastung zu verlegen.
 Dies kann zum Beispiel über monetäre Anreize oder über Quoten erfolgen.
-Bei aktiven Maßnahmen handelt es sich hingegen um ein aktives Eingreifen bei drohenden Netzengpässen in die Ladevorgänge durch den Netzbetreiber. \cite{Agora2019}
+Bei aktiven Maßnahmen handelt es sich hingegen um ein aktives Eingreifen in die Ladevorgänge durch den Netzbetreiber. \cite{Agora2019}
 
 
 \clearpage

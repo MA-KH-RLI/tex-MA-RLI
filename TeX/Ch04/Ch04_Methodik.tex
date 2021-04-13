@@ -1,99 +1,58 @@
-\section{Methodik}\label{chap:Methodik}
+	\section{Methodik}\label{chap:Methodik}
 
 Aufgrund ihrer Wichtigkeit für diese Arbeit werden zunächst die verwendeten Netztopologien sowie deren Clusterung zur Bestimmung repräsentativer Netze, anhand welcher die Untersuchungen vorgenommen werden, beschrieben und vorgestellt.
-Anschließend werden mit Hilfe des Software Tools \gls{SIMBEV} Fahrtprofile von \glspl{EPKW} erstellt und die untersuchten Ladestrategien beschrieben.
-Damit der Ladebedarf in die Netzmodelle integriert werden kann, muss dieser räumlich auf eine entsprechende georeferenzierte Ladeinfrastruktur verteilt werden.
-Abschließend erfolgt eine Beschreibung der Methodik zur Bestimmung von Netzproblemen und der Ermittlung des Abregelungsbedarfs im Netzgebiet mit Hilfe des Open Source Tools \gls{EDISGO}.
+Anschließend werden mit Hilfe des Software Tools \gls{SIMBEV} Fahrtprofile von \glspl{EPKW} erstellt und der Ladebedarf räumlich auf eine georeferenzierte Ladeinfrastruktur verteilt.
+Daraufhin werden abhängig von der Ladestrategie Lastzeitreihen erstellt und in die Netzmodelle integriert.
+Abschließend werden etwaige Netzprobleme bestimmt und der Abregelungsbedarf ermittelt, welcher nötig ist, um diese aufzulösen.
 
 
 \subsection{Verwendete Verteilnetztopologien}\label{chap:dingo_theo}
 
-Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glspl{EDISGO} sind die zu untersuchenden Netztopologien der \gls{MS}- und \gls{NS}-Ebene.
+Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glspl{EDISGO} sind die zu untersuchenden Netztopologien mitsamt der \gls{MS}- und \gls{NS}-Ebene.
 Aufgrund der mangelnden Datenlagen von realen Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die innerhalb des \gls{OPENEGO} Projektes \cite{Mueller2019} mit Hilfe des Open Source Tools \gls{DINGO} erzeugt wurden.
 Das Tool ist in der Lage ländliche und suburbane Netzstrukturen für Gesamtdeutschland zu synthetisieren und kann auf \textit{GitHub} \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
-Weiterhin ist auf \textit{Read the Docs} \cite{dingo-docs2019} eine ausführliche Dokumentation nachzulesen.\medskip
-
-Die Synthetisierung der Netztopologien ist nicht Teil dieser Arbeit und erfolgte innerhalb des \gls{OPENEGO} Projektes.
-Die Netztopologien werden auf der Datengrundlage des Jahres \num{2015} gebildet und entsprechend ausgebaut.
-Urbane Netzgebiete können derzeit nicht durch \gls{DINGO} abgebildet und können deshalb innerhalb dieser Arbeit nicht betrachtet werden.\medskip
-
-In der konventionellen Netzplanung werden Betriebsmittel in der Regel überdimensioniert ausgelegt, um eine möglichst lange Betriebszeit zu garantieren.
-Da die Netzgebiete des \gls{OPENEGO} Projektes so ausgebaut werden, dass die Versorgungsaufgabe des Jahres \num{2015} möglichst genau übernommen werden kann, werden die Netzgebiete zusätzlich ausgebaut.
-Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw. Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant und entsprechend ausgebaut werden.
-Dies gilt sowohl für die Transformator-Stationen als auch die Kabel innerhalb des Netzgebietes.
-Die verwendeten Betriebsmittel können der Dokumentation \glspl{EDISGO} \cite{edisgoDocs2017a} entnommen werden.
-Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Station größer sein als der größte verfügbare Transformator, so werden entsprechend benötigte Transformatoren parallel betrieben, um den Anforderungen gerecht zu werden.
-
-
-\subsubsection{Mittelspannung}
-
-Die einzelnen \gls{MS}-Netze werden alle als offene Ringnetze betrieben.
-Im städtischen Bereich werden hauptsächlich Erdkabel mit einer Nennspannung von \SI{10}{\kv} eingesetzt, während im ländlichen Raum größtenteils Freileitungen mit einer Nennspannung von \SI{20}{\kv} eingesetzt werden. \cite{Mueller2019}\medskip
-
-Die Modellierung der Mittelspannungstopologie erfolgt als Tourenplanungsproblem (\gls{CVRP}) in Kombination mit der Beachtung der historisch lastorientierten Entwicklung und den Planungsprinzipien von Verteilnetzen.
-Ein besonderer Fokus liegt dabei auf der Beachtung von Leitungsüberlastungen und Verletzungen des Spannungsbandes.
-Eine genau Beschreibung der Methodik findet sich in \textit{The eGo grid model} \cite{Amme2018}.
-
-
-\subsubsection{Niederspannung}
-
-Die \gls{NS}-Ebene wird mit Hilfe von \num{46} Referenznetzsträngen synthetisiert und die einzelnen \gls{NS}-Netze werden als Strahlennetz abgebildet.
-Die Referenznetzstränge stehen jeweils repräsentativ für eine bestimmte Anzahl an Hausanschlüssen innerhalb einer Netzklasse, wobei letztere nach Land-, Dorf- und Vorstadtnetzen unterschieden werden.
-Auf Grundlage der Anzahl an Hausanschlüssen je Ortsnetzstation wird ein \gls{NS}-Netz einer Netzklasse zugeordnet.
-Die verschiedenen Referenznetzstränge der entsprechenden Netzklasse werden anschließend so miteinander kombiniert, dass für die entsprechende Anzahl an Hausanschlüssen ein typisches Netz generiert wird. \cite{Mueller2019}
-
-
-\subsubsection{K-Means-Clustering}
-
-Innerhalb Deutschlands wurden insgesamt \num{3354} Netzgebiete \cite{Schachler} identifiziert und mit Hilfe des Open Source Tools \gls{DINGO} synthetisiert.
-Bei der Synthese der Netztopologien wurde auf eine hohe räumliche und zeitliche Auflösung des Netzdatenmodells geachtet.
-Die große Anzahl an Netzgebieten und die hohe Auflösung führen zu inakzeptabel hohen Rechenzeiten.
-Um die Komplexität des Modells zu reduzieren, wurden in  mit Hilfe des \kmeans Referenznetzgebiete ausgewählt, die stellvertretend für eine möglichst große Zahl an Netzgebieten stehen.
-Das \kmean wurde im Rahmen des \gls{OPENEGO} Projektes \cite{Mueller2019} entwickelt und wurde innerhalb \textit{E-Mobility Study} \cite{Schachler} unverändert angewendet.
-Innerhalb dieser Arbeit soll eine Teilmenge der ermittelten \num{15} Netzgebiete mit stark unterschiedlichen Charakteristiken untersucht werden.
-An dieser Stelle soll das grundlegende Vorgehen erläutert werden. \medskip
-
-Grundlage des \kmeans bildet der \gls{EMA} des Python Paketes \textit{scikit learn} \cite{scikit-learn2011}.
-Hierbei kann jedes \gls{MS}-Netzgebiet durch die Definition mehrerer numerischer Attribute als Punkt im mehrdimensionalen Raum beschrieben werden.
-Der Algorithmus bildet anschließend eine vorgegebene Anzahl an Clustern $k$ durch die Minimierung der Summe der quadrierten gewichteten euklidischen Abstände zwischen den originalen Netzknoten und den Clusterzentren.
-Für die Bildung der Cluster werden die folgenden vier Attribute verwendet, um die einzelnen \gls{MS}-Netzgebiet zu repräsentieren:
-
-\begin{itemize}
-	\item Entwicklung der installierten \gls{PV}-Kapazitäten
-	\item Entwicklung der installierten Wind-Kapazitäten
-	\item Spitzenlast durch \glspl{WP}
-	\item Spitzenlast durch \gls{EPKW}
-\end{itemize}
-
-Die Regionalisierung der \gls{PV}-, Wind- und \gls{WP}-Kapazitäten erfolgt nach \autoref{chap:Szenariorahmen}.
-Da die Simulation aller \gls{EPKW} aufgrund der großen Anzahl nicht für jedes \gls{MS}-Netzgebiet durchgeführt werden kann, muss die Spitzenlast durch \gls{EPKW} bereits im Voraus abgeschätzt werden.
-So wird angenommen, dass nach den Hochlaufzahlen des Antriebswende-Szenarios jeder \gls{PKW} durch einen \gls{EPKW} ersetzt wird und jeder \gls{EPKW} im Jahr \SI{12000}{\km} zurücklegt.
-Anhand eines durchschnittlichen Verbrauches von \SI{20}{\kwhkm} wird anschließend der Ladebedarf je Gemeinde abgeschätzt.
-Anschließend wird der Ladebedarf mit einem beispielhaften Lastprofil auf die Netzgebiete anhand des Flächenanteils der Gemeinde im Netzgebiete verteilt.
+Weiterhin ist auf \textit{Read the Docs} \cite{dingo-docs2019} eine ausführliche Dokumentation nachzulesen.
+Urbane Netzgebiete können derzeit nicht durch \gls{DINGO} abgebildet und deshalb nicht innerhalb dieser Arbeit betrachtet werden.\medskip
 
 
 \subsubsection{Auswahl repräsentativer Verteilnetztopologien}
 
-Auf der \gls{MS}-Ebene gibt es \num{3354} Netzgebiete mit einer mittleren Fläche von \SI{99}{\km\squared}.
+Auf der \gls{MS}-Ebene werden \num{3354} Netzgebiete \cite{Schachler} identifiziert.
 \autoref{fig:grid_176_map} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \gls{DINGO} erzeugt wurde und innerhalb dieser Arbeit untersucht wird.
 
 \input{Ch04/fig/Ch04_fig_01_grid_176_map}
 
-Um mit dieser Arbeit eine Ergänzung zur \textit{E-Mobility Study} \cite{Schachler} zu liefern, werden die Ergebnisse des Clusterings aus der \textit{E-Mobility Study} übernommen und von den \num{15} identifizierten repräsentativen Netzgebieten eine Teilmenge untersucht.
+Bei der Synthese der Netztopologien wird auf eine hohe räumliche und zeitliche Auflösung der Netzdatenmodelle geachtet.
+Die große Anzahl an Netzgebieten und die hohe Auflösung führen zu inakzeptabel hohen Rechenzeiten.
+Um die Komplexität des Modells zu reduzieren, werden in der \textit{E-Mobility Study} \cite{Schachler} mit Hilfe des \mbox{\kmeans} Referenznetzgebiete ausgewählt, die jeweils stellvertretend für eine große Anzahl an Netzgebieten stehen.
+Das \mbox{\kmean} wurde im Rahmen des \gls{OPENEGO} Projektes entwickelt und eine ausführliche Beschreibung der Methodik findet sich im Projektabschlussbericht \cite{Mueller2019}.\medskip
+
+Um mit dieser Arbeit eine Ergänzung zu der \textit{E-Mobility Study} \cite{Schachler} zu liefern, werden die Ergebnisse des Clusterings aus der \textit{E-Mobility Study} übernommen und von den \num{15} identifizierten repräsentativen Netzgebieten eine Teilmenge untersucht.
 So werden jeweils zwei Netzgebiete der Kategorien \gls{PV}- und Wind-dominiert und ein Netzgebiet der Kategorie Last-dominiert ausgewählt, die stellvertretend für viele Netzgebiete stehen.
-Auf diese Weise wird sichergestellt, dass die Effekte der Netzintegration der Elektromobilität für unterschiedliche Netzklassen aufgezeigt werden können.
+Auf diese Weise wird sichergestellt, dass die Effekte der Netzintegration der Elektromobilität für möglichst unterschiedliche Netzklassen aufgezeigt werden können.
 Insgesamt werden somit fünf Netzgebiete untersucht, die repräsentativ für \num{1495} der \num{3354} Netzgebiete stehen.
-In \autoref{tab:grid_IDs} werden die untersuchten \gls{MS}-Netzgebiet nach ihrem \gls{ID} kategorisiert und die Anzahl an repräsentierten Netzgebieten dargestellt, wobei der Index der Netz \glspl{ID} für die jeweilige Netzkategorie steht.
+In \autoref{tab:grid_IDs} ist die jeweilige Kategorie und die Anzahl an repräsentierten Netzgebieten der untersuchten Referenznetzgebiete dargestellt.
+Der Index der Netz \glspl{ID} steht hierbei für die jeweilige Netzkategorie.
 
 \input{Ch04/tab/Ch04_tab_01_grid_IDs}
 
-In \autoref{fig:bar_representatives} werden die wichtigsten Charakteristika der untersuchten \gls{MS}-Netzgebiete dargestellt.
-Hierzu zählen die installierten \gls{PV}- und Wind-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} beim Referenz-Laden (s. \autoref{chap:theo_strategies}) im Antriebswende-Szenario und des konventionellen Stromverbrauches inklusive \glspl{WP}.
-Weiterhin wird in \autoref{fig:map_representatives} eine Karte der repräsentierten \gls{MS}-Netzgebiete, eingeteilt in die Kategorien \gls{PV}-, Wind- und Last-dominiert, dargestellt.
+In \autoref{fig:bar_representatives} sind die wichtigsten Charakteristika der untersuchten Referenznetzgebiete dargestellt.
+Hierzu zählen die installierten \gls{PV}-, Wind- und sonstigen Erzeuger-Kapazitäten, sowie die Spitzenlast der \glspl{EPKW} beim Referenz-Laden (s. \autoref{chap:theo_strategies}) im Antriebswende-Szenario (s. \autoref{chap:Szenariorahmen}) und des konventionellen Stromverbrauches inklusive \glspl{WP}.
+Weiterhin wird in \autoref{fig:map_representatives} eine Karte der repräsentierten Netzgebiete, eingeteilt in die Kategorien \gls{PV}-, Wind- und Last-dominiert, dargestellt.
 
 \input{Ch04/fig/Ch04_fig_02_bar_representatives}
 
 \input{Ch04/fig/Ch04_fig_03_map_representatives}
+
+
+\subsubsection{Netzausbau}
+
+In der konventionellen Netzplanung werden Betriebsmittel in der Regel überdimensioniert ausgelegt, um die Versorgungsaufgabe für eine möglichst lange Betriebszeit zu garantieren.
+Da die Netzgebiete des \gls{OPENEGO} Projektes so ausgebaut werden, dass die Versorgungsaufgabe des Jahres \num{2015} möglichst genau erfüllt werden kann, werden die Netzgebiete innerhalb dieser Arbeit zusätzlich ausgebaut.
+Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw. Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant werden und werden entsprechend ausgebaut.
+Dies gilt sowohl für die Transformator-Stationen als auch die Kabel innerhalb des Netzgebietes.
+Die verwendeten Betriebsmittel können der Dokumentation \glspl{EDISGO} \cite{edisgoDocs2017a} entnommen werden.
+Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Station größer sein als der größte verfügbare Transformator, so werden entsprechend benötigte Transformatoren parallel betrieben, um den Anforderungen gerecht zu werden.
 
 
 \subsection{Erstellung der Fahrtprofile der E-Pkw}\label{chap:simbev_theo}
@@ -112,8 +71,8 @@ In \autoref{tab:wegezweck} wird die prozentuale Aufteilung der Hauptwegezwecke a
 
 \input{Ch04/tab/Ch04_tab_02_wegezweck}
 
-Der Wegezweck \glqq Begleitung\grqq{} wird innerhalb von \gls{SIMBEV} nicht abgebildet, da hierfür keine zusätzliche Fahrt angetreten wird.
-Der Rückweg der Wegezwecke wird getrennt als Wegezweck \nH berücksichtigt, da dem Laden zu Hause eine besonders wichtige Rolle zukommt.
+Der Wegezweck \textit{Begleitung} wird innerhalb von \gls{SIMBEV} nicht abgebildet, da hierfür keine zusätzliche Fahrt angetreten wird.
+Der Rückweg der Wegezwecke wird getrennt als Wegezweck \nH berücksichtigt, da dem Laden zu Hause eine besonders wichtige Rolle beim Laden der \glspl{EPKW} zukommt.
 Weiterhin dient \gls{SIMBEV} nur der Erstellung von Fahrtprofilen für \glspl{PKW}, weshalb ausschließlich die Ergebnisse der Befragung zu Fahrten mit dem Hauptverkehrsmittel \gls{PKW} betrachtet werden.
 Die für diese Arbeit entscheidenden Befragungsergebnisse sind somit die Fahrtzeiten, Fahrtstrecken und anschließenden Standzeiten je Hauptwegezweck für Fahrten mit \glspl{PKW}.
 Bei den Befragungsergebnissen kann zusätzlich zwischen den in \autoref{tab:RegioStaR} aufgelisteten \glspl{REGIOSTAR} unterschieden werden.
@@ -129,17 +88,17 @@ In \autoref{tab:RegioStaR} wird die mittlere Fahrleistung pro Person und pro \gl
 \subsubsection{simBEV}
 
 Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \gls{MID} erstellt.
-Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit für einen bestimmten Wegezweck, um eine Fahrt zu beginnen.
-Wird eine Fahrt ausgelöst, wird abhängig vom Wegezweck und Regionstyp der Fahrt, ebenfalls probabilistisch, eine Streckenlänge und eine anschließende Standzeit zugeteilt.
+Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit je Wegezweck, um eine Fahrt zu beginnen.
+Wird eine Fahrt ausgelöst, wird abhängig vom Wegezweck und Raumtyp der Fahrt, ebenfalls probabilistisch, eine Streckenlänge und eine anschließende Standzeit zugeteilt.
 Der hierbei entstehende Verbrauch des \gls{EPKW} muss anschließend gedeckt werden.
 Ob am Zielort ein Ladevorgang stattfindet, hängt vom \gls{SOC} des \gls{EPKW} und dem Vorhandensein eines Ladepunktes ab.
 Mit Hilfe der Wahrscheinlichkeiten aus \autoref{tab:WegezweckProbability2050} wird die Verfügbarkeit eines Ladepunktes am Zielort und die entsprechende Ladeleistung ermittelt.
-Ladepunkte besitzen pauschal einen Wirkungsgrad von \SI{90}{\percent} \cite{EliaGroup2020}.
+Ladevorgänge besitzen hierbei pauschal einen Wirkungsgrad von \SI{90}{\percent} \cite{EliaGroup2020}.
 Die Bestimmung des Vorhandenseins eines Ladepunktes für die Wegezwecke \nH und \Arbeit erfolgt je \gls{EPKW} einmalig.
-Für alle anderen Wegezwecke erfolgt jedesmal eine erneute Bestimmung.
-Wird dem Zielort ein Ladepunkt zugeordnet, wird davon ausgegangen, dass die Fahrzeugnutzerin oder der Fahrzeugnutzer einen Ladevorgang erst ab einem bestimmten \gls{SOC} einleitet, da dies einen zusätzlichen Aufwand für die Nutzerin oder den Nutzer bedeutet.
+Für alle anderen Wegezwecke erfolgt jedes mal eine erneute Bestimmung.
+Wird dem Zielort ein Ladepunkt zugeordnet, wird davon ausgegangen, dass Fahrzeugnutzer\(^*\)innen einen Ladevorgang erst ab einem bestimmten \gls{SOC} einleitet, da dies einen zusätzlichen Aufwand für Nutzer\(^*\)innen bedeutet.
 Dabei wird angenommen, dass das Laden des \gls{EPKW} am Wohnort und am Arbeitsplatz bereits ab einem \gls{SOC} von \SI{95}{\percent} stattfindet.
-Im öffentlichen Raum bedeutet das Anfahren und der Anschluss an einen Ladepunkt einen größeren Aufwand für die Nutzerin oder den Nutzer als im privaten Raum.
+Im öffentlichen Raum bedeutet das Anfahren und der Anschluss an einen Ladepunkt einen größeren Aufwand für Fahrzeugnutzer\(^*\)innen als im privaten Raum.
 Deshalb wird angenommen, dass oberhalb eines \glspl{SOC} von \SI{80}{\percent} keine Ladevorgänge stattfinden.
 Es gilt, je niedriger der \gls{SOC}, desto wahrscheinlicher ist es, dass die öffentliche Ladeinfrastruktur genutzt wird.
 Ab einem \gls{SOC} von \SI{50}{\percent} findet, wann immer möglich, eine Ladung statt.
@@ -147,7 +106,7 @@ Zwischen den beiden Stützwerten erfolgt eine lineare Interpolation, welche in \
 
 \input{Ch04/fig/Ch04_fig_04_soc_charging_prob}
 
-Schnellladeinfrastruktur besitzt aufgrund des zusätzlichen Fahrt- und Zeitaufwandes eine geringere Attraktivität für den Nutzer.
+Schnellladeinfrastruktur besitzt aufgrund des zusätzlichen Fahrt- und Zeitaufwandes eine geringere Attraktivität für Fahrzeugnutzer\(^*\)innen.
 Deshalb wird eine Schnellladung in dieser Simulation nur dann ausgelöst, wenn es wirklich nötig ist.
 Sinkt der \gls{SOC} eines \gls{EPKW} unter \SI{20}{\percent}, wird eine Schnellladestation angefahren und der \gls{EPKW} für \SI{15}{\Minuten} geladen.
 Im Unterschied zu \glspl{BEV} können \glspl{PHEV} auch mit einem \gls{SOC} von \SI{0}{\percent} ihre Fahrt mit Hilfe des Verbrennungsmotors fortsetzen.
@@ -162,10 +121,10 @@ Um abschließend ein Fahrtprofil für ein ganzes Jahr zu erhalten, werden die Fa
 
 Um die Anzahl an \glspl{EPKW} je \gls{MS}-Netzgebiet zu bestimmen, muss der Gesamtbestand an \glspl{EPKW} je Szenario (s. \autoref{tab:SzenarienRampUp} und \autoref{tab:CarSplit}) regionalisiert werden.
 Die Regionalisierung der \glspl{EPKW} findet vorerst auf Ebene der Landkreise statt.
-Als Grundlage hierfür dient der aktuelle \gls{PKW}-Bestand nach Zulassungsbezirken \cite[][Stand: \DTMdate{2020-01-01}]{KBAPLZ2020}.
+Als Grundlage hierfür dient der aktuelle \textit{PKW-Bestand nach Zulassungsbezirken} \cite[][Stand: \DTMdate{2020-01-01}]{KBAPLZ2020}.
 Es wird davon ausgegangen, dass es zu keiner Verschiebung des Bestandanteils zwischen den Zulassungsbezirken kommt.
 Dies bedeutet, dass die Gesamtanzahl der \glspl{EPKW} je Fahrzeugklasse und Szenario entsprechend des heutigen Bestandes anteilig verteilt wird.
-Die Aufteilung der \glspl{EPKW} in Klassen erfolgt anhand der Einteilung des \gls{PKW}-Bestandes in Hubraum-Klassen, welche ebenfalls dem \gls{PKW}-Bestand nach Zulassungsbezirken entnommen werden können.\medskip
+Die Aufteilung der \glspl{EPKW} in Klassen erfolgt anhand der Einteilung des \gls{PKW}-Bestandes in Hubraum-Klassen, welche ebenfalls dem \textit{PKW-Bestand nach Zulassungsbezirken} entnommen werden können.\medskip
 
 Die geographische Einteilung der Landfläche in \glspl{REGIOSTAR} erfolgt auf Gemeindeebene, weshalb eine weitere Regionalisierung der \glspl{EPKW} innerhalb eines Landkreises auf die jeweiligen Gemeinden notwendig ist.
 Da auf Gemeindeebene keine Daten zum \gls{PKW}-Bestand vorliegen, erfolgt die Regionalisierung anhand der Bevölkerungszahl der Gemeinden.
@@ -180,19 +139,19 @@ Die entsprechende Zuordnung für das Jahr \num{2018} kann dem Datensatz \textit{
 \subsection{Räumliche Verteilung der Ladevorgänge}\label{chap:theo_distribution}
 
 Die räumliche Verteilung der Ladevorgänge innerhalb eines geographischen Gebietes kann starken Einfluss auf die Auswirkungen der Netzintegration von \glspl{EPKW} haben.
-So können beispielsweise regionale Konzentrationen von Ladepunkten einzelne Leitungen stark beanspruchen und den Netzausbaubedarf erhöhen.\medskip
+So können beispielsweise regionale Konzentrationen des Ladebedarfs einzelne Leitungen stark beanspruchen und den Netzausbaubedarf erhöhen.
+Grundlage für die Ermittlung von möglichen Standorten mitsamt einer Gewichtung bietet eine geoinformatische Auswertung der untersuchten geographischen Gebiete.
+Das hierfür verwendete Software Tool wird unabhängig von der vorliegenden Arbeit am \textit{Reiner Lemoine Institut} entwickelt und ist noch nicht veröffentlicht.
+Erweiternd zu der Identifizierung der möglichen Ladeinfrastruktur wurde innerhalb dieser Arbeit eine Methodik für die Zuteilung der Ladevorgänge auf die Ladeinfrastruktur entwickelt.
+Die Methodik des verwendeten Software Tools und der Zuteilung der Ladevorgänge auf die Ladeinfrastruktur sollen in diesem Kapitel vorgestellt werden soll.\medskip
 
 Innerhalb dieser Arbeit erfolgt die Verteilung der Ladevorgänge immer innerhalb des untersuchten geographischen Gebietes.
 In der Realität wird es vorkommen, dass \glspl{EPKW} außerhalb ihres während der Regionalisierung zugewiesenen geographischen Gebietes geladen werden.
 Dies betrifft vor allem den Pendel- und Urlaubsverkehr.
 Ein Laden in anderen geographischen Gebieten oder das Laden von \glspl{EPKW} aus anderen Gebieten im untersuchten Gebiet kann nicht abgebildet werden.
-Es wird davon ausgegangen, dass sich die hierdurch entstehende Verschiebung des Ladebedarfs zwischen den einzelnen Gebieten ungefähr ausgleicht und keinen großen Einfluss auf die Ergebnisse dieser Untersuchung hat.
-Es ist vorstellbar, dass in einzelnen Fällen auch größere Verschiebungen entstehen, wenn beispielsweise innerhalb eines geographischen Gebietes ein großer Ladepark gebaut wird oder ein großes Unternehmen ansässig ist, welches als Anlaufpunkt für eine Vielzahl von \glspl{EPKW} aus anderen Gebieten dient. 
-Ein solcher Fall kann somit nicht innerhalb dieser Arbeit abgebildet werden.\medskip
-
-Grundlage für die Ermittlung von möglichen Standorten mitsamt einer Gewichtung bietet eine geoinformatische Auswertung der untersuchten geographischen Gebiete.
-Das hierfür verwendete Software Tool wird unabhängig von der vorliegenden Arbeit am \textit{Reiner Lemoine Institut} entwickelt und ist noch nicht veröffentlicht.
-Erweiternd zu der Identifizierung der möglichen Ladeinfrastruktur wurde innerhalb dieser Arbeit eine Methodik für die Zuteilung der Ladevorgänge auf die Ladeinfrastruktur entwickelt.
+Es ist anzunehmen, dass sich die hierdurch entstehende Verschiebung des Ladebedarfs zwischen den einzelnen Gebieten ungefähr ausgleichen und keinen großen Einfluss auf die Ergebnisse dieser Untersuchung hat.
+In einzelnen Fällen ist ess vorstellbar, dass  auch größere Verschiebungen entstehen, wenn beispielsweise innerhalb eines geographischen Gebietes ein großer Ladepark gebaut wird oder ein großes Unternehmen ansässig ist, welches als Anlaufpunkt für eine Vielzahl von \glspl{EPKW} aus anderen Gebieten dient. 
+Ein solcher Fall kann somit nicht innerhalb dieser Arbeit abgebildet werden.
 
 
 \subsubsection{Private Ladeinfrastruktur}
@@ -226,13 +185,13 @@ Die klassifizierten Landflächen nach Nutzungsart der \gls{OSM} entsprechen häu
 Da hierdurch unter Umständen nur wenige Anschlusspunkte generiert werden, werden ergänzend \SI{50}{\percent} der möglichen öffentlichen Normalladeinfrastruktur für Ladeinfrastruktur auf Firmenparkplätzen genutzt.
 Den zusätzlichen Anschlusspunkten wird eine geringe Gewichtung zugeordnet, da durch diese vor allem kleine Betriebe abgebildet werden sollen.
 Die Gewichtung orientiert sich dabei an der ermittelten Gewichtung der öffentlichen Ladeinfrastruktur.
-Bei der privaten Ladeinfrastruktur am Eigenheim oder in Wohnanlagen liegen innerhalb eines Rasters in der Regel mehrere Wohneinheiten, weshalb davon auszugehen ist, dass je identifiziertem Anschlusspunkt mehrere unabhängige Ladepunkte bzw. -parks betrieben werden.
+Bei der privaten Ladeinfrastruktur am Eigenheim oder in Wohnanlagen liegen innerhalb eines Rasters in der Regel mehrere Wohneinheiten, weshalb davon auszugehen ist, dass je identifiziertem Anschlusspunkt mehrere unabhängige Ladepunkte bzw. -parks betrieben werden können.
 Auch bei der öffentlichen Normalladeinfrastruktur können unter Umständen mehrere unabhängige Ladepunkte bzw. -parks betrieben werden.
 Deshalb werden in diesen drei Fällen die möglichen Anschlusspunkte mehrfach vergeben.
 Dabei wird für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen ein Belegungsfaktor von \num{7}, auf Firmenparkplätzen von \num{5} und für die öffentlichen Normalladeinfrastruktur von \num{2} verwendet.\medskip
 
 Jedem Anschlusspunkt wird vor der Zuteilung der Ladevorgänge eine maximale Anzahl an möglichen Ladepunkten zugeordnet.
-Diese entspricht dem Verhältnis von \glspl{EPKW} im \gls{MS}-Netzgebiet und der Anzahl möglicher Ladepunkte je \UC multipliziert mit einem Faktor von \num{5}.
+Diese entspricht dem Verhältnis von \glspl{EPKW} im \gls{MS}-Netzgebiet und der Anzahl möglicher zuvor ermittelter Anschlusspunkte je \UC multipliziert mit einem Faktor von \num{5}.
 Nachdem einem Anschlusspunkt ein Ladepunkt zugeordnet wird, wird die Gewichtung des Anschlusspunktes linear abgesenkt, sodass die Gewichtung des Anschlusspunktes auf Null fällt, sobald die maximale Anzahl an möglichen Ladepunkten erreicht wurde.\medskip
 
 Die Zuteilung der Ladevorgänge auf die Ladeinfrastruktur erfolgt mit Hilfe des Gewichtungsfaktors der Anschlusspunkte.
@@ -262,12 +221,12 @@ Im Falle des \UC \Firmeparkplatz erfolgt der Anschluss an dem nächstgelegenen g
 Demgegenüber erfolgt im Falle von öffentlicher Ladeinfrastruktur der Netzanschluss der Ladestation an dem nächstgelegen Verbraucher, der keine Haushaltslast darstellt.\medskip
 
 Erfolgt der Anschluss in der \gls{MS}-Ebene, wird die Ladestation über ein Kabel an dem nächstgelegenen Netzknoten oder Kabel angeschlossen.
-Hierbei wird ausgeschlossen, dass ein Ladestation an eine andere Ladestation angeschlossen wird.
+Hierbei wird ausgeschlossen, dass eine Ladestation an eine andere Ladestation angeschlossen wird.
 Wird ein Kabel ausgewählt, wird die Leitung an der nächstgelegenen Stelle zur Ladestation aufgetrennt und eine neue Kabelmuffe hinzugefügt, an welcher die Ladestation angeschlossen wird.
 Liegt die Anschlussleistung der Ladestation über \SI{4.5}{\mva}, erfolgt der Anschluss der Ladestation über eine Kabelverbindung direkt an dem \gls{HS}-\gls{MS}-\gls{USW}.\medskip
 
 Es wird angenommen, dass die Anschlussleistung einer Ladestation bis zu einer Leistung von \SI{0.3}{\mva} immer der kumulierten Leistung aller Ladepunkte der Ladestation entspricht.
-Ab einem Anschluss in der \gls{MS}-Ebene wird davon ausgegangen, dass immer eine Optimierung der Spitzenlast der \UCs \zH und \Firmeparkplatz stattfindet (s. \autoref{chap:theo_strategies}).
+Ab einem Anschluss in der \gls{MS}-Ebene wird davon ausgegangen, dass immer eine Optimierung der Spitzenlast bei der \UCs \zH und \Firmeparkplatz stattfindet (s. \autoref{chap:theo_strategies}).
 Aus diesem Grund wird ab einem Anschluss in der \gls{MS}-Ebene eine Abhängigkeit der Anschlussleistung von der kumulierten Leistung vorgenommen.
 Hierbei wird ein linearer Zusammenhang des Anschlussleistungsfaktors von der kumulierten Leistung der Ladepunkte einer Ladestation nach \autoref{fig:connection_rating} angenommen.
 Die Anschlussleistung einer Ladestation ergibt sich anschließend aus dem Produkt des Anschlussleistungsfaktors mit der kumulierten Leistung der Ladepunkte der Ladestation.
@@ -300,7 +259,7 @@ In diesen Fällen kommt auch bei der Referenz-Ladestrategie das reduzierte Laden
 Das Ziel der Ladegruppen ist es, die Netzbelastung präventiv durch die Senkung der Gleichzeitigkeit der Ladevorgänge zu reduzieren.
 Hierfür werden die einzelnen Ladepunkte in zwei Gruppen eingeteilt.
 Beiden Gruppen werden alternierend 15-minütige Ladezeitfenster zugewiesen, in denen bei voller Ladeleistung der Ladebedarf gedeckt wird.
-Reichen die zugewiesenen Ladezeitfenster nicht aus, um den Ladebedarf des Ladevorgangs zu decken, werden auch die Ladezeitfenster der anderen Gruppe verwendet, bis der Ladebedarf gedeckt werden kann.
+Reichen die zugewiesenen Ladezeitfenster nicht aus, um den Ladebedarf des Ladevorgangs zu decken, werden zusätzlich die Ladezeitfenster der anderen Gruppe verwendet, bis der Ladebedarf gedeckt werden kann.
 Die Ladezeitfenster der eigenen Gruppe werden dabei priorisiert behandelt.
 Es wird darauf geachtet, dass die Zuweisung der Gruppen nicht nur innerhalb eines \gls{MS}-Netzgebietes möglichst leistungshomogen erfolgt, sondern detailliert bis in die einzelnen Stränge der \gls{NS}-Ebene.
 Innerhalb eines \gls{NS}-Stranges wird weiterhin darauf geachtet, dass auch die einzelnen Leistungsklassen der Ladeinfrastruktur gleichmäßig auf die Gruppen verteilt werden.
@@ -312,7 +271,7 @@ In \autoref{fig:group_vis} wird beispielhafte die Einteilung von Ladepunkten auf
 
 \subsubsection{Reduziertes Laden}
 
-Im Gegensatz zu den Ladegruppen soll beim reduzierten Laden die Senkung der Netzbelastung präventiv durch die Reduzierung der Ladeleistung der einzelnen Ladevorgänge erreicht werden.
+Beim reduzierten Laden soll präventiv durch die Reduzierung der Ladeleistung der einzelnen Ladevorgänge eine Senkung der Netzbelastung erreicht werden.
 Hierbei wird durch eine Absenkung der Ladeleistung möglichst die gesamte Standzeit des \gls{EPKW} für den Ladevorgang genutzt.
 Die Flexibilität dieser Ladestrategie wird durch eine Mindestladeleistung von \SI{10}{\percent} der Nennleistung des angefahrenen Ladepunktes technisch begrenzt.
 Hierdurch soll ein Kompromiss zwischen einer möglichst großen Reduktion der Ladeleistung und den technischen Anforderungen der Ladeinfrastruktur gefunden werden.
@@ -324,7 +283,7 @@ Im Gegensatz zur Referenz-Ladestrategie werden unabhängig von der Netzebene bei
 Bei dem Residuallast-Laden handelt es sich um eine aktive Ladestrategie, welche an das gesteuerte Laden der Agora Studie \textit{Verteilnetzausbau für die Energiewende} \cite{Agora2019} angelehnt ist.
 Der Ladevorgang eines \gls{EPKW} findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des \gls{MS}-Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
 Die Zuweisung findet auf Viertelstundenbasis und die Ladevorgänge immer bei voller Ladeleistung statt.
-Das Ziel der Optimierung kann so formuliert werden, dass eine Minimierung der \glspl{MQA} nach \autoref{eq:residual} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
+Das Ziel der Optimierung kann so formuliert werden, dass nach \autoref{eq:residual} eine Minimierung der \glspl{MQA} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
 
 \begin{equation}
 	\text{MQA} = \frac{1}{n} \sum_i^n \left( P_{\text{R}_i} - \overline{P}_{\text{R}} \right)^2
@@ -342,13 +301,13 @@ Das Ziel der Optimierung kann so formuliert werden, dass eine Minimierung der \g
 	\end{tabular}
 }
 
-Durch die Abhängigkeit der Residuallast von den einzelnen Ladevorgängen sind auch die Ergebnisse der Optimierung der einzelnen Ladevorgänge voneinander abhängig.
+Durch die Abhängigkeit der Residuallast von den einzelnen Ladevorgängen sind auch die einzelnen Ladevorgänge voneinander abhängig.
 Hierdurch entsteht ein komplexes Optimierungsproblem.
 Um die Rechenzeit in einem akzeptablen Maß zu halten, wird eine Näherung an eine optimale Lösung angestrebt.
 Für jeden Ladevorgang wird ermittelt, wie viel überschüssige Standzeit zur Flexibilisierung der Ladevorgänge zur Verfügung steht.
 Die Ladevorgänge werden anschließend in Abhängigkeit dieses Kriteriums in aufsteigender Reihenfolge sortiert und einzeln betrachtet.
-So werden für jeden Ladevorgang die nötigen Zeitschritte für den Ladevorgang ausgewählt, welche innerhalb der Standzeit die geringste Residuallast aufweisen.
-Zusätzlich wird die Residuallast entsprechend angepasst und somit die Abhängigkeit der einzelnen Ladevorgänge voneinander gewährleistet.
+So werden für jeden Ladevorgang die Zeitschritte für den Ladevorgang ausgewählt, welche innerhalb der Standzeit die geringste Residuallast aufweisen.
+Zusätzlich wird die Residuallast nach jeder Zuweisung entsprechend angepasst und somit die Abhängigkeit der einzelnen Ladevorgänge voneinander gewährleistet.
 Auf diese Weise werden Ladevorgänge mit einem geringen Flexibilitätsband vorrangig behandelt und eine möglichst optimale Lösung bei einem geringen Rechenaufwand erreicht.
 
 
@@ -356,11 +315,13 @@ Auf diese Weise werden Ladevorgänge mit einem geringen Flexibilitätsband vorra
 
 Die Fahrtprofile der \gls{EPKW} und die Lastzeitreihen der Ladestrategien werden auf \SI{15}{\Minuten} Basis generiert.
 In vielen Zeitschritten kann der {--} verbleibende {--} Ladebedarf in weniger als \SI{15}{\Minuten} nachgeladen werden.
-Aus diesem Grund wird durch zwei Maßnahmen ein Kompromiss angestrebt, um sowohl realistische Gleichzeitigkeiten abzubilden, die Auswikungen auf die Netzbelastung haben, als auch die Differenz zwischen dem Ladebedarf der Fahrtprofile nach \gls{SIMBEV} und den Lastzeitreihen der Ladestrategien minimal zu halten.
+Aus diesem Grund wird durch zwei Maßnahmen ein Kompromiss angestrebt.
+Einerseits sollen realistische Gleichzeitigkeiten abgebildet werden, welche Auswikungen auf die Netzbelastung haben.
+Andererseits soll die Differenz zwischen dem Ladebedarf der Fahrtprofile nach \gls{SIMBEV} und den Lastzeitreihen der Ladestrategien minimal ausfallen.
 
 \begin{enumerate}
 	\item Dem Gesamtladebedarf eines Ladevorgangs wird nur dann der Ladebedarf des letzten Zeitschritts zugeordnet, wenn bei maximaler Ladeleistung mindestens \SI{20}{\percent} des Zeitschritts benötigt werden, um den Ladebedarf zu decken.
-	\item Wenn einem Ladevorgang der Ladebedarf des letzten Zeitschritts zugeordnet wird, dann wird dies in den Lastzeitreihen in allen für die Ladung auch nur anteilig benötigten Zeitschritten durch die zugewiesene Ladeleistung widergespiegelt.
+	\item Wenn einem Ladevorgang der Ladebedarf des letzten Zeitschritts zugeordnet wird, dann wird in allen für die Ladung auch nur anteilig benötigten Zeitschritten dies in den Lastzeitreihen durch die zugewiesene Ladeleistung des Ladevorgangs in voller Höhe widergespiegelt.
 \end{enumerate}
 
 Wenn ein Ladevorgang von diesen Maßnahmen betroffen ist, dann wird der Ladebedarf dieses Ladevorgangs entweder erhöht oder reduziert in den Lastzeitreihen wiedergegeben.
@@ -372,14 +333,13 @@ Dies soll kurz an zwei Beispielen veranschaulicht werden:
 
 \begin{enumerate}
 	\item Beträgt der Ladebedarf eines Fahrzeuges nach \gls{SIMBEV} beispielsweise \SI{12}{\kwh} und die fahrzeugseitige Wirkleistung \SI{9.9}{\kw}, dann werden insgesamt rund \SI{73}{\Minuten} für die Ladung benötigt. In diesem Fall wird in den Lastzeitreihen insgesamt fünf Zeitschritten und somit \SI{75}{\Minuten} die Ladeleistung zugeordnet. Aus diesem Grund wird der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \gls{SIMBEV} auf \SI{12.375}{\kwh} erhöht.
-	\item Wenn hingegen der Ladebedarf bei einer gleichbleibenden Ladeleistung \SI{10}{\kwh} beträgt, dann werden nur rund \SI{61}{\Minuten} für die Ladung benötigt. In diesem Fall wird die Ladeleistung in den Lastzeitreihen nur in vier Zeitschritten und somit \SI{60}{\Minuten} abgebildet. Der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \gls{SIMBEV} wird entsprechend auf \SI{9.9}{\kwh} reduziert.
+	\item Wenn hingegen der Ladebedarf bei einer gleichbleibenden Ladeleistung nur \SI{10}{\kwh} beträgt, dann werden nur rund \SI{61}{\Minuten} für die Ladung benötigt. In diesem Fall wird die Ladeleistung in den Lastzeitreihen nur in vier Zeitschritten und somit \SI{60}{\Minuten} abgebildet. Der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \gls{SIMBEV} wird entsprechend auf \SI{9.9}{\kwh} reduziert.
 \end{enumerate}
 
 
 \subsection{Netzuntersuchung}\label{chap:edisgo_theo}
 
 Das Open Source Tool \gls{EDISGO} stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
-Gleichzeitig können mit \gls{EDISGO} Maßnahmen zur Behebung der Netzprobleme bewertet werden.
 Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt wurden, die Grundlage für die Berechnungen mit \gls{EDISGO}.
 \gls{EDISGO} kann über \textit{GitHub} \cite{edisgoGit2019} abgerufen werden und ist auf \textit{Read the Docs} \cite{edisgoDocs2017} dokumentiert.
 Innerhalb dieses Kapitels werden die wichtigsten Funktionalitäten \glspl{EDISGO} für die Durchführung der Berechnungen innerhalb dieser Arbeit dargestellt und erläutert.
@@ -387,54 +347,31 @@ Innerhalb dieses Kapitels werden die wichtigsten Funktionalitäten \glspl{EDISGO
 
 \subsubsection{Ermittlung von Netzproblemen}\label{chap:grid_issues}
 
-Die Überprüfung der einzelnen Netze auf Netzprobleme erfolgt in zwei Schritten.
+Die Überprüfung der Referenznetzgebiete auf Netzprobleme besteht aus zwei Schritten.
 Vorerst wird eine nichtlineare Lastflussanalyse durchgeführt, um anschließend die Einhaltung der Spannungsanforderungen und technischen Richtlinien bezüglich der Betriebsmittelbelastungen zu überprüfen.
-Die Durchführung der Lastflussanalyse erfolgt mit Hilfe des Open Source Tools \textit{PyPSA} \cite{Brown2020}.
-In diesem Kapitel soll auf die theoretischen Grundlagen der Lastflussanalyse, den Umfang der Analyse und die Spannungsanforderungen sowie die technischen Richtlinien bezüglich der Gerätebelastungen eingegangen werden.\medskip
-
-Das Ziel der Lastflussanalyse ist es, dass zwischen allen Verbindungen der Netzknoten $i$ und $k$ die folgende Gleichung erfüllt wird:
-
-\begin{equation}
-	S_i = P_i + j Q_i = V_i I_i^* = V_i \left(\sum_j Y_{i,k} V_k \right)^*
-	\label{eq:pf}
-\end{equation}
-
-\noindent Wobei:
-
-\addvbuffer[12pt 12pt]{
-	\begin{tabular}{>{$}r<{$}@{\ :\ }l}
-		S_i 		& Scheinleistung am Netzknoten $i$ \\
-		P_i	 		& Wirkleistung am Netzknoten $i$ \\
-		Q_i			& Blindleistung am Netzknoten $i$ \\
-		V_i			& Komplexe Spannung am Netzknoten, wobei $V_i = \left| V_i \right|e^{j \theta_i}$ \\
-		I_i			& Stromstärke am Netzknoten \\
-		Y_{i,k}		& Admittanz der Leitung zwischen den Netzknoten $i$ und $k$ \\
-	\end{tabular}
-}
-
-Der Winkel der komplexen Spannung ist relativ zum Bilanzknoten.
-Unter dem Bilanzknoten wird ein Netzknoten verstanden, an welchem der Wirk- und Blindleistungsfluss frei eingestellt werden kann.
-Mit Hilfe des Bilanzknotens kann über einen iterativen Prozess die Konvergenz nach \autoref{eq:pf} des Systems erreicht werden.
-Eine genau Beschreibung der Lastflussanalyse des Open Source Tools \textit{PyPSA} kann auf \textit{Read the Docs} \cite{Brown2020a} abgerufen werden.
-Da die Spannung der Sekundärseite des \gls{HS}-\gls{MS}-\glspl{USW} eingestellt werden kann, eignet sich dieser Punkt besonders gut und wird entsprechend als Bilanzknoten verwendet.
-Alle weiteren Netzknoten werden mit gegebenen Wirk- und Blindleistungen modelliert. \cite{Schachler}\medskip
+Die Durchführung der Lastflussanalyse erfolgt mit Hilfe \glspl{EDISGO}, welches die Funktionalitäten des Open Source Tools \textit{PyPSA} \cite{Brown2020} nutzt.
+In diesem Kapitel soll auf den Umfang der Lastflussanalyse und die Spannungsanforderungen sowie die technischen Richtlinien bezüglich der Gerätebelastungen eingegangen werden.
+Eine genau Beschreibung der Lastflussanalyse des Open Source Tools \textit{PyPSA} kann auf \textit{Read the Docs} \cite{Brown2020a} abgerufen werden.\medskip
 
 Die Lastflussanalyse der Netze berücksichtigt sowohl \gls{MS}- und \gls{NS}-Leitungen als auch die \gls{MS}-\gls{NS}-Umspannebene.
-Gegenüber einer Aggregation der Erzeugung und des Bedarfs der einzelnen \gls{NS}-Netze an dem jeweiligen \gls{MS}-\gls{NS}-\gls{USW} bietet diese besonders tiefgehende Betrachtung die Möglichkeit, die Auswirkungen der teilweise hohen Ladeleistungen der Ladeinfrastruktur genauer zu betrachten und den Einfluss verschiedener Ladestrategien umfassender bestimmen zu können.
-Da die Sekundärseite des \gls{HS}-\gls{MS}-\glspl{USW} als Bilanzknoten modelliert wird, können an dieser keine Spannungsprobleme auftreten.
-Jedoch entspricht die Scheinleistung des Bilanzknotens der Lastflussanalyse der Leistung, die über das \gls{HS}-\gls{MS}-\gls{USW} geleitet wird.
-Anhand dieses Wertes können zusätzlich Aussagen über die Belastung des \gls{HS}-\gls{MS}-\glspl{USW} getroffen werden.
+Gegenüber einer Aggregation der Erzeugung und des Bedarfs der einzelnen \gls{NS}-Netze an dem jeweiligen \gls{MS}-\gls{NS}-\gls{USW} bietet diese besonders tiefgehende Betrachtung die Möglichkeit, die Auswirkungen der teilweise hohen Ladeleistungen der Ladeinfrastruktur genauer zu analysieren und den Einfluss verschiedener Ladestrategien umfassender bestimmen zu können.\medskip
+
+Unter dem Bilanzknoten wird ein Netzknoten verstanden, an welchem der Wirk- und Blindleistungsfluss frei eingestellt werden kann, womit über einen iterativen Prozess bei der Lastflussanalyse die Konvergenz des Systems erreicht werden soll.
+Da die Spannung der Sekundärseite des \gls{HS}-\gls{MS}-\glspl{USW} auch in der Realität eingestellt werden kann, eignet sich dieser Punkt besonders gut und wird entsprechend als Bilanzknoten verwendet.
+Aus diesem Grund können am \gls{HS}-\gls{MS}-\gls{USW} keine Spannungsprobleme auftreten.
+Jedoch entspricht die bei der Lastflussanalyse berechnete Scheinleistung des Bilanzknotens der Leistung, die über das \gls{HS}-\gls{MS}-\gls{USW} geleitet wird.
+Anhand dieses Wertes können erweiternd Aussagen über etwaige Überlastungen des \gls{HS}-\gls{MS}-\glspl{USW} getroffen werden.
 In \autoref{fig:scope} ist eine Übersicht über den Umfang der Lastflussanalyse dargestellt. \cite{Schachler}
 
-\input{Ch04/fig/Ch04_fig_07_scope_grid_issues}
+\input{Ch04/fig/Ch04_fig_07_scope_power_flow}
 
 Mit Hilfe der durch die Lastflussanalyse ermittelten Belastungen und Spannungsabweichungen an den Betriebsmitteln können abschließend Überlastungen und Spannungsprobleme festgestellt werden.
-Im Rahmen dieser Arbeit gilt als Planungsgrundsatz, dass der zulässige Belastungsfaktor aller Betriebsmittel \SI{100}{\percent} beträgt.
+Im Rahmen dieser Arbeit gilt als Planungsgrundsatz, dass der auf Scheinleistung bezogene zulässige Belastungsfaktor aller Betriebsmittel \SI{100}{\percent} beträgt.
 Die zulässigen Spannungsabweichungen liegen für Endkunden in der \gls{NS}-Ebene bei \SI{\pm 10}{\percent}.
 Dieses Spannungsband wird nach \autoref{tab:Spannungsband} auf die \gls{MS}, \gls{MS}-\gls{NS}- und \gls{NS}-Ebene aufgeteilt.
 Im Lastfall spiegelt das in der \gls{NS}-Ebene größere zulässige Spannungsband wider, dass in dieser Ebene die Mehrzahl der Verbraucher angeschlossen ist.
 Demgegenüber wird im Rückspeisefall ein größeres Spannungsband für die \gls{MS}-Ebene reserviert.
-Es gelten die in \autoref{tab:Spannungsband} Spannungsabweichungen, welche aus \textit{Integrated Techno-Economic Power System Planning of Transmission and Distribution Grids} \cite{Mueller2019a} entnommen wurden und auf der \textit{Verteilnetzstudie für das Land Baden-Württemberg} \cite{Rehtanz2017} basieren.
+Die Aufteilung des zulässigen Spannungsbandes nach \autoref{tab:Spannungsband} wird aus \textit{Integrated Techno-Economic Power System Planning of Transmission and Distribution Grids} \cite{Mueller2019a} entnommen und basiert auf der \textit{Verteilnetzstudie für das Land Baden-Württemberg} \cite{Rehtanz2017}
 
 \input{Ch04/tab/Ch04_tab_05_Spannungsband}
 
@@ -442,17 +379,9 @@ Es gelten die in \autoref{tab:Spannungsband} Spannungsabweichungen, welche aus \
 \subsubsection{Ermittlung des Abregelungsbedarfs für die Auflösung von Netzüberlastungen}
 
 Die Ermittlung des Abregelungsbedarfs für die Auflösung von Spannungsbandverletzungen und Betriebsmittelüberbelastungen erfolgt in einem iterativen Prozess.
-Vorerst werden etwaige Netzprobleme und die entsprechenden Zeitschritte, in denen die Netzprobleme auftreten, mit Hilfe der zuvor beschriebenen Lastflussanalyse ermittelt.
+Vorerst werden etwaige Netzprobleme und die entsprechenden Zeitschritte, in denen die Netzprobleme auftreten, mit Hilfe der Lastflussanalyse ermittelt.
 Anschließend wird die Last bzw. die Einspeisung in \SI{5}{\percent}-Schritten innerhalb der ermittelten Zeitschritte reduziert.
 Beides wird so lange wiederholt, bis keine Netzprobleme mehr auftreten.\medskip
-
-Um die Rechenzeit innerhalb eines akzeptablen Maßes zu halten, erfolgt die Ermittlung des Abregelungsbedarfs für zwei Wochen des Jahres.
-Hierbei werden die Wochen untersucht, die im \gls{MS}-Netzgebiet die minimale bzw. maximale durchschnittliche Residuallast aufweisen.
-Auf diese Weise sollen möglichst extreme Belastungssituationen abgedeckt werden.\medskip
-
-Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
-Aus diesem Grund werden zuerst die \gls{NS}-Netze eines \gls{MS}-Netzgebiets einzeln betrachtet, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.\medskip
-% Durch die vorgeschaltete Einzelbetrachtung der \gls{NS}-Netze kann der Abregelungsbedarf eindeutig der \gls{NS}- bzw. \gls{MS}-Ebene zugeordnet werden.\medskip
 
 Bei der Lösung der Netzprobleme werden vorerst Spannungsprobleme und abschließend Überlastungen behandelt.
 Weiterhin werden Probleme in der \gls{NS}-Ebene behandelt, bevor Probleme in der \gls{MS}-\gls{NS}-Umspannebene und abschließend in der \gls{MS}-Ebene gelöst werden.
@@ -462,9 +391,15 @@ So kann auch hier die Lösung von weiter entfernten Netzproblemen bereits vorges
 Für jeden Zeitschritt, in dem Überlastungs- oder Spannungsprobleme an einem Netzknoten auftreten, wird geprüft, ob die Netzprobleme durch hohe Nachfrage oder hohe Einspeisung entstehen.
 Anhand dieser Information wird entschieden, ob Last oder Einspeisung abgeregelt werden soll.
 Die gesamte notwendige Abregelung für das \gls{MS}-Netzgebiet ergibt sich aus der Summierung aller nötigen Abregelungen von Last und Erzeugung.
-In \autoref{fig:scope_curtailment} ist das Vorgehen veranschaulicht.
+In \autoref{fig:scope_curtailment} ist das Vorgehen veranschaulicht. \cite{Schachler}
 
-\input{Ch04/fig/Ch04_fig_08_scope_curtailment}
+\input{Ch04/fig/Ch04_fig_08_scope_grid_issues}
 
+Um die Rechenzeit innerhalb eines akzeptablen Maßes zu halten, erfolgt die Ermittlung des Abregelungsbedarfs für zwei Wochen des Jahres.
+Hierbei werden die Wochen untersucht, die im \gls{MS}-Netzgebiet die minimale bzw. maximale durchschnittliche Residuallast aufweisen.
+Auf diese Weise sollen möglichst extreme Belastungssituationen abgedeckt werden.\medskip
+
+Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
+Aus diesem Grund werden zuerst die \gls{NS}-Netze eines \gls{MS}-Netzgebiets einzeln betrachtet und bei Bedarf abgeregelt, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.
 
 \clearpage
