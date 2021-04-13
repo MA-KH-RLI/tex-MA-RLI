@@ -18,7 +18,7 @@ Die folgende Auflistung entspricht den relevantesten Ergebnissen mehrerer Diskus
 %	\item Es wird davon ausgegangen, dass \num{2050} etwa \num{15} \glspl{EPKW} auf einen öffentlichen Ladepunkt kommen
 	\item Eine regionale Konzentration von \glspl{EPKW} wird nur während der Markthochlaufphase eine relevante Rolle spielen.
 	\item Marktorientierte Ladestrategien können Gleichzeitigkeiten und damit den Netzausbaubedarf erhöhen.
-	\item Die Umsetzung von \gls{V2G}-Anwendungen wird als unwahrscheinlich eingestuft.
+	\item Die großtechnische Umsetzung von \gls{V2G}-Anwendungen wird als unwahrscheinlich eingestuft.
 	
 \end{itemize}
 
@@ -34,18 +34,12 @@ Insgesamt werden drei Szenarien und eine daraus abgeleitete Sensitivität in For
 \subsubsection{Ausbau regenerativer Energien}
 
 Die Annahmen zum Hochlauf der regenerativen Erzeugerkapazitäten werden innerhalb der Szenarien als konstant angenommen.
-Hierdurch werden Vermischungseffekte durch die Änderung mehrerer Eingangsparameter verhindert und der Einfluss der Elektromobilität kann getrennt betrachtet werden.
+Hierdurch werden Vermischungseffekte aufgrund der Variation mehrerer Eingangsparameter vermieden und der Einfluss der Elektromobilität kann getrennt betrachtet werden.
 Die Annahmen zum Hochlauf der Erzeugerkapazitäten werden aus dem Szenario \ego des \gls{OPENEGO} Projekts entnommen.
-Die Regionalisierung der Erzeugerkapazitäten erfolgte im Rahmen des \gls{OPENEGO} Projektes und eine genaue Beschreibung der Regionalisierung ist im Projektabschlussbericht \cite{Mueller2019} festgehalten.
-An dieser Stelle wird die Methodik zusammenfassend dargestellt.\medskip
-
-Um den Status Quo abzubilden, werden offizielle, öffentliche Verzeichnisse, welche Informationen zu den einzelnen Kraftwerken bereitstellen, zusammengeführt.
-Da die Daten hierbei in unterschiedlichen Qualitäten und Detailgraden vorliegen, müssen diese auf ein einheitliches Format ergänzt werden.
-Ziel ist dabei, allen Anlagen einen geografischen Bezugspunkt und eine Netzebene zuzuordnen.
-Je nach Datensatz werden hierbei die angegebene Spannungsebene, die eingetragene Technologie und die installierte Leistung der Kraftwerke als Identifikatoren genutzt.\medskip
+Die Regionalisierung der Erzeugerkapazitäten erfolgte im Rahmen des \gls{OPENEGO} Projektes und eine genaue Beschreibung der Regionalisierung ist im Projektabschlussbericht \cite{Mueller2019} festgehalten.\medskip
 
 Für das Szenario \ego werden die Hochlaufzahlen für regenerative Erzeugerkapazitäten aus der Studie \textit{e-Highway 2050 - Modular Development Plan of the Pan-European Transmission System 2050} \cite{EEHPG2015} übernommen, welche in \autoref{tab:EE-RampUp} dargestellt sind.
-Auf Grundlage des zuvor erstellten Status Quo werden die Erzeugerkapazitäten entsprechend der aktuellen Verteilung gewichtet verteilt.
+Auf Grundlage des Status Quo im Jahr \num{2015} werden die Erzeugerkapazitäten entsprechend der aktuellen Verteilung gewichtet verteilt.
 Hierbei werden maximale Ausbaupotentiale berücksichtigt, indem beispielsweise Weißflächen für den Ausbau von Onshore Windkraftanlagen berücksichtigt werden.
 
 \input{Ch05/tab/Ch05_tab_01_EE-RampUp}
@@ -65,8 +59,8 @@ An dieser Stelle soll die Methodik kurz zusammengefasst werden.\medskip
 
 Die \Lastgebiete entsprechen einer geographischen Einheit, welcher ein elektrischer Verbrauch zugeordnet wird.
 Um die Datenmengen möglichst gering zu halten, werden innerhalb eines \Lastgebietes räumlich nahe liegende Landnutzungsflächen zusammengefasst.
-Zusätzlich wird den \Lastgebieten eine Bevölkerungsanzahl und der Anteil an den Gesamtlandnutzungsflächen (\gls{GHD}, Industrie, Wohnen und Landwirtschaft) zugeteilt.
-Anhand dieser Charakteristika erfolgt abschließend eine anteilige Zuordnung des Stromverbrauches und der Zeitreihen der vier Sektoren auf die \Lastgebietedot.
+Zusätzlich wird den \Lastgebieten eine Bevölkerungsanzahl und der Anteil an den Gesamtlandnutzungsflächen der Sektoren \gls{GHD}, Industrie, Wohnen und Landwirtschaft zugeteilt.
+Anhand dieser Charakteristika erfolgt abschließend eine anteilige Zuordnung des gesamten Stromverbrauches und der Zeitreihen der vier Sektoren auf die \Lastgebietedot.
 
 
 \subsubsection{Wärmepumpen}
@@ -78,7 +72,7 @@ Die Hochlaufzahlen und der Jahresverbrauch entsprechen dem Szenario C~\num{2035}
 
 Der Jahresstromverbrauch der \glspl{WP} wird anhand des Anteils des Stromverbrauches des Haushaltssektors eines Netzgebietes bezogen auf den Gesamtstromverbrauch des Haushaltssektors im Szenario \ego auf die einzelnen Netzgebiete verteilt.
 Innerhalb eines Netzgebietes erfolgt die Regionalisierung gewichtet anhand des Stromverbrauches der einzelnen Haushaltslasten.
-Die zeitliche Verteilung der Last wird der nichtöffentlichen Studie \textit{E-Mobility Study {--} Assessment of coordinated charging considering distribution grid restrictions} \cite{Schachler} entnommen.
+Der zeitliche Verlauf der Last wird der \textit{E-Mobility Study} \cite{Schachler} entnommen und auf alle \glspl{WP} umgelegt.
 
 
 \subsubsection{Elektromobilität}\label{chap:EMob_Szenarien}
@@ -97,7 +91,7 @@ Das Antriebswende-Szenario geht hingegen von einer vollständigen Elektrifizieru
 \input{Ch05/tab/Ch05_tab_03_SzenarienRampUp}
 
 Die Aufteilung des \gls{EPKW}-Bestands in \glspl{BEV} und \glspl{PHEV} erfolgt anhand des ermittelten Medians der Literaturrecherche für den Fahrzeughochlauf an \glspl{BEV} und \glspl{PHEV} für das Stützjahr \num{2050}.
-Innerhalb der \gls{EPKW}-Typen erfolgt weiterhin eine Einteilung in die Fahrzeugklassen Kleinwagen, Mittelklasse und Oberklasse.
+Innerhalb der \gls{EPKW}-Typen wird erweiternd eine Einteilung in die Fahrzeugklassen Kleinwagen, Mittelklasse und Oberklasse vorgenommen.
 Es wird davon ausgegangen, dass sich die Einteilung in Fahrzeugklassen zwischen \glspl{BEV} und \glspl{PHEV} nicht unterscheidet.
 So gibt es in den Szenarien zwar insgesamt mehr \glspl{BEV} als \glspl{PHEV}, aber das Verhältnis zwischen den Fahrzeugklassen ist zwischen den beiden \gls{EPKW}-Typen konstant.
 Die Einteilung in \autoref{tab:CarSplit} entspricht der Statistik des Kraftfahrt-Bundesamtes \cite{KBASegments2020} vom \DTMdate{2020-01-01}.
@@ -188,7 +182,7 @@ Abschließend wird angenommen, dass alle Stellplätze von Besitzer$^*$innen eine
 In Wohnanlagen werden hohe Ladeleistungen eine Ausnahme bleiben.
 Insgesamt wird von einem Verhältnis zwischen den Ladeleistungen von \(10:80:10:0\) ausgegangen.\medskip
 
-Bei Firmen- bzw. Gewerbeparkplätzen wird davon unterstellt, dass zukünftig Mitarbeiter$^*$innen bzw. Kund$^*$innen in \SI{75}{\percent} der Fälle Zugriff auf einen Ladepunkt haben.
+Bei Firmen- bzw. Gewerbeparkplätzen wird unterstellt, dass zukünftig Mitarbeiter$^*$innen bzw. Kund$^*$innen in \SI{75}{\percent} der Fälle Zugriff auf einen Ladepunkt haben.
 Die Verteilung der Ladeleistungen geschieht in Anlehnung an das Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} und der Stromtankstellen Statistik des \textit{GoingElectric} Forums \cite[][Stand: \DTMdate{2020-10-21}]{Weemaes2020}.
 Demnach besitzt ein Großteil (\SIrange[range-phrase=~bzw.~]{80}{51}{\percent}) der heute öffentlich zugänglichen Ladepunkte eine Ladeleistung von \SIrange{22}{42}{\kw}.
 Insgesamt wird davon ausgegangen, dass sich der Trend zu hohen Ladeleistungen weiter fortsetzt.
@@ -205,7 +199,7 @@ Die entsprechenden Ergebnisse sind in \autoref{tab:WegezweckProbability2050} dar
 
 
 \subparagraph{Schnellladung} entspricht in dieser Arbeit einer Art Notfallladung.
-Fällt der \gls{SOC} eines \gls{EPKW} während einer Fahrt unter \SI{20}{\percent}, wird eine Schnellladestation angefahren und der \gls{EPKW} für \SI{15}{\Minuten} geladen.
+Fällt der \gls{SOC} eines \gls{EPKW} unter \SI{20}{\percent}, wird eine Schnellladestation angefahren und der \gls{EPKW} für \SI{15}{\Minuten} geladen.
 Bei Schnellladevorgängen wird in dieser Arbeit grundsätzlich zwischen einer Ladung mit \SI{150}{\kw} und mit \SI{350}{\kw} unterschieden.
 Nach dem Ladesäulenregister der Bundesnetzagentur \cite[][Stand: \DTMdate{2020-09-09}]{BundesnetzagenturElektrizitaet2020} weisen bereits heute \SI{59}{\percent} der Ladeinfrastruktur mit einer Leistung von mehr als \SI{50}{\kw} eine Ladeleistung von über \SI{150}{\kw} auf.
 Es ist davon auszugehen, dass sich auch bei der Schnellladeinfrastruktur der Trend zu hohen Ladeleistungen fortsetzt.
