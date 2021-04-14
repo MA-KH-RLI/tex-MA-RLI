@@ -3,33 +3,39 @@
 
 \subsection{Motivation und Zielsetzung}
 
-Durch die Verpflichtung der Bundesregierung, die Treibhausgasemissionen im Verkehrssektor bis \num{2030} um \SIrange[range-phrase=~bis~]{40}{42}{\percent} \cite{BundesministeriumUmwelt2019} zu senken, scheint eine rapide Steigerung der Marktdurchdringung des Verkehrssektor mit Elektrofahrzeugen unumgänglich zu sein.
+Durch die Verpflichtung der Bundesregierung, die Treibhausgasemissionen im Verkehrssektor bis \num{2030} um \SIrange[range-phrase=~bis~]{40}{42}{\percent} \cite{BundesministeriumUmwelt2019} zu senken, scheint eine rapide Steigerung der Durchdringung des Verkehrssektor mit Elektrofahrzeugen unumgänglich.
 Nicht nur aus Gründen des Klimaschutzes ist ein zukünftiges Szenario mit einer hohen Durchdringung an direktelektrifizierten Fahrzeugen immer wahrscheinlicher.
-Auch sinkende Investitionskosten, ausgelöst durch einen starken Preisverfall bei der Batterietechnologie und staatliche Subventionen spielen eine entscheidende Rolle.
+Auch sinkende Investitionskosten, ausgelöst durch einen starken Preisverfall bei der Batterietechnologie, und staatliche Subventionen spielen eine entscheidende Rolle.
 Zusätzlich wirken sich die Erweiterung des Angebots, wegfallende lokale Schadstoffemissionen und Effizienzvorteile gegenüber alternativen Technologien begünstigend auf den Markthochlauf aus.
-Abschließend sollen auch durch den Aufbau von einer Million öffentlich-zugänglicher Ladepunkte bis \num{2030} \cite{DieBundesregierung2019} reale und psychologische Hemmnisse beim Erwerb von Elektrofahrzeugen abgebaut werden.\medskip
+Ergänzend sollen auch durch den Aufbau von einer Million öffentlich-zugänglicher Ladepunkte bis \num{2030} \cite{DieBundesregierung2019} reale und psychologische Hemmnisse beim Erwerb von Elektrofahrzeugen abgebaut werden.\medskip
 
 Die Ladung der Fahrzeuge kann mit moderaten Ladeleistungen im Eigenheim, in Wohnanalagen, auf Firmen- und Gewerbeparkplätzen, am Straßenrand oder auch bei hohen Ladeleistungen an Schnellladeinfrastruktur erfolgen.
-Da Elektrofahrzeuge über die Verteilnetze geladen werden, ist bei einer Zunahme des Fahrzeugbestandes mit einer Erhöhung der Rückwirkungen auf die Verteilnetze zu rechnen.
-Die Höhe und Art der Auswirkungen hängt neben der Anzahl an Elektrofahrzeugen von vielen weiteren Faktoren ab.
-Hierzu zählen die Ladeleistung, der Zeitpunkt und Ort der Ladung, die Kapazität und der \gls{SOC} der Batterie sowie der aktuelle Zustand der Verteilnetze.
-Die Gleichzeitigkeit von Ladevorgängen und die Ladestrategie nehmen ebenfalls entscheidend Einfluss.
-Parallel hierzu ist bereits heute aufgrund des zunehmenden Ausbaus erneuerbaren Energien, welche zu einem großen Teil in den Verteilnetzen angeschlossen werden \cite{AgoraEnergiewende2017}, eine starken Belastung der Verteilnetze zu vermerken.
-Durch die Wahl einer geeigneten Ladestrategie können auch Synergien zwischen Elektrofahrzeugen und erneuerbaren Energien entstehen.
+Da Elektrofahrzeuge über die Verteilnetze geladen werden, ist bei einer Zunahme des Fahrzeugbestandes mit einer Erhöhung negativer Auswirkungen auf die Verteilnetze wie zunehmenden Netzverlusten, Verletzungen thermischer Betriebsmittelbelastungen und Spannungsbandverletzungen zu rechnen \cite{Dharmakeerthi2011}.
+Neben der Anzahl an Elektrofahrzeugen hängt der Einfluss auf die Verteilnetze von vielen weiteren Faktoren ab.
+Hierzu zählen vor allem die Ladeleistung, der Zeitpunkt und Ort der Ladung, der aktuelle Netzzustand sowie die Gleichzeitigkeit der Ladevorgänge.
+Ladestrategien können einige dieser Faktoren und somit die Rückwirkungen auf die Verteilnetze beeinflussen.
+Parallel hierzu ist bereits heute aufgrund des zunehmenden Ausbaus Erneuerbarer Energien, welche zu einem großen Teil in den Verteilnetzen angeschlossen werden \cite{AgoraEnergiewende2017}, eine starke Belastung der Verteilnetze zu vermerken.
+Durch die Wahl einer geeigneten Ladestrategie können Synergien zwischen Elektrofahrzeugen und erneuerbaren Energien entstehen.
 Beispielsweise kann gezielt ein Ausgleich zwischen der Erzeugung von \glspl{FEE} und dem Energiebedarf der Elektrofahrzeuge geschaffen und so die Netzintegration von erneuerbaren Energien unterstützt werden.
-Im Mittelpunkt dieser Arbeit steht deshalb die Untersuchung der Auswirkungen verschiedener präventiver und aktiver Ladestrategien, mit dem Ziel die Netzbelastung zu minimieren und die Netzintegration von erneuerbaren Energien zu unterstützen.\medskip
+Im Mittelpunkt dieser Arbeit steht deshalb die Untersuchung der Auswirkungen verschiedener Ladestrategien, mit dem Ziel die Netzbelastung zu minimieren.
+Erweiternd soll geprüft werden, inwieweit ergänzend die Netzintegration von erneuerbaren Energien gefördert werden kann.\medskip
 
-Mehrere Studien haben sich bereits mit den Auswirkungen der Netzintegration von Elektrofahrzeugen auf die Verteilnetze beschäftigt \cite{Agora2019} \cite{DEAGH2018} \cite{BCG2018}.
+Diverse Studien haben sich bereits mit den Auswirkungen der Netzintegration von Elektrofahrzeugen auf die Verteilnetze beschäftigt \cite{Agora2019} \cite{DEAGH2018} \cite{BCG2018}.
 In der Regel erfolgt hierbei eine wirtschaftliche Gesamtrechnung der nötigen Investitionskosten in die Verteilnetze.
-Es zeigt sich, dass der Investitionsbedarf durch eine geeignete Ladestrategie stark gesenkt werden kann.
-Ergänzend zu diesen Erkenntnissen sollen innerhalb dieser Arbeit Aussagen über die Auswirkungen auf konkrete Referenznetzgebiete getroffen werden, welche stellvertretend für eine große Anzahl an Netzgebieten in Deutschland stehen.\medskip
+Es zeigt sich, dass der Gesamtinvestitionsbedarf durch eine geeignete Ladestrategie stark gesenkt werden kann.
+Dabei ist anzunehmen, dass sich die untersuchten Ladestrategien in verschiedenen Netztypen unterschiedlich auswirken.
+Aus diesem Grund sollen innerhalb dieser Arbeit die Auswirkungen von drei Ladestrategien auf die Niederspannungs- und Mittelspannungsebene von konkreten Referenznetzgebieten untersucht werden, welche stellvertretend für eine große Anzahl an Netzgebieten in Deutschland stehen.\medskip
 
-Mit \SI{47.7}{\MioFZs} \cite{KBA2020a} machen \glspl{PKW} den Großteil der Kraftfahrzeuge in Deutschland aus.
-Damit wird \glspl{PKW} eine besondere Bedeutung bei der Betrachtung der Auswirkungen der Netzintegration von Elektrofahrzeugen beigemessen.
-Unter \glspl{EPKW} werden alle \glspl{PKW} \SI{< 3.5}{\tonne} mit batterieelektrischem Antrieb verstanden, die im privaten oder gewerblichen Individualverkehr genutzt werden \cite{BNetzA2020}.
-Innerhalb dieser Arbeit werden ausschließlich die Auswirkungen einer Elektrifizierung des Bestandes an \glspl{PKW} durch \glspl{EPKW} in verschiedenen Durchdringungsstufen betrachtet.\medskip
+Die untersuchten Referenznetzgebiete lassen sich grob in die Kategorien \gls{PV}-, Wind- und Last-dominiert unterteilen.
+Bei den Ladestrategien wird zwischen zwei präventiven und einer aktiven Ladestrategie unterschieden.
+Die präventiven Ladestrategien sollen die Netzbelastung minimieren, indem entweder die Gleichzeitigkeit oder die Ladeleistung der Ladevorgänge reduziert wird.
+Demgegenüber wird bei der aktiven Ladestrategie eine Glättung der Residuallast im Netzgebiet angestrebt, um möglichst einen Ausgleich zwischen Erzeugung und Bedarf anzustreben.\medskip
 
-Zusammenfassend ist das Ziel der vorliegenden Arbeit zu bewerten, ob netzdienliche Ladestrategien die Netzintegration von \glspl{EPKW} in die Verteilnetze erleichtern können.
+Innerhalb dieser Arbeit werden ausschließlich die Auswirkungen einer Elektrifizierung des Bestandes an \glspl{PKW} in verschiedenen Durchdringungsstufen betrachtet.
+Mit \SI{47.7}{\MioFZs} \cite{KBA2020a} machen \glspl{PKW} den Großteil der Kraftfahrzeuge in Deutschland aus, womit der Elektrifizierung dieser eine besondere Bedeutung bei der Betrachtung der Auswirkungen der Netzintegration von Elektrofahrzeugen zu kommt.
+Unter \glspl{EPKW} werden hierbei alle \glspl{PKW} \(<\!\SI{3.5}{\tonne}\) mit batterieelektrischem Antrieb verstanden, die im privaten oder gewerblichen Individualverkehr genutzt werden \cite{BNetzA2020}. \medskip
+
+Zusammenfassend ist das Ziel der vorliegenden Arbeit zu bewerten, inwiefern netzdienliche Ladestrategien die Netzintegration von \glspl{EPKW} in unterschiedlichen Netzgebietsklassen von Verteilnetzen begünstigen können.
 Erweiternd soll überprüft werden, inwieweit Synergien zwischen dem Ladebedarf der \glspl{EPKW} und der Erzeugung von \gls{FEE} Anlagen geschaffen werden können.
 
 
