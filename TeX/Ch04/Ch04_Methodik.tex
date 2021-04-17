@@ -213,8 +213,8 @@ Wenn nicht, dann fallen die zugeordneten Ladevorgänge innerhalb eines angrenzen
 
 Die Netzintegration der Ladeinfrastruktur erfolgt automatisiert mit Hilfe der \textit{integrate\_component} Funktionalität \glspl{EDISGO}.
 Der Anschluss erfolgt hierbei bis zu einer Anschlussleistung von \SI{0.3}{\mva} in der \gls{NS}-Ebene und bei höheren Anschlussleistungen direkt in der \gls{MS}-Ebene.
-Bei einem Anschluss in der \gls{NS}-Ebene erfolgt der Anschluss immer innerhalb des \gls{NS}-Netzes, dessen \gls{MS}-\gls{NS}-\gls{USW} am nächsten an dem anzuschließenden Anschlusspunkt liegt.
-Ab einer Leistung von \SI{0.1}{\mva} erfolgt der Anschluss über eine Kabelverbindung direkt an der \gls{MS}-\gls{NS}-Station.
+Bei einem Anschluss in der \gls{NS}-Ebene erfolgt der Anschluss immer innerhalb des \gls{NS}-Netzes, dessen \gls{MS}-\gls{NS}-\gls{USW} (kurz: \gls{ONS}) am nächsten an dem anzuschließenden Anschlusspunkt liegt.
+Ab einer Leistung von \SI{0.1}{\mva} erfolgt der Anschluss über eine Kabelverbindung direkt an der \gls{ONS}.
 Unter einer Leistung von \SI{0.1}{\mva} hängt die Art des Anschlusses von dem \textit{use case} der Ladestation ab.
 Für den \UC \zH wird die Ladestation an der nächstgelegenen Haushaltslast im identifizierten \gls{NS}-Netz angeschlossen.
 Im Falle des \UC \Firmeparkplatz erfolgt der Anschluss an dem nächstgelegenen gewerblichen, industriellen oder landwirtschaftlichen Verbraucher.
@@ -281,7 +281,7 @@ Im Gegensatz zur Referenz-Ladestrategie werden unabhängig von der Netzebene bei
 \subsubsection{Residuallast-Laden}
 
 Bei dem Residuallast-Laden handelt es sich um eine aktive Ladestrategie, welche an das gesteuerte Laden der Agora Studie \textit{Verteilnetzausbau für die Energiewende} \cite{Agora2019} angelehnt ist.
-Der Ladevorgang eines \gls{EPKW} findet hierbei immer innerhalb der Zeitpunkte der Standzeit statt, welche die geringste Residuallast innerhalb des \gls{MS}-Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
+Der Ladevorgang eines \gls{EPKW} findet hierbei immer innerhalb der Zeitschritte der Standzeit statt, welche die geringste Residuallast innerhalb des \gls{MS}-Netzgebietes aufweisen, wodurch eine Glättung der Residuallast erreicht werden soll.
 Die Zuweisung findet auf Viertelstundenbasis und die Ladevorgänge immer bei voller Ladeleistung statt.
 Das Ziel der Optimierung kann so formuliert werden, dass nach \autoref{eq:residual} eine Minimierung der \glspl{MQA} der Residuallast vom Mittelwert der Residuallast angestrebt wird.
 
@@ -341,8 +341,12 @@ Dies soll kurz an zwei Beispielen veranschaulicht werden:
 
 Das Open Source Tool \gls{EDISGO} stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
 Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt wurden, die Grundlage für die Berechnungen mit \gls{EDISGO}.
-\gls{EDISGO} kann über \textit{GitHub} \cite{edisgoGit2019} abgerufen werden und ist auf \textit{Read the Docs} \cite{edisgoDocs2017} dokumentiert.
-Innerhalb dieses Kapitels werden die wichtigsten Funktionalitäten \glspl{EDISGO} für die Durchführung der Berechnungen innerhalb dieser Arbeit dargestellt und erläutert.
+\gls{EDISGO} kann über \textit{GitHub} \cite{edisgoGit2019} abgerufen werden und ist auf \textit{Read the Docs} \cite{edisgoDocs2017} dokumentiert.\medskip
+
+Mit Hilfe \glspl{EDISGO} werden vorerst durch eine Lastflussanalyse Netzprobleme in den Referenznetzgebieten ermittelt.
+Anschließend wird der last- und erzeugerseitigen Abregelungsbedarfs ermittelt, welcher nötig ist, um die Netzprobleme aufzulösen.
+Anhand dieses Wertes sollen Aussagen darüber gemacht werden, inwieweit die Ladestrategien dazu in der Lage sind, kritische Netzbelastungen zu vermeiden beziehungsweise zu reduzieren.
+Gegenüber einer Ermittlung der Netzausbaukosten bringt diese Methodik den Vorteil mit sich, dass Aussagen darüber getroffen werden können, ob die Netzprobleme aufgrund von einer zu starken Last oder Einspeisung entstehen.
 
 
 \subsubsection{Ermittlung von Netzproblemen}\label{chap:grid_issues}
@@ -354,7 +358,7 @@ In diesem Kapitel soll auf den Umfang der Lastflussanalyse und die Spannungsanfo
 Eine genau Beschreibung der Lastflussanalyse des Open Source Tools \textit{PyPSA} kann auf \textit{Read the Docs} \cite{Brown2020a} abgerufen werden.\medskip
 
 Die Lastflussanalyse der Netze berücksichtigt sowohl \gls{MS}- und \gls{NS}-Leitungen als auch die \gls{MS}-\gls{NS}-Umspannebene.
-Gegenüber einer Aggregation der Erzeugung und des Bedarfs der einzelnen \gls{NS}-Netze an dem jeweiligen \gls{MS}-\gls{NS}-\gls{USW} bietet diese besonders tiefgehende Betrachtung die Möglichkeit, die Auswirkungen der teilweise hohen Ladeleistungen der Ladeinfrastruktur genauer zu analysieren und den Einfluss verschiedener Ladestrategien umfassender bestimmen zu können.\medskip
+Gegenüber einer Aggregation der Erzeugung und des Bedarfs der einzelnen \gls{NS}-Netze an der jeweiligen \gls{ONS} bietet diese tiefgehende Betrachtung die Möglichkeit, die Auswirkungen der teilweise hohen Ladeleistungen der Ladeinfrastruktur genauer zu analysieren und den Einfluss verschiedener Ladestrategien umfassender bestimmen zu können.\medskip
 
 Unter dem Bilanzknoten wird ein Netzknoten verstanden, an welchem der Wirk- und Blindleistungsfluss frei eingestellt werden kann, womit über einen iterativen Prozess bei der Lastflussanalyse die Konvergenz des Systems erreicht werden soll.
 Da die Spannung der Sekundärseite des \gls{HS}-\gls{MS}-\glspl{USW} auch in der Realität eingestellt werden kann, eignet sich dieser Punkt besonders gut und wird entsprechend als Bilanzknoten verwendet.
@@ -399,7 +403,7 @@ Um die Rechenzeit innerhalb eines akzeptablen Maßes zu halten, erfolgt die Ermi
 Hierbei werden die Wochen untersucht, die im \gls{MS}-Netzgebiet die minimale bzw. maximale durchschnittliche Residuallast aufweisen.
 Auf diese Weise sollen möglichst extreme Belastungssituationen abgedeckt werden.\medskip
 
-Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
+Aufgrund der hohen Anzahl an \glspl{EPKW}, \glspl{WP} und Erneuerbaren Erzeugereinheiten kommt es in einigen Fällen dazu, dass die Lastflussanalyse nicht konvergiert.
 Aus diesem Grund werden zuerst die \gls{NS}-Netze eines \gls{MS}-Netzgebiets einzeln betrachtet und bei Bedarf abgeregelt, um dort extreme Belastungssituationen abzufangen, die eine Konvergenz des Gesamtsystems verhindern können.
 
 \clearpage
