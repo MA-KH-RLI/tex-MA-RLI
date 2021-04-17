@@ -2,27 +2,28 @@
 \hypersetup{linkcolor=black}
 
 \microtypesetup{protrusion=false}
+
 \begin{spacing}{1}% Spacing auf 1 statt 1.5 setzen, damit ToC O.K. aussieht
 	\tableofcontents% Inhaltsverzeichnis
 \end{spacing}
 
-\newpage
+\clearpage
 
 \addcontentsline{toc}{section}{Abbildungsverzeichnis}% Abbildungsverzeichnins
 \begin{spacing}{1}
 	\listoffigures
 \end{spacing}
 
-\newpage
+\clearpage
 
 \addcontentsline{toc}{section}{Tabellenverzeichnis}% Tabellenverzeichnis
 \begin{spacing}{1}
 	\listoftables
 \end{spacing}
 
-\newpage
+\clearpage
 
-\begin{spacing}{1.5}% Abkürzungsverzeichnis
+\begin{spacing}{1.4}% Abkürzungsverzeichnis
 	\printglossary[
 	type=\acronymtype,
 	nonumberlist,
@@ -30,8 +31,9 @@
 	]% Keine Seitenzahl angeben
 \end{spacing}
 
+
 \microtypesetup{protrusion=true}
 \endgroup
 
-\newpage
+\clearpage
 \pagenumbering{arabic}% Arabic Page Number

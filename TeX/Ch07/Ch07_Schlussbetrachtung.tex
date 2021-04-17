@@ -3,18 +3,18 @@
 Das Ziel dieser Arbeit war es, die Auswirkungen verschiedener präventiver und aktiver Ladestrategien bei unterschiedlichen Durchdringungstiefen von \glspl{EPKW} auf die drei Netzgebietsklassen \gls{PV}-, Wind- und Last-dominiert aufzuzeigen.
 Dafür wurde der jeweils nötige last- und erzeugerseitige Abregelungsbedarf innerhalb der untersuchten \gls{MS}-Netze, inklusive daruterliegender \gls{NS}-Netze, quantifiziert.\medskip
 
-Es kann gezeigt werden, dass mit \gls{SIMBEV} ein Software Tool mitentwicklet wurde, mit dessen Hilfe plausible Fahrtprofile von \gls{EPKW} erzeugt werden können.
-Die Fahrtprofile zeigen deutlich, dass ein Großteil der Ladevorgänge im privaten Bereich stattfindet.
+Mit \gls{SIMBEV} wurde ein Software Tool mitentwicklet, mit dessen Hilfe plausible Fahrtprofile von \gls{EPKW} erzeugt werden können.
+Die Fahrtprofile zeigen, dass ein Großteil der Ladevorgänge im privaten Bereich stattfindet.
 Bei privaten Ladevorgängen wird weiterhin deutlich, dass die Ladung der \glspl{EPKW} nur einen geringen Anteil der Standzeit ausmacht.
-In den untersuchten Szenarien entstehen die stärksten Leistungsspitezen am morgen durch das Lade am Arbeitsplatz, während das Laden zu Hause den größten Energiebedarf aufweist.
-Die anschließende Verortung des Ladebedarfs führt teilweise zu zweifelhaften Belastungen einzelner \gls{NS}-Netze innerhalb der Referenznetzgebiete.
+In den untersuchten Szenarien entstehen die stärksten Leistungsspitzen am Morgen durch das Laden am Arbeitsplatz, während das Laden zu Hause den größten Energiebedarf aufweist.
+Die anschließende Verortung des Ladebedarfs führt teilweise zu unplausiblen Belastungen einzelner \gls{NS}-Netze innerhalb der Referenznetzgebiete.
 In der Realität würde es hierbei vermutlich zu einem Netzneubau kommen, welcher innerhalb dieser Arbeit nicht abgebildet werden kann.\medskip
 
-Mit einem steigenden Ladebedarf aufgrund eines erhöhten Hochlaufs der \glspl{EPKW} mit den Szenarien kommt es in den meisten Referenznetzgebieten immer stärker dazu, dass zu einem Großteil der Zeitpunkte lastseitige Abregelung nötig ist.
+Mit einem steigenden Ladebedarf aufgrund eines erhöhten Hochlaufs der \glspl{EPKW} in den Szenarien kommt es in den meisten Referenznetzgebieten immer stärker dazu, dass zu einem Großteil der Zeitpunkte lastseitige Abregelung nötig sind.
 Hierdurch nimmt das relative Senkungspotential des lastseitigen Abregelungsbedarfs ab, da der Abregelungsbedarf verstärkt verschoben, aber nicht verhindert werden kann.
 Die Untersuchung der \SzeFirmenparkplatz ergibt, dass beim Referenz-Laden in den meisten Fällen der Bedarf an last- und erzeugerseitiger Abregelung im Vergleich zum Antriebswende-Szenario geringer ausfällt.
 Hierfür verantwortlich ist in der Regel der hohe Anteil an \glspl{PVA} in den \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen des \UC \zHdot.
-Sind diese \gls{NS}-Netze jedoch lastseitig bereits stark ausgelastet, dann erhöht sich der lastseitige Abregelungsbedarf in der \SzeFirmenparkplatz gegenüber dem Antriebswende-Szenario.\medskip
+Sind diese \gls{NS}-Netze lastseitig bereits stark ausgelastet, dann erhöht sich der lastseitige Abregelungsbedarf in der \SzeFirmenparkplatz gegenüber dem Antriebswende-Szenario.\medskip
 
 Bei den Ladestrategien führen die präventiven Ladestrategien zu einer Erhöhung der Spreizung zwischen der maximalen und minimalen Residuallast.
 Dies kann als Indikator für eine möglicherweise benötigte Erhöhung der Dimensionierung der Netze gegenüber dem Referenz-Laden gedeutet werden.
@@ -31,7 +31,7 @@ Erweiternd kann der Abregelungsbedarf von \gls{FEE} in den \gls{PV}- und Last-do
 Hierbei werden viele Ladevorgänge in die Mittagszeit verschoben und es kommt zu einem besseren Ausgleich zwischen Last und Erzeugung.
 In den Wind-dominierten Netzen zeigt sich demgegenüber ein erhöhter Abregelungsbedarf von \gls{FEE}, wobei sich zwei Effekte beobachten lassen.
 Zum einen befindet sich in den Wind-dominierten Netzen zusätzlich ein gewisser Anteil an \glspl{PVA}, welcher wie zuvor beschrieben vermehrt in \gls{NS}-Netzen mit einem hohen Anteil an Ladevorgängen des \UC \zH verortet ist.
-Aufgrund einer niedrigen Residuallast in der Nacht werden jedoch viele Ladevorgänge des \UC \zH in die Nacht verschoben.
+Aufgrund einer niedrigen Residuallast in der Nacht werden viele Ladevorgänge des \UC \zH in die Nacht verschoben.
 Zum anderen befinden sich Wind-Kapazitäten nicht in örtlicher Nähe zu der privaten Ladeinfrastruktur und werden auf der \gls{MS}-Ebene angeschlossen.
 Hierdurch wird der Abregelungsbedarf der Wind-Kapazitäten durch die Ladestrategien kaum beeinflusst, während sich der Abregelungsbedarf der \glspl{PVA}, und somit in Summe der Abregelungsbedarf von \gls{FEE}, erhöht.\medskip
 
@@ -40,32 +40,33 @@ Dabei ist insbesondere der Erfolg des Residuallast-Ladens von mehreren Randbedin
 Zum einen ist es aufgrund von Ausgleichseffekten zwischen der Last und Erzeugung entscheidend, ob sich die Erzeugerkapazitäten in den gleichen \gls{NS}-Netzen befinden in denen auch die Ladevorgänge stattfinden und ob Ladevorgänge und Einspeisung innerhalb eines \gls{NS}-Netzes gleichzeitig stattfinden.
 Zum anderen ist von großer Bedeutung, wie stark die einzelnen \gls{NS}-Netze ausgelastet sind.
 Wenn ein \gls{NS}-Netz bereits innerhalb des Großteils der Zeitpunkte überlastet ist, dann kann der lastseitige Abregelungsbedarf in der Regel nur noch verschoben, aber nicht verhindert werden.
-Sind diese Bedingungen jedoch gegeben, dann kann durch das Residuallast-Laden ein hoher Anteil des lastseitigen Abregelungsbedarfs vermieden werden.
+Sind diese Bedingungen gegeben, dann kann durch das Residuallast-Laden ein hoher Anteil des lastseitigen Abregelungsbedarfs vermieden werden.
 Ist dies hingegen nicht der Fall, dann führen hohe Gleichzeitigkeiten, welche durch das Residuallast-Laden entstehen können, zu negativen lastseitigen Auswirkungen.
 So kommt es primär in den Wind-dominierten Netzen zu dem Effekt, dass sich das Residuallast-Laden an einer globalen Residuallast im gesamten Netzgebiet orientiert, welche nur bedingt die lokale Situation in den einzelnen \gls{NS}-Netzen widerspiegelt.
 In diesen Fällen erweist sich das reduzierte Ladens als besser geeignet, um den lastseitigen Abregelungsbedarf zu senken.
 Die Ladegruppen führen hingegen nur zu einer geringen Senkung des lastseitigen Abregelungsbedarfs gegenüber dem Referenz-Laden.
 So kann die Gleichzeitigkeit durch die Ladegruppen nur in einem geringen Maße beeinflusst werden und auf der \gls{MS}-Ebene erhöht sich sogar die maximale Last gegenüber dem Referenz-Laden, da reduzierte Ladevorgänge durch Ladevorgänge in Ladegruppen ersetzt werden.\medskip
 
-Zusammenfassend zeigt das präventive reduzierte Laden große Erfolge den lastseitigen Abregelungsbedarf zu mindern.
+Zusammenfassend zeigt sich, dass sowohl präventive als auch aktive Ladestrategien die Netzintegration von \gls{EPKW} unterstützen können.
+Das präventive reduzierte Laden erweist sich als besonders erfolgreich den lastseitigen Abregelungsbedarf zu mindern.
 Demgegenüber können durch die ebenfalls präventiven Ladegruppen keine signifikanten Reduzierungen des Abregelungsbedarfs erreicht werden.
 Unter den richtigen Bedingungen kann der lastseitige Abregelungsbedarf durch das aktive Residuallast-Laden am stärksten gesenkt werden.
 Erweiternd kann das Residuallast-Laden auch die Netzintegration von \gls{FEE} unterstützen.
 Dies können die präventiven Ladestrategien nicht leisten und führen sogar zu einer Verschlechterung bei dem Abregelungsbedarf von \gls{FEE}.
-Der Erfolg des Residuallast-Ladens hängt jedoch von vielen Randbedingungen ab.
+Der Erfolg des Residuallast-Ladens hängt von vielen Randbedingungen ab.
 Sind diese nicht gegeben, dann erweist sich das reduzierte Laden als die beste Alternative, um den lastseitigen Abregelungsbedarf zu minimieren und somit die Netzintegration von \glspl{EPKW} zu unterstützen.\medskip
 
 Neben den untersuchten Ladestrategien, gibt es noch eine Vielzahl von denkbaren Ladestrategien, welche ebenfalls auf ihre netzdienlichen Effekte untersucht werden sollten.
 Erweiternd zu den netzdienlichen Ladestrategien sollte auch bei der Verortung der Ladeinfrastruktur auf ein möglichst netzdienliches Vorgehen geachtet werden, indem Gegebenheiten des Netzes miteinbezogen werden.
-Weiterhin sollte \gls{SIMBEV} dahingehend erweitert werden, einen Zeitraum von mindestens einem Jahr und saisonale Schwankungen im Verbrauch der \gls{EPKW} und dem Fahrtverhalten der Farhzeugnutzer\(^*\)innen abbilden zu können.
+Weiterhin sollte \gls{SIMBEV} dahingehend erweitert werden, einen Zeitraum von mindestens einem Jahr und saisonale Schwankungen im Verbrauch der \gls{EPKW} und dem Fahrtverhalten der Fahrzeugnutzer\(^*\)innen abbilden zu können.
 Hierdurch würde die Realitätsnähe des Tools erhöht und eine größere Anzahl von unterschiedlichen Bedarfsfällen abgedeckt werden.\medskip
 
-Konkreter sollte geprüft werden, ob das Residuallast-Laden erweitert und dadurch verbessert werden kann.
+Konkret sollte geprüft werden, ob das Residuallast-Laden erweitert und dadurch verbessert werden kann.
 Hierbei sollten zwei Optionen untersucht werden, wobei darauf zu achten ist, dass diese Konzepte auch in der Realität abgebildet werden können.
 Zum einen können dem Residuallast-Laden Randbedingungen hinzugefügt werden.
-So kann beispielsweise die Belastungsgrenze des jeweiligen \gls{MS}-\gls{NS}-\glspl{USW} beachtet werden oder/und die Wirkleistung der installierten \gls{FEE} Erzeugerkapazitäten in den \gls{NS}-Netzen als ein Gewichtungsfaktor in die Zuteilung der Ladezeitfenster eingehen.
+So kann beispielsweise die Belastungsgrenze der jeweiligen \gls{ONS} beachtet werden und/oder die Wirkleistung der installierten \gls{FEE} Erzeugerkapazitäten in den \gls{NS}-Netzen als ein Gewichtungsfaktor in die Ladestrategie mit eingehen.
 Zum anderen kann statt der globalen Residuallast innerhalb des Netzgebietes auch die Residuallast einzelner Abschnitte des Netzgebietes als Leitlinie dienen.
 Hierbei kann beispielsweise die Residuallast der einzelnen \gls{MS}-Abgänge genutzt werden oder sogar die Residuallast einzelner \gls{NS}-Netze.
-
+Es ist zu vermuten, dass aufgrund dieser Maßnahmen lokale Engpässe in den Netzen besser berücksichtigt werden und die Netzintegration von \gls{EPKW} stärker unterstützt werden kann.
 
 % je mehr MS Ebene, desto besser wird Referenz-Laden ggü den Ladegruppen
