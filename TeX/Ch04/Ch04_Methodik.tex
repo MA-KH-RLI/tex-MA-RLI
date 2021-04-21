@@ -1,31 +1,31 @@
-	\section{Methodik}\label{chap:Methodik}
+\section{Methodik}\label{chap:Methodik}
 
 Aufgrund ihrer Wichtigkeit für diese Arbeit werden zunächst die verwendeten Netztopologien sowie deren Clusterung zur Bestimmung repräsentativer Netze, anhand welcher die Untersuchungen vorgenommen werden, beschrieben und vorgestellt.
-Anschließend werden mit Hilfe des Software Tools \gls{SIMBEV} Fahrtprofile von \glspl{EPKW} erstellt und der Ladebedarf räumlich auf eine georeferenzierte Ladeinfrastruktur verteilt.
+Anschließend werden mit Hilfe des Software Tools \glsi{SIMBEV} Fahrtprofile von \glspl{EPKW} erstellt und der Ladebedarf räumlich auf eine georeferenzierte Ladeinfrastruktur verteilt.
 Daraufhin werden abhängig von der Ladestrategie Lastzeitreihen erstellt und in die Netzmodelle integriert.
 Abschließend werden etwaige Netzprobleme bestimmt und der Abregelungsbedarf ermittelt, welcher nötig ist, um diese aufzulösen.
 
 
 \subsection{Verwendete Verteilnetztopologien}\label{chap:dingo_theo}
 
-Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glspl{EDISGO} sind die zu untersuchenden Netztopologien mitsamt der \gls{MS}- und \gls{NS}-Ebene.
-Aufgrund der mangelnden Datenlagen von realen Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die innerhalb des \gls{OPENEGO} Projektes \cite{Mueller2019} mit Hilfe des Open Source Tools \gls{DINGO} erzeugt wurden.
+Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glsipl{EDISGO} sind die zu untersuchenden Netztopologien mitsamt der \gls{MS}- und \gls{NS}-Ebene.
+Aufgrund der mangelnden Datenlagen von realen Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die innerhalb des \glsi{OPENEGO} Projektes \cite{Mueller2019} mit Hilfe des Open Source Tools \glsi{DINGO} erzeugt wurden.
 Das Tool ist in der Lage ländliche und suburbane Netzstrukturen für Gesamtdeutschland zu synthetisieren und kann auf \textit{GitHub} \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
 Weiterhin ist auf \textit{Read the Docs} \cite{dingo-docs2019} eine ausführliche Dokumentation nachzulesen.
-Urbane Netzgebiete können derzeit nicht durch \gls{DINGO} abgebildet und deshalb nicht innerhalb dieser Arbeit betrachtet werden.\medskip
+Urbane Netzgebiete können derzeit nicht durch \glsi{DINGO} abgebildet und deshalb nicht innerhalb dieser Arbeit betrachtet werden.\medskip
 
 
 \subsubsection{Auswahl repräsentativer Verteilnetztopologien}
 
 Auf der \gls{MS}-Ebene werden \num{3354} Netzgebiete \cite{Schachler} identifiziert.
-\autoref{fig:grid_176_map} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \gls{DINGO} erzeugt wurde und innerhalb dieser Arbeit untersucht wird.
+\autoref{fig:grid_176_map} zeigt den Aufbau eines beispielhaften Mittelspannungsnetzes, welches mit Hilfe von \glsi{DINGO} erzeugt wurde und innerhalb dieser Arbeit untersucht wird.
 
 \input{Ch04/fig/Ch04_fig_01_grid_176_map}
 
 Bei der Synthese der Netztopologien wird auf eine hohe räumliche und zeitliche Auflösung der Netzdatenmodelle geachtet.
 Die große Anzahl an Netzgebieten und die hohe Auflösung führen zu inakzeptabel hohen Rechenzeiten.
 Um die Komplexität des Modells zu reduzieren, werden in der \textit{E-Mobility Study} \cite{Schachler} mit Hilfe des \mbox{\kmeans} Referenznetzgebiete ausgewählt, die jeweils stellvertretend für eine große Anzahl an Netzgebieten stehen.
-Das \mbox{\kmean} wurde im Rahmen des \gls{OPENEGO} Projektes entwickelt und eine ausführliche Beschreibung der Methodik findet sich im Projektabschlussbericht \cite{Mueller2019}.\medskip
+Das \mbox{\kmean} wurde im Rahmen des \glsi{OPENEGO} Projektes entwickelt und eine ausführliche Beschreibung der Methodik findet sich im Projektabschlussbericht \cite{Mueller2019}.\medskip
 
 Um mit dieser Arbeit eine Ergänzung zu der \textit{E-Mobility Study} \cite{Schachler} zu liefern, werden die Ergebnisse des Clusterings aus der \textit{E-Mobility Study} übernommen und von den \num{15} identifizierten repräsentativen Netzgebieten eine Teilmenge untersucht.
 So werden jeweils zwei Netzgebiete der Kategorien \gls{PV}- und Wind-dominiert und ein Netzgebiet der Kategorie Last-dominiert ausgewählt, die stellvertretend für viele Netzgebiete stehen.
@@ -48,32 +48,32 @@ Weiterhin wird in \autoref{fig:map_representatives} eine Karte der repräsentier
 \subsubsection{Netzausbau}
 
 In der konventionellen Netzplanung werden Betriebsmittel in der Regel überdimensioniert ausgelegt, um die Versorgungsaufgabe für eine möglichst lange Betriebszeit zu garantieren.
-Da die Netzgebiete des \gls{OPENEGO} Projektes so ausgebaut werden, dass die Versorgungsaufgabe des Jahres \num{2015} möglichst genau erfüllt werden kann, werden die Netzgebiete innerhalb dieser Arbeit zusätzlich ausgebaut.
+Da die Netzgebiete des \glsi{OPENEGO} Projektes so ausgebaut werden, dass die Versorgungsaufgabe des Jahres \num{2015} möglichst genau erfüllt werden kann, werden die Netzgebiete innerhalb dieser Arbeit zusätzlich ausgebaut.
 Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw. Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant werden und werden entsprechend ausgebaut.
 Dies gilt sowohl für die Transformator-Stationen als auch die Kabel innerhalb des Netzgebietes.
-Die verwendeten Betriebsmittel können der Dokumentation \glspl{EDISGO} \cite{edisgoDocs2017a} entnommen werden.
+Die verwendeten Betriebsmittel können der Dokumentation \glsipl{EDISGO} \cite{edisgoDocs2017a} entnommen werden.
 Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Station größer sein als der größte verfügbare Transformator, so werden entsprechend benötigte Transformatoren parallel betrieben, um den Anforderungen gerecht zu werden.
 
 
 \subsection{Erstellung der Fahrtprofile der E-Pkw}\label{chap:simbev_theo}
 
-Mit Hilfe des im Rahmen dieser Arbeit mitentwickelten Software Tools \gls{SIMBEV} können die Fahrtprofile für eine beliebige Anzahl an \glspl{EPKW} verschiedener Fahrzeugklassen erstellt werden.
-Grundlage von \gls{SIMBEV} bildet die Befragung \gls{MID} \cite{ISGH2017}.
-Nachfolgend wird zunächst die Datengrundlage und anschließend die Methodik zur Erstellung der Fahrtprofile mit Hilfe von \gls{SIMBEV} beschrieben.
+Mit Hilfe des im Rahmen dieser Arbeit mitentwickelten Software Tools \glsi{SIMBEV} können die Fahrtprofile für eine beliebige Anzahl an \glspl{EPKW} verschiedener Fahrzeugklassen erstellt werden.
+Grundlage von \glsi{SIMBEV} bildet die Befragung \glsi{MID} \cite{ISGH2017}.
+Nachfolgend wird zunächst die Datengrundlage und anschließend die Methodik zur Erstellung der Fahrtprofile mit Hilfe von \glsi{SIMBEV} beschrieben.
 
 
 \subsubsection{Mobilität in Deutschland}\label{chap:MID}
 
-Das Ziel der Befragung \gls{MID} \cite{ISGH2017} ist es, eine Datengrundlage für das alltägliche Mobilitätsverhalten von Personen und Haushalten über ein Jahr zu bilden.
+Das Ziel der Befragung \glsi{MID} \cite{ISGH2017} ist es, eine Datengrundlage für das alltägliche Mobilitätsverhalten von Personen und Haushalten über ein Jahr zu bilden.
 Für diese Arbeit sind vor allem die Erhebungen der sieben Hauptwegezwecke entscheidend.
 Diese sind: \textit{Arbeit}, \textit{dienstlich}, \textit{Ausbildung}, \textit{Einkauf}, \textit{Erledigung}, \textit{Freizeit} und \textit{Begleitung}.
 In \autoref{tab:wegezweck} wird die prozentuale Aufteilung der Hauptwegezwecke am \gls{PKW}-Verkehrsaufkommen in Wegen beschrieben.
 
 \input{Ch04/tab/Ch04_tab_02_wegezweck}
 
-Der Wegezweck \textit{Begleitung} wird innerhalb von \gls{SIMBEV} nicht abgebildet, da hierfür keine zusätzliche Fahrt angetreten wird.
+Der Wegezweck \textit{Begleitung} wird innerhalb von \glsi{SIMBEV} nicht abgebildet, da hierfür keine zusätzliche Fahrt angetreten wird.
 Der Rückweg der Wegezwecke wird getrennt als Wegezweck \nH berücksichtigt, da dem Laden zu Hause eine besonders wichtige Rolle beim Laden der \glspl{EPKW} zukommt.
-Weiterhin dient \gls{SIMBEV} nur der Erstellung von Fahrtprofilen für \glspl{PKW}, weshalb ausschließlich die Ergebnisse der Befragung zu Fahrten mit dem Hauptverkehrsmittel \gls{PKW} betrachtet werden.
+Weiterhin dient \glsi{SIMBEV} nur der Erstellung von Fahrtprofilen für \glspl{PKW}, weshalb ausschließlich die Ergebnisse der Befragung zu Fahrten mit dem Hauptverkehrsmittel \gls{PKW} betrachtet werden.
 Die für diese Arbeit entscheidenden Befragungsergebnisse sind somit die Fahrtzeiten, Fahrtstrecken und anschließenden Standzeiten je Hauptwegezweck für Fahrten mit \glspl{PKW}.
 Bei den Befragungsergebnissen kann zusätzlich zwischen den in \autoref{tab:RegioStaR} aufgelisteten \glspl{REGIOSTAR} unterschieden werden.
 
@@ -87,7 +87,7 @@ In \autoref{tab:RegioStaR} wird die mittlere Fahrleistung pro Person und pro \gl
 
 \subsubsection{simBEV}
 
-Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \gls{MID} erstellt.
+Die Fahrtprofile werden über einen probabilistischen Ansatz auf Grundlage der Befragung \glsi{MID} erstellt.
 Dabei erhält jeder simulierte Zeitschritt eine Wahrscheinlichkeit je Wegezweck, um eine Fahrt zu beginnen.
 Wird eine Fahrt ausgelöst, wird abhängig vom Wegezweck und Raumtyp der Fahrt, ebenfalls probabilistisch, eine Streckenlänge und eine anschließende Standzeit zugeteilt.
 Der hierbei entstehende Verbrauch des \gls{EPKW} muss anschließend gedeckt werden.
@@ -112,7 +112,7 @@ Sinkt der \gls{SOC} eines \gls{EPKW} unter \SI{20}{\percent}, wird eine Schnelll
 Im Unterschied zu \glspl{BEV} können \glspl{PHEV} auch mit einem \gls{SOC} von \SI{0}{\percent} ihre Fahrt mit Hilfe des Verbrennungsmotors fortsetzen.
 Aus diesem Grund wird bei \glspl{PHEV} kein Schnellladevorgang ausgelöst.\medskip
 
-Derzeit können mit \gls{SIMBEV} nur Fahrtprofile mit einer Länge von einer Woche simuliert werden.
+Derzeit können mit \glsi{SIMBEV} nur Fahrtprofile mit einer Länge von einer Woche simuliert werden.
 Da hierdurch ein Initialproblem eines vollständig geladenen Fahrzeugbestandes am ersten Tag der Simulation dominant hervortritt, wird zu Beginn der Simulation \SI{15}{\percent} der \glspl{EPKW} ein zufälliger \gls{SOC} zwischen \SIrange[range-phrase=~bis~]{30}{100}{\percent} zugeordnet.
 Um abschließend ein Fahrtprofil für ein ganzes Jahr zu erhalten, werden die Fahrtprofile solange mit sich selbst verlängert und logisch verknüpft, bis die gewünschte Länge erreicht wird.
 
@@ -161,7 +161,7 @@ Eine genaue Beschreibung der \UCs findet sich in \autoref{chap:Szenariorahmen}.
 Um mögliche Standorte für die Ladeinfrastruktur am Eigenheim oder in Wohnanlagen identifizieren zu können, wird die Anzahl an Wohneinheiten auf einem \SI{100 x 100}{\m} Raster aus dem \textit{Zensus 2011} \cite{StatistischesBundesamt2011} verwendet.
 So wird jedem Raster mit mehr als einer Wohneinheit und einer Einwohnerzahl größer Null ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet und anhand der Gesamtanzahl von Wohneinheiten im Raster gewichtet. \medskip
 
-Für private Ladeinfrastruktur auf Firmenparkplätzen werden die Klassifizierungen der Landflächen nach Nutzungsart der \gls{OSM} \cite{OpenStreetMapFoundation} verwendet.
+Für private Ladeinfrastruktur auf Firmenparkplätzen werden die Klassifizierungen der Landflächen nach Nutzungsart der \glsi{OSM} \cite{OpenStreetMapFoundation} verwendet.
 Hierbei wird jeder Landfläche mit der Nutzungsart \textit{commercial}, \textit{retail} oder \textit{industrial} ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
 Die Gewichtung erfolgt anhand der Fläche des Gebietes multipliziert mit einem Flächennutzungsfaktor.
 Der Flächennutzungsfaktor liegt für \textit{commercial} bei \num{3}, für \textit{retail} bei \num{2} und für \textit{industrial} bei \num{1}.
@@ -171,17 +171,17 @@ Der Flächennutzungsfaktor liegt für \textit{commercial} bei \num{3}, für \tex
 
 Die öffentliche Ladeinfrastruktur beinhaltet die Ladeinfrastruktur, die nicht der privaten Ladeinfrastruktur zugeordnet werden kann.
 Grundsätzlich lässt sich hierbei zwischen Normal- und Schnellladeinfrastruktur unterscheiden.
-Für die Normalladeinfrastruktur wird allen \glspl{POI} aus der \gls{OSM} \cite{OpenStreetMapFoundation} in dem untersuchten Gebiet jeweils ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
+Für die Normalladeinfrastruktur wird allen \glspl{POI} aus der \glsi{OSM} \cite{OpenStreetMapFoundation} in dem untersuchten Gebiet jeweils ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
 Die Gewichtung der Anschlusspunkte erfolgt hierbei anhand der Gesamtanzahl an \glspl{POI} in der Nähe des Anschlusspunktes.\medskip
 
-Für Schnellladeinfrastruktur wird jeder Tankstelle aus der \gls{OSM} \cite{OpenStreetMapFoundation} im untersuchten Gebiet jeweils ein Anschlusspunkt zugeordnet.
+Für Schnellladeinfrastruktur wird jeder Tankstelle aus der \glsi{OSM} \cite{OpenStreetMapFoundation} im untersuchten Gebiet jeweils ein Anschlusspunkt zugeordnet.
 Liegt innerhalb des Gebietes keine Tankstelle, so wird ein zufälliger Anschlusspunkt der öffentlichen Ladeinfrastruktur verwendet.
 Eine Gewichtung findet in diesem Fall nicht statt.
 
 
 \subsubsection{Zuteilung der Ladevorgänge auf die Ladeinfrastruktur}
 
-Die klassifizierten Landflächen nach Nutzungsart der \gls{OSM} entsprechen häufig sehr großen Landflächen, die in der Regel nicht nur einem Unternehmen zugewiesen werden können.
+Die klassifizierten Landflächen nach Nutzungsart der \glsi{OSM} entsprechen häufig sehr großen Landflächen, die in der Regel nicht nur einem Unternehmen zugewiesen werden können.
 Da hierdurch unter Umständen nur wenige Anschlusspunkte generiert werden, werden ergänzend \SI{50}{\percent} der möglichen öffentlichen Normalladeinfrastruktur für Ladeinfrastruktur auf Firmenparkplätzen genutzt.
 Den zusätzlichen Anschlusspunkten wird eine geringe Gewichtung zugeordnet, da durch diese vor allem kleine Betriebe abgebildet werden sollen.
 Die Gewichtung orientiert sich dabei an der ermittelten Gewichtung der öffentlichen Ladeinfrastruktur.
@@ -211,7 +211,7 @@ Wenn nicht, dann fallen die zugeordneten Ladevorgänge innerhalb eines angrenzen
 
 \subsubsection{Netzintegration der Ladeinfrastruktur}
 
-Die Netzintegration der Ladeinfrastruktur erfolgt automatisiert mit Hilfe der \textit{integrate\_component} Funktionalität \glspl{EDISGO}.
+Die Netzintegration der Ladeinfrastruktur erfolgt automatisiert mit Hilfe der \textit{integrate\_component} Funktionalität \glsipl{EDISGO}.
 Der Anschluss erfolgt hierbei bis zu einer Anschlussleistung von \SI{0.3}{\mva} in der \gls{NS}-Ebene und bei höheren Anschlussleistungen direkt in der \gls{MS}-Ebene.
 Bei einem Anschluss in der \gls{NS}-Ebene erfolgt der Anschluss immer innerhalb des \gls{NS}-Netzes, dessen \gls{MS}-\gls{NS}-\gls{USW} (kurz: \gls{ONS}) am nächsten an dem anzuschließenden Anschlusspunkt liegt.
 Ab einer Leistung von \SI{0.1}{\mva} erfolgt der Anschluss über eine Kabelverbindung direkt an der \gls{ONS}.
@@ -317,7 +317,7 @@ Die Fahrtprofile der \gls{EPKW} und die Lastzeitreihen der Ladestrategien werden
 In vielen Zeitschritten kann der {--} verbleibende {--} Ladebedarf in weniger als \SI{15}{\Minuten} nachgeladen werden.
 Aus diesem Grund wird durch zwei Maßnahmen ein Kompromiss angestrebt.
 Einerseits sollen realistische Gleichzeitigkeiten abgebildet werden, welche Auswikungen auf die Netzbelastung haben.
-Andererseits soll die Differenz zwischen dem Ladebedarf der Fahrtprofile nach \gls{SIMBEV} und den Lastzeitreihen der Ladestrategien minimal ausfallen.
+Andererseits soll die Differenz zwischen dem Ladebedarf der Fahrtprofile nach \glsi{SIMBEV} und den Lastzeitreihen der Ladestrategien minimal ausfallen.
 
 \begin{enumerate}
 	\item Dem Gesamtladebedarf eines Ladevorgangs wird nur dann der Ladebedarf des letzten Zeitschritts zugeordnet, wenn bei maximaler Ladeleistung mindestens \SI{20}{\percent} des Zeitschritts benötigt werden, um den Ladebedarf zu decken.
@@ -327,23 +327,23 @@ Andererseits soll die Differenz zwischen dem Ladebedarf der Fahrtprofile nach \g
 Wenn ein Ladevorgang von diesen Maßnahmen betroffen ist, dann wird der Ladebedarf dieses Ladevorgangs entweder erhöht oder reduziert in den Lastzeitreihen wiedergegeben.
 Bei dem reduzierten Laden entsteht diese Problematik bei den flexibilisierbaren Ladevorgängen nicht, da sich die Ladeleistung flexibel nach dem gegebenen Ladebedarf und der zur Verfügung stehenden Standzeit ausrichten kann.
 Hierdurch entsteht jedoch eine Differenz in dem Gesamtenergiebedarf der Lastzeitreihen zwischen dem reduzierten Laden und den sonstigen Ladestrategien.
-Um dies zu vermeiden werden die zuvor beschriebenen Maßnahmen vor der Erstellung der Lastzeitreihen durchgeführt und der Ladebedarf bereits in den Fahrtprofilen nach \gls{SIMBEV} angepasst.
+Um dies zu vermeiden werden die zuvor beschriebenen Maßnahmen vor der Erstellung der Lastzeitreihen durchgeführt und der Ladebedarf bereits in den Fahrtprofilen nach \glsi{SIMBEV} angepasst.
 Auf diese Weise wird sichergestellt, dass sich der Gesamtenergiebedarf der Lastzeitreihen zwischen den Ladestrategien nicht unterscheidet.
 Dies soll kurz an zwei Beispielen veranschaulicht werden:
 
 \begin{enumerate}
-	\item Beträgt der Ladebedarf eines Fahrzeuges nach \gls{SIMBEV} beispielsweise \SI{12}{\kwh} und die fahrzeugseitige Wirkleistung \SI{9.9}{\kw}, dann werden insgesamt rund \SI{73}{\Minuten} für die Ladung benötigt. In diesem Fall wird in den Lastzeitreihen insgesamt fünf Zeitschritten und somit \SI{75}{\Minuten} die Ladeleistung zugeordnet. Aus diesem Grund wird der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \gls{SIMBEV} auf \SI{12.375}{\kwh} erhöht.
-	\item Wenn hingegen der Ladebedarf bei einer gleichbleibenden Ladeleistung nur \SI{10}{\kwh} beträgt, dann werden nur rund \SI{61}{\Minuten} für die Ladung benötigt. In diesem Fall wird die Ladeleistung in den Lastzeitreihen nur in vier Zeitschritten und somit \SI{60}{\Minuten} abgebildet. Der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \gls{SIMBEV} wird entsprechend auf \SI{9.9}{\kwh} reduziert.
+	\item Beträgt der Ladebedarf eines Fahrzeuges nach \glsi{SIMBEV} beispielsweise \SI{12}{\kwh} und die fahrzeugseitige Wirkleistung \SI{9.9}{\kw}, dann werden insgesamt rund \SI{73}{\Minuten} für die Ladung benötigt. In diesem Fall wird in den Lastzeitreihen insgesamt fünf Zeitschritten und somit \SI{75}{\Minuten} die Ladeleistung zugeordnet. Aus diesem Grund wird der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \glsi{SIMBEV} auf \SI{12.375}{\kwh} erhöht.
+	\item Wenn hingegen der Ladebedarf bei einer gleichbleibenden Ladeleistung nur \SI{10}{\kwh} beträgt, dann werden nur rund \SI{61}{\Minuten} für die Ladung benötigt. In diesem Fall wird die Ladeleistung in den Lastzeitreihen nur in vier Zeitschritten und somit \SI{60}{\Minuten} abgebildet. Der Ladebedarf des Ladevorgangs in den Fahrtprofilen nach \glsi{SIMBEV} wird entsprechend auf \SI{9.9}{\kwh} reduziert.
 \end{enumerate}
 
 
 \subsection{Netzuntersuchung}\label{chap:edisgo_theo}
 
-Das Open Source Tool \gls{EDISGO} stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
-Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \gls{DINGO} erzeugt wurden, die Grundlage für die Berechnungen mit \gls{EDISGO}.
-\gls{EDISGO} kann über \textit{GitHub} \cite{edisgoGit2019} abgerufen werden und ist auf \textit{Read the Docs} \cite{edisgoDocs2017} dokumentiert.\medskip
+Das Open Source Tool \glsi{EDISGO} stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
+Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \glsi{DINGO} erzeugt wurden, die Grundlage für die Berechnungen mit \glsi{EDISGO}.
+\glsi{EDISGO} kann über \textit{GitHub} \cite{edisgoGit2019} abgerufen werden und ist auf \textit{Read the Docs} \cite{edisgoDocs2017} dokumentiert.\medskip
 
-Mit Hilfe \glspl{EDISGO} werden vorerst durch eine Lastflussanalyse Netzprobleme in den Referenznetzgebieten ermittelt.
+Mit Hilfe \glsipl{EDISGO} werden vorerst durch eine Lastflussanalyse Netzprobleme in den Referenznetzgebieten ermittelt.
 Anschließend wird der last- und erzeugerseitigen Abregelungsbedarfs ermittelt, welcher nötig ist, um die Netzprobleme aufzulösen.
 Anhand dieses Wertes sollen Aussagen darüber gemacht werden, inwieweit die Ladestrategien dazu in der Lage sind, kritische Netzbelastungen zu vermeiden beziehungsweise zu reduzieren.
 Gegenüber einer Ermittlung der Netzausbaukosten bringt diese Methodik den Vorteil mit sich, dass Aussagen darüber getroffen werden können, ob die Netzprobleme aufgrund von einer zu starken Last oder Einspeisung entstehen.
@@ -353,7 +353,7 @@ Gegenüber einer Ermittlung der Netzausbaukosten bringt diese Methodik den Vorte
 
 Die Überprüfung der Referenznetzgebiete auf Netzprobleme besteht aus zwei Schritten.
 Vorerst wird eine nichtlineare Lastflussanalyse durchgeführt, um anschließend die Einhaltung der Spannungsanforderungen und technischen Richtlinien bezüglich der Betriebsmittelbelastungen zu überprüfen.
-Die Durchführung der Lastflussanalyse erfolgt mit Hilfe \glspl{EDISGO}, welches die Funktionalitäten des Open Source Tools \textit{PyPSA} \cite{Brown2020} nutzt.
+Die Durchführung der Lastflussanalyse erfolgt mit Hilfe \glsipl{EDISGO}, welches die Funktionalitäten des Open Source Tools \textit{PyPSA} \cite{Brown2020} nutzt.
 In diesem Kapitel soll auf den Umfang der Lastflussanalyse und die Spannungsanforderungen sowie die technischen Richtlinien bezüglich der Gerätebelastungen eingegangen werden.
 Eine genau Beschreibung der Lastflussanalyse des Open Source Tools \textit{PyPSA} kann auf \textit{Read the Docs} \cite{Brown2020a} abgerufen werden.\medskip
 

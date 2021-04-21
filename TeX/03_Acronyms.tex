@@ -9,18 +9,19 @@
 
 \makeglossaries
 
+\newcommand{\glsi}[1]{\textit{\gls{#1}}} % italic gls
+\newcommand{\glsipl}[1]{\textit{\glspl{#1}}} % italic glspl
+
 %\setacronymstyle{long-short}
 \newacronym[
 	]{BEV}{BEV}{Battery electric vehicle}
 \newacronym[
 	shortplural={\textit{ding0s}},
-	sort={ding0},
-	]{DINGO}{\textit{ding0}}{\textit{DIstribution Network Generat0r}}
+	]{DINGO}{ding0}{DIstribution Network Generat0r}
 \newacronym[
 	longplural={electricity Distribution Grid optimization},
-	shortplural={\textit{eDisGos}},
-	sort=eDisGo
-	]{EDISGO}{\textit{eDisGo}}{electricity Distribution Grid optimization}
+	shortplural={eDisGos},
+	]{EDISGO}{eDisGo}{electricity Distribution Grid optimization}
 \newacronym[
     longplural={elektrische Personenkraftwagen},
 	shortplural={E-Pkw}
@@ -43,10 +44,9 @@
 	longplural={Identifikatoren}
 	]{ID}{ID}{Identifikator}
 \newacronym[
-	longplural={\textit{Mobilität in Deutschland}},
-    shortplural={\textit{MiD 2017}},
-    sort={MiD 2017},
-	]{MID}{\textit{MiD 2017}}{\textit{Mobilität in Deutschland}}
+	longplural={Mobilität in Deutschland},
+    shortplural={MiD 2017},
+	]{MID}{MiD 2017}{Mobilität in Deutschland}
 \newacronym[
 	longplural={motorisierten Individualverkehrs},
     shortplural={MIV},
@@ -70,23 +70,19 @@
     shortplural={NS},
 	]{NS}{NS}{Niederspannung}
 \newacronym[
-    shortplural={\textit{OEP}},
-    sort=OEP
-	]{OEP}{\textit{OEP}}{\textit{Open Energy Platform}}
+    shortplural={OEP},
+	]{OEP}{OEP}{Open Energy Platform}
 \newacronym[
 	longplural={Ortsnetzstationen},
     shortplural={ONS},
 	]{ONS}{ONS}{Ortsnetzstation}
 \newacronym[
-	shortplural={\textit{open\_eGos}},
-    sort={open\_eGo},
-	]{OPENEGO}{\textit{open\_eGo}}{Open electricity grid optimization}
+	]{OPENEGO}{open\_eGo}{open electricity Grid optimization}
 \newacronym[
-    shortplural={\textit{OSM}},
-    sort=OSM
-	]{OSM}{\textit{OSM}}{\textit{OpenStreetMap}}
+    shortplural={OSM},
+	]{OSM}{OSM}{OpenStreetMap}
 \newacronym[
-	sort=P
+	sort={P},
 	]{P}{$P$}{Wirkleistung}
 \newacronym[
 	]{PHEV}{PHEV}{Plug-in hybrid electric vehicle}
@@ -113,9 +109,7 @@
     shortplural={RegioStaR 7}
 	]{REGIOSTAR}{RegioStaR 7}{regionalstatistische Raumtypologie 7}
 \newacronym[
-	shortplural={\textit{simBEVs}},
-	sort={simBEV},
-	]{SIMBEV}{\textit{simBEV}}{\textit{simulative Battery Electric Vehicle}}
+	]{SIMBEV}{simBEV}{simulative Battery Electric Vehicle}
 \newacronym[
     longplural={State of charge},
     shortplural={SOC}
