@@ -11,7 +11,7 @@ Abschließend werden etwaige Netzprobleme bestimmt und der Abregelungsbedarf erm
 Eine der Grundlagen für die Nutzung des Netzplanungsinstruments \glsipl{EDISGO} sind die zu untersuchenden Netztopologien mitsamt der \gls{MS}- und \gls{NS}-Ebene.
 Aufgrund der mangelnden Datenlagen von realen Netztopologien, wird auf synthetisch erzeugte Netztopologien zurückgegriffen, die innerhalb des \glsi{OPENEGO} Projektes \cite{Mueller2019} mit Hilfe des Open Source Tools \glsi{DINGO} erzeugt wurden.
 Das Tool ist in der Lage ländliche und suburbane Netzstrukturen für Gesamtdeutschland zu synthetisieren und kann auf \textit{GitHub} \cite{dingo2019} öffentlich eingesehen und frei verwendet werden.
-Weiterhin ist auf \textit{Read the Docs} \cite{dingo-docs2019} eine ausführliche Dokumentation nachzulesen.
+Weiterhin ist auf \textit{Read the Docs} \cite{dingo-docs2019} eine ausführliche Dokumentation hinterlegt.
 Urbane Netzgebiete können derzeit nicht durch \glsi{DINGO} abgebildet und deshalb nicht innerhalb dieser Arbeit betrachtet werden.\medskip
 
 
@@ -28,7 +28,7 @@ Um die Komplexität des Modells zu reduzieren, werden in der \textit{E-Mobility 
 Das \mbox{\kmean} wurde im Rahmen des \glsi{OPENEGO} Projektes entwickelt und eine ausführliche Beschreibung der Methodik findet sich im Projektabschlussbericht \cite{Mueller2019}.\medskip
 
 Um mit dieser Arbeit eine Ergänzung zu der \textit{E-Mobility Study} \cite{Schachler} zu liefern, werden die Ergebnisse des Clusterings aus der \textit{E-Mobility Study} übernommen und von den \num{15} identifizierten repräsentativen Netzgebieten eine Teilmenge untersucht.
-So werden jeweils zwei Netzgebiete der Kategorien \gls{PV}- und Wind-dominiert und ein Netzgebiet der Kategorie Last-dominiert ausgewählt, die stellvertretend für viele Netzgebiete stehen.
+So werden jeweils zwei Netzgebiete der Kategorien \gls{PV}- und Wind-dominiert sowie ein Netzgebiet der Kategorie Last-dominiert ausgewählt, die stellvertretend für viele Netzgebiete stehen.
 Auf diese Weise wird sichergestellt, dass die Effekte der Netzintegration der Elektromobilität für möglichst unterschiedliche Netzklassen aufgezeigt werden können.
 Insgesamt werden somit fünf Netzgebiete untersucht, die repräsentativ für \num{1495} der \num{3354} Netzgebiete stehen.
 In \autoref{tab:grid_IDs} ist die jeweilige Kategorie und die Anzahl an repräsentierten Netzgebieten der untersuchten Referenznetzgebiete dargestellt.
@@ -49,7 +49,7 @@ Weiterhin wird in \autoref{fig:map_representatives} eine Karte der repräsentier
 
 In der konventionellen Netzplanung werden Betriebsmittel in der Regel überdimensioniert ausgelegt, um die Versorgungsaufgabe für eine möglichst lange Betriebszeit zu garantieren.
 Da die Netzgebiete des \glsi{OPENEGO} Projektes so ausgebaut werden, dass die Versorgungsaufgabe des Jahres \num{2015} möglichst genau erfüllt werden kann, werden die Netzgebiete innerhalb dieser Arbeit zusätzlich ausgebaut.
-Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw. Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant werden und werden entsprechend ausgebaut.
+Es wird angenommen, dass die Betriebsmittel mit einem Überdimensionierungsfaktor für die Scheinleistungs- bzw. Stromstärkenbelastbarkeit von mindestens \num{1.3} geplant werden und dementsprechend ausgebaut.
 Dies gilt sowohl für die Transformator-Stationen als auch die Kabel innerhalb des Netzgebietes.
 Die verwendeten Betriebsmittel können der Dokumentation \glsipl{EDISGO} \cite{edisgoDocs2017a} entnommen werden.
 Sollte die maximal auftretende Scheinleistungsbelastung einer Transformator-Station größer sein als der größte verfügbare Transformator, so werden entsprechend benötigte Transformatoren parallel betrieben, um den Anforderungen gerecht zu werden.
@@ -169,7 +169,7 @@ Der Flächennutzungsfaktor liegt für \textit{commercial} bei \num{3}, für \tex
 
 \subsubsection{Öffentliche Ladeinfrastruktur}
 
-Die öffentliche Ladeinfrastruktur beinhaltet die Ladeinfrastruktur, die nicht der privaten Ladeinfrastruktur zugeordnet werden kann.
+Die öffentliche Ladeinfrastruktur beinhaltet solche, die nicht der privaten Ladeinfrastruktur zugeordnet werden kann.
 Grundsätzlich lässt sich hierbei zwischen Normal- und Schnellladeinfrastruktur unterscheiden.
 Für die Normalladeinfrastruktur wird allen \glspl{POI} aus der \glsi{OSM} \cite{OpenStreetMapFoundation} in dem untersuchten Gebiet jeweils ein möglicher Anschlusspunkt für Ladeinfrastruktur zugeordnet.
 Die Gewichtung der Anschlusspunkte erfolgt hierbei anhand der Gesamtanzahl an \glspl{POI} in der Nähe des Anschlusspunktes.\medskip
@@ -340,7 +340,7 @@ Dies soll kurz an zwei Beispielen veranschaulicht werden:
 \subsection{Netzuntersuchung}\label{chap:edisgo_theo}
 
 Das Open Source Tool \glsi{EDISGO} stellt eine Toolbox zur Verfügung, um Verteilnetze auf Netzprobleme zu untersuchen.
-Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \glsi{DINGO} erzeugt wurden, die Grundlage für die Berechnungen mit \glsi{EDISGO}.
+Dabei bilden synthetische Netztopologien, die mit Hilfe des Open Source Tools \glsi{DINGO} erzeugt wurden, die Grundlage für die Berechnungen.
 \glsi{EDISGO} kann über \textit{GitHub} \cite{edisgoGit2019} abgerufen werden und ist auf \textit{Read the Docs} \cite{edisgoDocs2017} dokumentiert.\medskip
 
 Mit Hilfe \glsipl{EDISGO} werden vorerst durch eine Lastflussanalyse Netzprobleme in den Referenznetzgebieten ermittelt.

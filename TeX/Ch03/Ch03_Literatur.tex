@@ -9,7 +9,7 @@ Bei den Studien, die sich explizit mit den Auswirkungen der Elektromobilität au
 \subsection{Fahrzeughochlauf}
 
 Aufgrund der zunehmenden Marktdurchdringung der Elektromobilität rückt die Frage der Rückwirkungen der Ladevorgänge auf die Stromnetze vermehrt in den Vordergrund.
-Sind die Auswirkungen heutzutage noch klein, so kann ein stark steigender Markthochlauf auch starken Einfluss auf die Netzlast haben.
+Sind die Auswirkungen heutzutage noch gering, so kann ein stark steigender Markthochlauf auch starken Einfluss auf die Netzlast haben.
 Neben der Anzahl an Fahrzeugen haben auch die technischen Parameter der einzelnen Fahrzeugklassen einen starken Einfluss.
 Die verwendeten technischen Parameter der Fahrzeuge können \autoref{chap:EMob_Szenarien} entnommen werden.
 
@@ -25,11 +25,9 @@ So handelt es sich beispielsweise bei dem oberen Ausreißer im Jahr 2030 um das 
 Dieses nimmt hohe Elektrifizierungsquoten an setzt als Leitlinie die Einhaltung des \SIrange[range-phrase=~{--}~]{80}{95}{\percent}-Ziels.\medskip
 
 Neben dem Hochlauf an \glspl{BEV}, ist auch mit einem starken Hochlauf bei den \glspl{PHEV} zu rechnen.
-Da ein Großteil der Fahrten von \glspl{PKW} eine Strecke von \SI{50}{\km} nicht überschreiten \cite{Agora2019}, können viele Fahrten auch von \glspl{PHEV} batterieelektrisch zurückgelegt werden.
+Da ein Großteil der Fahrten von \glspl{PKW} eine Strecke von \SI{50}{\km} nicht überschreiten \cite{Agora2019}, können viele Fahrten auch von \glspl{PHEV} batterieelektrisch zurückgelegt werden.\medskip
 
-\input{Ch03/fig/Ch03_fig_02_RampUp_PHEV}
-
-\autoref{fig:RampUpPHEV} zeigt die Annahmen der betrachteten Studien zum Fahrzeugbestand von \glspl{PHEV} bis zum Jahr \num{2050} als Box-Plot.
+\autoref{fig:RampUpPHEV} veranschaulicht die Annahmen der betrachteten Studien zum Fahrzeugbestand von \glspl{PHEV} bis zum Jahr \num{2050} als Box-Plot.
 Die zugrundeliegenden Daten finden sich im Anhang in \autoref{tab:RampUpPHEV}.
 Bei \glspl{PHEV} liegt der Anstieg im Fahrzeugbestand anfangs sogar höher als bei \glspl{BEV}.
 So liegt der Median 2030 bereits bei \SI{3.7}{\MioFZs}.
@@ -37,19 +35,21 @@ Anschließend fällt der Fahrzeugbestand von \glspl{PHEV} hinter den der \glspl{
 Bis \num{2040} steigt dieser auf \SI{8.2}{\Mio} und \num{2050} auf \SI{9.6}{\MioStk}.
 Je nach Studie und Szenario sinkt der Fahrzeugbestand nach \num{2040} sogar wieder, da zur Erreichung der Klimaziele oder aus ökonomischen Gründen der Umstieg auf \glspl{BEV} als sinnvoller eingeschätzt wird.
 
+\input{Ch03/fig/Ch03_fig_02_RampUp_PHEV}
+
 
 \subsection{Methodik zur Modellierung der Elektromobilität}
 
 Von den betrachteten Studien quantifizieren drei Studien den Netzausbaubedarf auf Verteilnetzebene und besitzen somit einen Vergleichswert zu der vorliegenden Arbeit und werden vertieft betrachtet.
-Hierzu zählen die dena-Leitstudie \textit{Integrierte Energiewende} \cite{DEAGH2018}, die BCG Studie \textit{Klimapfade für Deutschland} \cite{BCG2018} und die Agora Studie \textit{Verteilnetzausbau für die Energiewende} \cite{Agora2019}.
-
-\input{Ch03/fig/Ch03_fig_05_DS_CAPEX-Meta}
+Hierzu zählen die dena-Leitstudie \textit{Integrierte Energiewende} \cite{DEAGH2018}, die BCG Studie \textit{Klimapfade für Deutschland} \cite{BCG2018} und die Agora Studie \textit{Verteilnetzausbau für die Energiewende} \cite{Agora2019}.\medskip
 
 In \autoref{fig:DSCAPEXMeta} werden die Ergebnisse der Studien für den Investitionsbedarf in die Verteilnetze bis zum Jahr \num{2050} aufgeteilt auf die drei Spannungsebenen \gls{NS}, \gls{MS} und \gls{HS} dargestellt.
 Deutlich wird hierbei, dass die dena-Leitstudie die mit Abstand höchsten Kosten für den Netzausbau auf \gls{NS}- und \gls{HS}-Ebene ermittelt.
 Die Agora Studie untersucht hingegen die Netzausbaukosten nicht auf der \gls{HS}-Ebene, ermittelt jedoch die höchsten Ausbaukosten aller Studien auf der \gls{MS}-Ebene.
 Ein direkter Vergleich der Ergebnisse ist jedoch nur bedingt möglich, da die drei Studien unterschiedliche Grundsätze für ihre Szenarien und die Bestimmung des Netzausbaubedarfs ansetzen.
 An dieser Stelle sollen deshalb die Unterschiede und Gemeinsamkeiten zwischen den drei Studien in der Methodik zur Einbindung von \glspl{EPKW} in das Netzmodell dargestellt werden.
+
+\input{Ch03/fig/Ch03_fig_05_DS_CAPEX-Meta}
 
 
 \subsubsection{Bedarfsabschätzung}

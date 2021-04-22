@@ -26,7 +26,7 @@ In \autoref{tab:Spannungsebenen} finden sich die üblichen Spannungen je Spannun
 \paragraph{Netztopologie:}
 
 \gls{NS}-Netze werden in dieser Arbeit als Strahlennetze ausgelegt.
-Strahlennetze werden so genannt, weil die einzelnen Stränge der Netze strahlenförmig vom Ortsnetztransformator zu den Endverbrauchern verlaufen.
+Strahlennetze werden so genannt, da die einzelnen Stränge der Netze strahlenförmig vom Ortsnetztransformator zu den Endverbrauchern verlaufen.
 Vorteil dieser Netzform ist die leichte Berechenbarkeit und die einfache Überwachung des Netzzustandes.
 Jedoch führt bereits ein einziger Fehlerfall an einer Einspeisestelle eines Verbrauchers dazu, dass auch alle nachfolgenden Verbraucher vom Netz getrennt werden.
 Zudem nimmt der Spannungsabfall über die Länge der Leitung immer weiter zu, wodurch die mögliche Belastbarkeit der Leitung ebenfalls über die Länge abnimmt. \cite{Agora2019} \cite{WNG2020}\medskip
@@ -61,7 +61,7 @@ Dabei reicht die räumliche Skala von lokalen Quartierslösungen bis zu internat
 
 \paragraph{Residuallast:}
 
-Die Residuallast beschreibt die Differenz zwischen der benötigten Leistung und der erbrachten Leistung von nicht steuerbaren Kraftwerken innerhalb eines Betrachtungsgebietes.
+Die Residuallast beschreibt die Differenz zwischen der benötigten und der erbrachten Leistung von nicht steuerbaren Kraftwerken innerhalb eines Betrachtungsgebietes.
 Dabei bedeutet eine positive Residuallast, dass der derzeitige Bedarf der Lasten größer ausfällt als die Erzeugung aus nicht steuerbaren Kraftwerken.
 Eine negative Residuallast weist hingegen auf einen Erzeugungsüberschuss hin.
 Aufgrund des zunehmenden Anteils von nicht steuerbaren regenerativen Kraftwerken im Stromnetz und der fortschreitenden Sektorkopplung steigt zunehmend die Spreizung zwischen dem maximalen Wert und dem minimalen Wert der Residuallast. \cite{Paschotta2020a}\medskip
@@ -95,9 +95,7 @@ Der Einfluss der Elektrifizierung von beispielsweise des öffentlichen Personenn
 
 Die Ladetechnik von \glspl{EPKW} und den korrespondierenden Ladepunkten lässt sich mit Hilfe verschiedener Kriterien klassifizieren.
 Die Klassifizierung der Ladetechnik erfolgt innerhalb dieser Arbeit anhand der Höhe ihrer Wirkleistung.
-In \autoref{fig:four-quadrant} finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EPKW} in Abhängigkeit von ihrer \gls{P} und ihrer \gls{Q}.
-
-\input{Ch02/fig/Ch02_fig_01_four-quadrant}
+In \autoref{fig:four-quadrant} finden sich die möglichen Betriebszustände der Ladetechnik von \glspl{EPKW} in Abhängigkeit von ihrer \gls{P} und ihrer \gls{Q}. \medskip
 
 Zusammengefasst werden Ladevorgänge unter der Bezeichnung \gls{G2V}.
 Ladevorgänge können sowohl blindleistungsfrei, induktiv oder kapazitiv erfolgen.
@@ -106,7 +104,9 @@ Weiterhin können mit bidirektionaler Ladetechnik \glspl{EPKW} ebenfalls entlade
 Das gezielte entladen von \glspl{EPKW} wird allgemein unter der Bezeichnung \gls{V2G} zusammengefasst und kann ebenfalls blindleistungsfrei, induktiv oder kapazitiv erfolgen.
 In \autoref{fig:four-quadrant} entspricht dieser Modus einer negativen Wirkleistung. \cite{He2020} 
 Innerhalb dieser Arbeit erfolgen Ladevorgänge immer blindleistungsfrei, welches dem eingezeichneten Betriebspunkt in \autoref{fig:four-quadrant} entspricht.
-Ebenfalls wird der Einsatz von bidirektionaler Ladetechnik nicht untersucht.\medskip
+Ebenfalls wird der Einsatz von bidirektionaler Ladetechnik nicht untersucht.
+
+\input{Ch02/fig/Ch02_fig_01_four-quadrant}
 
 Die einzelnen Ladevorgänge werden anhand ihrer Wirkleistung grob in Normal- und Schnellladevorgänge unterteilt.
 Normalladevorgänge finden innerhalb dieser Arbeit bei einer Wirkleistung von maximal \SI{50}{\kw} statt, während Schnellladevorgänge bei einer Leistung von \SIrange[range-phrase=~{oder}~]{150}{350}{\kw} erfolgen.
