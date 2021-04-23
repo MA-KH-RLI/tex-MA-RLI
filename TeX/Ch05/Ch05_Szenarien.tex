@@ -58,11 +58,11 @@ In den untersuchten \gls{MS}-Netzgebieten finden sich keine konventionellen Kraf
 
 \subsubsection{Konventioneller Stromverbrauch}
 
-Bei dem konventionellen Stromverbrauch handelt es sich um geographisch hochaufgelöste Zeitreihen, die jeweils einem sogenannten \Lastgebiet zugeordnet werden.
+Bei dem konventionellen Stromverbrauch handelt es sich um geo­gra­fisch hochaufgelöste Zeitreihen, die jeweils einem sogenannten \Lastgebiet zugeordnet werden.
 Der konventionelle Stromverbrauch entstammt parallel zum Ausbau der regenerativen Energien aus dem \glsi{OPENEGO} Projekt und wurde im entsprechenden Projektbericht \cite{Mueller2019} ausführlich beschrieben.
 An dieser Stelle soll die Methodik kurz zusammengefasst werden.\medskip
 
-Die \Lastgebiete entsprechen einer geographischen Einheit, welcher ein elektrischer Verbrauch zugeordnet wird.
+Die \Lastgebiete entsprechen einer geo­gra­fischen Einheit, welcher ein elektrischer Verbrauch zugeordnet wird.
 Um die Datenmengen möglichst gering zu halten, werden innerhalb eines \Lastgebietes räumlich nahe liegende Landnutzungsflächen zusammengefasst.
 Zusätzlich wird den \Lastgebieten eine Bevölkerungsanzahl und der Anteil an den Gesamtlandnutzungsflächen der Sektoren Gewerbe, Handel, Dienstleistungen, Industrie, Wohnen und Landwirtschaft zugeteilt.
 Anhand dieser Charakteristika erfolgt abschließend eine anteilige Zuordnung des gesamten Stromverbrauches und der Zeitreihen der Sektoren auf die \Lastgebietedot.
@@ -71,29 +71,32 @@ Anhand dieser Charakteristika erfolgt abschließend eine anteilige Zuordnung des
 \subsubsection{Wärmepumpen}
 
 Der Hochlauf an \glspl{WP} in Deutschland wird innerhalb der Szenarien als feste Eingangsgröße angenommen.
-Die Hochlaufzahlen und der Jahresverbrauch entsprechen dem Szenario C~\num{2035} des \glspl{NEP} \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020} und sind in \autoref{tab:WP-RampUp} dargestellt.
-
-\input{Ch05/tab/Ch05_tab_02_WP-RampUp}
+Die Hochlaufzahlen und der Jahresverbrauch entsprechen dem Szenario C~\num{2035} des \glspl{NEP} \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020} und sind in \autoref{tab:WP-RampUp} dargestellt.\medskip
 
 Der Jahresstromverbrauch der \glspl{WP} wird anteilig anhand des Stromverbrauches des Haushaltssektors eines Netzgebietes bezogen auf den Gesamtstromverbrauch des Haushaltssektors im Szenario \ego auf die einzelnen Netzgebiete verteilt.
 Innerhalb eines Netzgebietes erfolgt die Regionalisierung gewichtet anhand des Stromverbrauches der einzelnen Haushaltslasten.
 Der zeitliche Verlauf der Last wird der \textit{E-Mobility Study} \cite{Schachler} entnommen und auf alle \glspl{WP} umgelegt.
 
+\input{Ch05/tab/Ch05_tab_02_WP-RampUp}
+
 
 \subsubsection{Elektromobilität}\label{chap:EMob_Szenarien}
 
-Bei der Elektromobilität müssen neben Annahmen bezüglich der Zahlen zum Fahrzeughochlauf auch die technischen Daten der \gls{EPKW} und die Verfügbarkeit der Ladeinfrastruktur berücksichtigt werden.
+Bei der Elektromobilität müssen neben den Annahmen zum Fahrzeughochlauf auch die technischen Daten der \gls{EPKW} und die Verfügbarkeit der Ladeinfrastruktur berücksichtigt werden.
 
 
 \paragraph{Fahrzeughochlauf:}
 Der Fahrzeughochlauf unterscheidet sich je nach Szenario.
-Insgesamt spiegeln alle Szenarien unterschiedlich starke Durchdringungen des \glspl{MIV} mit \glspl{EPKW} wider.\medskip
+Insgesamt spiegeln alle Szenarien unterschiedlich starke Durchdringungen des \glspl{MIV} mit \glspl{EPKW} wider.
 
+\input{Ch05/tab/Ch05_tab_03_SzenarienRampUp}
+
+In \autoref{tab:SzenarienRampUp} sind die Annahmen der drei Szenarien zum Hochlauf von \glspl{EPKW} dargestellt.
 Das erste Szenario entspricht mit einem Fahrzeughochlauf von \SI{14}{\Mio} \gls{EPKW} den Annahmen des Szenarios C~\num{2035} des \gls{NEP} \numrange[range-phrase=~{--}~]{2021}{2035} \cite{BNetzA2020}.
 Die Hochlaufzahlen für das Referenzszenario spiegeln mit \SI{25.1}{\Mio} \gls{EPKW} den summierten Median der Literaturrecherche für den Fahrzeughochlauf an \glspl{BEV} und \glspl{PHEV} im Jahr \num{2050} wider.
 Das Antriebswende-Szenario geht hingegen von einer vollständigen Elektrifizierung des Fahrzeugbestandes von \SI{47.7}{\Mio} \gls{EPKW} vom \DTMdate{2020-01-01} \cite{KBA2020} aus.
 
-\input{Ch05/tab/Ch05_tab_03_SzenarienRampUp}
+\input{Ch05/tab/Ch05_tab_04_CarSplit}
 
 Die Aufteilung des \gls{EPKW}-Bestands in \glspl{BEV} und \glspl{PHEV} erfolgt anhand des ermittelten Medians der Literaturrecherche für den Fahrzeughochlauf an \glspl{BEV} und \glspl{PHEV} für das Stützjahr \num{2050}.
 Innerhalb der \gls{EPKW}-Typen wird erweiternd eine Einteilung in die Fahrzeugklassen Kleinwagen, Mittelklasse und Oberklasse vorgenommen.
@@ -102,8 +105,6 @@ So gibt es in den Szenarien zwar insgesamt mehr \glspl{BEV} als \glspl{PHEV}, ab
 Die Einteilung in \autoref{tab:CarSplit} entspricht der Statistik des Kraftfahrt-Bundesamtes \cite{KBASegments2020} vom \DTMdate{2020-01-01}.
 Es wird somit von einer Fortschreibung des aktuellen Verbraucherverhaltens ausgegangen.
 Eine genaue Zuordnung der \gls{PKW}-Segmente in die Klassen wird im Anhang in \autoref{tab:KBASegments} und \autoref{tab:Segments} dargestellt.
-
-\input{Ch05/tab/Ch05_tab_04_CarSplit}
 
 
 \paragraph{Technische Daten:}
@@ -117,7 +118,7 @@ Eine Limitierung der Ladeleistung durch die Unterscheidung in Normal- und Schnel
 
 Der elektrische Energieverbrauch der \gls{EPKW} wird aus den Annahmen der Studie \textit{eMobil 2050} \cite{Hacker2014} abgeleitet.
 Es wird angenommen, dass Kleinwagen gegenüber Mittelklasse-\gls{EPKW} einen um \SI{20}{\percent} reduzierten Energieverbrauch aufweisen.
-Oberklasse-\gls{EPKW} weisen hingegen einen um \SI{20}{\percent} erhöhten Energieverbrauch auf.\medskip
+Oberklasse-\gls{EPKW} weisen hingegen einen um \SI{20}{\percent} erhöhten Energieverbrauch auf.
 
 Weiterhin bietet die Studie \textit{eMobil 2050} nur Verbrauchsangaben nach dem \glspl{NEFZ}, welche nicht realen Verbrauchsdaten entsprechen.
 Nach \textit{Informationen zur Umweltpolitik - 189} \cite{Heinfellner2015} lag der Realverbrauch \num{2013} gegenüber einer Messung nach \gls{NEFZ} im Mittel um \SI{27}{\percent} höher.
@@ -142,7 +143,7 @@ In \autoref{tab:WegLadeUseCase} ist die entsprechende prozentuale Aufteilung der
 
 \input{Ch05/tab/Ch05_tab_07_WegezweckeLadeUseCase}
 
-Derzeit leben in Deutschland ungefähr \SI{44.2}{\MioMen} in Gebäuden mit maximal zwei Wohnungen und \SI{37.2}{\MioMen} in Mehrfamilienhäusern.
+Derzeit leben in Deutschland ungefähr \SI{44.2}{\MioMen} in Gebäuden mit maximal zwei Wohnungen und \num{37.2} Millionen Menschen in Mehrfamilienhäusern.
 Etwa \SI{80}{\percent} der \linebreak Fahrzeugbesitzer$^*$innen in Gebäuden mit maximal zwei Wohnungen verfügen über einen Stellplatz in einer Garage oder unter einem Carport.
 In Mehrfamilienhäusern verfügen hingegen nur \SI{55}{\percent} der Fahrzeugbesitzer$^*$innen über einen Stellplatz für ihr Fahrzeug \cite{dena2020}.
 Unter der vereinfachenden Annahme einer gleichmäßigen Verteilung von Fahrzeugen zwischen Fahrzeugbesitzern$^*$innen in Ein- und Mehrfamilienhäusern ergibt sich hieraus die ermittelte Aufteilung der \UCs auf den Wegezweck \nHdot.\medskip
@@ -163,7 +164,7 @@ Weiterhin wird angenommen, dass dieses Verhältnis auf den Wegezweck \Ausbildung
 
 Für den Wegezweck \dienst wird die Aufteilung nach dem üblichen Stellplatz am Fahrtziel im Wirtschaftsverkehr verwendet \cite{Rikus2015}.
 Demnach parken gewerbliche Halter im Wirtschaftsverkehr in \SI{30}{\percent} der Fälle am Straßenrand und in \SI{26}{\percent} der Fälle auf einem Privatgrundstück.
-Im Wirtschaftsverkehr handelt es sich in der Regel nicht um das eigene Privatgrundstück, weswegen diese Art des Parkens ebenfalls als Parken am Straßenrand gewertet wird.
+Im Wirtschaftsverkehr handelt es sich in der Regel nicht um das eigene Privatgrundstück, weshalb diese Art des Parkens ebenfalls als Parken am Straßenrand gewertet wird.
 In \SI{6}{\percent} der Fälle erfolgt das Parken auf einem Gewerbeparkplatz und in \SI{38}{\percent} der Fälle auf einem Firmenparkplatz.\medskip
 
 Im Folgenden erfolgt je \UC eine Abschätzung der Wahrscheinlichkeiten, inwieweit eine Ladung des \gls{EPKW} stattfinden und mit welcher Ladeleistung geladen werden kann.
@@ -172,7 +173,7 @@ In \autoref{tab:UCProbability2050} werden die entsprechenden Annahmen dargestell
 \input{Ch05/tab/Ch05_tab_08_UCProbability}
 
 In allen \UCs wird davon ausgegangen, dass die Ladevorgänge in Zukunft mit immer höheren Ladeleistungen stattfinden.
-Für den \UC \Eigenheim wird angenommen, dass jede Besitzerin und jeder Besitzer eines \glspl{EPKW} eine Ladevorrichtung einrichtet, wenn die technischen Voraussetzungen gegeben sind.
+Für den \UC \Eigenheim wird angenommen, dass Besitzer\(^*\)innen eines \glspl{EPKW} eine Ladevorrichtung einrichtet, wenn die technischen Voraussetzungen gegeben sind.
 Bei rund \SI{15}{\percent} der Stellplätze von Gebäuden mit einer oder zwei Wohnungen besteht kein Zugang zum Stromnetz \cite{dena2020}.
 Es wird angenommen, dass von diesem Bestand die Hälfte einen Zugang zum Stromnetz erhält.
 Die Aufteilung der Ladeleistungen erfolgt hierbei in Anlehnung an \textit{Bedarfsgerechte und wirtschaftliche öffentliche Ladeinfrastruktur} \cite{NPZMAVE2020}.
@@ -222,10 +223,9 @@ In \autoref{tab:SchnellProbability2050} sind die getroffenen Annahmen für die S
 
 Zusätzlich zu den zuvor beschriebenen Szenarien soll in dieser Arbeit eine Sensitivität in Form einer Szenarette untersucht werden.
 Hierbei analysiert die \SzeFirmenparkplatz den Einfluss eines geringeren Anteils an Ladevorgängen des \UC \Firmeparkplatzdot.
-Aufgrund der hohen Gleichzeitigkeit und der zeitlichen Überschneidung mit einer hohen Erzeugung aus \glspl{PVA} kommt dem \UC \Firmeparkplatz eine besondere Bedeutung zu.
+Aufgrund der hohen Gleichzeitigkeit und der zeitlichen Überschneidungen der Standzeiten mit Zeiten einer hohen Erzeugung aus \glspl{PVA} kommt dem \UC \Firmeparkplatz eine besondere Bedeutung zu.
 Die \SzeFirmenparkplatz soll bei ansonsten gleichbleibenden Eingangsparametern die Sensitivität des Antriebswende-Szenarios auf die Verfügbarkeit von Ladepunkten des \UC \Firmeparkplatz analysieren.
 Hierfür wird angenommen, dass nur noch in \SI{50}{\percent} der Fälle eine Ladung beim \UC \Firmeparkplatz stattfinden kann.
-Die Annahme wird somit gegenüber dem Antriebswende-Szenario halbiert.
 
 \input{Ch05/tab/Ch05_tab_12_UCProbability_Szenarette}
 

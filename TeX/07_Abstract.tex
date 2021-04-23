@@ -2,26 +2,46 @@
 
 \begin{abstract}
 
+	From today's perspective the goal of decarbonizing the transport sector makes a rapid increase in the ramp-up of directly electrified electric vehicles inevitable.
+	Consequently, an increase in negative impacts on the distribution networks is to be expected.
+	For this reason, this work investigates whether grid-friendly charging strategies can support the grid integration of electric vehicles and, by extension, fluctuating renewable energies.
+	Two preventive and one active charging strategy are evaluated for their effectiveness.
+	With \mbox{\textit{SimBEV}}, a tool for the generation of travel profiles and the determination of the charging demand of electric vehicles is co-developed.
+	The demand is allocated locally and transferred in the form of load time series to the spatially and temporally high-resolution network models of five typical medium-voltage networks including underlying low-voltage networks.
+	Subsequently, a load flow analysis is carried out to determine any network problems.
+	Finally, the load- and generation-side curtailment demand is determined, which is necessary to solve the grid problems.
+	Based on this value, conclusions are drawn as to the extent to which the charging strategies are capable of avoiding or reducing critical grid stresses.
+	A preventive charging strategy with reduced charging power can successfully reduce the load-side stresses on the networks.
+	In contrast, a preventive charging strategy in which the charging points are divided into groups can only reduce the load-side stresses to a small extent.
+	Furthermore, the preventive charging strategies also lead to an increase in the curtailment demand of fluctuating renewable energies, since the charging demand is reduced in times of high feed-in.
+	With the active charging strategy, which is dependent on the residual load in the grid area, the load-side curtailment demand is reduced more strongly in some cases, but less strongly in most cases than with the preventive charging strategy with reduced charging capacities.
+	On the other hand, especially in photovoltaic-dominated grids, only the active charging strategy offers the potential to reduce the generation-side curtailment demand and thus supports the grid integration of fluctuating renewables.
+	The success of the active charging strategy depends strongly on the extent to which the global residual load in the medium-voltage grid reflects the situations in the individual grid sections.
+	Primarily in wind-dominated grids, the global residual load proves to be an insufficient optimization parameter, which can lead to negative effects on both the load- and generation-side curtailment demand.
+
 \end{abstract}
+
+\clearpage
 
 \selectlanguage{ngerman}
 
 \begin{abstract}
 	
-	Das Ziel der Dekarbonisierung des Verkehrssektors macht eine rapide Steigerung des Hochlaufs an direktelektrifizierten Elektrofahrzeugen aus heutiger Sicht unumgänglich.
+	Das Ziel der Dekarbonisierung des Verkehrssektors macht eine rapide Steigerung des Hochlaufs an direktelektrifizierten Fahrzeugen aus heutiger Sicht unumgänglich.
 	Als Konsequenz ist mit einer Zunahme der negativen Auswirkungen auf die Verteilnetze zu rechnen.
-	Aus diesem Grund wird in dieser Arbeit untersucht, ob mit Hilfe von netzdienlichen Ladestrategien die Netzintegration von E-Pkw und erweiternd von fluktuierenden Erneuerbaren Energien unterstützt werden kann.
-	Hierbei werden zwei präventive und eine aktive Ladestrategie auf ihre Wirksamkeit geprüft, um einen Vergleich zwischen den Ansätzen zu ermöglichen.
-	Mit \mbox{\textit{simBEV}} wird ein Tool für die Erstellung von Fahrtprofilen und der Ermittlung des Ladebedarfs von E-Pkw mitentwickelt.
+	Aus diesem Grund wird in dieser Arbeit untersucht, ob mit Hilfe von netzdienlichen Ladestrategien die Netzintegration von elektrischen Personenkraftwagen und erweiternd von fluktuierenden Erneuerbaren Energien unterstützt werden kann.
+	Hierbei werden zwei präventive und eine aktive Ladestrategie auf ihre Wirksamkeit geprüft.
+	Mit \mbox{\textit{SimBEV}} wird ein Tool für die Erstellung von Fahrtprofilen und der Ermittlung des Ladebedarfs von elektrischen Personenkraftwagen mitentwickelt.
 	Der Bedarf wird örtlich allokiert und in Form von Lastzeitreihen in die räumlich und zeitlich hochaufgelösten Netzmodelle von fünf typischen Mittelspannungsnetzen inklusive darunterliegenden Niederspannungsnetzen überführt.
 	Nachfolgend wird für die Ermittlung von etwaigen Netzproblemen eine Lastflussanalyse durchgeführt.
 	Abschließend erfolgt eine Ermittlung des last- und erzeugerseitigen Abregelungsbedarfs, welcher notwendig ist, um die Netzprobleme aufzulösen.
-	Anhand dieses Wertes lassen sich Aussagen darüber treffen, inwieweit die Ladestrategien dazu in der Lage sind, kritische Netzbelastungen zu vermeiden beziehungsweise zu reduzieren.
+	Anhand dieses Wertes werden Aussagen darüber getroffen, inwieweit die Ladestrategien dazu in der Lage sind, kritische Netzbelastungen zu vermeiden beziehungsweise zu reduzieren.
 	Es zeigt sich, dass eine präventive Ladestrategie mit reduzierten Ladeleistungen erfolgreich die lastseitigen Belastungen der Netze senken kann.
-	Allerdings führen die präventiven Ladestrategien auch zu einer Erhöhung des Abregelungsbedarfs von fluktuierenden Erneuerbaren Energien, da sich der Ladebedarf in Zeiten hoher Einspeisung reduziert.
+	Demgegenüber können durch eine präventive Ladestrategie, bei welcher die Ladepunkte in Gruppen eingeteilt werden, die lastseitigen Belastungen nur in einem geringen Maße gemindert werden.
+	Weiterhin führen die präventiven Ladestrategien auch zu einer Erhöhung des Abregelungsbedarfs von fluktuierenden Erneuerbaren Energien, da sich der Ladebedarf in Zeiten hoher Einspeisung reduziert.
 	Bei der aktiven Ladestrategie, welche sich an der Residuallast im Netzgebiet orientiert, kann der lastseitige Abregelungsbedarf in einzelnen Fällen stärker, aber in den meisten Fällen weniger stark als bei der präventiven Ladestrategie mit reduzierten Ladeleistungen gesenkt werden.
-	Auf der anderen Seite bietet vor allem in Photovoltaik-dominierten Netzen die aktive Ladestrategie als einzige Ladestrategie das Potential, den erzeugerseitigen Abregelungsbedarf zu senken und somit die Netzintegration von fluktuierenden Erneuerbaren Energien zu unterstützen.
-	Der Erfolg der aktiven Ladestrategie hängt last- und erzeugerseitig davon ab, in welchem Maße die globale Residuallast im Mittelspannungsnetzgebiet die Situationen in den einzelnen Netzabschnitten widerspiegelt.
+	Auf der anderen Seite bietet vor allem in Photovoltaik-dominierten Netzen ausschließlich die aktive Ladestrategie das Potential, den erzeugerseitigen Abregelungsbedarf zu senken und somit die Netzintegration von fluktuierenden Erneuerbaren Energien zu unterstützen.
+	Der Erfolg der aktiven Ladestrategie hängt stark davon ab, in welchem Maße die globale Residuallast im Mittelspannungsnetzgebiet die Situationen in den einzelnen Netzabschnitten widerspiegelt.
 	So erweist sich primär in Wind-dominierten Netzen die globale Residuallast als unzureichende Optimierungsgröße, welches zu negativen Effekten sowohl auf den last- als auch erzeugerseitigen Abregelungsbedarf führen kann.
 	
 \end{abstract}
