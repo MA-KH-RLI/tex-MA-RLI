@@ -216,9 +216,9 @@ Der Anschluss erfolgt hierbei bis zu einer Anschlussleistung von \SI{0.3}{\mva} 
 Bei einem Anschluss in der \gls{NS}-Ebene erfolgt der Anschluss immer innerhalb des \gls{NS}-Netzes, dessen \gls{ONS} am nächsten an dem anzuschließenden Anschlusspunkt liegt.
 Ab einer Leistung von \SI{0.1}{\mva} erfolgt der Anschluss über eine Kabelverbindung direkt an der \gls{ONS}.
 Unter einer Leistung von \SI{0.1}{\mva} hängt die Art des Anschlusses von dem \textit{use case} der Ladestation ab.
-Für den \UC \zH wird die Ladestation an der nächstgelegenen Haushaltslast im identifizierten \gls{NS}-Netz angeschlossen.
-Im Falle des \UC \Firmeparkplatz erfolgt der Anschluss an dem nächstgelegenen gewerblichen, industriellen oder landwirtschaftlichen Verbraucher.
-Demgegenüber wird bei öffentlicher Ladeinfrastruktur der Netzanschluss der Ladestation an dem nächstgelegen Verbraucher, der keine Haushaltslast darstellt, vorgenommen.\medskip
+Für den \UC \zH wird die Ladestation an einer zufälligen Haushaltslast im identifizierten \gls{NS}-Netz angeschlossen.
+Im Falle des \UC \Firmeparkplatz erfolgt der Anschluss an einem zufälligen gewerblichen, industriellen oder landwirtschaftlichen Verbraucher.
+Demgegenüber wird bei öffentlicher Ladeinfrastruktur der Netzanschluss der Ladestation an einem zufälligen Verbraucher, der keine Haushaltslast darstellt, vorgenommen.\medskip
 
 Erfolgt der Anschluss in der \gls{MS}-Ebene, wird die Ladestation über ein Kabel an dem nächstgelegenen Netzknoten oder Kabel angeschlossen.
 Hierbei wird ausgeschlossen, dass eine Ladestation an eine andere Ladestation angeschlossen wird.
@@ -322,7 +322,7 @@ Andererseits soll die Differenz zwischen dem Ladebedarf der Fahrtprofile nach \g
 
 \begin{enumerate}
 	\item Dem Gesamtladebedarf eines Ladevorgangs wird nur dann der Ladebedarf des letzten Zeitschritts zugeordnet, wenn bei maximaler Ladeleistung mindestens \SI{20}{\percent} des Zeitschritts benötigt werden, um den Ladebedarf zu decken.
-	\item Wenn einem Ladevorgang der Ladebedarf des letzten Zeitschritts zugeordnet wird, dann wird in allen für die Ladung auch nur anteilig benötigten Zeitschritten dies in den Lastzeitreihen durch die zugewiesene Ladeleistung des Ladevorgangs in voller Höhe widergespiegelt.
+	\item Wenn in einem Zeitschritt eine Ladung stattfindet, dann wird diesem die volle Ladeleistung des Ladevorgangs zugeordnet.
 \end{enumerate}
 
 Wenn ein Ladevorgang von diesen Maßnahmen betroffen ist, dann wird der Ladebedarf dieses Ladevorgangs entweder erhöht oder reduziert in den Lastzeitreihen wiedergegeben.
