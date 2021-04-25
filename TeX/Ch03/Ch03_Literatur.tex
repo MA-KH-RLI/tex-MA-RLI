@@ -11,21 +11,21 @@ Bei den Studien, die sich explizit mit den Auswirkungen der Elektromobilität au
 Aufgrund der zunehmenden Marktdurchdringung der Elektromobilität rückt die Frage der Rückwirkungen der Ladevorgänge auf die Stromnetze vermehrt in den Vordergrund.
 Sind die Auswirkungen heutzutage noch gering, so kann ein stark steigender Markthochlauf auch starken Einfluss auf die Netzlast haben.
 Neben der Anzahl an Fahrzeugen haben auch die technischen Parameter der einzelnen Fahrzeugklassen einen starken Einfluss.
-Die verwendeten technischen Parameter der Fahrzeuge können \autoref{chap:EMob_Szenarien} entnommen werden.
-
-\input{Ch03/fig/Ch03_fig_01_RampUp_BEV}
+Die verwendeten technischen Parameter der Fahrzeuge können \autoref{chap:EMob_Szenarien} entnommen werden.\medskip
 
 In \autoref{fig:RampUpBEV} sind die Annahmen der betrachteten Studien zum Fahrzeugbestand von \glspl{BEV} bis zum Jahr \num{2050} als Box-Plot dargestellt.
 Die zugrundeliegenden Daten finden sich im Anhang in \autoref{tab:RampUpBEV}.
 Trotz einer starken Streuung zeigt sich bis \num{2050} eine klare Zunahme des Bestandes.
 Liegt der Median 2030 noch bei \SI{1.9}{\MioStk}, steigt dieser bis \num{2040} auf \SI{11.0}{\Mio} und erreicht \num{2050} \SI{15.5}{\Mio}.
 Die starke Streuung lässt sich zum einen durch unterschiedliche Zielsetzungen der verschiedenen Studien und zum anderen durch den langen Zeithorizont und die damit verbundene Unsicherheit erklären.
-In einzelnen Szenarien werden hohe Elektrifizierungsquoten angenommen und das Einhalten des \SIrange[range-phrase=~{--}~]{80}{95}{\percent}-Ziels des Klimaschutzplans \num{2050} vorausgesetzt, während andere Szenarien eine Fortschreibung der aktuellen Entwicklungen untersuchen.
-So handelt es sich beispielsweise bei dem oberen Ausreißer im Jahr 2030 um das Elektrifizierungs-Szenario der dena-Leitstudie \textit{Integrierte Energiewende} \cite{DEAGH2018}.
-Dieses nimmt hohe Elektrifizierungsquoten an setzt als Leitlinie die Einhaltung des \SIrange[range-phrase=~{--}~]{80}{95}{\percent}-Ziels.\medskip
+In einzelnen Szenarien werden hohe Elektrifizierungsquoten angenommen und das Einhalten des \SIrange[range-phrase=~{--}~]{80}{95}{\percent}-Ziels des Klimaschutzplans \num{2050} \cite{BMU2016} vorausgesetzt, während andere Szenarien eine Fortschreibung der aktuellen Entwicklungen untersuchen.
+
+\input{Ch03/fig/Ch03_fig_01_RampUp_BEV}
+
+\clearpage
 
 Neben dem Hochlauf an \glspl{BEV}, ist auch mit einem starken Hochlauf bei den \glspl{PHEV} zu rechnen.
-Da ein Großteil der Fahrten von \glspl{PKW} eine Strecke von \SI{50}{\km} nicht überschreiten \cite{Agora2019}, können viele Fahrten auch von \glspl{PHEV} batterieelektrisch zurückgelegt werden.\medskip
+Da ein Großteil der Fahrten von \glspl{PKW} eine Strecke von \SI{50}{\km} nicht überschreiten \cite{Agora2019}, können viele Fahrten auch von \glspl{PHEV} batterieelektrisch zurückgelegt werden.
 
 \autoref{fig:RampUpPHEV} veranschaulicht die Annahmen der betrachteten Studien zum Fahrzeugbestand von \glspl{PHEV} bis zum Jahr \num{2050} als Box-Plot.
 Die zugrundeliegenden Daten finden sich im Anhang in \autoref{tab:RampUpPHEV}.
@@ -40,14 +40,14 @@ Je nach Studie und Szenario sinkt der Fahrzeugbestand nach \num{2040} sogar wied
 
 \subsection{Methodik zur Modellierung der Elektromobilität}
 
-Von den betrachteten Studien quantifizieren drei Studien den Netzausbaubedarf auf Verteilnetzebene und besitzen somit einen Vergleichswert zu der vorliegenden Arbeit und werden vertieft betrachtet.
+Von den betrachteten Studien quantifizieren drei Studien den Netzausbaubedarf auf Verteilnetzebene und werden vertieft betrachtet.
 Hierzu zählen die dena-Leitstudie \textit{Integrierte Energiewende} \cite{DEAGH2018}, die BCG Studie \textit{Klimapfade für Deutschland} \cite{BCG2018} und die Agora Studie \textit{Verteilnetzausbau für die Energiewende} \cite{Agora2019}.\medskip
 
 In \autoref{fig:DSCAPEXMeta} werden die Ergebnisse der Studien für den Investitionsbedarf in die Verteilnetze bis zum Jahr \num{2050} aufgeteilt auf die drei Spannungsebenen \gls{NS}, \gls{MS} und \gls{HS} dargestellt.
-Deutlich wird hierbei, dass die dena-Leitstudie die mit Abstand höchsten Kosten für den Netzausbau auf \gls{NS}- und \gls{HS}-Ebene ermittelt.
+Deutlich wird hierbei, dass die dena-Leitstudie die mit Abstand höchsten Kosten für den Netzausbau auf der \gls{NS}- und \gls{HS}-Ebene ermittelt.
 Die Agora Studie untersucht hingegen die Netzausbaukosten nicht auf der \gls{HS}-Ebene, ermittelt jedoch die höchsten Ausbaukosten aller Studien auf der \gls{MS}-Ebene.
 Ein direkter Vergleich der Ergebnisse ist jedoch nur bedingt möglich, da die drei Studien unterschiedliche Grundsätze für ihre Szenarien und die Bestimmung des Netzausbaubedarfs ansetzen.
-An dieser Stelle sollen deshalb die Unterschiede und Gemeinsamkeiten zwischen den drei Studien in der Methodik zur Einbindung von \glspl{EPKW} in das Netzmodell dargestellt werden.
+An dieser Stelle sollen die Unterschiede und Gemeinsamkeiten zwischen den drei Studien in der Methodik zur Einbindung von \glspl{EPKW} in das Netzmodell dargestellt werden.
 
 \input{Ch03/fig/Ch03_fig_05_DS_CAPEX-Meta}
 
@@ -80,9 +80,9 @@ Das gesteuerte und gesteuert\Plus Laden werden in Form eines Reduktionsfaktors i
 In der ausgewerteten Literatur werden die Auswirkungen einer zunehmenden Netzintegration von \glspl{EPKW} auf die Verteilnetze in Deutschland bereits in ihrer Gesamtheit betrachtet.
 In dieser Arbeit werden ergänzend die Auswirkungen auf fünf konkrete Referenznetzgebiete untersucht, welche jeweils stark unterschiedliche Charakteristika besitzen und grob in die Kategorien \gls{PV}-, Wind- bzw. Last-dominiert eingeteilt werden können.
 Hierbei wird der Einfluss verschiedener netzdienlicher Ladestrategien untersucht und der Erfolg von präventiven und aktiven Ansätzen miteinander verglichen.
-Somit soll eine Aussage darüber möglich werden, ob aktive Ansätze gegenüber präventiven Ansätzen einen wesentlichen Vorteil bieten.\medskip
+Somit soll eine Aussage darüber möglich werden, ob aktive Ansätze gegenüber präventiven Ansätzen einen wesentlichen Vorteil bieten.
 
-In dieser Arbeit soll erweiternd zur vorliegenden Literatur ein verstärkter Fokus auf eine detaillierte Modellierung des Fahrzeugbestandes mit verschiedenen Fahrzeugklassen von \glspl{EPKW} gelegt werden.
+In dieser Arbeit soll erweiternd zur vorliegenden Literatur ein verstärkter Fokus auf eine detaillierte Modellierung des direktelektrifizierten Fahrzeugbestandes mit verschiedenen Fahrzeugklassen von \glspl{EPKW} gelegt werden.
 Weiterhin werden für die Untersuchung der Auswirkungen auf die Verteilnetze nicht feste Gleichzeitigkeiten und Reduktionsfaktoren ermittelt, sondern konkrete Bedarfszeitreihen verwendet.
 
 
